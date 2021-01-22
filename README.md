@@ -4,7 +4,7 @@
   Emilce Daiana Molina
   
   Gimena Rivoira:
-  Mi nombre es Gimena Rivoira, tengo 19 años y soy una persona que le gusta mucho el mundo de la tecnología. Recientemente termine el secundario por lo cual estoy estudiando programción para ir en busqueda de mi primer trabajo como Programadora Web. Full Stack.
+  Mi nombre es Gimena Rivoira, tengo 19 años y soy una persona que le gusta mucho el mundo de la tecnología. Recientemente termine el secundario por lo cual estoy estudiando programación para ir en busqueda de mi primer trabajo como Programadora Web. Full Stack.
   
   Gabriel Pelizza:
   Mi nombre es Gabriel Pelizza tengo 26 años, me apasiona todo lo relacionado con tecnologia, por eso mismo decidi estudiar desarrollo web
