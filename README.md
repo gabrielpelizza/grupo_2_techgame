@@ -1,7 +1,8 @@
 # grupo_2_techgame
 
 # Integrantes:
-  Emilce Daiana Molina
+  Emilce Daiana Molina :
+  Soy emilce, tengo 21 y soy estudiante  de programación, además  soy una persona de aprendizaje continuo y autodidacta, busco distintos tipos de plataformas para poder sumar conocimientos y así desarrollarme  profesionalmente como desarrolladora fullstack
   
   Gimena Rivoira:
   Mi nombre es Gimena Rivoira, tengo 19 años y soy una persona que le gusta mucho el mundo de la tecnología. Recientemente termine el secundario por lo cual estoy estudiando programación para ir en busqueda de mi primer trabajo como Programadora Web. Full Stack.
