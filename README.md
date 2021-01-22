@@ -5,7 +5,8 @@
   
   Gimena Rivoira
   
-  Gabriel Pelizza
+  Gabriel Pelizza:
+  Mi nombre es Gabriel Pelizza tengo 26 años, me apasiona todo lo relacionado con tecnologia, por eso mismo decidi estudiar desarrollo web
   
   
 # Servicios ofrecidos:
