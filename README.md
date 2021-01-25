@@ -35,11 +35,13 @@ La inspiración a futuro que este sitio nos dió tanto en sus formularios como e
 
 # Colores: 
   https://colorhunt.co/palette/207237
+  
   https://colorhunt.co/palette/207237
   
 # Fuente: 
-Play (jonas hecksher)
-https://fontsfree.pro/brand-fonts/917-geforce.html
+  Play (jonas hecksher)
+  
+  https://fontsfree.pro/brand-fonts/917-geforce.html
 
 
 
