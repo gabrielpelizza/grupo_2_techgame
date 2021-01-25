@@ -46,6 +46,6 @@ La inspiración a futuro que este sitio nos dió tanto en sus formularios como e
   https://www.azfonts.net/families/gadugi.html
 
 
-#Logo:
+# Logo:
 
   https://drive.google.com/drive/folders/1yqXHf34AYAc6R2BtnzK3NEsfnRUx0REl?usp=sharing
