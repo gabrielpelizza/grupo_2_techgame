@@ -32,3 +32,14 @@ Para darle estilos y utilizar alguna que otras opciones en nuestros wireframes, 
   
 https://www.skullcandy.com/
 La inspiración a futuro que este sitio nos dió tanto en sus formularios como en la variedad de opciónes que tiene en sus wireframes. Nos brindó una gran variedad de ideas para personalizar y finalizar un boceto de nuestra página.
+
+# Colores: 
+  https://colorhunt.co/palette/207237
+  https://colorhunt.co/palette/207237
+  
+# Fuente: 
+Play (jonas hecksher)
+https://fontsfree.pro/brand-fonts/917-geforce.html
+
+
+
