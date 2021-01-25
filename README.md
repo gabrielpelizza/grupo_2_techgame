@@ -42,6 +42,8 @@ La inspiración a futuro que este sitio nos dió tanto en sus formularios como e
   Play (jonas hecksher)
   
   https://fontsfree.pro/brand-fonts/917-geforce.html
+  
+  https://www.azfonts.net/families/gadugi.html
 
 
 #Logo:
