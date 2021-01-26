@@ -1,8 +1,25 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+header{
+  display:flex;
 }
 
-a {
-  color: #00B7FF;
+header .cabecera{
+  display:flex;
+  flex-wrap:wrap;
+  overflow:hidden;
 }
+
+header .cabecera .row div.logo{
+  display:flex;
+  flex-wrap:wrap;
+  overflow:hidden;
+}
+
+header .cabecera .row .logo a img{
+  width:100%;
+}
+
