@@ -10,7 +10,9 @@
   Gabriel Pelizza:
   Mi nombre es Gabriel Pelizza tengo 26 años, me apasiona todo lo relacionado con tecnologia, por eso mismo decidi estudiar desarrollo web
   
-  
+# Link de trello:
+https://trello.com/b/2EfgBIgB/proyecto-integrador-grupo2
+
 # Servicios ofrecidos:
  Techgame es un sitio dedicado a la venta de hardware de computadoras y aparatos electronicos.
  
