@@ -23,3 +23,15 @@ header .cabecera .row .logo a img{
   width:100%;
 }
 
+
+/*Header*/
+.menu .navbar-nav .mr-auto ul{
+  width:100%;
+}
+
+
+.show{
+  display:absolute;
+  width:300px;
+  background-color:black;
+}
