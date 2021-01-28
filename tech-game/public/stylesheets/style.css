@@ -1,8 +1,41 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+/*Footer*/
+footer {
+  text-align: center;
+}
+footer h3{
+  margin-top: 5px;
+}
+footer .nosotros p{
+  padding: 0px 15px;
+}
+footer ul{
+  padding: 0;
+}
+footer ul li a{
+  text-decoration: none;
+  color: black;
+}
+footer .redes ul li{
+  display: inline;
+  margin-right: 10px;
 }
 
-a {
-  color: #00B7FF;
+footer .mediosDePago i{
+  margin-right: 5px;
+}
+
+footer .redes{
+  margin-top: 20px;
+  padding-left: 50px;
+}
+footer .redes ul li{
+  margin-right: 40px;
+  font-size: 35px;
 }
