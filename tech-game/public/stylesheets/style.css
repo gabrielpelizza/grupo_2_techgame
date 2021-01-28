@@ -89,16 +89,20 @@ img.logo{
   margin-top:10px;
 }
 
-div.container{
+header div.container{
   flex-direction: column;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid purple;
 }
+
+
 /*Footer*/
 footer {
   text-align: center;
+  background-color: #892cdc;
+  color: white;
 }
 footer h3{
   margin-top: 5px;
@@ -111,11 +115,19 @@ footer ul{
 }
 footer ul li a{
   text-decoration: none;
-  color: black;
+  color: white;
 }
+
+footer .redes{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
 footer .redes ul li{
   display: inline;
-  margin-right: 10px;
+  margin-right: 30px;
 }
 
 footer .mediosDePago i{
@@ -125,6 +137,10 @@ footer .mediosDePago i{
 footer .redes{
   margin-top: 20px;
   padding-left: 50px;
+}
+
+footer .copyright{
+  width: 100%;
 }
 
 
@@ -188,6 +204,8 @@ footer .redes{
   header nav.nav-menu{
       height:50px;
       overflow: hidden;
+      background-color: #892cdc;
+      color: white;
   }
 
   header nav .lista{
