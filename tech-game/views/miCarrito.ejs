@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head') %> 
+  <body>
+    <%- include('partials/header') %>
+    <!-- -------------MI CARRITO DE COMPRAS-------------------- -->
+    <div class="micarritoCompras">
+      <!-- **********PRODUCTOS AGREGADOs*********** -->
+        <section class="misCompras container">
+          <div class="titulo ">
+            <h2>Mi carrito</h2>
+          </div>
+                <!-- *****PRODUCTO***** -->
+                  <div class="row producto">
+                      <article class="col-sm-12">
+                        <div class="imagenProducto">
+                          <img src="./images/Productos/calculadora.jpg"alt=""> 
+                        </div>
+                        <div class="detallesProducto">
+                          <p class="nombreProducto">Calculadora Xs - version 2.1</p>
+                          <form action="" class="cantidadProducto">
+                            <input type="number">
+                          </form>
+                          <p class="precioProducto"> precio$</p>
+                          <form action="" class="eliminarProducto">
+                            <button><i class="far fa-trash-alt"></i>Eliminar</button>
+                          </form>
+                        </div>
+                      </article>
+                  </div>
+                <!-- *****FIN PRODUCTO***** -->
+                <!-- *****PRODUCTO***** -->
+                  <div class="row producto">
+                    <article class="col-sm-12">
+                      <div class="imagenProducto">
+                        <img src="./images/Productos/calculadora.jpg"alt=""> 
+                      </div>
+                      <div class="detallesProducto">
+                        <p class="nombreProducto">Calculadora Xs - version 2.1</p>
+                        <form action="" class="cantidadProducto">
+                          <input type="number">
+                        </form>
+                        <p class="precioProducto"> precio$</p>
+                        <form action="" class="eliminarProducto">
+                          <button><i class="far fa-trash-alt"></i>Eliminar</button>
+                        </form>
+                      </div>
+                    </article>
+                  </div>
+               <!-- *****FIN PRODUCTO***** -->
+               <!-- *****PRODUCTO***** -->
+                  <div class="row producto">
+                    <article class="col-sm-12">
+                      <div class="imagenProducto">
+                        <img src="./images/Productos/calculadora.jpg"alt=""> 
+                      </div>
+                      <div class="detallesProducto">
+                        <p class="nombreProducto">Calculadora Xs - version 2.1</p>
+                        <form action="" class="cantidadProducto">
+                          <input type="number">
+                        </form>
+                        <p class="precioProducto"> precio$</p>
+                        <form action="" class="eliminarProducto">
+                          <button><i class="far fa-trash-alt"></i>Eliminar</button>
+                        </form>
+                      </div>
+                    </article>
+                  </div>
+                <!-- *****FIN PRODUCTO***** -->
+                <!-- *****PRODUCTO***** -->
+                  <div class="row producto">
+                    <article class="col-sm-12">
+                        <div class="imagenProducto">
+                          <img src="./images/Productos/calculadora.jpg"alt=""> 
+                        </div>
+                        <div class="detallesProducto">
+                          <p class="nombreProducto">Calculadora Xs - version 2.1</p>
+                          <form action="" class="cantidadProducto">
+                            <input type="number">
+                          </form>
+                          <p class="precioProducto"> precio$</p>
+                          <form action="" class="eliminarProducto">
+                            <button><i class="far fa-trash-alt"></i>Eliminar</button>
+                          </form>
+                        </div>
+                     </article>
+                   </div>
+                <!-- *****FIN PRODUCTO***** -->
+         </section>
+      <!-- **************FIN PRODUCTOS AGREGADOS**************** -->
+
+
+      <!-- **************BOLETA DE MI ORDEN **************** -->
+        <section class="container cajaMiOrden">
+          <div class="row  miOrden">
+                <h2 class="col-sm-12  ">Mi orden</h2>
+                <!-- ******precios *****-->
+                  <section class="preciosDeCompra col-sm-12" >
+                      <div class="preciosDeMiOrden">
+                          <p>Subtotal</p>
+                          <p>$$$$$</p>
+                      </div>
+            
+                      <div class="preciosDeMiOrden descuentos">
+                          <p>Descuentos</p>
+                          <p>$$$$$</p>
+                      </div>
+            
+                      <div class="preciosDeMiOrden">
+                        <p>Total</p>
+                        <p>$$$$$</p>
+                      </div>
+                  </section>
+                <!-- ******FIN PRECIOS *****-->
+                <section class="botonesFinCompra col-sm-12">
+                  <form action="" >
+                    <button class="col-sm-12 comprar">Finalizar Compra</button>
+                    <button class="col-sm-12 seguirComprando">Seguir comprando</button>
+                  </form>
+                </section>
+            </div>
+          </section>
+        <!-- *************FIN BOLETA DE MI ORDEN***************** -->
+    </div>
+    <!-------------------FIN DE MI CARRITO----------------------------------- -->
+
+      <%- include('partials/footer') %> 
+      <%- include('partials/scripts') %> 
+  </body>
+</html>

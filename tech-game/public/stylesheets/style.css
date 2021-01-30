@@ -6,7 +6,7 @@
   list-style: none;
 }
 
-/*HEADER*/
+/*------------------------------------HEADER----------------------------------------------------------------------------------------*/
 header {
   display:flex;
   flex-direction: row;
@@ -96,9 +96,126 @@ header div.container{
   padding-bottom: 10px;
   border-bottom: 1px solid purple;
 }
+/*---------------------------------------------fin--------------------------------------------------------------------------------*/
 
 
-/*Footer*/
+
+/*-----------------------------------------------MI CARRITO : "Productos agregados"--------------------------------------------------*/
+div.micarritoCompras section.misCompras{
+  margin-bottom: 40px;
+}
+.micarritoCompras section.misCompras .titulo h2{
+font-size: 25px;
+color: indigo;
+margin-top: 20px;
+}
+.micarritoCompras .producto article{
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.micarritoCompras  .producto article  .imagenProducto{
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.micarritoCompras  .producto article  .imagenProducto img{
+width: 100%;
+}
+.micarritoCompras  .producto article .detallesProducto{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+
+}
+.micarritoCompras   .producto article  .detallesProducto p.nombreProducto{
+width: 100%;
+margin-bottom: 0;
+height:min-content;
+font-size: 14px;
+margin-bottom:5px;
+}
+.micarritoCompras  .producto article   .detallesProducto .cantidadProducto{
+  width: 30%;
+
+  height: min-content;
+  text-align: center;
+}
+.micarritoCompras  .producto article  .detallesProducto .cantidadProducto input{
+ width: 40%;
+ height: 20px;
+}
+.micarritoCompras  .producto article  .detallesProducto p.precioProducto{
+  width: 30%;
+  margin-bottom: 0;
+  text-align: right;
+  height: min-content;
+}
+.micarritoCompras  .producto article .detallesProducto .eliminarProducto{
+  width: 99%;
+  height: min-content;
+  text-align: right;
+  padding-top: 10px;
+  font-size: 12px;
+}
+.micarritoCompras .producto article .detallesProducto .eliminarProducto button{
+border-style: none;
+background-color: white;
+}
+/*-------------------------------------------------------fin---------------------------------------------------------------------*/
+
+/*-------------------- MI CARRITO : "mi orden"------------------------------------------------------------------------------------- */
+.cajaMiOrden{
+  margin-bottom: 20px;
+}
+.cajaMiOrden  .miOrden h2{
+  text-align: center;
+  font-size: 18px;
+}
+.cajaMiOrden  .miOrden section.preciosDeCompra{
+  display: flex;
+  flex-direction: column;
+}
+.cajaMiOrden  .miOrden section.preciosDeCompra div:first-child{
+  border-top: 1px solid gray;
+  padding-top: 20px;
+}
+.cajaMiOrden  .miOrden section.preciosDeCompra .preciosDeMiOrden{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cajaMiOrden  .miOrden section.preciosDeCompra .descuentos{
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+.cajaMiOrden  .miOrden .botonesFinCompra form button{
+  border-style: none;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.cajaMiOrden  .miOrden .botonesFinCompra form button.comprar{
+  background-color: rgba(72, 211, 72, 0.637);
+  color: rgb(119, 172, 103);
+}
+.cajaMiOrden  .miOrden .botonesFinCompra form button.seguirComprando{
+  background-color: rgba(243, 226, 73, 0.637);
+  color: rgb(209, 197, 34);
+}
+/*--------------------------------------------fin---------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------Footer-----------------------------------------------------------*/
 footer {
   text-align: center;
   background-color: #892cdc;
@@ -142,11 +259,16 @@ footer .redes{
 footer .copyright{
   width: 100%;
 }
+footer .redes ul li{
+  margin-right: 40px;
+  font-size: 35px;
+}
+/*-----------------------------------------------------fin-------------------------------------------------------------*/
 
 
-
-/*RESPONSIVE*/
+/**************************************************RESPONSIVE*******************************************************/
 @media(min-width:768px){
+  /*>>>>>>>HEADER<<<<<<<<*/
   img.logo{
       height: 50px;
       text-align: left;
@@ -232,9 +354,59 @@ footer .copyright{
       align-items: right;
       padding-top: 10px;
   }
+  /*>>>>>>>>FIN<<<<<<<<<<*/
 
+  /*>>>>>>>>>>>MI CARRITO<<<<<<<<<< */
+  .micarritoCompras{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }  
+  .micarritoCompras section.misCompras{
+    width: 60%;
+  }
+  .micarritoCompras section.misCompras div.titulo h2{
+    margin-top: 0px;
+    }
+  .micarritoCompras section.cajaMiOrden{
+    width: 30%;
+  }
+  .micarritoCompras section article .detallesProducto{
+    align-items: center;
+    justify-content: space-around;
+  }
+  .micarritoCompras section .producto article .detallesProducto{
+  width: 80%;
+  }
+  
+  .micarritoCompras section .producto article  div.imagenProducto{
+    width: 15%;
+  }
+  .micarritoCompras section .producto article {
+    justify-content: start;
+  }
+  .micarritoCompras section  .producto article  .detallesProducto p.precioProducto{
+  width: 15%;
+
+  text-align: center;
+  }
+
+  .micarritoCompras section  .producto article  .detallesProducto p.nombreProducto{
+    width: 40%;
+    text-align: center;
+  }
+  .micarritoCompras section  .producto article   .detallesProducto .cantidadProducto{
+  width: 20%;
+  }
+  .micarritoCompras section .producto article .detallesProducto .eliminarProducto{
+    width: 10%;
+    text-align: center;
+  }
+  /*>>>>>>>>>FIN<<<<<<<<<<<*/
 }
-footer .redes ul li{
-  margin-right: 40px;
-  font-size: 35px;
-}
+
+
+
