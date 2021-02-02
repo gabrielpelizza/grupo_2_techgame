@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %> 
+    <link rel="stylesheet" href="stylesheets/login.css">
+<body>
+    <%- include('partials/header') %>
+
+    <div class="login">
+    <h1>Inicia sesión</h1>
+    <p>ingrese con su usuario y contraseña</p>
+    </div>
+
+    <div class="formulario">
+        <form action="../routes/index.js">
+            <label for="">Ingresa tu e-mail</label>
+            <input type="text" placeholder="email">
+            
+            <label for="">Ingresa tu contraseña</label>
+            <input type="password" placeholder="contraseña">
+            <a href="">¿Olvidaste tu contraseña?</a>
+
+            <button>iniciar sesión</button>
+        </form>
+
+        <h3>o</h3>
+        <div class="registro">
+            <h2>Create una cuenta</h2>
+            <p>¿no tienes una cuenta? registrate</p>
+                <button>continuar</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %> 
+
+
+    <%- include('partials/scripts') %> 
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/registro.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Creá tu cuenta</h1>
+
+    <hr width="100%">
+    <h3>Completa tus datos personales</h3>
+    <hr width="100%">
+    
+
+    <div class="registro">
+        <form action="">
+            <section>
+            <label for="">Nombre</label>
+            <input type="text" placeholder="Nombre">
+        </section>
+
+        <section>
+            <label for="">Apellído</label>
+            <input type="text" placeholder="Apellido">
+        </section>
+        
+        <section>
+            <label for="">Email</label>
+            <input type="email" placeholder="E-mail">
+        </section>
+
+        <section>
+            <label for="">N° de documento</label>
+            <input type="text">
+        </section>
+
+        <section>
+            <label for="">País de residencia</label>
+            <%- include('partials/paises') %> 
+        </section>
+
+        <section>
+            <label for="">Localidad</label>
+            <input type="text" placeholder="Localidad">
+        </section>
+
+        <section>
+            <label for="">Clave</label>
+            <input type="password" placeholder="Clave">
+        </section>
+
+        <section>
+            <label for="">Confirmar clave</label>
+            <input type="password" placeholder="Confirmar clave">
+        </section>
+
+            <button>Registrarme</button>
+        </form>
+    </div>
+</body>
+</html>
