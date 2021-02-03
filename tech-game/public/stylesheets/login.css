@@ -92,8 +92,13 @@ ul li{
 
 
 
-@media(min-width: 1024px){
+@media(min-width: 769px){
     body{
         /* padding: 5px 420px; */
+    }
+
+    div.formulario{
+        width:50%;
+        margin:auto;
     }
 }
