@@ -3,8 +3,31 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  list-style: none;
+  font-family: 'geforce_bold';
 }
+/*Fuentes Personalizadas*/
+
+@font-face {
+  font-family: geforce_light;
+  src: url("https://www.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fonts/geforce_light-webfont.woff") format("opentype");
+}
+
+@font-face {
+  font-family: geforce_bold;
+  src: url("https://www.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fonts/geforce_bold-webfont.woff") format("opentype");
+}
+
+@font-face {
+  font-family: geforce_light_alt;
+  src: url("https://www.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fonts/geforce-light-alt-webfont.woff2") format("opentype");
+}
+
+@font-face {
+  font-family: geforce-bold-alt;
+  src: url("https://www.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fonts/geforce-bold-alt-webfont.woff2") format("opentype");
+}
+
+
 
 /*------------------------------------HEADER----------------------------------------------------------------------------------------*/
 header {
