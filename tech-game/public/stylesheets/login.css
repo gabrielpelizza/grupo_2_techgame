@@ -94,6 +94,6 @@ ul li{
 
 @media(min-width: 1024px){
     body{
-        padding: 5px 420px;
+        /* padding: 5px 420px; */
     }
 }
