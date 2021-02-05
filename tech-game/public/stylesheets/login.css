@@ -68,6 +68,12 @@ ul li{
     list-style: none;
 }
 
+hr{
+    margin-top: 50px;
+    border: none;
+    border-top: 1px solid gray;
+}
+
 .registro{
     padding-top: 30px;
 }
@@ -93,9 +99,9 @@ ul li{
 
 
 @media(min-width: 769px){
-    body{
-        /* padding: 5px 420px; */
-    }
+/*     body{
+         padding: 5px 420px; 
+    } */
 
     div.formulario{
         width:50%;
