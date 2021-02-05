@@ -7,6 +7,15 @@
   body{
     padding: 30px;
   }
+
+  .imagenesbis{
+    display: none;
+  }
+  
+  .inicial .imagenescritorio{
+    display: none;
+  }
+  
   
   .volver{
     padding-top: 30px;
@@ -25,15 +34,25 @@
   .inicial h1{
     margin-bottom: 30px;
   }
-  
-  .inicial .imagen{
+
+  .inicial .carrucel{
     display: flex;
     justify-content: center;
+  }
+  
+/*   .inicial .imagen{
+    display: flex;
+    justify-content: center;
+  } */
+
+  img{
+    width: 10px;
   }
   
   
   .descripcion{
     padding-top: 40px;
+/*     padding-top: 50px; */
   }
   
   .descripcion h2{
@@ -44,6 +63,7 @@
   .descripcion .detalle span{
     display: block;
     padding-top: 30px;
+    font-size: 40px;
   }
   
   .descripcion .detalle i{
@@ -103,6 +123,10 @@
     padding-bottom: 20px;
     background-color: rgba(209, 209, 209);
   }
+
+  .descripciones p{
+    font-size: 25px;
+  }
   
   .secciones{
     padding-top: 50px;
@@ -132,16 +156,24 @@
   
   .secciones section ul li span{
     padding-left: 20%;
+    width: 35%;
+    float: right;
+  }
+
+  .secciones section{
+    margin-top: 50px;
   }
   
   .secciones section h3{
-    padding-top: 30px;
+    padding-top: 40px;
   }
   
   .secciones section h5{
-    width: 50%;
+    margin: 0 auto;
+    display: block;
     float: left;
-    font-size: 25px;
+    font-size: 20px; 
+    width: 50%;
   }
   
   @media(min-width:1024px){
@@ -156,34 +188,35 @@
     .inicial{
       width: 60%;
       float: left;
-      height: 900px;
+      height: 730px;
     }
   
     .inicial h1{
-      font-size: 30px;
+      font-size: 22px;
     }
   
     .descripcion{
       width: 40%;
       float: right;
       padding-top: 100px;
-      padding-left: 120px;
+      padding-left: 20px;
     }
   
     .descripcion h2{
       display: flex;
       justify-content: center;
+      font-size: 35px;
     }
   
     .descripcion h3{
       display: flex;
       justify-content: center;
-      font-size: 20px;
+      font-size: 15px;
       width: 100%;
     }
   
     .descripcion .detalle span{
-      font-size: 22px;
+      font-size: 15px;
     }
   
     .descripcion .detalle i{
@@ -194,22 +227,28 @@
       width: 90px;
       display: inline;
       float: left;
-      margin-top: 70px;
-      margin-left: auto;
+      margin-top: 40px;
+      margin-left: 0%;
+      margin-right: 0%;
       cursor: pointer;
+      height: 45px;
+      font-size: 18px;
     }
   
     .descripcion button.carrito{
-      width: 210px;
+      width: 75%;
+      height: 45px;
       float: right;
-      margin-top: 70px;
-      font-size: 20px;
+      margin-top: 40px;
+      font-size: 18px;
       cursor: pointer;
     }
   
     .descripcion .comprar button.comprar{
       padding: 0 auto;
       cursor: pointer;
+      height: 50px;
+      margin-top: 5%;
     }
   
     .entrega{
@@ -219,12 +258,12 @@
   
     .entrega h3{
       padding-left: 100px;
-      font-size: 40px;
+      font-size: 20px;
     }
   
     .entrega .metodos span{
       padding-left: 110px;
-      font-size: 25px;
+      font-size: 15px;
     }
   
     .entrega .metodos i{
@@ -233,29 +272,89 @@
     }
   
     .descripciones{
-      padding-top: 1000px;
+      padding-top: 830px;
     }
   
     .descripciones h4{
-      font-size: 45px;
+      margin-top: 30px;
+      font-size: 25px;
+      background-color: white;
+      border-bottom: 1px solid rgba(209, 209, 209);;  
     }
   
     .descripciones p{
-      font-size: 25px;
+      font-size: 18px;
     }
   
     .secciones h4{
       padding-top: 30px;
-      font-size: 50px;
+      font-size: 25px;
+      background-color: white;
+      border-bottom: 1px solid rgba(209, 209, 209);
+    }
+
+    .secciones section{
+      margin: 0 auto;
+      width: 50%;
+      float: left;
+    }
+
+    .secciones .secciones:nth-child(even){
+      float: right;
+    }
+  
+    .secciones section ul li{
+      margin-bottom: 50px;
     }
   
     .secciones section h3{
-      font-size: 40px;
+      font-size: 20px;
+      width: 92%;
+      margin-top: 20px;
+      margin-bottom: 16px;
+      padding-left: 5px;
+      border-bottom: 1px solid rgba(209, 209, 209);
     }
   
     .secciones section ul li span{
-      padding-left: 35%;
+      padding-left: 15%;
+      margin-right: 0%;
       font-size: 18px;
+      float: left;
+      width: 40%;
+    }
+
+    .secciones hr{
+      width: 96%;
+    }
+  
+    .inicial .imagenesbis{
+      display: inline;
+    }
+  
+    .inicial .imagenesbis img{
+      width: 23%;
+      margin-top: 50px;
+      margin-right: 35px;
+      margin-left: 20px;
+    }
+  
+    .inicial .carrucel{
+      display: none;
+    }
+  
+    .inicial .imagenescritorio{
+      display: flex;
+      justify-content: center;
+      margin-top: 5%;
+    }
+  
+    .inicial .imagenescritorio img{
+      width: 80%;
+    }
+  
+    .secciones hr{
+      display: none;
     }
   }
   
