@@ -4,14 +4,14 @@
     padding: 0;
 }
 
-h1{
+.registrar h1{
     padding-top: 30px;
     padding-bottom: 30px;
     display: flex;
     justify-content: center;
 }
 
-h3{
+.registrar h3{
     margin: 0 auto;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -19,7 +19,7 @@ h3{
     font-size: 14px;
 }
 
-hr{
+.registrar hr{
     border: none;
     border-top: 1px solid rgb(209, 209, 209);
 }
@@ -66,8 +66,8 @@ hr{
 }
 
 @media (min-width: 1024px){
-  body{
-    padding: 5px 250px;
+  .registrar{
+    padding: 5px 10%;
   }
 
   section{
