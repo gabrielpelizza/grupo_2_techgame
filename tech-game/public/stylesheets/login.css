@@ -57,18 +57,7 @@
     display: inline;
 }
 
-h3{
-    padding-top: 50px ;
-    display: flex;
-    justify-content: center;
-}
-
-ul li{
-    text-decoration: none;
-    list-style: none;
-}
-
-hr{
+.formulario hr{
     margin-top: 50px;
     border: none;
     border-top: 1px solid gray;
@@ -99,9 +88,6 @@ hr{
 
 
 @media(min-width: 769px){
-/*     body{
-         padding: 5px 420px; 
-    } */
 
     div.formulario{
         width:50%;
