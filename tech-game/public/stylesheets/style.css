@@ -1067,7 +1067,6 @@ footer .redes ul li{
   }
   div.logo-container{
       order:-1;
-      right:100px;
       text-align: left;
       justify-content: start;
       align-items:none;
@@ -1169,11 +1168,9 @@ footer .redes ul li{
 
   header div.menu-button-carrito{
       display:absolute;
-      /* justify-content:end;
+      justify-content:end;
       align-items: right;
-      padding-top: 10px; */
-      top:0;
-      right:-90px;
+      padding-top: 10px;
   }
 
   header div .menu-button-carrito button{
