@@ -3,8 +3,22 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'geforce_bold';
 }
+
+h1, h2{
+  font-family: "geforce_bold";
+}
+
+h3{
+  font-family: "geforce_light";
+}
+
+p{
+  font-family: "geforce-bold-alt";
+}
+
+
+
 /*Fuentes Personalizadas*/
 
 @font-face {
@@ -118,6 +132,14 @@ div.container{
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #892cdc;
+}
+
+header div .menu-button-carrito button{
+  width:25px;
+  height:25px;
+  background-color:white;
+  border-radius:50%;
+  border:1px solid #892cdc;
 }
 
 
@@ -753,6 +775,14 @@ footer .redes ul li{
       padding-top: 10px;
   }
 
+  header div .menu-button-carrito button{
+    width:40px;
+    height:40px;
+    background-color:white;
+    border-radius:50%;
+    border:1px solid purple;
+  }
+
   /*Main*/
   /* main{
       display:flex;
@@ -1037,6 +1067,7 @@ footer .redes ul li{
   }
   div.logo-container{
       order:-1;
+      right:100px;
       text-align: left;
       justify-content: start;
       align-items:none;
@@ -1137,11 +1168,22 @@ footer .redes ul li{
   }
 
   header div.menu-button-carrito{
-      display:flex;
-      justify-content:end;
+      display:absolute;
+      /* justify-content:end;
       align-items: right;
-      padding-top: 10px;
+      padding-top: 10px; */
+      top:0;
+      right:-90px;
   }
+
+  header div .menu-button-carrito button{
+    width:40px;
+    height:40px;
+    background-color:white;
+    border-radius:50%;
+    border:1px solid purple;
+  }
+
   /******/
   /*Main*/
   /******/
