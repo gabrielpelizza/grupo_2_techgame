@@ -45,9 +45,9 @@
     justify-content: center;
   } */
 
-  img{
+/*   img{
     width: 10px;
-  }
+  } */
   
   
   .descripcion{
@@ -74,18 +74,20 @@
     margin-top: 70px;
     width: 180px;
     height: 68px;
-    margin-right: 30px;
+    margin-right: 20px;
     font-size: 30px;
     background-color: rgba(209, 209, 209);
   }
   
   .descripcion button.carrito{
-    width: 700px;
+    width: 500px;
     height: 70px;
     font-size: 30px;
     color: white;
     background-color: cadetblue;
+    float: right;
     border-radius: 4px;
+    margin-top: 69px;
   }
   
   .descripcion .comprar button.comprar{
