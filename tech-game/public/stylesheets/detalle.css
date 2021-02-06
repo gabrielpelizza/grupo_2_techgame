@@ -296,13 +296,16 @@
     }
 
     .secciones section{
-      margin: 0 auto;
+      margin-left: 0%;
+      margin-right: 0%;
       width: 50%;
-      float: left;
+/*       float: left; */
     }
 
     .secciones .secciones:nth-child(even){
-      float: right;
+      margin-right: 0%;
+      margin-left: 0%;
+      float: left;
     }
   
     .secciones section ul li{
