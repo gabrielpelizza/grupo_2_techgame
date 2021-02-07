@@ -28,6 +28,7 @@
   }
   
   .inicial h1{
+    padding-left: 5%;
     margin-bottom: 30px;
   }
 
@@ -210,7 +211,8 @@
   .definicion{
     width: 40%;
     float: right;
-    padding: 100px 20px;
+    padding-top: 100px;
+    padding-right: 20px;
   }
 
   .definicion h2{
