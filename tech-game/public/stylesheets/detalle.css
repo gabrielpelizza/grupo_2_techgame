@@ -316,7 +316,7 @@
 
   .secciones .seccion{
     display: flex;
-    width: 100%;
+    width: 90%;
   }
   .secciones .seccion .detalle1{
     width: 50%;
