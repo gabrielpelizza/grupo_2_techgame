@@ -37,31 +37,31 @@
   }
   
   
-  .descripcion{
-    padding-top: 40px;
+  .definicion{
+    padding: 40px 20px;
   }
   
-  .descripcion h2{
+  .definicion h2{
     font-size: 2.4rem;
     padding-bottom: 20px;
   }
 
-  .descripcion h3{
+  .definicion h3{
     padding-top: 10px;
   }
   
-  .descripcion .detalle span{
+  .definicion .detalle span{
     display: block;
     padding-top: 30px;
     font-size: 18px;
   }
   
-  .descripcion .detalle i{
+  .definicion .detalle i{
     margin-left: 8px;
     margin-right: 20px;
   }
   
-  .descripcion select{
+  .definicion select{
     margin-top: 70px;
     width: 30%;
     height: 68px;
@@ -69,10 +69,10 @@
     background-color: rgba(209, 209, 209);
   }
   
-  .descripcion button.carrito{
+  .definicion button.carrito{
     width: 66%;
     height: 70px;
-    font-size: 30px;
+    font-size: 22px;
     color: white;
     background-color: cadetblue;
     float: right;
@@ -80,7 +80,7 @@
     margin-top: 69px;
   }
   
-  .descripcion .comprar button.comprar{
+  .definicion .comprar button.comprar{
     margin-top: 50px;
     padding-bottom: 10px;
     width: 100%;
@@ -112,17 +112,17 @@
     font-size: 15px;
   }
   
-  .descripciones{
+  .definiciones{
     padding-top: 50px;
   }
   
-  .descripciones h4{
+  .definiciones h4{
     font-size: 30px;
     padding-bottom: 20px;
     background-color: rgba(209, 209, 209);
   }
 
-  .descripciones p{
+  .definiciones p{
     font-size: 25px;
   }
   
@@ -207,35 +207,34 @@
   }
 
 
-  .descripcion{
+  .definicion{
     width: 40%;
     float: right;
-    padding-top: 100px;
-    padding-left: 20px;
+    padding: 100px 20px;
   }
 
-  .descripcion h2{
+  .definicion h2{
     display: flex;
     justify-content: center;
     font-size: 35px;
   }
 
-  .descripcion h3{
+  .definicion h3{
     display: flex;
     justify-content: center;
     font-size: 15px;
     width: 100%;
   }
 
-  .descripcion .detalle span{
+  .definicion .detalle span{
     font-size: 15px;
   }
 
-  .descripcion .detalle i{
+  .definicion .detalle i{
     margin-right: 10px;
   }
 
-  .descripcion select{
+  .definicion select{
     width: 90px;
     display: inline;
     float: left;
@@ -247,7 +246,7 @@
     font-size: 18px;
   }
 
-  .descripcion button.carrito{
+  .definicion button.carrito{
     width: 70%;
     height: 45px;
     float: right;
@@ -256,7 +255,7 @@
     cursor: pointer;
   }
 
-  .descripcion .comprar button.comprar{
+  .definicion .comprar button.comprar{
     padding: 0 auto;
     cursor: pointer;
     height: 50px;
@@ -283,18 +282,18 @@
     font-size: 25px;
   }
 
-  .descripciones{
+  .definiciones{
     padding-top: 830px;
   }
 
-  .descripciones h4{
+  .definiciones h4{
     margin: 0% 2%;
     font-size: 25px;
     background-color: white;
     border-bottom: 1px solid rgba(209, 209, 209);;
   }
 
-  .descripciones p{
+  .definiciones p{
     font-size: 18px;
     margin-left: 3%;
     margin-right: 2%;
@@ -313,6 +312,18 @@
     background-color: white;
     border-bottom: 1px solid rgba(209, 209, 209);
     margin: 0% 2%;
+  }
+
+  .secciones .seccion{
+    display: flex;
+    width: 100%;
+  }
+  .secciones .seccion .detalle1{
+    width: 50%;
+  }
+
+  .secciones .seccion .detalle2{
+    width: 50%;
   }
 
 

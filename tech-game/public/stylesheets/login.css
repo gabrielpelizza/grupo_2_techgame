@@ -89,7 +89,7 @@
 
 @media(min-width: 769px){
 
-    div.formulario{
+    .formulario{
         width:50%;
         margin:auto;
     }
