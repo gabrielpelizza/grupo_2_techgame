@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %> 
+<body>
+    <%- include('partials/header') %> 
+    <main>
+        <div class="contenedor-crear container col-12 mt-5">
+            <h1 class="col-12 mb-5">Agregar producto</h1>
+            <form action="" method="post">
+                <input type="" name="nombre" value="" class="col-3 mb-2" placeholder="Nombre">
+                <input type="" name="precio" value="" class="col-3 mb-3" placeholder="Precio">
+                <input type="" name="sku" value="" class="col-3 mb-3" placeholder="SKU">
+                <input type="" name="stock" value="" class="col-3 mb-3" placeholder="stock">
+                <input type="" name="descuento" value="" class="col-3 mb-3" placeholder="con o sin descuento">
+                <input type="" name="detalle" value="" class="col-3 mb-3"  placeholder="Detalle">
+                <select name="" id="" class="col-3">
+                    <option disabled="enable" selected>Categoria</option>
+                    <option value="">accesorios</option>
+                    <option value="">componentes</option>
+                    <option value="">juegos</option>
+                </select>
+
+                <select name="" id="" class="col-3">
+                    <option disabled="enable" selected>Marcas</option>
+                    <option value="">hyper x</option>
+                    <option value="">noga</option>
+                    <option value="">aorus</option>
+                </select>
+                <input type="file" name="img" value="" class="col-3 mb-3">
+                <textarea cols="90%" rows="5" class="col-9 mb-5" placeholder="Ingresa descripcion de l producto"></textarea>
+                <button type="submit" class="btn btn-success col-9 justify-content-center mb-5">agregar producto</button>
+            </form>
+        </div>
+
+        <div class="contenedor-modificar container col-12 mb-5 mt-5">
+            <h1 class="col-12 mb-5">Modificar producto</h1>
+
+            <form action="" method="get" class="col-12">
+                <input type="search" name="" value="" class="col-6 mb-5 justify-content-left" placeholder="buscar" >
+            </form>
+
+            <form action="" method="post">
+                <input type="" name="nombre" value="" class="col-3 mb-2" placeholder="Nombre">
+                <input type="" name="precio" value="" class="col-3 mb-3" placeholder="Precio">
+                <input type="" name="sku" value="" class="col-3 mb-3" placeholder="SKU">
+                <input type="" name="stock" value="" class="col-3 mb-3" placeholder="stock">
+                <input type="" name="descuento" value="" class="col-3 mb-3" placeholder="con o sin descuento">
+                <input type="" name="detalle" value="" class="col-3 mb-3"  placeholder="Detalle">
+                <select name="" id="" class="col-3">
+                    <option disabled="enable" selected>Categoria</option>
+                    <option value="">accesorios</option>
+                    <option value="">componentes</option>
+                    <option value="">juegos</option>
+                </select>
+
+                <select name="" id="" class="col-3">
+                    <option disabled="enable" selected>Marcas</option>
+                    <option value="">hyper x</option>
+                    <option value="">noga</option>
+                    <option value="">aorus</option>
+                </select>
+                <input type="file" name="img" value="" class="col-3 mb-3">
+                <textarea cols="90%" rows="5" class="col-9 mb-5" placeholder="Ingresa descripcion de l producto"></textarea>
+                <button type="submit" class="btn btn-success col-9 justify-content-center mb-5">agregar producto</button>
+            </form>
+        </div>
+
+        <div class="contenedor-crear mb-5">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>descripcion</th>
+                    <th>sku</th>
+                    <th>stock</th>
+                    <th>descripcion</th>
+                    <th>imagen</th>
+                    <th>operaciones</th>
+                </tr>
+                <tr>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td><button class="btn btn-success">editar</button> <button class="btn btn-danger">eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td><button class="btn btn-success">editar</button> <button class="btn btn-danger">eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td><button class="btn btn-success">editar</button> <button class="btn btn-danger">eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td><button class="btn btn-success">editar</button> <button class="btn btn-danger">eliminar</button></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <%- include('partials/scripts') %> 
+</body>
+</html>
