@@ -1,18 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/*Usuarios
+
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
-});
+}); */
 
+const usuariosController = require('../controllers/usuariosController')
 
-router.get('/registro', function(req, res, next) {
-  res.render('registro', { title: 'Express' });
-});
-router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'Express' });
-});
+router.get('/registro', usuariosController.registro);
+router.get('/login', usuariosController.inicioSesion);
 
 
 
