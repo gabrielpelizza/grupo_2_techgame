@@ -1,5 +1,5 @@
 module.exports = {
-    crud : (req, res, next) => {
+    crud : (req, res, next)=>{
         res.render('admin/crud');
       }
 }
