@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const productos_db = path.join('data', 'products.json');
 
 module.exports = {
