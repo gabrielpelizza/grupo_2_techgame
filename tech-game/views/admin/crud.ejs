@@ -77,6 +77,7 @@
                     <th>imagen</th>
                     <th>operaciones</th>
                 </tr>
+                <% productos.forEach(elemento => { %>
                 <tr>
                     <td>lorem ipsum</td>
                     <td>lorem ipsum</td>
@@ -85,7 +86,29 @@
                     <td>lorem ipsum</td>
                     <td>lorem ipsum</td>
                     <td>lorem ipsum</td>
-                    <td><button class="btn btn-success">editar</button> <button class="btn btn-danger">eliminar</button></td>
+                    <td><form action="" class="d-inline p-2">
+                        <button class="btn btn-success">editar</button>
+                    </form>
+                     <form action="/admin/delete/<%= elemento.id %>?_method=DELETE" method="POST" class="d-inline p-2">
+                        <button class="btn btn-danger" type="submit">eliminar</button>
+                    </form>
+                </td>
+                </tr>
+               <!--  <tr>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td>lorem ipsum</td>
+                    <td><form action="" class="d-inline p-2">
+                        <button class="btn btn-success">editar</button>
+                    </form>
+                     <form action="" class="d-inline p-2">
+                        <button class="btn btn-danger" type="submit">eliminar</button>
+                    </form>
+                </td>
                 </tr>
                 <tr>
                     <td>lorem ipsum</td>
@@ -95,7 +118,13 @@
                     <td>lorem ipsum</td>
                     <td>lorem ipsum</td>
                     <td>lorem ipsum</td>
-                    <td><button class="btn btn-success">editar</button> <button class="btn btn-danger">eliminar</button></td>
+                    <td><form action="" class="d-inline p-2">
+                        <button class="btn btn-success">editar</button>
+                    </form>
+                     <form action="" class="d-inline p-2">
+                        <button class="btn btn-danger" type="submit">eliminar</button>
+                    </form>
+                </td>
                 </tr>
                 <tr>
                     <td>lorem ipsum</td>
@@ -105,18 +134,15 @@
                     <td>lorem ipsum</td>
                     <td>lorem ipsum</td>
                     <td>lorem ipsum</td>
-                    <td><button class="btn btn-success">editar</button> <button class="btn btn-danger">eliminar</button></td>
-                </tr>
-                <tr>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td><button class="btn btn-success">editar</button> <button class="btn btn-danger">eliminar</button></td>
-                </tr>
+                    <td><form action="" class="d-inline p-2">
+                        <button class="btn btn-success">editar</button>
+                    </form>
+                     <form action="" class="d-inline p-2">
+                        <button class="btn btn-danger" type="submit">eliminar</button>
+                    </form>
+                </td>
+                </tr> -->
+                <% }) %>
             </table>
         </div>
     </main>
