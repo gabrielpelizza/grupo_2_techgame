@@ -61,5 +61,18 @@
     "price": "123",
     "details": "123",
     "discount": "123"
+  },
+  {
+    "id": 7,
+    "product_name": "lorem ipsum",
+    "description": "lorem ipsum",
+    "sku": "123",
+    "image": "",
+    "stock": "123",
+    "price": "lorem ipsum",
+    "details": "lorem ipsum",
+    "category": "acceesorios",
+    "discount": "lorem ipsum",
+    "brand": "noga"
   }
 ]

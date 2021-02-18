@@ -5,7 +5,7 @@
     <%- include('partials/header') %> 
     <main>
         <div class="contenedor-crear container col-12 mt-5">
-            <h1 class="col-12 mb-5">Agregar producto</h1>
+            <h2 class="col-12 mb-5">Agregar producto</h2>
             <form action="/admin/create" method="POST">
                 <input type="text" name="nombre" id="nombre" value="" class="col-3 mb-2" placeholder="Nombre">
                 <input type="text" name="precio" id="precio" value="" class="col-3 mb-3" placeholder="Precio">
@@ -33,7 +33,7 @@
         </div>
 
         <div class="contenedor-modificar container col-12 mb-5 mt-5">
-            <h1 class="col-12 mb-5">Modificar producto</h1>
+            <h2 class="col-12 mb-5">Modificar producto</h2>
 
             <form action="" method="get" class="col-12">
                 <input type="search" name="" value="" class="col-6 mb-5 justify-content-left" placeholder="buscar" >
@@ -61,90 +61,93 @@
                 </select>
                 <input type="file" name="img" value="" class="col-3 mb-3">
                 <textarea cols="90%" rows="5" class="col-9 mb-5" placeholder="Ingresa descripcion de l producto"></textarea>
-                <button type="submit" class="btn btn-success col-9 justify-content-center mb-5">agregar producto</button>
+                <button type="submit" class="btn btn-success col-9 justify-content-center mb-5">modificar producto</button>
             </form>
         </div>
 
-        <div class="contenedor-crear mb-5">
-            <table class="table table-striped">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>descripcion</th>
-                    <th>sku</th>
-                    <th>stock</th>
-                    <th>descripcion</th>
-                    <th>imagen</th>
-                    <th>operaciones</th>
-                </tr>
-                <% productos.forEach(elemento => { %>
-                <tr>
-                    <td><%= elemento.product_name %></td>
-                    <td><%= elemento.price %></td>
-                    <td><%= elemento.description %></td>
-                    <td><%= elemento.sku %></td>
-                    <td><%= elemento.stock %></td>
-                    <td><%= elemento.description %></td>
-                    <td><%= elemento.image%></td>
-                    
-                    <td><form action="" class="d-inline p-2">
-                        <button class="btn btn-success">editar</button>
-                    </form>
-                     <form action="/admin/delete/<%= elemento.id %>?_method=DELETE" method="POST" class="d-inline p-2">
-                        <button class="btn btn-danger" type="submit">eliminar</button>
-                    </form>
-                </td>
-                </tr>
-               <!--  <tr>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td><form action="" class="d-inline p-2">
-                        <button class="btn btn-success">editar</button>
-                    </form>
-                     <form action="" class="d-inline p-2">
-                        <button class="btn btn-danger" type="submit">eliminar</button>
-                    </form>
-                </td>
-                </tr>
-                <tr>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td><form action="" class="d-inline p-2">
-                        <button class="btn btn-success">editar</button>
-                    </form>
-                     <form action="" class="d-inline p-2">
-                        <button class="btn btn-danger" type="submit">eliminar</button>
-                    </form>
-                </td>
-                </tr>
-                <tr>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td><form action="" class="d-inline p-2">
-                        <button class="btn btn-success">editar</button>
-                    </form>
-                     <form action="" class="d-inline p-2">
-                        <button class="btn btn-danger" type="submit">eliminar</button>
-                    </form>
-                </td>
-                </tr> -->
-                <% }) %>
-            </table>
+        <div class="contenedor-crear mb-5 col-12 mb-5 mt-5 container">
+            <h2 class="col-12 mb-5 center">Listado de productos</h2>
+            <div class="scroll">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>descripcion</th>
+                        <th>sku</th>
+                        <th>stock</th>
+                        <th>descripcion</th>
+                        <th>imagen</th>
+                        <th>operaciones</th>
+                    </tr>
+                    <% productos.forEach(elemento => { %>
+                    <tr>
+                        <td><%= elemento.product_name %></td>
+                        <td><%= elemento.price %></td>
+                        <td><%= elemento.description %></td>
+                        <td><%= elemento.sku %></td>
+                        <td><%= elemento.stock %></td>
+                        <td><%= elemento.description %></td>
+                        <td><%= elemento.image%></td>
+                        
+                        <td><form action="" class="d-inline p-2">
+                            <button class="btn btn-success">editar</button>
+                        </form>
+                         <form action="/admin/delete/<%= elemento.id %>?_method=DELETE" method="POST" class="d-inline p-2">
+                            <button class="btn btn-danger" type="submit">eliminar</button>
+                        </form>
+                    </td>
+                    </tr>
+                   <!--  <tr>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td><form action="" class="d-inline p-2">
+                            <button class="btn btn-success">editar</button>
+                        </form>
+                         <form action="" class="d-inline p-2">
+                            <button class="btn btn-danger" type="submit">eliminar</button>
+                        </form>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td><form action="" class="d-inline p-2">
+                            <button class="btn btn-success">editar</button>
+                        </form>
+                         <form action="" class="d-inline p-2">
+                            <button class="btn btn-danger" type="submit">eliminar</button>
+                        </form>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td>lorem ipsum</td>
+                        <td><form action="" class="d-inline p-2">
+                            <button class="btn btn-success">editar</button>
+                        </form>
+                         <form action="" class="d-inline p-2">
+                            <button class="btn btn-danger" type="submit">eliminar</button>
+                        </form>
+                    </td>
+                    </tr> -->
+                    <% }) %>
+                </table>
+            </div>
         </div>
     </main>
 
