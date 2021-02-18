@@ -6,28 +6,28 @@
     <main>
         <div class="contenedor-crear container col-12 mt-5">
             <h1 class="col-12 mb-5">Agregar producto</h1>
-            <form action="" method="post">
-                <input type="" name="nombre" value="" class="col-3 mb-2" placeholder="Nombre">
-                <input type="" name="precio" value="" class="col-3 mb-3" placeholder="Precio">
-                <input type="" name="sku" value="" class="col-3 mb-3" placeholder="SKU">
-                <input type="" name="stock" value="" class="col-3 mb-3" placeholder="stock">
-                <input type="" name="descuento" value="" class="col-3 mb-3" placeholder="con o sin descuento">
-                <input type="" name="detalle" value="" class="col-3 mb-3"  placeholder="Detalle">
-                <select name="" id="" class="col-3">
+            <form action="/admin/create" method="POST">
+                <input type="text" name="nombre" id="nombre" value="" class="col-3 mb-2" placeholder="Nombre">
+                <input type="text" name="precio" id="precio" value="" class="col-3 mb-3" placeholder="Precio">
+                <input type="number" name="sku" id="sku" value="" class="col-3 mb-3" placeholder="SKU">
+                <input type="number" name="stock" id="stock" value="" class="col-3 mb-3" placeholder="stock">
+                <input type="text" name="descuento" id="descuento" value="" class="col-3 mb-3" placeholder="con o sin descuento">
+                <input type="text" name="detalle" id="detalle" value="" class="col-3 mb-3"  placeholder="Detalle">
+                <select name="categoria" id="categoria" class="col-3">
                     <option disabled="enable" selected>Categoria</option>
-                    <option value="">accesorios</option>
-                    <option value="">componentes</option>
-                    <option value="">juegos</option>
+                    <option id="accesorios" value="acceesorios">accesorios</option>
+                    <option id="componentes" value="componentes">componentes</option>
+                    <option id="juegos" value="juegos">juegos</option>
                 </select>
 
-                <select name="" id="" class="col-3">
+                <select name="marcas" id="marcas" class="col-3">
                     <option disabled="enable" selected>Marcas</option>
-                    <option value="">hyper x</option>
-                    <option value="">noga</option>
-                    <option value="">aorus</option>
+                    <option id="hyper-x" value="hyper-x">hyper x</option>
+                    <option id="noga" value="noga">noga</option>
+                    <option id="aorus" value="aorus">aorus</option>
                 </select>
                 <input type="file" name="img" value="" class="col-3 mb-3">
-                <textarea cols="90%" rows="5" class="col-9 mb-5" placeholder="Ingresa descripcion de l producto"></textarea>
+                <textarea name="descripcion" id="descripcion" cols="90%" rows="5" class="col-9 mb-5" placeholder="Ingresa descripcion de l producto"></textarea>
                 <button type="submit" class="btn btn-success col-9 justify-content-center mb-5">agregar producto</button>
             </form>
         </div>
@@ -79,13 +79,14 @@
                 </tr>
                 <% productos.forEach(elemento => { %>
                 <tr>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
+                    <td><%= elemento.product_name %></td>
+                    <td><%= elemento.price %></td>
+                    <td><%= elemento.description %></td>
+                    <td><%= elemento.sku %></td>
+                    <td><%= elemento.stock %></td>
+                    <td><%= elemento.description %></td>
+                    <td><%= elemento.image%></td>
+                    
                     <td><form action="" class="d-inline p-2">
                         <button class="btn btn-success">editar</button>
                     </form>
