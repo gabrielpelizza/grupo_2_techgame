@@ -51,9 +51,7 @@ module.exports = {
         
         setProduct(productos);
 
-        res.redirect('/admin',{
-          alerta
-        });
+        res.redirect('/admin');
 
     },
 
