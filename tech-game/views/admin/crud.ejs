@@ -67,6 +67,7 @@
 
         <div class="contenedor-crear mb-5 col-12 mb-5 mt-5 container">
             <h2 class="col-12 mb-5 center">Listado de productos</h2>
+            <button class="btn btn-success" onclick="myFunction()">buscar  <i class="fas fa-search"></i></button>
             <div class="scroll">
                 <table class="table table-striped">
                     <tr>
@@ -154,5 +155,17 @@
     <%- include('partials/footer') %>
 
     <%- include('partials/scripts') %> 
+    <script>
+        function myFunction() {
+         
+            var search = prompt("Termino de busqueda:");
+            if (search == null || search == "") {
+                alert("User cancelled");
+            } else {
+                find(search)
+            }
+           
+        }
+    </script>
 </body>
 </html>
