@@ -9,6 +9,6 @@ router.delete('/delete/:id', deleteProduct);
 
 router.post('/create', createProduct);
 
-router.get('/editarProducto/:id', editarProducto);
+router.get('/editProduct/:id?', editarProducto);
 
 module.exports = router;

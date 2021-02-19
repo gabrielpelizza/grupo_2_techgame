@@ -95,7 +95,7 @@
                         <td><%= elemento.image %></td>
                         
                         <td><form action="" class="d-inline p-2">
-                                <a href="/admin/editarProducto/<%= elemento.id %>" class="btn btn-success">Editar</a>
+                                <a href="/admin/editProduct/<%= elemento.id %>" class="btn btn-success">Editar</a>
                             </form>
                             <form action="/admin/delete/<%= elemento.id %>?_method=DELETE" method="POST" class="d-inline p-2">
                                 <button class="btn btn-danger" type="submit">eliminar</button>

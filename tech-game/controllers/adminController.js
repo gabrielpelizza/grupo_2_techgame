@@ -70,8 +70,12 @@ module.exports = {
       let producto = productos.find(cadaProducto=>{
         return cadaProducto.id === +req.params.id;
       });
+
+      
       //console.log(producto); para verificar si pasa el id
-      res.render('admin/crud',{producto})
+      res.render('admin/editProduct',{
+        producto
+      })
 
     } 
 }
