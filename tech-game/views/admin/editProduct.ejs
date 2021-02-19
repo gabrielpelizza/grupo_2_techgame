@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %> 
+<body>
+    <%- include('partials/header') %> 
+    <main>
+        <div class="contenedor-modificar container col-12 mb-5 mt-5">
+            <h2 class="col-12 mb-5">Modificar producto</h2>
+
+            <form action="" method="get" class="col-12">
+                <input type="search" name="" value="" class="col-6 mb-5 justify-content-left" placeholder="buscar" >
+            </form>
+
+            <form action="" method="post">
+                <input type="" name="nombre" value="<%= producto.product_name %>" class="col-3 mb-2" placeholder="Nombre">
+                <input type="" name="precio" value="<%= producto.price  %>" class="col-3 mb-3" placeholder="Precio">
+                <input type="" name="sku" value="<%= producto.sku  %>" class="col-3 mb-3" placeholder="SKU">
+                <input type="" name="stock" value="<%= producto.stock  %>" class="col-3 mb-3" placeholder="stock">
+                <input type="" name="descuento" value="<%= producto.discount  %>" class="col-3 mb-3" placeholder="con o sin descuento">
+                <input type="" name="detalle" value="<%= producto.details %>" class="col-3 mb-3"  placeholder="Detalle">
+                <select name="" id="" value="" class="col-3">
+                    <option disabled="enable" selected>Categoria</option>
+                    <option value="">accesorios</option>
+                    <option value="">componentes</option>
+                    <option value="">juegos</option>
+                </select>
+
+                <select name="" id="" class="col-3">
+                    <option disabled="enable" selected>Marcas</option>
+                    <option value="">hyper x</option>
+                    <option value="">noga</option>
+                    <option value="">aorus</option>
+                </select>
+                <input type="file" name="img" value="" class="col-3 mb-3">
+                <textarea id="descripcion" cols="90%" rows="5" class="col-9 mb-5" value="" placeholder="Ingresa descripcion de l producto"><%= producto.description %></textarea>
+                <button type="submit" class="btn btn-success col-9 justify-content-center mb-5">modificar producto</button>
+            </form>
+        </div>
+
+        
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <%- include('partials/scripts') %> 
+    <script>
+        function myFunction() {
+         
+            var search = prompt("Termino de busqueda:");
+            if (search == null || search == "") {
+                alert("User cancelled");
+            } else {
+                find(search)
+            }
+           
+        }
+    </script>
+</body>
+</html>
