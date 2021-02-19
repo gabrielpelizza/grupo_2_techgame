@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-const adminController = require('../controllers/adminController');
-router.get('/', adminController.crud);
+const {createProduct, crud, deleteProduct, editarProducto} = require('../controllers/adminController');
 
-router.delete('/delete/:id', adminController.delete)
+router.get('/', crud);
+
+router.delete('/delete/:id', deleteProduct);
+
+router.post('/create', createProduct);
+
+router.get('/editarProducto/:id', editarProducto);
 
 module.exports = router;

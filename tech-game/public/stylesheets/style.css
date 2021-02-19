@@ -1928,7 +1928,12 @@ footer .redes ul li{
 }
 
 
+/**********************************************/
+/*                   CRUD                     */
+/**********************************************/
 
-
-
-
+div .scroll{
+  height: 400px;
+  overflow: scroll;
+  border: 1px solid #892cdc;
+}
