@@ -4,56 +4,70 @@
 <body>
     <%- include('partials/header') %> 
     <main>
-        <div class="contenedor-modificar container col-12 mb-5 mt-5">
-            <h2 class="col-12 mb-5">Modificar producto</h2>
-
+        <div class="cajaFormularioEdit">
+            
+            <!-- para el panel d productos....
             <form action="" method="get" class="col-12">
                 <input type="search" name="" value="" class="col-6 mb-5 justify-content-left" placeholder="buscar" >
-            </form>
+            </form> -->
+            <form class="formEditar" action="/admin/productos/update/<%= producto.id %>/?_method=PUT " method="POST">
+                <div>     
+                    <h2>Modificar producto</h2>
+                </div>
+                <div class="">
+                  <label for="nombre" class="">Nombre: </label>
+                  <input type="text" name="nombre" value="<%= producto.product_name%> " id="nombre">
+                </div>
+                <div class="">
+                    <label for="sku" class="">Sku: </label>
+                    <input type="text" name="sku" value="<%= producto.sku %>" id="sku">
+                  </div>
+                  <div class="">
+                    <label for="precio" class="">Precio: </label>
+                    <input type="text" name="precio" value="<%= producto.price %>" id="precio">
+                  </div>
+                  <div class="">
+                    <label for="stock" class="">Stock: </label>
+                    <input type="text" name="stock" value="<%= producto.stock %>" id="stock">
+                  </div>
+                  <div class="">
+                    <label for="descuento" class="">Descuento: </label>
+                    <input type="text" name="descuento" value="<%= producto.discount %>" id="descuento">
+                  </div>
+                  <div>
+                    <select name="categoria" id="">
+                        <option value="">Categoria</option>
+                        <option value="">--</option>
+                        <option value="">---</option>
+                    </select>
+                  
+                  
+                    <select name="marca" id="">
+                        <option value="">Marca</option>
+                        <option value="">--</option>
+                        <option value="">---</option>
+                    </select>
+                  </div>
+                   
 
-            <form action="" method="post">
-                <input type="" name="nombre" value="<%= producto.product_name %>" class="col-3 mb-2" placeholder="Nombre">
-                <input type="" name="precio" value="<%= producto.price  %>" class="col-3 mb-3" placeholder="Precio">
-                <input type="" name="sku" value="<%= producto.sku  %>" class="col-3 mb-3" placeholder="SKU">
-                <input type="" name="stock" value="<%= producto.stock  %>" class="col-3 mb-3" placeholder="stock">
-                <input type="" name="descuento" value="<%= producto.discount  %>" class="col-3 mb-3" placeholder="con o sin descuento">
-                <input type="" name="detalle" value="<%= producto.details %>" class="col-3 mb-3"  placeholder="Detalle">
-                <select name="" id="" value="" class="col-3">
-                    <option disabled="enable" selected>Categoria</option>
-                    <option value="">accesorios</option>
-                    <option value="">componentes</option>
-                    <option value="">juegos</option>
-                </select>
-
-                <select name="" id="" class="col-3">
-                    <option disabled="enable" selected>Marcas</option>
-                    <option value="">hyper x</option>
-                    <option value="">noga</option>
-                    <option value="">aorus</option>
-                </select>
-                <input type="file" name="img" value="" class="col-3 mb-3">
-                <textarea id="descripcion" cols="90%" rows="5" class="col-9 mb-5" value="" placeholder="Ingresa descripcion de l producto"><%= producto.description %></textarea>
-                <button type="submit" class="btn btn-success col-9 justify-content-center mb-5">modificar producto</button>
-            </form>
+                  <div class="">
+                    <label for="Descripcion" class="">Descripcion: </label> <br>
+                    <textarea name="descripcion" id="descripcion" cols="60" rows="4"><%= producto.description %>
+                    </textarea>
+                  </div>
+                  <div class="">
+                    <label for="formFile" class="">Imagen: </label>
+                    <input class="" type="file" name="imagen" id="formFile">
+                  </div>
+                
+                <div>
+                    <a href="/admin/productos" class="btn btn-danger px-5">Cancelar</a>
+                    <button type="submit" class="btn btn-success px-5">Modificar</button>
+                </div>
+              </form>
         </div>
-
-        
-    </main>
-
-    <%- include('partials/footer') %>
-
-    <%- include('partials/scripts') %> 
-    <script>
-        function myFunction() {
-         
-            var search = prompt("Termino de busqueda:");
-            if (search == null || search == "") {
-                alert("User cancelled");
-            } else {
-                find(search)
-            }
            
-        }
-    </script>
+    </main>
+    <%- include('partials/scripts') %> 
 </body>
 </html>

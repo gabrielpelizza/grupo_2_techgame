@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+.logoAdmin img {
+    width: 60%;
+}
+.logoAdmin{
+    width: 15%;
+}
+.letraHeader{
+    color: #892cdc;    
+}
+
+.letraHeader:hover{
+    background-color:rgba(137, 44, 220,0.7);
+    color:white ;
+    border: none;    
+}
+/*editar producto*/
+div.cajaFormularioEdit{
+    width: 800px;
+    margin: 20px auto;
+    padding: 20px 0px;
+    border: 1px solid #892cdc;
+}
+div.cajaFormularioEdit .formEditar{
+    width: 70%;
+    margin: auto;
+}
+div.cajaFormularioEdit .formEditar div{
+    text-align: center;
+    margin-bottom: 20px;
+}
+div.cajaFormularioEdit .formEditar input{
+width: 60%;
+}
+div.cajaFormularioEdit .formEditar select{
+    width: 40%;
+}
+
+.indexTitulo{
+    text-align: center;
+    padding-top: 25px;
+}
+.headerAdmin nav{
+    background-color: rgba(214, 168, 255, 0.7);
+}

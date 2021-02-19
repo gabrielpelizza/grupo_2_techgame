@@ -1,14 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-const {createProduct, crud, deleteProduct, editarProducto} = require('../controllers/adminController');
+const {createProduct,productModificado,productAlmacenado, crud, deleteProduct, editarProducto,index} = require('../controllers/adminController');
 
-router.get('/', crud);
+router.get('/', index)
+router.get('/productos', crud);
 
-router.delete('/delete/:id', deleteProduct);
+router.get('/productos/create',createProduct) //muestra el formulario crear producto
+router.post('/productos/create', productAlmacenado) //cumple la accion de almacenar el producto agregado
 
-router.post('/create', createProduct);
+router.delete('/productos/delete/:id', deleteProduct) //cumple la accion de eliminar producto
 
-router.get('/editProduct/:id?', editarProducto);
-
+router.get('/productos/editar/:id', editarProducto) //muestra vista con datos de producto 
+router.put('/productos/update/:id',productModificado);
 module.exports = router;
