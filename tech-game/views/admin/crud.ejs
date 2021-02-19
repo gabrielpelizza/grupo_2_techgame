@@ -69,24 +69,27 @@
             <table class="table table-striped">
                 <tr>
                     <th>Nombre</th>
+                    <th>Sku</th>
                     <th>Precio</th>
-                    <th>descripcion</th>
-                    <th>sku</th>
-                    <th>stock</th>
-                    <th>descripcion</th>
-                    <th>imagen</th>
-                    <th>operaciones</th>
+                    <th>Descuento</th>
+                    <th>Stock</th>
+                    <th>Categoria</th>
+                    <th>Marca</th>
+                    <th>Descripcion</th>
+                    <th>Imagen</th>
+                    <th>Operaciones</th>
                 </tr>
                 <% productos.forEach(elemento => { %>
                 <tr>
                     <td><%= elemento.product_name %></td>
-                    <td><%= elemento.price %></td>
-                    <td><%= elemento.description %></td>
                     <td><%= elemento.sku %></td>
+                    <td><%= elemento.price %></td>
+                    <td><%= elemento.discount %></td>
                     <td><%= elemento.stock %></td>
+                    <td><%= elemento.category %></td>
+                    <td><%= elemento.brand %></td>
                     <td><%= elemento.description %></td>
                     <td><%= elemento.image%></td>
-                    
                     <td><form action="" class="d-inline p-2">
                         <button class="btn btn-success">editar</button>
                     </form>
@@ -95,54 +98,6 @@
                     </form>
                 </td>
                 </tr>
-               <!--  <tr>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td><form action="" class="d-inline p-2">
-                        <button class="btn btn-success">editar</button>
-                    </form>
-                     <form action="" class="d-inline p-2">
-                        <button class="btn btn-danger" type="submit">eliminar</button>
-                    </form>
-                </td>
-                </tr>
-                <tr>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td><form action="" class="d-inline p-2">
-                        <button class="btn btn-success">editar</button>
-                    </form>
-                     <form action="" class="d-inline p-2">
-                        <button class="btn btn-danger" type="submit">eliminar</button>
-                    </form>
-                </td>
-                </tr>
-                <tr>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td>lorem ipsum</td>
-                    <td><form action="" class="d-inline p-2">
-                        <button class="btn btn-success">editar</button>
-                    </form>
-                     <form action="" class="d-inline p-2">
-                        <button class="btn btn-danger" type="submit">eliminar</button>
-                    </form>
-                </td>
-                </tr> -->
                 <% }) %>
             </table>
         </div>
