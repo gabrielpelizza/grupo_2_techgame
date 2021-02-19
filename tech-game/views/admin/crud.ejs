@@ -5,7 +5,7 @@
     <%- include('partials/header') %> 
     <main>
         <div class="contenedor-crear container col-12 mt-5">
-            <h1 class="col-12 mb-5">Agregar producto</h1>
+            <h2 class="col-12 mb-5">Agregar producto</h2>
             <form action="/admin/create" method="POST">
                 <input type="text" name="nombre" id="nombre" value="" class="col-3 mb-2" placeholder="Nombre">
                 <input type="text" name="precio" id="precio" value="" class="col-3 mb-3" placeholder="Precio">
@@ -33,7 +33,7 @@
         </div>
 
         <div class="contenedor-modificar container col-12 mb-5 mt-5">
-            <h1 class="col-12 mb-5">Modificar producto</h1>
+            <h2 class="col-12 mb-5">Modificar producto</h2>
 
             <form action="" method="get" class="col-12">
                 <input type="search" name="" value="" class="col-6 mb-5 justify-content-left" placeholder="buscar" >
@@ -61,50 +61,68 @@
                 </select>
                 <input type="file" name="img" value="" class="col-3 mb-3">
                 <textarea cols="90%" rows="5" class="col-9 mb-5" placeholder="Ingresa descripcion de l producto"></textarea>
-                <button type="submit" class="btn btn-success col-9 justify-content-center mb-5">agregar producto</button>
+                <button type="submit" class="btn btn-success col-9 justify-content-center mb-5">modificar producto</button>
             </form>
         </div>
 
-        <div class="contenedor-crear mb-5">
-            <table class="table table-striped">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Sku</th>
-                    <th>Precio</th>
-                    <th>Descuento</th>
-                    <th>Stock</th>
-                    <th>Categoria</th>
-                    <th>Marca</th>
-                    <th>Descripcion</th>
-                    <th>Imagen</th>
-                    <th>Operaciones</th>
-                </tr>
-                <% productos.forEach(elemento => { %>
-                <tr>
-                    <td><%= elemento.product_name %></td>
-                    <td><%= elemento.sku %></td>
-                    <td><%= elemento.price %></td>
-                    <td><%= elemento.discount %></td>
-                    <td><%= elemento.stock %></td>
-                    <td><%= elemento.category %></td>
-                    <td><%= elemento.brand %></td>
-                    <td><%= elemento.description %></td>
-                    <td><%= elemento.image%></td>
-                    <td><form action="" class="d-inline p-2">
-                        <button class="btn btn-success">editar</button>
-                    </form>
-                     <form action="/admin/delete/<%= elemento.id %>?_method=DELETE" method="POST" class="d-inline p-2">
-                        <button class="btn btn-danger" type="submit">eliminar</button>
-                    </form>
-                </td>
-                </tr>
-                <% }) %>
-            </table>
+        <div class="contenedor-crear mb-5 col-12 mb-5 mt-5 container">
+            <h2 class="col-12 mb-5 center">Listado de productos</h2>
+            <button class="btn btn-success" onclick="myFunction()">buscar  <i class="fas fa-search"></i></button>
+            <div class="scroll">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Sku</th>
+                        <th>Precio</th>
+                        <th>Descuento</th>
+                        <th>Stock</th>
+                        <th>Categoria</th>
+                        <th>Marca</th>
+                        <th>Descripcion</th>
+                        <th>Imagen</th>
+                        <th>Operaciones</th>
+                    </tr>
+                    <% productos.forEach(elemento => { %>
+                    <tr>
+                        <td><%= elemento.product_name %></td>
+                        <td><%= elemento.sku %></td>
+                        <td><%= elemento.precio %></td>
+                        <td><%= elemento.descuento%></td>
+                        <td><%= elemento.stock %></td>
+                        <td><%= elemento.category %></td>
+                        <td><%= elemento.brand %></td>
+                        <td><%= elemento.description %></td>
+                        <td><%= elemento.image %></td>
+                        
+                        <td><form action="" class="d-inline p-2">
+                                <button class="btn btn-success">editar</button>
+                            </form>
+                            <form action="/admin/delete/<%= elemento.id %>?_method=DELETE" method="POST" class="d-inline p-2">
+                                <button class="btn btn-danger" type="submit">eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                  
+                    <% }) %>
+                </table>
+            </div>
         </div>
     </main>
 
     <%- include('partials/footer') %>
 
     <%- include('partials/scripts') %> 
+    <script>
+        function myFunction() {
+         
+            var search = prompt("Termino de busqueda:");
+            if (search == null || search == "") {
+                alert("User cancelled");
+            } else {
+                find(search)
+            }
+           
+        }
+    </script>
 </body>
 </html>

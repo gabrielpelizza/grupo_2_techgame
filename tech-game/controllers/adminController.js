@@ -65,5 +65,13 @@ module.exports = {
 
       fs.writeFileSync('./data/products.json', JSON.stringify(productos), 'utf-8');
       res.redirect('/admin')
+    },
+    editarProducto : (req,res)=>{
+      let producto = productos.find(cadaProducto=>{
+        return cadaProducto.id === +req.params.id;
+      });
+      console.log(producto);
+      res.render('admin/crud',{producto})
+
     } 
 }
