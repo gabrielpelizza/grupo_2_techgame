@@ -14,7 +14,16 @@ module.exports = {
     },
 
     detalle : (req, res)=>{
-        res.render('detalle', { title: 'Producto' });
+
+        let productDetail = product.find(producto =>{
+            return producto.id === +req.params.id
+        })
+        
+        res.render('detalle', { 
+            title: 'Producto',
+            productDetail
+
+        });
       },
     carrito : (req, res, next)=>{
         res.render('miCarrito', { title: 'Express' });
