@@ -30,7 +30,7 @@ module.exports = {
             }
         });
         
-        const {nombre,precio,sku,stock,descuento,detalle,descripcion,img, categoria, marcas} = req.body;
+        const {nombre,precio,sku,stock,descuento,detalle,descripcion, categoria, marcas} = req.body;
 
 
         const newProduct = {
@@ -38,14 +38,13 @@ module.exports = {
             product_name : nombre,
             description : descripcion,
             sku : sku,
-            image : img,
             stock : stock,
             price: precio,
             details : detalle,
             category : categoria,
             discount : descuento,
-            brand : marcas
-            /* img : req.files[0].filename */
+            brand : marcas,
+            image : req.files[0].filename
         }
 
         productos.push(newProduct)
