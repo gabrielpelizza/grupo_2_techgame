@@ -1747,7 +1747,7 @@ footer .redes ul li{
       flex-direction: row;
       flex-wrap: wrap;
       overflow:hidden;
-      width:100%;   
+      width:auto;   
       height:450px;
   }
   

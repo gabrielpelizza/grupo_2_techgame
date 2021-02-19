@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head') %> 
+  <body>
+    <%- include('partials/header') %>
+    
+    <main>
+  
+      <div class="titulo col-12">
+        <h2>Productos</h2>
+      </div>
+  
+      <div class="contenedor-productos">
+        <div class="fila">
+            <% product.forEach(producto => { %>
+              <div class="tarjeta-producto">
+                <a href="#">
+                  <div class="img-prod">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/stores/829/696/products/pc-gamer-xtreme-gxivr8020a5-torre-intel-i5-8400-8g-ddr4-1t-d_nq_np_690443-mco27327787230_052018-f1-2ddbdf4a2c54b6cf5a15678086111485-1024-1024.jpg" alt="">
+                  </div>
+                  <h3><%= producto.product_name%></h3>
+                  <div class="descripcion">
+                    <span class="precio">$<%= producto.price%></span>
+                    <span class="descuento">%<%= producto.discount%></span>
+                  </div>
+                </a>
+              </div>
+            <% }) %>
+        </div>
+      </div>
+    
+    </main>
+
+    <%- include('partials/footer') %> 
+
+
+    <%- include('partials/scripts') %> 
+  </body>
+</html>
