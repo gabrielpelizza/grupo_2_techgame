@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %> 
+<body>
+    <%- include('partials/header') %> 
+    <main>
+        <div class="contenedor-crear mb-5 col-12 mb-5 mt-5 container">
+            <h2 class="col-12 mb-5 center">Listado de productos</h2>
+            <a href="/admin/productos/create" class="btn btn-success mb-5 mr-2 ">Agregar Producto</a>
+            <button class="btn btn-success mb-5" onclick="myFunction()">buscar  <i class="fas fa-search"></i></button>
+            <div class="scroll">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Sku</th>
+                        <th>Precio</th>
+                        <th>Descuento</th>
+                        <th>Stock</th>
+                        <th>Categoria</th>
+                        <th>Marca</th>
+                        <th>Descripcion</th>
+                        <th>Imagen</th>
+                        <th>Operaciones</th>
+                    </tr>
+                    <% productos.forEach(elemento => { %>
+                    <tr>
+                        <td><%= elemento.product_name %></td>
+                        <td><%= elemento.sku %></td>
+                        <td><%= elemento.price %></td>
+                        <td><%= elemento.discount%></td>
+                        <td><%= elemento.stock %></td>
+                        <td><%= elemento.category %></td>
+                        <td><%= elemento.brand %></td>
+                        <td><%= elemento.description %></td>
+                        <td><%= elemento.image %></td>
+                        
+                        <td><form action="" class="d-inline p-2">
+                                <a href="/admin/productos/editar/<%= elemento.id %>" class="btn btn-success">Editar</a>
+                            </form>
+                            <form action="/admin/productos/delete/<%= elemento.id %>?_method=DELETE" method="POST" class="d-inline p-2">
+                                <button class="btn btn-danger" type="submit">eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                  
+                    <% }) %>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <%- include('partials/scripts') %> 
+    <script>
+        function myFunction() {
+         
+            var search = prompt("Termino de busqueda:");
+            if (search == null || search == "") {
+                alert("User cancelled");
+            } else {
+                find(search)
+            }
+           
+        }
+    </script>
+</body>
+</html>

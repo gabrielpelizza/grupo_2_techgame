@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head') %> 
+  <body>
+    <%- include('partials/header') %>
+    
+    <main>
+  
+      <div class="titulo col-12">
+        <h2>Productos</h2>
+      </div>
+  
+      <div class="contenedor-productos">
+        <div class="fila">
+            <% product.forEach(producto => { %>
+              <div class="tarjeta-producto">
+                <a href="productos/detalle/<%= producto.id %>">
+                  <div class="img-prod">
+                    <img src="/images/productos/<%= producto.image %>" alt="">
+                  </div>
+                  <h3><%= producto.product_name%></h3>
+                  <div class="descripcion">
+                    <span class="precio">$<%= producto.price%></span>
+                    <span class="descuento">%<%= producto.discount%></span>
+                  </div>
+                </a>
+              </div>
+            <% }) %>
+        </div>
+      </div>
+    
+    </main>
+
+    <%- include('partials/footer') %> 
+
+
+    <%- include('partials/scripts') %> 
+  </body>
+</html>

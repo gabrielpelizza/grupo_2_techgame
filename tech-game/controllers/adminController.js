@@ -9,16 +9,18 @@ const {getProduct, setProduct} = require(path.join('..', 'data', 'products'));
 const productos = getProduct();
 
 module.exports = {
-    crud : (req, res, next)=>{
-        res.render('admin/crud', {
+  index:(req,res)=>{
+    res.render('admin/index'); //home de administracion
+  },
+    crud : (req, res, next)=>{ //panel de control de productos
+        res.render('admin/panelProduct', {
           productos
         });
     },
-
-    createProduct : (req,res,next)=>{
-        
-        
-
+    createProduct :(req,res)=>{ //muestra el formulario de agregar producto
+      res.render('admin/agregarProduct');
+    },
+    productAlmacenado : (req,res,next)=>{ //cumple la accion de almacenar lo agregado
         let lastID = 1;
         productos.forEach(producto => {
             if (producto.id > lastID) {
@@ -28,7 +30,7 @@ module.exports = {
             }
         });
         
-        const {nombre,precio,sku,stock,descuento,detalle,descripcion,img, categoria, marcas} = req.body;
+        const {nombre,precio,sku,stock,descuento,detalle,descripcion, categoria, marcas} = req.body;
 
 
         const newProduct = {
@@ -36,14 +38,13 @@ module.exports = {
             product_name : nombre,
             description : descripcion,
             sku : sku,
-            image : img,
             stock : stock,
             price: precio,
             details : detalle,
             category : categoria,
             discount : descuento,
-            brand : marcas
-            /* img : req.files[0].filename */
+            brand : marcas,
+            image : req.files[0].filename
         }
 
         productos.push(newProduct)
@@ -51,22 +52,22 @@ module.exports = {
         
         setProduct(productos);
 
-        res.redirect('/admin');
+        res.redirect('/admin/productos');
 
     },
 
-    deleteProduct : (req, res, next) => {
+    deleteProduct : (req, res, next) => { //cumple la accion de eliminar 
       productos.forEach(elemento => {
         if(elemento.id == req.params.id){
           let eliminar = productos.indexOf(elemento);
-          productos.splice(eliminar,1)
+          productos.splice(eliminar,1);
         }
       });
 
       fs.writeFileSync('./data/products.json', JSON.stringify(productos), 'utf-8');
-      res.redirect('/admin')
+      res.redirect('/admin/productos');
     },
-    editarProducto : (req,res)=>{
+    editarProducto : (req,res)=>{ //muestra fomulario modificar con datos delproducto
       let producto = productos.find(cadaProducto=>{
         return cadaProducto.id === +req.params.id;
       });
@@ -75,7 +76,30 @@ module.exports = {
       //console.log(producto); para verificar si pasa el id
       res.render('admin/editProduct',{
         producto
-      })
+      });
 
-    } 
+    },
+    productModificado:(req,res)=>{ // cumple la accion de actualizar los datos del form modificar
+      const {nombre,precio,imagen,descuento,detalle,sku,stock,categoria,marca,descripcion} =req.body;
+    
+      productos.forEach(cadaProducto=>{
+        if(cadaProducto.id === +req.params.id){
+          cadaProducto.id = Number(req.params.id);
+          cadaProducto.product_name = nombre;
+          cadaProducto.price = precio ;
+          cadaProducto.sku = sku;
+          cadaProducto.stock = stock ;
+          cadaProducto.category = categoria ;
+          cadaProducto.brand = marca ;
+          cadaProducto.description = descripcion;
+          cadaProducto.details = detalle;
+          cadaProducto.image = imagen;
+          cadaProducto.discount = descuento ;
+        }
+      });
+
+      setProduct(productos);
+      res.redirect('/admin/productos');
+    
+    }
 }
