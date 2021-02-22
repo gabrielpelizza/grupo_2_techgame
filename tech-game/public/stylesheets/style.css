@@ -557,6 +557,7 @@ footer .redes ul li{
 
 .definicion h3{
   padding-top: 10px;
+  color: green;
 }
 
 .definicion .detalle span{
@@ -1508,6 +1509,7 @@ footer .redes ul li{
   
   .definiciones{
     padding-top: 830px;
+    padding-bottom: 70px ;
   }
   
   .definiciones h4{
@@ -1549,10 +1551,7 @@ footer .redes ul li{
   .secciones .seccion .detalle2{
     width: 50%;
   }
-  
-  
-  
-  
+
   .secciones .seccion hr{
     display: none;
   }
@@ -1585,6 +1584,7 @@ footer .redes ul li{
   .secciones hr{
     display: none;
   }
+  
   /*--------FIN DE DETALLE*/
   
 } 

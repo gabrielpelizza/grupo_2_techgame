@@ -4,6 +4,7 @@ let fs = require('fs');
 
 const {getProduct, setProduct} = require(path.join('..', 'data', 'products'));
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const productos = getProduct();
@@ -75,7 +76,8 @@ module.exports = {
       
       //console.log(producto); para verificar si pasa el id
       res.render('admin/editProduct',{
-        producto
+        producto,
+        toThousand
       });
 
     },

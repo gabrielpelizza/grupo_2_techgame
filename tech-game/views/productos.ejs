@@ -20,8 +20,11 @@
                   </div>
                   <h3><%= producto.product_name%></h3>
                   <div class="descripcion">
-                    <span class="precio">$<%= producto.price%></span>
-                    <span class="descuento">%<%= producto.discount%></span>
+                    <span class="precio">$ <%= toThousand(producto.price - producto.price * producto.discount / 100); %></span>
+                    <% if(producto.discount != 0){ %> 
+                    <span class="descuento"><%= producto.discount %>%</span>
+                    <% } %>
+
                   </div>
                 </a>
               </div>

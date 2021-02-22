@@ -1,1 +1,28 @@
-[{"id":11,"product_name":"Teclado Logitech k-120","description":"Un teclado USB que permite escribir cómodamente, durante mucho tiempo. ","sku":"0010","stock":"10","price":"899","details":"Nuevo","category":"acceesorios","discount":"0","brand":"noga","image":"img-1613758958337.jpg"}]
+[
+  {
+    "id": 11,
+    "product_name": "Teclado Logitech k-120",
+    "description": "Un teclado USB que permite escribir cómodamente, durante mucho tiempo. ",
+    "sku": "0010",
+    "stock": "10",
+    "price": "899",
+    "details": "Nuevo",
+    "category": "acceesorios",
+    "discount": "0",
+    "brand": "noga",
+    "image": "img-1613758958337.jpg"
+  },
+  {
+    "id": 12,
+    "product_name": "Moto G8",
+    "description": "Camara frontal de 8px y camara trasera de 32px.\r\nDiferentes colores : Azul,Negro,Amarillo.\r\nAprueba de agua.",
+    "sku": "4456",
+    "stock": "20",
+    "price": "12000",
+    "details": "",
+    "category": "componentes",
+    "discount": "56",
+    "brand": "noga",
+    "image": "img-1613791700390.jpg"
+  }
+]
