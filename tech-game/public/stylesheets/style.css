@@ -635,9 +635,12 @@ footer .redes ul li{
 .definiciones p{
   font-size: 25px;
 }
-
-.secciones{
+ul li{
+  list-style: none;
+}
+.secciones2{
   padding-top: 50px;
+  margin-left: 35px;
 }
 
 .secciones .seccion ul li{
