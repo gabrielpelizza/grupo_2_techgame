@@ -4,12 +4,13 @@ let fs = require('fs');
 
 const {getProduct} = require(path.join('..', 'data', 'products'));
 const product = getProduct();
-
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     productos : (req,res)=>{
         res.render('productos', {
-            product
+            product,
+            toThousand
         })
     },
 
@@ -21,7 +22,8 @@ module.exports = {
         
         res.render('detalle', { 
             title: 'Producto',
-            productDetail
+            productDetail,
+            toThousand
 
         });
       },
