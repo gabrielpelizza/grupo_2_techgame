@@ -635,9 +635,12 @@ footer .redes ul li{
 .definiciones p{
   font-size: 25px;
 }
-
-.secciones{
+ul li{
+  list-style: none;
+}
+.secciones2{
   padding-top: 50px;
+  margin-left: 35px;
 }
 
 .secciones .seccion ul li{
@@ -1705,6 +1708,7 @@ footer .redes ul li{
       justify-content:end;
       align-items: right;
       padding-top: 10px;
+      
   }
 
   header div .menu-button-carrito button{
@@ -1712,7 +1716,7 @@ footer .redes ul li{
     height:40px;
     background-color:white;
     border-radius:50%;
-    border:1px solid purple;
+    border:1px solid white;
   }
 
   /******/
