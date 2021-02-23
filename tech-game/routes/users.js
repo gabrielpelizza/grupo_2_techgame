@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
 const usuariosController = require('../controllers/usuariosController')
 
 router.get('/registro', usuariosController.registro);
+router.post('/registro', usuariosController.processRegistro);
 
 router.get('/login', usuariosController.inicioSesion);
 
