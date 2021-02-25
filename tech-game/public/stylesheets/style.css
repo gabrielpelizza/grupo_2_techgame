@@ -1939,3 +1939,64 @@ div .scroll{
   overflow: scroll;
   border: 1px solid #892cdc;
 }
+
+
+/* -----------------------------------------MI PERFIL------------------------------------ */
+
+.perfil{
+  display: flex;
+  justify-content: center;
+}
+
+.perfil .datosPersonales{
+  padding-top: 30px;
+  width: 90%;
+}
+
+.perfil .datosPersonales .misDatos h1{
+  font-size: 30px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+}
+
+.perfil .datosPersonales h2{
+  font-size: 18px;
+}
+
+.perfil .datosPersonales .dato{
+  padding: 0px 30px;
+}
+
+.perfil .datosPersonales .dato .nombre h3{
+  font-size: 18px;
+}
+
+.perfil .datosPersonales .dato .apellido h3{
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.perfil .datosPersonales .dato .correoElectronico h3{
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.perfil .datosPersonales .dato .documento h3{
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.perfil .datosPersonales .dato .perfilResidencia h3{
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.perfil .datosPersonales .dato .perfilLocalidad h3{
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.perfil .direccionesPerfil h2{
+  padding-top: 20px;
+  font-size: 18px;
+}
