@@ -1,5 +1,6 @@
 const path = require('path');
 const bcrypt = require('bcrypt');
+const {check, validationResult, body} = require('express-validator');
 
 const {getUsers, setUsers} = require(path.join('..', 'data', 'users'));
 
@@ -13,6 +14,16 @@ module.exports = {
         res.render('registro');
     },
     processRegistro : (req, res) => {
+
+        const erroresValidacion = validationResult(req);
+
+/*         res.send(erroresValidacion)  /* para ver que me manda */
+
+        if(!erroresValidacion.isEmpty()){
+            return res.redirect('/users/registro')
+        } else {
+
+
         const {name, lastname, email, dni, country, password, password2} = req.body
 
         if(password != password2){
@@ -45,9 +56,10 @@ module.exports = {
         usuarios.push(newUser)
 
 
-/*         setUsers(usuarios) */
+        setUsers(usuarios)
 
          res.redirect('/') 
+    }
     },
     inicioSesion : (req,res)=>{
         res.render('login');

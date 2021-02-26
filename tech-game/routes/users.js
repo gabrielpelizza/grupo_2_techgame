@@ -8,9 +8,10 @@ router.get('/', function(req, res, next) {
 }); */
 
 const usuariosController = require('../controllers/usuariosController')
+const registerValidations = require('../validations/registerValidations');
 
 router.get('/registro', usuariosController.registro);
-router.post('/registro', usuariosController.processRegistro);
+router.post('/registro',registerValidations, usuariosController.processRegistro);
 
 router.get('/login', usuariosController.inicioSesion);
 
