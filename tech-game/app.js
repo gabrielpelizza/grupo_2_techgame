@@ -5,6 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
 
+const session = require('express-session')
+const localCheck = require('./middlewares/localsCheck')
+const cookieCheck = require('./middlewares/cookieCheck')
 /* RUTAS */
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -26,7 +29,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
+app.use(session({
+  secret : "frase secreta"
+}));
 
+app.use(localCheck);
+
+app.use(cookieCheck);
 
 
 app.use('/', indexRouter);

@@ -14,10 +14,18 @@
                     <button><a href="/productos/carrito"><i class="fas fa-shopping-cart"></i></a></button>
                     <span class=" d-none d-lg-block d-xl-block ml-2">Carrito</span></a>
             </div>
-            <div class="navbar-expand-md col-2 col-lg-2 menu-button-carrito">
-                <button><a href="/users/login"><i class="fas fa-user"></i></a></button>
-                <span class=" d-none d-lg-block d-xl-block ml-2">Iniciar Sesion</span>
-            </div>
+
+            <% if (typeof user == 'undefined' ) { %>
+                <div class="navbar-expand-md col-2 col-lg-2 menu-button-carrito">
+                    <button><a href="/users/login"><i class="fas fa-user"></i></a></button>
+                    <span class=" d-none d-lg-block d-xl-block ml-2">Cerrar Sesion</span>
+                </div>
+            <% } else { %>
+                <div class="navbar-expand-md col-2 col-lg-2 menu-button-carrito">
+                    <button><a href="/users/login"><i class="fas fa-user"></i></a></button>
+                    <span class=" d-none d-lg-block d-xl-block ml-2">Iniciar Sesion</span>
+                </div>
+            <% } %>
           </div>
      </div>
      <div class="container col-12 col-md-12 contenedor-menu">

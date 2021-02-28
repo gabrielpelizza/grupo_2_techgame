@@ -63,5 +63,46 @@ module.exports = {
     },
     inicioSesion : (req,res)=>{
         res.render('login');
-    }
+    },
+    processLogin : (req,res)=>{ 
+        let errores = validationResult(req);
+        
+        if(!errores.isEmpty()){
+            return res.render('login',{
+                errores: errores.errors
+            })
+        }else{
+            const {email,password,recordar} = req.body;
+
+            let result  = usuarios.find(user => user.email === email);
+
+            if(result){
+                if(bcrypt.compareSync(password.trim(),result.password)){
+
+                    req.session.user = {
+                        id : result.id,
+                        username : result.name,
+                    }
+
+                    if(recordar){
+                        res.cookie('techGame', req.session.user,{
+                            maxAge : 1000 * 60
+                        })
+                    }
+
+                    return res.redirect('/users/perfil')
+                }
+            }
+            return res.render('login',{
+                errores : [
+                    {
+                        msg : "credenciales invalidas"
+                    }
+                ]
+            })
+        }
+    },
+    profile : (req,res)=>{
+        res.render('profile')
+    },
 }
