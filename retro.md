@@ -3,3 +3,6 @@ Nuestras principales conclusiones respecto al primer sprint fueron que como grup
 
 # Principales conclusiones del Sprint 2:
 Para este sprint nos vimos un poco mas aliviados con respecto a algunas consignas ya que teniamos hecho una gran parte en los sprint anteriores. Sin embargo, lo que más nos dificulto fue a la hora de hacer el CRUD, ya que tuvimos que agregar nuevas vistas que no teniamos y unificar todo para que nuestro sitio ya sea funcional, por lo cual la parte más complicada y que mas tiempo nos llevo pensar y hacer fue esta. Ya que fue la consigna fundamental para así tener todo preparado para el sprint que viene.
+
+#Principales conclusiones del Sprint 3:
+En este sprint nos costo un poco menos llevar a cabo, gracias a lo que ya teniamos hecho predeterminado y gracias a ellos pudimos a hacer cuestiones que nos van a ser util para sprints siguientes, pudimos llegar a tiempo y forma e incluso modificar algunas cosas que ya teniamos hechas. 
