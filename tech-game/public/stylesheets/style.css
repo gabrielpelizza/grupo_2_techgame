@@ -511,20 +511,19 @@ footer .redes ul li{
 
 /*------------------------------------------DETALLE DE PRODUCTO----------------------------------------------*/
 
-
-.imagenesbis{
-  display: none;
+.container{
+  width: 100%;
+  height: auto;
 }
-
-.inicial .imagenescritorio{
-  display: none;
-}
-
 
 .volver{
   padding-top: 30px;
   padding-bottom:30px ;
 } 
+
+.producto{
+  background-color: #f6f6f6;
+}
 
 .volver span{
   color: black;
@@ -543,16 +542,21 @@ footer .redes ul li{
 .inicial .carrucel{
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 
 .definicion{
-  padding: 40px 20px;
+  padding: 0 20px;
+}
+
+.definicion .textodekstop{
+  display: none;
 }
 
 .definicion h2{
   font-size: 2.4rem;
-  padding-bottom: 20px;
+/*   padding-bottom: 20px; */
 }
 
 .definicion h3{
@@ -560,19 +564,35 @@ footer .redes ul li{
   color: green;
 }
 
-.definicion .detalle span{
-  display: block;
-  padding-top: 30px;
-  font-size: 18px;
+.definicion .detalle{
+  display: flex;
+  flex-direction: column;
+
+/*   display: block; */
 }
+
+.definicion .detalle span{
+  padding-top: 20px;
+  font-size: 18px;
+  width: 100%;
+}
+
+/* .definicion .metodospago{
+  display: flex;
+} */
+
+.definicion .metodospago {
+  display: none;
+}
+
 
 .definicion .detalle i{
   margin-left: 8px;
   margin-right: 20px;
 }
 
-.definicion select{
-  margin-top: 70px;
+.definicion input{
+  margin-top: 50px;
   width: 30%;
   height: 68px;
   font-size: 30px;
@@ -584,26 +604,92 @@ footer .redes ul li{
   height: 70px;
   font-size: 22px;
   color: white;
-  background-color: cadetblue;
+  background-color: black;
   float: right;
   border-radius: 4px;
-  margin-top: 69px;
+  margin-top: 50px;
 }
 
 .definicion .comprar button.comprar{
-  margin-top: 50px;
-  padding-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
   width: 100%;
   height: 70px;
   font-size: 30px;
-  background-color: rgb(52, 174, 179);
+  background-color:black;
   color: white;
   border-radius: 4px;
 }
 
-.entrega{
-  padding-top: 40px;
+.definicion .comprar a{
+  width: 100%;
+  color: black;
+  padding-left: 10px;
 }
+
+.acordion{
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: #e7e5e5;
+  margin: 5% 8%;
+}
+
+.accordion__label, 
+.acordioncontenido{
+  padding: 14px 20px;
+}
+
+.accordion__label{
+ display: block;
+ font-weight: 500;
+ cursor: pointer;
+ position: relative;
+ transition: 0.6s;
+}
+
+.accordion__label:hover{
+  background:rgba(0, 0, 0, 0.1);
+}
+
+.accordion__label::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  width: 12px;
+  height: 6px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+  background-size: contain;
+  transition: transform 0.4s;
+}
+
+.acordionentrega{
+  height: 30px;
+}
+
+.acordioncontenido{
+  background: #ffffff;
+  line-height: 1.6;
+  font-size: 0.85em;
+  display: none;
+}
+
+.accordion__input{
+  display: none;
+}
+
+.accordion__input:checked ~ .acordioncontenido{
+  display: block;
+}
+
+.accordion__input:checked ~ .acordion__label::after{
+  transform: translateY(-50%) rotate(0.5turn);
+}
+/*  .entrega{
+  padding-top: 40px;
+} 
 
 .entrega h3{
   display: flex;
@@ -614,7 +700,7 @@ footer .redes ul li{
 .entrega .metodos span{
   display: block;
   padding-top: 20px;
-  font-size: 30px;
+  font-size: 18px;
 }
 
 .entrega .metodos i{
@@ -623,7 +709,7 @@ footer .redes ul li{
 }
 
 .definiciones{
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .definiciones h4{
@@ -682,6 +768,7 @@ ul li{
 
 .secciones .seccion h5{
   display: inline-block;
+  padding-left: 20px;
   font-size: 20px; 
   width: 50%;
   text-align: left;
@@ -698,7 +785,7 @@ ul li{
   font-size: 20px; 
   width: 50%;
   text-align: left;
-}
+} */
 
 
 
@@ -707,6 +794,38 @@ ul li{
 /*--------------------------FIN DE DEATLLE---------------------------------------------------------*/
 
 
+  /*--------------------------------------------MI PERFIL------------------------------------------ */
+  
+  .datosperfil{
+    margin: 0 8%;
+  }
+
+  .datosperfil h1{
+    text-align: center;
+  }
+
+  .datosperfil img{
+    border-radius: 50%;
+  }
+
+  .datosperfil h2{
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .datosperfil label{
+    width: 100%;
+  }
+  
+  .datosperfil input{
+    width: 100%;
+  }
+
+  .datosperfil button{
+    margin: 20px 0;
+    width: 100%;
+    cursor: pointer;
+  }
 
 
 /**************************************************RESPONSIVE*******************************************************/
@@ -1421,11 +1540,10 @@ ul li{
   .volver{
     display: none;
   }
-  
+
   .inicial{
-    width: 60%;
-    float: left;
-    height: 730px;
+   display: inline-block;
+    width: 50%;
     margin-top: 5%;
   }
   
@@ -1433,12 +1551,56 @@ ul li{
     font-size: 22px;
   }
   
+  .producto{
+    margin: 0 5%;
+  }
+
+  .inicial h1{
+    display: none;
+  }
+
+  .definicion .textodekstop{
+    display: inline;
+  }
+
+  .definicion .detalle{
+    display: flex;
+    width: 100%;
+  }
+
+  .definicion .detalle span{
+    display: flex;
+    width: 60%;
+  }
+
+  .definicion .metodospago {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+  }
+  
+  .definicion .detalle .metodospago p{
+    display: inline;
+    width: 100%;
+    font-size: 20px;
+  }
+  
+  .definicion .detalle .metodospago p i{
+    margin-top: 10px;
+    font-size: 26px;
+  }
   
   .definicion{
-    width: 40%;
+    width: 50%;
+    margin-top: 5%;
     float: right;
-    padding-top: 100px;
+/*     width: 40%; */
     padding-right: 20px;
+  }
+
+  .definicion h1{
+    display: flex;
+    justify-content: center;
   }
   
   .definicion h2{
@@ -1462,8 +1624,8 @@ ul li{
     margin-right: 10px;
   }
   
-  .definicion select{
-    width: 90px;
+  .definicion input{
+    width: 50px;
     display: inline;
     float: left;
     margin-top: 40px;
@@ -1475,7 +1637,7 @@ ul li{
   }
   
   .definicion button.carrito{
-    width: 70%;
+    width: 40%;
     height: 45px;
     float: right;
     margin-top: 40px;
@@ -1484,13 +1646,92 @@ ul li{
   }
   
   .definicion .comprar button.comprar{
+    width: 100%;
     padding: 0 auto;
     cursor: pointer;
-    height: 50px;
-    margin-top: 5%;
+    height: 45px;
+    font-size: 18px;
+    margin-top: 40px;
+    margin-left: 10px;
+  }
+
+  .acordion{
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: #ffffff;
+    display: flex;
+    margin: 0 2%;
+    }
+
+/*   .acordion .seccion1{
+    width: 100%;
+  } */
+
+  .acordion .seccion2{
+    width: 100%;
+  }
+
+  .acordion .seccion3{
+    width: 50%;
+  }
+
+ 
+  
+  .accordion__label, 
+  .acordioncontenido{
+    padding: 14px 20px;
   }
   
-  .entrega{
+  .accordion__label{
+   display: block;
+   font-weight: 500;
+   cursor: pointer;
+   position: relative;
+   transition: 0.6s;
+  }
+  
+  .accordion__label:hover{
+    background:rgba(0, 0, 0, 0.1);
+  }
+  
+  .accordion__label::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 12px;
+    height: 6px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+    background-size: contain;
+    transition: transform 0.4s;
+  }
+  
+  .acordionentrega{
+    height: 30px;
+  }
+  
+  .acordioncontenido{
+    background: #e4e3e3;
+    line-height: 1.6;
+    font-size: 0.85em;
+    display: none;
+  }
+  
+  .accordion__input{
+    display: none;
+  }
+  
+  .accordion__input:checked ~ .acordioncontenido{
+    display: block;
+  }
+  
+  .accordion__input:checked ~ .acordion__label::after{
+    transform: translateY(-50%) rotate(0.5turn);
+  }
+  
+  /* .entrega{
     float: right;
     width: 40%;
   }
@@ -1508,11 +1749,10 @@ ul li{
   .entrega .metodos i{
     margin-right: 10px;
     font-size: 25px;
-  }
+  } */
   
-  .definiciones{
-    padding-top: 830px;
-    padding-bottom: 70px ;
+/*   .definiciones{
+    padding-top: 980px;
   }
   
   .definiciones h4{
@@ -1568,26 +1808,41 @@ ul li{
     margin-top: 50px;
     margin-right: 2%;
     margin-left: 5%;
-  }
+  }  */
   
-  .inicial .carrucel{
+/* /*   .inicial .carrucel{
     display: none;
+  } */
+
+/*   .inicial .imagenescritoriogrande{
+    display: flex;
+    position: relative;
+  }
+
+  .inicial .imagenescritoriogrande img{
+    width: 98%;
+    margin-left: 2%;
+    height: auto;
   }
   
   .inicial .imagenescritorio{
     display: flex;
-    justify-content: center;
     margin-top: 5%;
+    width: 19%;
   }
   
   .inicial .imagenescritorio img{
-    width: 70%;
-  }
-  
+    width: 100%;
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: 3%;
+  } */
+
+
+
   .secciones hr{
     display: none;
   }
-  
   /*--------FIN DE DETALLE*/
   
 } 

@@ -25,10 +25,6 @@ module.exports = {
 
 
         const {name, lastname, email, dni, country, password, password2} = req.body
-
-        if(password != password2){
-            return res.redirect('/users/registro')
-        } 
         
         let lastID = 0;
 
