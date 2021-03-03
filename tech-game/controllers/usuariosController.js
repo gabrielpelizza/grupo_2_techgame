@@ -85,8 +85,7 @@ module.exports = {
                             maxAge : 1000 * 60
                         })
                     }
-
-                    return res.redirect('/users/perfil')
+                    res.redirect('/');
                 }
             }
             return res.render('login',{
@@ -98,7 +97,43 @@ module.exports = {
             })
         }
     },
-    profile : (req,res)=>{
-        res.render('profile')
+    cerrarSesion : (req,res)=>{
+        req.session.destroy();
+
+        if(req.cookies.techGame){
+            res.cookie('techGame','',{
+                maxAge: -1
+            });
+        }
+        res.redirect('/');
     },
+    //---------------- operacion con el perfil del usuario-------------------
+    perfilUser:(req,res)=>{
+        const usuario = usuarios.find(cadauser=>cadauser.id === +req.params.id);
+        res.render('perfil',{
+            usuario
+        });
+    },
+    perfilEditadoUser:(req,res)=>{
+        const {name,lastname,email,dni,country} = req.body;
+
+        usuarios.forEach(user=>{
+            if(user.id === +req.params.id ){
+                user.id = Number(req.params.id);
+                user.name =  name;
+                user.lastname = lastname;
+                user.email = email;
+                user.dni = +dni;
+                user.country = country;
+            }
+        });
+
+        setUsers(usuarios);
+        
+        const usuario = usuarios.find(cadauser=>cadauser.id === +req.params.id);
+        res.render('perfil',{
+            usuario
+        });
+    }
+
 }

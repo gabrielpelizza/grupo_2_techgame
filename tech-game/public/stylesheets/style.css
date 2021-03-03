@@ -139,7 +139,10 @@ header div .menu-button-carrito button{
   border-radius:50%;
   border:1px solid #892cdc;
 }
-
+header div.menu-button-carrito a{
+  color: black;
+  text-decoration: none;
+}
 
 
 /*---------------------------------------------fin--------------------------------------------------------------------------------*/
