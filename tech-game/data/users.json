@@ -78,5 +78,35 @@
     "email": "rmatteo9@salon.com",
     "country": "Poland",
     "password": "EOk4aep2"
+  },
+  {
+    "id": 11,
+    "name": "gabriel",
+    "lastname": "pelizza",
+    "email": "gbrpelizza@gmail.com",
+    "dni": 38458895,
+    "country": "la matanza",
+    "password": "$2b$10$3VLN3yexkC5pcxD.bTiBnOExHcA1mRgRe60vJLyo0jjIrgaw8p.hC",
+    "password2": "$2b$10$sDvs4IWsEl5q5ZFIS0caR.02qeBRf/md3BxW.cBCMwev3xuPbM8jK"
+  },
+  {
+    "id": 12,
+    "name": "gabriel",
+    "lastname": "pelizza",
+    "email": "gbrpelizza@gmail.com",
+    "dni": 123123123123,
+    "country": "123123123",
+    "password": "$2b$10$qrPKumT2gmT2hgSLBPo6meZ7oB/iuBOMlk/V8BnvIzERrKr81iTVy",
+    "password2": "$2b$10$oFM4yra1r/ZSYHNSsmAvCe/380Su8skJrcrBlOEC0wVNTOcRxJlKS"
+  },
+  {
+    "id": 13,
+    "name": "Emilce d",
+    "lastname": "molina",
+    "email": "alan_de.boca@hotmail.com",
+    "dni": 56565,
+    "country": "lomasa",
+    "password": "$2b$10$m8izIZ4TQc5NeBOycNMLI.yXC.GG5YWQwNmkhCtGo9XesLttW6HMG",
+    "password2": "$2b$10$HBr7ckRg/.P.oIPAgp/aruhvI6oDyqIpLTouwfR45Ex1RoSk97GJq"
   }
 ]

@@ -10,41 +10,57 @@
         
         <h2>Perfil</h2>
 
-        <form action="">
+        <form action="/users/perfil/actualizado/<%= usuario.id %>/?_method=PUT" method="POST">
             <label for="">Nombre</label>
-            <input type="text">
+            <input type="text" name="name" value="<%= usuario.name %> ">
 
             <label for="">Apellido</label>
-            <input type="text">
+            <input type="text" name="lastname" value="<%= usuario.lastname %>">
 
             <label for="">Correo electronico</label>
-            <input type="text">
+            <input type="text" name="email" value="<%= usuario.email %>">
 
             <label for="">Numero de documento</label>
-            <input type="text">
+            <input type="text" name="dni" value="<%= usuario.dni %>">
 
-            <label for="">Numero de telefono</label>
-            <input type="text">
-        </form>
 
         <h2>Ubicación</h2>
 
-        <form action="">
+       
             <label for="">País de residencia</label>
             <input type="text">
 
             <label for="">Localidad</label>
-            <input type="text">
+            <input type="text" name="country"  value="<%= usuario.country %>">
 
-            <label for="">Dirección</label>
-            <input type="text">
+            <button type="submit">Actualizar datos</button>
         </form>
 
-        <button type="submit">Actualizar datos</button>
 
 
     </div>
 
+
+
+    <main class="container">
+        <section>
+            <div class="profile-image">
+
+            </div>
+
+            <div class="container">
+                <ul>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
 
 
     <%- include('partials/footer') %> 

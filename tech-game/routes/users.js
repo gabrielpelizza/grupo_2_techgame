@@ -10,13 +10,19 @@ router.get('/', function(req, res, next) {
 const usuariosController = require('../controllers/usuariosController')
 const registerValidations = require('../validations/registerValidations');
 
+const checkUser = require('../middlewares/checkUsers');
+
 router.get('/registro', usuariosController.registro);
 router.post('/registro',registerValidations, usuariosController.processRegistro);
 
 router.get('/login', usuariosController.inicioSesion);
+router.post('/login', usuariosController.processLogin);
 
-router.get('/perfil', usuariosController.perfil)
+
+router.get('/cerrarSesion',checkUser, usuariosController.cerrarSesion)
 
 
+router.get('/perfil/:id',checkUser,usuariosController.perfilUser)
+router.put('/perfil/actualizado/:id',usuariosController.perfilEditadoUser);
 
 module.exports = router;
