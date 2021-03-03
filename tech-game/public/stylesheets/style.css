@@ -1717,6 +1717,7 @@ ul li{
     line-height: 1.6;
     font-size: 0.85em;
     display: none;
+    font-size: 18px;
   }
   
   .accordion__input{
