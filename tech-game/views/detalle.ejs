@@ -206,22 +206,24 @@
 
       <h2 class="mt-5 ml-3 mb-4">Tambien te puede interesar</h2>
 
+      <% [productDetail].forEach(producto => { %>
+
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner mb-5">
           <div class="carousel-item active">
             <div class="row">
-              <div class="col-sm-4 col-md-3"><img src="/images/productos/img-1613791700390.jpg" class="d-block w-100" alt="primero"></div>
-              <div class="col-sm-4 col-md-3"><img src="/images/productos/img-1613791700390.jpg" class="d-block w-100" alt="primero"></div>
-              <div class="col-sm-4 col-md-3"><img src="/images/productos/img-1613791700390.jpg" class="d-block w-100" alt="primero"></div>
-              <div class="col-sm-4 col-md-3"><img src="/images/productos/img-1613791700390.jpg" class="d-block w-100" alt="primero"></div>
+              <div class="col-sm-4 col-md-3"><img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="primero"></div>
+              <div class="col-sm-4 col-md-3"><img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="segundo"></div>
+              <div class="col-sm-4 col-md-3"><img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="tercero"></div>
+              <div class="col-sm-4 col-md-3"><img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="cuarto"></div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="row">
-              <div class="col-sm-4 col-md-3"><img src="/images/productos/img-1613791700390.jpg" class="d-block w-100" alt="primero"></div>
-              <div class="col-sm-4 col-md-3"><img src="/images/productos/img-1613791700390.jpg" class="d-block w-100" alt="primero"></div>
-              <div class="col-sm-4 col-md-3"><img src="/images/productos/img-1613791700390.jpg" class="d-block w-100" alt="primero"></div>
-              <div class="col-sm-4 col-md-3"><img src="/images/productos/img-1613791700390.jpg" class="d-block w-100" alt="primero"></div>
+              <div class="col-sm-4 col-md-3"><img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="primero"></div>
+              <div class="col-sm-4 col-md-3"><img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="segundo"></div>
+              <div class="col-sm-4 col-md-3"><img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="tercero"></div>
+              <div class="col-sm-4 col-md-3"><img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="cuarto"></div>
             </div>
           </div>
 <!--           <div class="carousel-item">
@@ -237,6 +239,8 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+
+      <% }) %>
 
     </div>
 
