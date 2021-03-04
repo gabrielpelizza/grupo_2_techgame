@@ -77,6 +77,11 @@ header div.menu-button-carrito{
   background-color: transparent;
 }
 
+header .contenedor-menu{
+  background-color: #892cdc;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
 header nav .search{
   padding-top: 10px;
@@ -100,7 +105,6 @@ header nav .lista{
 }
 
 header nav li{
-  border-bottom: 1px solid white;
   line-height: 30px;
 }
 
@@ -125,6 +129,7 @@ header nav a{
   padding-left: 10px;
   text-transform: uppercase;
 }
+
 
 
 
@@ -1027,7 +1032,7 @@ ul li{
   header nav ul li a:hover{
       background-color: white;
       color:#892cdc;
-      border:2px solid white;
+
       border-radius: 10px 0 10px 0;
       font-weight: 700;
       text-decoration: none;
@@ -1118,7 +1123,7 @@ ul li{
     height:40px;
     background-color:white;
     border-radius:50%;
-    border:1px solid purple;
+    border:1px solid 892cdc;
   }
 
   /*Main*/
