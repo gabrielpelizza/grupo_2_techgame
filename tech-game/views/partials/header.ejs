@@ -38,11 +38,19 @@
                   </form>
 
                   <div class="lista col-lg-6 row">
-                      <li><a href="/">home</a></li>
-                      <li><a href="/productos">Productos</a></li>
-                      <li><a href="">Tiendas oficiales</a></li>
-                      <li><a href="">Vender</a></li>
-                      <li><a href="">Ayuda</a></li>
+                        <li><a href="/">home</a></li>
+                        <li><a href="/productos">Productos</a></li>
+                        <% if (typeof user == 'undefined' ) { %>
+
+                        <% } else { %>
+                            <li>
+                                <select name="" id="" class="opciones">
+                                    <option value="">Mi cuenta</option>
+                                    <option value="">Mis compras</option>
+                                </select>
+                            </li>
+
+                         <% } %>
                   </div>
                   
               </ul>

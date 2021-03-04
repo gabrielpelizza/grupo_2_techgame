@@ -1,16 +1,15 @@
 [
   {
     "id": 2,
-    "product_name": "Teclado Gamer v12",
-    "description": "Por su diseño es óptimo para largas sesiones de juego en las que puedas apoyar tus manos. Tiene teclas Multimedia para agilizar el uso de Internet y funciones Multimedia más empleadas cotidianamente. Además el teclado tiene LEDS Multicolores y trae la opción de poder usarlo sin luces.",
+    "product_name": "Teclado Gamer v12 ",
+    "description": "Por su diseño es óptimo para largas sesiones de juego en las que puedas apoyar tus manos. Tiene teclas Multimedia para agilizar el uso de Internet y funciones Multimedia más empleadas cotidianamente. Además el teclado tiene LEDS Multicolores y trae la opción de poder usarlo sin luces.\r\n                    ",
     "sku": "0000000001",
     "stock": "200",
     "price": "5030",
-    "details": "-Voltaje: 5V",
-    "category": "acceesorios",
+    "category": "",
     "discount": "10",
-    "brand": "hyper-x",
-    "image": "img-1614728928014.jpg"
+    "brand": "",
+    "image": ""
   },
   {
     "id": 3,
@@ -26,19 +25,6 @@
     "image": "img-1614729039732.jpg"
   },
   {
-    "id": 4,
-    "product_name": "Auriculares BOHNE",
-    "description": "Con tus auriculares in ear Bohne TWS vas a poder disfrutar tu música y entretenimiento en todo momento y lugar. Están diseñados especialmente para actividades al aire libre.\r\nLogran un sonido limpio y nítido y cuentan con una batería de larga duración y una caja de carga que permite recargar los auriculares hasta 4 veces.\r\nIntroducen funciones táctiles y micrófono incorporado.\r\nIncluyen gel para oídos en tamaños pequeño, mediano y grande.",
-    "sku": "00000012121",
-    "stock": "65",
-    "price": "2356",
-    "details": "",
-    "category": "acceesorios",
-    "discount": "5",
-    "brand": "noga",
-    "image": "img-1614729254324.jpg"
-  },
-  {
     "id": 5,
     "product_name": "Memoria Hyper X Ddr4 8gb 2666mhz",
     "description": "Responden sin problemas a tus necesidades. Incluyen funciones avanzadas, como lo son los estilos de disipación térmica, memoria de overclocking automático Plug-N-Play, memoria con perfiles XMP y memoria RGB. No dejes que tu sistema se lentifique.\r\nSu capacidad de 8 GB hace de esta memoria un soporte ideal para trabajos con documentos de alta complejidad, navegación en la web con múltiples pestañas, juegos, contenidos multimedia, entre otros.",
@@ -50,5 +36,18 @@
     "discount": "",
     "brand": "noga",
     "image": "img-1614729401325.jpg"
+  },
+  {
+    "id": 6,
+    "product_name": "teclado",
+    "description": "lorem ipsum",
+    "sku": "00001",
+    "stock": "10",
+    "price": "123",
+    "details": "lorem ipsum",
+    "category": "acceesorios",
+    "discount": "10",
+    "brand": "noga",
+    "image": "img-1614874313349.jpg"
   }
 ]
