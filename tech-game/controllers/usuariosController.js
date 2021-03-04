@@ -52,9 +52,9 @@ module.exports = {
         usuarios.push(newUser)
 
 
-        setUsers(usuarios)
+        /* setUsers(usuarios) */
 
-         res.redirect('/') 
+         res.redirect('/users/login') 
     }
     },
     inicioSesion : (req,res)=>{
