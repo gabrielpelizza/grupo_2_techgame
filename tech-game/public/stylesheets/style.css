@@ -77,6 +77,11 @@ header div.menu-button-carrito{
   background-color: transparent;
 }
 
+header .contenedor-menu{
+  background-color: #892cdc;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
 header nav .search{
   padding-top: 10px;
@@ -100,14 +105,31 @@ header nav .lista{
 }
 
 header nav li{
-  border-bottom: 1px solid white;
   line-height: 30px;
 }
+
+header nav li .opciones{
+  border: none;
+  list-style: none;
+  color:white;
+  background-color: #892cdc;
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+header nav li .opciones option{
+  border: none;
+}
+
 header nav a{
   color:white;
   text-decoration: none;
   padding-left: 10px;
+  text-transform: uppercase;
 }
+
 
 
 
@@ -143,6 +165,7 @@ header div.menu-button-carrito a{
   color: black;
   text-decoration: none;
 }
+
 
 
 /*---------------------------------------------fin--------------------------------------------------------------------------------*/
@@ -1009,7 +1032,7 @@ ul li{
   header nav ul li a:hover{
       background-color: white;
       color:#892cdc;
-      border:2px solid white;
+
       border-radius: 10px 0 10px 0;
       font-weight: 700;
       text-decoration: none;
@@ -1100,7 +1123,7 @@ ul li{
     height:40px;
     background-color:white;
     border-radius:50%;
-    border:1px solid purple;
+    border:1px solid 892cdc;
   }
 
   /*Main*/
@@ -2052,14 +2075,16 @@ ul li{
       border:1px solid black;
       /* border-radius: 10px; */
       border-radius: 20px 0 20px 0;
+      align-items: center;
       
   }
   main div div.tarjeta-producto:hover{
       border:1px solid black;
       box-shadow: 10px 10px 10px 0px #892cdc;
-      height:auto;   
+      height:390px;   
       transition:ease-in;
-      transition-duration:.5s;
+      transition-duration:.2s;
+      overflow:hidden;
   }
   
   main div div .tarjeta-producto h3{
@@ -2075,21 +2100,18 @@ ul li{
       border-top: 1px solid white;
       display:none;
       bottom:0;
-      transition: ease-in-out;
-      transition-duration: 0.5s;
       flex-direction: row;
       background-color: #892cdc;
       flex-wrap: wrap;
+      align-items: center;
   }
 
   main div div.tarjeta-producto:hover .descripcion{
       display: flex;
       background-color:white;
       top:10px;
-      height: auto;
-      transition:ease-in;
-      transition-duration:1.1s;
       background-color: #892cdc;
+      height: 90px;
   }
 
   main div div .tarjeta-producto div span.precio{

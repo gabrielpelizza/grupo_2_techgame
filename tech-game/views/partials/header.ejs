@@ -38,11 +38,38 @@
                   </form>
 
                   <div class="lista col-lg-6 row">
-                      <li><a href="/">home</a></li>
-                      <li><a href="/productos">Productos</a></li>
-                      <li><a href="">Tiendas oficiales</a></li>
-                      <li><a href="">Vender</a></li>
-                      <li><a href="">Ayuda</a></li>
+                        <li><a href="/">home</a></li>
+                        <li><a href="/productos">Productos</a></li>
+                        <% if (typeof user == 'undefined' ) { %>
+
+                        <% } else { %>
+                            <!-- <li>
+                                <select name="" id="" class="opciones">
+                                    mi cuenta
+                                    <option value="" disabled>Mi cuenta</option>
+                                    <option value="" class="dropdown-item">Perfil</option>
+                                    <option value="" >Mis compras</option>
+                                </select>
+                            </li> -->
+                            
+                            <li>
+                                <select class="dropdown-item opciones" aria-labelledby="dropdownMenuButton">
+                                  <option value=""class="dropdown-item"><a class="" href="#">Mi cuenta</a></option>
+                                  <option value=""class="dropdown-item"><a class="" href="#">Perfil</a></option>
+                                  
+                                </select>
+                            </li>
+                           <!--  <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Usuario
+                                </a>
+                                <ul class="" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" href="/admin/cerrarSesion">Cerrar sesion</a></li>
+                                  <li><a class="dropdown-item" href="/admin/cerrarSesion">Cerrar sesion</a></li>
+                                  <li><a class="dropdown-item" href="/admin/cerrarSesion">Cerrar sesion</a></li>
+                                </ul>
+                            </li> -->
+                         <% } %>
                   </div>
                   
               </ul>
