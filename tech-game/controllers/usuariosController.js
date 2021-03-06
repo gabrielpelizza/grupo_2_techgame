@@ -19,9 +19,14 @@ module.exports = {
 
 /*         res.send(erroresValidacion)  /* para ver que me manda */
 
-        if(!erroresValidacion.isEmpty()){
-            return res.redirect('/users/registro')
+        if(erroresValidacion.isEmpty()){
+            res.send('registrando...')
         } else {
+            return res.render('registro',{
+                errores : erroresValidacion.mapped(),
+                old : req.body
+            })
+        }
 
 
         const {name, lastname, email, dni, country, password, password2} = req.body
@@ -52,10 +57,9 @@ module.exports = {
         usuarios.push(newUser)
 
 
-        /* setUsers(usuarios) */
+        setUsers(usuarios)
 
          res.redirect('/users/login') 
-    }
     },
     inicioSesion : (req,res)=>{
         res.render('login');

@@ -108,5 +108,15 @@
     "country": "lomasa",
     "password": "$2b$10$m8izIZ4TQc5NeBOycNMLI.yXC.GG5YWQwNmkhCtGo9XesLttW6HMG",
     "password2": "$2b$10$HBr7ckRg/.P.oIPAgp/aruhvI6oDyqIpLTouwfR45Ex1RoSk97GJq"
+  },
+  {
+    "id": 14,
+    "name": "gimee",
+    "lastname": "rivoira",
+    "email": "gimeerivoira@gmail.com",
+    "dni": 11111111,
+    "country": "Buenos Aires",
+    "password": "$2b$10$tJDvUV5KznCQJcQTAEoOsu1cFlAXTX65hee9LwJDIRIPN9WVjDz7m",
+    "password2": "$2b$10$QX6qNe9gTz.Uqrm1QHKWhuTP8DUh00VUyja6RYfWRaxgavrQRIwRO"
   }
 ]

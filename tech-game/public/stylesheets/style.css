@@ -1376,10 +1376,18 @@ ul li{
 
 
 /*------------------LOGIN------------------------------*/
+
+.loginbody{
+  background: #ddcad9;
+  background: -webkit-linear-gradient(to right, #c2d7f0, #f5f3e8, #f0e2ec);
+  background: linear-gradient(to right, #adc7e7, #f7f4e8, #ebd6e6);
+}
+
 .login h1{
   display: flex;
   justify-content: center;
   padding-top: 40px;
+  
 }
 
 .login p{
@@ -1435,22 +1443,22 @@ ul li{
   border-top: 1px solid gray;
 }
 
-.registro{
+.registrologin{
   padding-top: 30px;
 }
 
-.registro h2{
+.registrologin h2{
   display: flex;
   justify-content: center;
 }
 
-.registro p{
+.registrologin p{
   display: flex;
   justify-content: center;
 }
 
 
-.registro button{
+.registrologin button{
   margin-top: 10px;
   margin-bottom: 30px;
   text-transform: uppercase;
@@ -1459,9 +1467,17 @@ ul li{
 /*------------------------------LOGIN FIN ------------------------------------*/
 
 /*-------------------------------REGISTRAR-----------------------------------*/
+
+.registrar{
+ /*  background: #CC95C0; 
+  background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  
+  background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);   */
+  background: #ddcad9;
+  background: -webkit-linear-gradient(to right, #c2d7f0, #f5f3e8, #f0e2ec);
+  background: linear-gradient(to right, #adc7e7, #f7f4e8, #ebd6e6);  
+}
 .registrar h1{
   padding-top: 30px;
-  padding-bottom: 30px;
   display: flex;
   justify-content: center;
 }
@@ -1480,19 +1496,23 @@ ul li{
 }
 
 .registro{
-  padding-top: 30px;
-  padding-right: 8px;
-  padding-left: 8px;
+  padding-top: 5px;
+  padding-right: 35px;
+  padding-left: 35px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+ /*  background: #ddcad9;
+  background: -webkit-linear-gradient(to right, #c2d7f0, #f5f3e8, #f0e2ec);
+  background: linear-gradient(to right, #adc7e7, #f7f4e8, #ebd6e6);   */
 }
 
 .registro label{
   display: block;
+  margin-top: 20px;
 }
 
 .registro input{
   width: 100%;
   height: 30px;
-  margin-bottom: 20px;
   background-color: #f1f1f1;
   border: none;
   border-bottom: 1px solid #949494;
@@ -1511,10 +1531,10 @@ ul li{
   cursor: pointer;
 }
 
+
 .paises select{
   width: 100%;
   height: 30px;
-  margin-bottom: 20px;
   background-color: #f1f1f1;
   border: none;
   border-bottom: 1px solid #949494;
@@ -1534,10 +1554,17 @@ ul li{
       margin: 0%;
   }
   
-   .registro section{
+  .registro section{
     width: 50%;
     float: left;
-    border-left: 8px solid white;
+  }
+
+  .registro input{
+    width: 98%;
+  }
+
+  .registro .paises select{
+    width: 98%;
   }
   /*   -----------------DETALLE DE PRODUCTO------------- */
   .volver{
