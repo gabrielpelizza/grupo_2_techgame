@@ -536,7 +536,12 @@ footer .redes ul li{
 /*-----------------------------------------------------fin-------------------------------------------------------------*/
 
 /*------------------------------------------DETALLE DE PRODUCTO----------------------------------------------*/
-
+.definicion p.sku{
+  display: none;
+}
+hr.detalledekstop{
+  background: #C1C1C1;
+}
 .container{
   width: 100%;
   height: auto;
@@ -547,8 +552,8 @@ footer .redes ul li{
   padding-bottom:30px ;
 } 
 
-.producto{
-  background-color: #f6f6f6;
+main.detalleproducto{
+  background-color: #EBEBEB;
 }
 
 .volver span{
@@ -561,8 +566,14 @@ footer .redes ul li{
 }
 
 .inicial h1{
-  padding-left: 5%;
-  margin-bottom: 30px;
+  padding: 0% 5%;
+  margin-bottom: 8px;
+  letter-spacing: 3px;
+}
+
+.inicial p.skumobile{
+  padding: 0% 5%;
+  color: #a8a8a8;
 }
 
 .inicial .carrucel{
@@ -580,7 +591,8 @@ footer .redes ul li{
   display: none;
 }
 
-.definicion h2{
+.definicion .comprar h2{
+  width: 100%;
   font-size: 2.4rem;
 /*   padding-bottom: 20px; */
 }
@@ -625,33 +637,56 @@ footer .redes ul li{
   background-color: rgba(209, 209, 209);
 }
 
-.definicion button.carrito{
-  width: 66%;
-  height: 70px;
-  font-size: 22px;
+.definicion h6{
+  font-size: 2em;
+  font-weight: 400px;
+  letter-spacing: 3px;
+}
+
+.definicion .coloresdetalle i{
+  height:20%;
+}
+
+.definicion .comprar button.carrito{
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
   color: white;
-  background-color: black;
+  background-color: white;
   float: right;
   border-radius: 4px;
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .definicion .comprar button.comprar{
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 10px;
+  font-weight: 600px;
   width: 100%;
-  height: 70px;
-  font-size: 30px;
+  height: 48px;
+  font-size: 16px;
   background-color:black;
   color: white;
   border-radius: 4px;
 }
 
-.definicion .comprar a{
+.definicion .comprar a.comprar{
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.definicion .comprar a.carrito{
   width: 100%;
   color: black;
   padding-left: 10px;
+  font-weight: 600;
 }
+
+
 
 .acordion{
   max-width: 400px;
@@ -1653,13 +1688,22 @@ ul li{
 
   .definicion h1{
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    letter-spacing: 3px;
+  }
+
+  .inicial p.skumobile{
+    display: none;
+  }
+
+  .definicion p.sku{
+    display: inline;
+    color: #a8a8a8;
   }
   
   .definicion h2{
-    display: flex;
-    justify-content: center;
     font-size: 35px;
+    width: 100%;
   }
   
   .definicion h3{
@@ -1688,24 +1732,31 @@ ul li{
     height: 45px;
     font-size: 18px;
   }
+
+  .definicion .comprar{
+    display: flex;
+    justify-content: start;
+  }
   
-  .definicion button.carrito{
+  .definicion .comprar button.carrito{
     width: 40%;
     height: 45px;
     float: right;
     margin-top: 40px;
     font-size: 18px;
     cursor: pointer;
+    background-color: white;
+    color: black;
   }
   
   .definicion .comprar button.comprar{
-    width: 100%;
-    padding: 0 auto;
+    width: 50%;
     cursor: pointer;
     height: 45px;
     font-size: 18px;
+    padding-top: 5px;
     margin-top: 40px;
-    margin-left: 10px;
+    margin-right: 20px;
   }
 
   .acordion{

@@ -20,7 +20,7 @@ module.exports = {
 /*         res.send(erroresValidacion)  /* para ver que me manda */
 
         if(erroresValidacion.isEmpty()){
-            res.send('registrando...')
+            res.redirect('/users/login') 
         } else {
             return res.render('registro',{
                 errores : erroresValidacion.mapped(),
@@ -59,7 +59,7 @@ module.exports = {
 
         setUsers(usuarios)
 
-         res.redirect('/users/login') 
+        /*  res.redirect('/users/login')  */
     },
     inicioSesion : (req,res)=>{
         res.render('login');

@@ -7,17 +7,18 @@
   <body>
     <%- include('partials/header') %>
 
-    <div class="container"></div>
+    <!-- <div class="container"></div> -->
 
-    <div class="producto">
+    <main class="detalleproducto">
       
       <div class="volver">
-        <i class="fas fa-angle-left"></i><a href=""><span> Ver más de <% [productDetail].forEach(producto => { %> <b><%= producto.product_name %></b><% }) %></span></a>
+        <i class="fas fa-angle-left"></i><a href="/productos"><span> Ver más de <% [productDetail].forEach(producto => { %> <b><%= producto.product_name %></b><% }) %></span></a>
       </div>
 
       <div class="inicial">
          <% [productDetail].forEach(producto => { %>
           <h1><%= producto.product_name %></h1> 
+          <p class="skumobile"> <%= producto.sku %> </p>
 
           <div class="carrucel">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -78,21 +79,46 @@
             <h1><%= producto.product_name %></h1>
             <% }) %>
           </div>
+
+          <p class="sku"><%= producto.sku %></p>
+
+          <hr class="detalledekstop">
+
+          <h6>Color</h6>
+          <div class="coloresdetalle">
+            <i class="fa fa-circle text-light"></i>
+            <i class="fa fa-circle text-danger"></i>
+            <i class="fa fa-circle text-black"></i>
+          </div>
+
+          <hr class="detalledekstop">
+
+          <p class="descripcion"><%= producto.description %></p>
+
+          <hr class="detalledekstop">
+
+          
           <h2>$<%= toThousand(producto.price - producto.price * producto.discount /100); %></h2>
           <% if(producto.discount != 0){ %> 
           <h3> <i class="fas fa-tag"></i>&nbsp;<%= producto.discount %> % OFF </i></h3>
           <% }  %> 
-          <div class="detalle">
 
-            <div class="metodospago">
+          <div class="comprar">
+            <button class="comprar" type="submit"><a class="comprar" href=""> Comprar ahora</a> </button> <br>
+            <button class="carrito" type="submit"><a class="carrito" href="../carrito"><i class="fas fa-shopping-cart"></i> Agregar al carrito </a></button>
+            <!-- <a href=""><i class="fas fa-shopping-cart"></i> Agregar al carrito</a> -->
+          </div>
+         <!--  <div class="detalle">
+
+            <div class="metodospago"> -->
               <!-- <p>Metodos de pago <br>  <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"> </i> <i class="fab fa-cc-paypal"></i></p>
                <p><i class="fab fa-cc-visa"></i></p>
               <p><i class="fab fa-cc-mastercard"></i></p>
               <p><i class="fab fa-cc-paypal"></i></p> -->
-            </div>
+            <!-- </div>
             <span><i class="fas fa-credit-card"></i>Precío de lista $<%= toThousand(producto.price) %></span> <br>
             <span><i class="fas fa-shield-alt"></i>Garantía</span> <br>
-            <span><i class="fas fa-truck"></i>Envíos a toda la Argentina</span>
+            <span><i class="fas fa-truck"></i>Envíos a toda la Argentina</span> -->
 
 <!--             <div class="metodospago">
               <span>Metodos de pago <br>  <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"> </i> <i class="fab fa-cc-paypal"></i></span>
@@ -101,7 +127,7 @@
               <p><i class="fab fa-cc-paypal"></i></p>
             </div> -->
 
-          </div>
+          <!-- </div> -->
 
        
            <!--  <input type="number" value="1">
@@ -109,11 +135,12 @@
   
           <button class="carrito" type="submit"><i class="fas fa-shopping-cart"></i>Agregar al carrito</button>
   
- -->          <div class="comprar">
+ -->          <!-- <div class="comprar">
             <button class="comprar" type="submit">Comprar ahora</button> <br>
-            <a href=""><i class="fas fa-shopping-cart"></i> Agregar al carrito</a>
-          </div>
-        </div>
+            <button class="carrito" type="submit"><a href="../carrito"><i class="fas fa-shopping-cart"></i> Agregar al carrito </a></button> -->
+            <!-- <a href=""><i class="fas fa-shopping-cart"></i> Agregar al carrito</a> -->
+          <!-- </div> -->
+        <!-- </div> -->
   
   <!-- 
         <div class="entrega">
@@ -129,7 +156,9 @@
 <!--         <div class="definiciones">
  -->
  
-          <div class="acordion">
+</div>
+
+         <!--  <div class="acordion"> -->
 
 <!--             <div class="seccion1">
               <input type="radio" name="detalle_acordion" id="seccion1" class="accordion__input">
@@ -143,14 +172,14 @@
             </div> -->
 
 
-            <div class="seccion2">
+        <!--     <div class="seccion2">
               <input type="radio" name="detalle_acordion" id="seccion2" class="accordion__input">
               <label for="seccion2" class="accordion__label">Descripción</label>
 
               <div class="acordioncontenido">
                 <p><%= producto.description %>.</p>
               </div>
-             </div>
+             </div> -->
 <!-- 
              <div class="seccion3">
               <input type="radio" name="detalle_acordion" id="seccion3" class="accordion__input">
@@ -162,6 +191,7 @@
              </div> -->
 
             </div>
+
 
             
 
@@ -238,7 +268,7 @@
 
 
 
-  </div>
+  </main>
 
     
       <%- include('partials/footer') %> 
