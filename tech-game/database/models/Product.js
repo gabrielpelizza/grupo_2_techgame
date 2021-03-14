@@ -43,8 +43,8 @@ module.exports = (sequelize, dataTypes) => {
 
 	const Products = sequelize.define(alias,cols,config)
 	
-    Productos.associate = function(modelos){
-        Productos.hasMany(models.Brand,{
+    Product.associate = function(modelos){
+        Product.hasMany(models.Brand,{
             as : 'brand'
         });
     }
