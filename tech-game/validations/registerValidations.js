@@ -15,9 +15,10 @@ module.exports = [
 
     check('documento')
     .notEmpty()
+    .isNumeric()
     .isLength({
-      min : 9,
-      max : 9
+      min : 8,
+      max : 8
     })
     .withMessage('Tiene que ser un dni valido'),
 

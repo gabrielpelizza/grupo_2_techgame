@@ -591,10 +591,30 @@ main.detalleproducto{
   display: none;
 }
 
-.definicion .comprar h2{
-  width: 100%;
+.definicion .precioystock{
+  display: flex;
+}
+
+.definicion .precioystock h2{
+  width: 80%;
   font-size: 2.4rem;
-/*   padding-bottom: 20px; */
+}
+
+.definicion .precioystock h3.countdetalle{
+  display: inline-block;
+  font-size: 1.3rem;
+  padding-top: 0%;
+  color: black;
+}
+
+.definicion .precioystock input.inputdetalle{
+  width: 3rem;
+  height: 3rem;
+  background-color: black;
+  color: white;
+  text-transform: 600;
+  text-align: center;
+  border-radius: 0.5rem;
 }
 
 .definicion h3{
@@ -605,8 +625,6 @@ main.detalleproducto{
 .definicion .detalle{
   display: flex;
   flex-direction: column;
-
-/*   display: block; */
 }
 
 .definicion .detalle span{
@@ -615,26 +633,10 @@ main.detalleproducto{
   width: 100%;
 }
 
-/* .definicion .metodospago{
-  display: flex;
-} */
-
-.definicion .metodospago {
-  display: none;
-}
-
 
 .definicion .detalle i{
   margin-left: 8px;
   margin-right: 20px;
-}
-
-.definicion input{
-  margin-top: 50px;
-  width: 30%;
-  height: 68px;
-  font-size: 30px;
-  background-color: rgba(209, 209, 209);
 }
 
 .definicion h6{
@@ -685,172 +687,6 @@ main.detalleproducto{
   padding-left: 10px;
   font-weight: 600;
 }
-
-
-
-.acordion{
-  max-width: 400px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  background-color: #e7e5e5;
-  margin: 5% 8%;
-}
-
-.accordion__label, 
-.acordioncontenido{
-  padding: 14px 20px;
-}
-
-.accordion__label{
- display: block;
- font-weight: 500;
- cursor: pointer;
- position: relative;
- transition: 0.6s;
-}
-
-.accordion__label:hover{
-  background:rgba(0, 0, 0, 0.1);
-}
-
-.accordion__label::after{
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
-  width: 12px;
-  height: 6px;
-  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
-  background-size: contain;
-  transition: transform 0.4s;
-}
-
-.acordionentrega{
-  height: 30px;
-}
-
-.acordioncontenido{
-  background: #ffffff;
-  line-height: 1.6;
-  font-size: 0.85em;
-  display: none;
-}
-
-.accordion__input{
-  display: none;
-}
-
-.accordion__input:checked ~ .acordioncontenido{
-  display: block;
-}
-
-.accordion__input:checked ~ .acordion__label::after{
-  transform: translateY(-50%) rotate(0.5turn);
-}
-/*  .entrega{
-  padding-top: 40px;
-} 
-
-.entrega h3{
-  display: flex;
-  justify-content: flex-start;
-}
-
-
-.entrega .metodos span{
-  display: block;
-  padding-top: 20px;
-  font-size: 18px;
-}
-
-.entrega .metodos i{
-  margin-right: 30px;
-  font-size: 15px;
-}
-
-.definiciones{
-  padding-top: 30px;
-}
-
-.definiciones h4{
-  font-size: 30px;
-  padding-bottom: 20px;
-  background-color: rgba(209, 209, 209);
-}
-
-.definiciones p{
-  font-size: 25px;
-}
-ul li{
-  list-style: none;
-}
-.secciones2{
-  padding-top: 50px;
-  margin-left: 35px;
-}
-
-.secciones .seccion ul li{
-  list-style: none;
-}
-
-.secciones h4{
-  font-size: 30px;
-  padding-bottom: 20px;
-  background-color: rgba(209, 209, 209);
-}
-
-.secciones hr{
-  margin-bottom: 20px;
-  margin-top: 20px;
-  border: none;
-  border-top: 1px solid gray;
-}
-
-.secciones ul li h4{
-  font-size: 18px;
-  float: right;
-}
-
-.secciones .secciones ul li span{
-  width: 45%;
-  text-align: right;
-}
-
-.secciones .seccion{
-  margin-top: 50px;
-}
-
-.secciones .seccion h3{
-  padding-top: 40px;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.secciones .seccion h5{
-  display: inline-block;
-  padding-left: 20px;
-  font-size: 20px; 
-  width: 50%;
-  text-align: left;
-}
-
-.secciones .segseccion h3{
-  padding-top: 40px;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.secciones .segseccion h5{
-  display: inline-block;
-  font-size: 20px; 
-  width: 50%;
-  text-align: left;
-} */
-
-
-
-
 
 /*--------------------------FIN DE DEATLLE---------------------------------------------------------*/
 
@@ -1689,7 +1525,7 @@ ul li{
   .definicion h1{
     display: flex;
     justify-content: start;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
   }
 
   .inicial p.skumobile{
@@ -1702,8 +1538,13 @@ ul li{
   }
   
   .definicion h2{
+    display: flex;
+    align-items: center;
     font-size: 35px;
-    width: 100%;
+  }
+
+  .definicion input.detalle{
+    display: flex;
   }
   
   .definicion h3{
@@ -1719,18 +1560,6 @@ ul li{
   
   .definicion .detalle i{
     margin-right: 10px;
-  }
-  
-  .definicion input{
-    width: 50px;
-    display: inline;
-    float: left;
-    margin-top: 40px;
-    margin-left: 0%;   
-    margin-right: 0%;
-    cursor: pointer;
-    height: 45px;
-    font-size: 18px;
   }
 
   .definicion .comprar{
@@ -1767,183 +1596,6 @@ ul li{
     display: flex;
     margin: 0 2%;
     }
-
-/*   .acordion .seccion1{
-    width: 100%;
-  } */
-
-  .acordion .seccion2{
-    width: 100%;
-  }
-
-  .acordion .seccion3{
-    width: 50%;
-  }
-
- 
-  
-  .accordion__label, 
-  .acordioncontenido{
-    padding: 14px 20px;
-  }
-  
-  .accordion__label{
-   display: block;
-   font-weight: 500;
-   cursor: pointer;
-   position: relative;
-   transition: 0.6s;
-  }
-  
-  .accordion__label:hover{
-    background:rgba(0, 0, 0, 0.1);
-  }
-  
-  .accordion__label::after{
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
-    width: 12px;
-    height: 6px;
-    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
-    background-size: contain;
-    transition: transform 0.4s;
-  }
-  
-  .acordionentrega{
-    height: 30px;
-  }
-  
-  .acordioncontenido{
-    background: #e4e3e3;
-    line-height: 1.6;
-    font-size: 0.85em;
-    display: none;
-    font-size: 18px;
-  }
-  
-  .accordion__input{
-    display: none;
-  }
-  
-  .accordion__input:checked ~ .acordioncontenido{
-    display: block;
-  }
-  
-  .accordion__input:checked ~ .acordion__label::after{
-    transform: translateY(-50%) rotate(0.5turn);
-  }
-  
-  /* .entrega{
-    float: right;
-    width: 40%;
-  }
-  
-  .entrega h3{
-    padding-left: 100px;
-    font-size: 20px;
-  }
-  
-  .entrega .metodos span{
-    padding-left: 110px;
-    font-size: 15px;
-  }
-  
-  .entrega .metodos i{
-    margin-right: 10px;
-    font-size: 25px;
-  } */
-  
-/*   .definiciones{
-    padding-top: 980px;
-  }
-  
-  .definiciones h4{
-    margin: 0% 2%;
-    font-size: 25px;
-    background-color: white;
-    border-bottom: 1px solid rgba(209, 209, 209);;
-  }
-  
-  .definiciones p{
-    font-size: 18px;
-    margin-left: 3%;
-    margin-right: 2%;
-  }
-  
-  .secciones .seccion{
-    margin-left: 18px;
-    width: 48%;
-    margin-right: 5%;
-    margin-left: 5%;
-  }
-  
-  .secciones h4{
-    padding-top: 30px;
-    font-size: 25px;
-    background-color: white;
-    border-bottom: 1px solid rgba(209, 209, 209);
-    margin: 0% 2%;
-  }
-  
-  .secciones .seccion{
-    display: flex;
-    width: 90%;
-  }
-  .secciones .seccion .detalle1{
-    width: 50%;
-  }
-  
-  .secciones .seccion .detalle2{
-    width: 50%;
-  }
-
-  .secciones .seccion hr{
-    display: none;
-  }
-  
-  .inicial .imagenesbis{
-    display: inline;
-  }
-  
-  .inicial .imagenesbis img{
-    width: 23%;
-    margin-top: 50px;
-    margin-right: 2%;
-    margin-left: 5%;
-  }  */
-  
-/* /*   .inicial .carrucel{
-    display: none;
-  } */
-
-/*   .inicial .imagenescritoriogrande{
-    display: flex;
-    position: relative;
-  }
-
-  .inicial .imagenescritoriogrande img{
-    width: 98%;
-    margin-left: 2%;
-    height: auto;
-  }
-  
-  .inicial .imagenescritorio{
-    display: flex;
-    margin-top: 5%;
-    width: 19%;
-  }
-  
-  .inicial .imagenescritorio img{
-    width: 100%;
-    display: inline-block;
-    margin-left: 3%;
-    margin-right: 3%;
-  } */
-
-
 
   .secciones hr{
     display: none;
