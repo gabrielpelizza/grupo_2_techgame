@@ -33,6 +33,7 @@ app.use(session({
   secret : "frase secreta"
 }));
 
+
 app.use(localCheck);
 
 app.use(cookieCheck);

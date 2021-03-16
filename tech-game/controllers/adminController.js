@@ -1,7 +1,11 @@
 const path = require('path');
 
-let fs = require('fs');
+/* let fs = require('fs'); */
+
+const db = require('../database/models')
+
 const { validationResult } = require('express-validator');
+const { isNullOrUndefined } = require('util');
 
 const {getProduct, setProduct} = require(path.join('..', 'data', 'products'));
 
@@ -14,15 +18,31 @@ module.exports = {
   index:(req,res)=>{
     res.render('admin/index'); //home de administracion
   },
-    crud : (req, res, next)=>{ //panel de control de productos
-        res.render('admin/panelProduct', {
-          productos
-        });
-    },
-    createProduct :(req,res)=>{ //muestra el formulario de agregar producto
-      res.render('admin/agregarProduct');
-    },
-    productAlmacenado : (req,res,next)=>{ //cumple la accion de almacenar lo agregado
+  crud : (req, res, next)=>{ //panel de control de productos
+      res.render('admin/panelProduct', {
+        productos
+      });
+  },
+  createProduct :(req,res)=>{ //muestra el formulario de agregar producto
+    res.render('admin/agregarProduct');
+  },
+
+  productAlmacenado:(req,res)=>{
+    const {nombre,precio,sku,stock,descuento,brand_id} = req.body;
+
+    db.Productos.create({
+      product_name : nombre,
+      price : precio,
+      sku : sku,
+      stock : stock,
+      discount : descuento,
+      brand_id : 1,
+      image : "2323333.jpg"
+    }).catch(error => console.log(error))
+    res.redirect('/')
+  }
+
+/*     productAlmacenado : (req,res,next)=>{ //cumple la accion de almacenar lo agregado
 
       const erroresValidacion = validationResult(req);
 
@@ -111,5 +131,5 @@ module.exports = {
       setProduct(productos);
       res.redirect('/admin/productos');
     
-    }
+    } */
 }
