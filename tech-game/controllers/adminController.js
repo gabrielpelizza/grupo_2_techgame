@@ -1,6 +1,7 @@
 const path = require('path');
 
 let fs = require('fs');
+const { validationResult } = require('express-validator');
 
 const {getProduct, setProduct} = require(path.join('..', 'data', 'products'));
 
@@ -22,38 +23,45 @@ module.exports = {
       res.render('admin/agregarProduct');
     },
     productAlmacenado : (req,res,next)=>{ //cumple la accion de almacenar lo agregado
-        let lastID = 1;
-        productos.forEach(producto => {
-            if (producto.id > lastID) {
-                lastID = producto.id
-            }else{
-              res.send("error ")
-            }
+
+      const erroresValidacion = validationResult(req);
+
+      if(!erroresValidacion.isEmpty()){
+        return res.render('admin/agregarProduct',{
+          errores : erroresValidacion.errors
         });
-        
-        const {nombre,precio,sku,stock,descuento,detalle,descripcion, categoria, marcas} = req.body;
+      }else{
+          let lastID = 1;
+          productos.forEach(producto => {
+              if (producto.id > lastID) {
+                  lastID = producto.id
+              }
+          });
+          
+          const {nombre,precio,sku,stock,descuento,detalle,descripcion, categoria, marcas} = req.body;
 
 
-        const newProduct = {
-            id: Number(lastID + 1),
-            product_name : nombre,
-            description : descripcion,
-            sku : sku,
-            stock : stock,
-            price: precio,
-            details : detalle,
-            category : categoria,
-            discount : descuento,
-            brand : marcas,
-            image : req.files[0].filename
-        }
+          const newProduct = {
+              id: Number(lastID + 1),
+              product_name : nombre,
+              description : descripcion,
+              sku : sku,
+              stock : stock,
+              price: precio,
+              details : detalle,
+              category : categoria,
+              discount : descuento,
+              brand : marcas,
+              image : (req.files[0])?req.files[0].filename : "imagenDefault.png" 
+          }
 
-        productos.push(newProduct)
+          productos.push(newProduct)
 
-        
-        setProduct(productos);
+          
+          setProduct(productos);
 
-        res.redirect('/admin/productos');
+          res.redirect('/admin/productos');
+      }
 
     },
 

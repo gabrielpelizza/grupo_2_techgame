@@ -28,6 +28,15 @@
                 </select>
                 <input type="file" name="img" value="" id="img" class="col-3 mb-3">
                 <textarea name="descripcion" id="descripcion" cols="90%" rows="5" class="col-9 mb-5" placeholder="Ingresa descripcion de l producto"></textarea>
+
+                <% if (typeof errores != 'undefined') { %>
+                    <ul>
+                        <% errores.forEach(cadaerror => { %>
+                         <li class="text-danger"> - <%= cadaerror.msg %>   </li>
+                       <% }); %>
+                    </ul>
+                <% } %>
+
                 <button type="submit" class="btn btn-success col-9 justify-content-center mb-2">Agregar producto</button>
                 <a href="/admin/productos" class="btn btn-danger col-9 justify-content-center mb-5">Cancelar</a>
 
