@@ -15,7 +15,7 @@ module.exports = (sequelize, datatypes) => {
         },
         lastname : {
             type : datatypes.STRING(45),
-            allowNull : true
+            allowNull : false
         },
         email : {
             type : datatypes.STRING(45),
@@ -27,7 +27,7 @@ module.exports = (sequelize, datatypes) => {
         },
         country : {
             type : datatypes.STRING(45),
-            defaultValue : null
+            allowNull : false
         },
         password : {
             type : datatypes.STRING(45),
@@ -40,7 +40,7 @@ module.exports = (sequelize, datatypes) => {
     }
 
     const config = {
-        tablename : 'users',  /* nombre de la tabla  */
+        tableName : 'users',  /* nombre de la tabla  */
         timestamps : false
     }
 
@@ -50,7 +50,7 @@ module.exports = (sequelize, datatypes) => {
 
     User.associate = function(models){
         User.belongsTo(models.Rol, {   /* se coloca el alias de la tabla */
-            as : 'rol',
+            as : 'rol',  /* alias para operar en el ejs */
             foreignKey : 'rol_id'
         })
     }

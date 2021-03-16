@@ -6,7 +6,7 @@ const {getUsers, setUsers} = require(path.join('..', 'data', 'users'));
 
 const usuarios = getUsers();
 
-let db = require('../database/models')
+let db = require('../database/models');
 
 module.exports = {
     perfil : (req, res) =>{
@@ -21,8 +21,25 @@ module.exports = {
 
 /*         res.send(erroresValidacion)  /* para ver que me manda */
 
+
         if(erroresValidacion.isEmpty()){
-            res.redirect('/users/login') 
+            const {name, lastname, email, dni, country, password} = req.body
+
+            db.Usuarios.create({   /* se pone el nombre de la columna de la tabla */
+                name : name.trim(),
+                lastname : lastname.trim(),
+                email,
+                dni : dni.trim(),
+                country : country.trim(),
+                password : bcrypt.hashSync(password, 10),
+                rol_id : 2
+            })
+
+            .then(()=> res.redirect('/users/login'))
+            .catch(error => res.send(error))
+
+
+
         } else {
             return res.render('registro',{
                 errores : erroresValidacion.mapped(),
@@ -31,7 +48,7 @@ module.exports = {
         }
 
 
-        const {name, lastname, email, dni, country, password, password2} = req.body
+      /*   const {name, lastname, email, dni, country, password, password2} = req.body
         
         let lastID = 0;
 
@@ -60,7 +77,7 @@ module.exports = {
 
 
         setUsers(usuarios)
-
+ */
         /*  res.redirect('/users/login')  */
     },
     inicioSesion : (req,res)=>{
@@ -121,7 +138,26 @@ module.exports = {
         });
     },
     perfilEditadoUser:(req,res)=>{
-        const {name,lastname,email,dni,country} = req.body;
+
+        const {name, lastname, email, dni, country} = req.body
+
+        db.Usuarios.update({
+            name,
+            lastname,
+            email,
+            dni,
+            country
+        },
+        {
+            where : {
+                id : req.params.id
+            }
+        })
+
+        .then(() =>{
+            return res.redirect('perfil')
+        })
+        /* const {name,lastname,email,dni,country} = req.body;
 
         usuarios.forEach(user=>{
             if(user.id === +req.params.id ){
@@ -139,7 +175,7 @@ module.exports = {
         const usuario = usuarios.find(cadauser=>cadauser.id === +req.params.id);
         res.render('perfil',{
             usuario
-        });
+        }); */
     }
 
 }

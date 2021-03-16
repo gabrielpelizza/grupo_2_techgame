@@ -693,8 +693,14 @@ main.detalleproducto{
 
   /*--------------------------------------------MI PERFIL------------------------------------------ */
   
+  .datosperfil .imageninfoperfil{
+    display: flex;
+    justify-content: center;
+  }
   .datosperfil{
-    margin: 0 8%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 10%;
   }
 
   .datosperfil h1{
@@ -710,7 +716,12 @@ main.detalleproducto{
     margin-bottom: 5%;
   }
 
+  .datosperfil h3{
+    margin-top: 20px;
+  }
+
   .datosperfil label{
+    margin-top: 15px;
     width: 100%;
   }
   
@@ -718,11 +729,21 @@ main.detalleproducto{
     width: 100%;
   }
 
-  .datosperfil button{
-    margin: 20px 0;
+  .datosperfil .botonesperfilactualizar{
+    display: flex;
+    margin-top: 10%;
     width: 100%;
-    cursor: pointer;
   }
+
+   .datosperfil button{
+    width: 50%;
+    height: 35px;
+    margin: 5% 2%;
+    border-radius: 5px;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    font-weight: bold;
+  } 
 
 
 /**************************************************RESPONSIVE*******************************************************/
@@ -1601,8 +1622,9 @@ main.detalleproducto{
     display: none;
   }
   /*--------FIN DE DETALLE*/
-  
-} 
+
+
+ /*  ---------------------------- MI PERFIL -------------------------- */
 
 @media(min-width:769px){
 
@@ -1950,6 +1972,4 @@ div .scroll{
   overflow: scroll;
   border: 1px solid #892cdc;
 }
-
-
-/* -----------------------------------------MI PERFIL------------------------------------ */
+}

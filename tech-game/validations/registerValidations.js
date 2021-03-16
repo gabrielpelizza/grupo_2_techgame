@@ -13,7 +13,7 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes completar el campo email'),
 
-    check('documento')
+    check('dni')
     .notEmpty()
     .isNumeric()
     .isLength({

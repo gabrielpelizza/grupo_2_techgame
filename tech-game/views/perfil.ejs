@@ -9,8 +9,36 @@
         <h1>Mis datos</h1>
         
         <h2>Perfil</h2>
+        
 
-       z
+        <form action="">
+            <form action="/users/perfil/<%= usuario.id %>?_method=PUT" method="POST">
+                <label for="">Nombre</label>
+                <input type="text" name="name" value="<%= usuario.name %> ">
+    
+                <label for="">Apellido</label>
+                <input type="text" name="lastname" value="<%= usuario.lastname %>">
+    
+                <label for="">Correo electronico</label>
+                <input type="text" name="email" value="<%= usuario.email %>">
+    
+                <label for="">Numero de documento</label>
+                <input type="text" name="dni" value="<%= usuario.dni %>">
+    
+                <label for="">Numero de telefono</label>
+                <input type="text">
+            
+    
+            <h2>Ubicación</h2>
+    
+                <label for="">Localidad</label>
+                <input type="text" name="country"  value="<%= usuario.country %>">
+    
+                <label for="">Dirección</label>
+                <input type="text" name="address">
+                <button type="submit">Actualizar datos</button>
+            </form>
+       </div>
 
         </section>
     </main>
