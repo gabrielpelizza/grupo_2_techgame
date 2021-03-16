@@ -6,6 +6,8 @@ const {getUsers, setUsers} = require(path.join('..', 'data', 'users'));
 
 const usuarios = getUsers();
 
+let db = require('../database/models')
+
 module.exports = {
     perfil : (req, res) =>{
         res.render('perfil')

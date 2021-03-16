@@ -3,7 +3,7 @@ var router = express.Router();
 const upload = require('../middlewares/subidaImagenes');
 const productValidator = require('../validations/productValidation');
 
-const {createProduct,productModificado,productAlmacenado, crud, deleteProduct, editarProducto,index} = require('../controllers/adminController');
+const {createProduct,productModificado,productAlmacenado, crud, deleteProduct, editarProducto,index, usuario} = require('../controllers/adminController');
 
 router.get('/', index)
 router.get('/productos', crud);

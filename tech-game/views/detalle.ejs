@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
     <%-  include('partials/head') %>
-<!--     <link rel='stylesheet' href='/stylesheets/detalle.css' /> -->
 
 
   <body>
     <%- include('partials/header') %>
 
-    <!-- <div class="container"></div> -->
 
     <main class="detalleproducto">
       
@@ -44,36 +42,11 @@
             </div>
 
 
-            <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="...">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </a>
-            </div>
-          </div> -->
-
-          <!-- 
-          <div class="imagenesbis">
-            <img src="/images/productos/<%= producto.image %>" alt="">
-            <img src="/images/productos/<%= producto.image %>" alt="">
-            <img src="/images/productos/<%= producto.image %>" alt="">
-          </div>  -->
       </div>
       </div>
   
         <div class="definicion">
+          
           <div class="textodekstop">
           <% [productDetail].forEach(producto => { %>
             <h1><%= producto.product_name %></h1>
@@ -97,133 +70,31 @@
 
           <hr class="detalledekstop">
 
-          
+          <div class="precioystock">
           <h2>$<%= toThousand(producto.price - producto.price * producto.discount /100); %></h2>
+        
+          <div class="count">
+          <h3 class="countdetalle">Stock</h3>
+          <input class="inputdetalle" type="number" value="1">
+        </div>
+
+        </div>
+
           <% if(producto.discount != 0){ %> 
           <h3> <i class="fas fa-tag"></i>&nbsp;<%= producto.discount %> % OFF </i></h3>
           <% }  %> 
 
+          
+
           <div class="comprar">
             <button class="comprar" type="submit"><a class="comprar" href=""> Comprar ahora</a> </button> <br>
             <button class="carrito" type="submit"><a class="carrito" href="../carrito"><i class="fas fa-shopping-cart"></i> Agregar al carrito </a></button>
-            <!-- <a href=""><i class="fas fa-shopping-cart"></i> Agregar al carrito</a> -->
           </div>
-         <!--  <div class="detalle">
-
-            <div class="metodospago"> -->
-              <!-- <p>Metodos de pago <br>  <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"> </i> <i class="fab fa-cc-paypal"></i></p>
-               <p><i class="fab fa-cc-visa"></i></p>
-              <p><i class="fab fa-cc-mastercard"></i></p>
-              <p><i class="fab fa-cc-paypal"></i></p> -->
-            <!-- </div>
-            <span><i class="fas fa-credit-card"></i>Precío de lista $<%= toThousand(producto.price) %></span> <br>
-            <span><i class="fas fa-shield-alt"></i>Garantía</span> <br>
-            <span><i class="fas fa-truck"></i>Envíos a toda la Argentina</span> -->
-
-<!--             <div class="metodospago">
-              <span>Metodos de pago <br>  <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"> </i> <i class="fab fa-cc-paypal"></i></span>
-              <p><i class="fab fa-cc-visa"></i></p>
-              <p><i class="fab fa-cc-mastercard"></i></p>
-              <p><i class="fab fa-cc-paypal"></i></p>
-            </div> -->
-
-          <!-- </div> -->
-
-       
-           <!--  <input type="number" value="1">
-
-  
-          <button class="carrito" type="submit"><i class="fas fa-shopping-cart"></i>Agregar al carrito</button>
-  
- -->          <!-- <div class="comprar">
-            <button class="comprar" type="submit">Comprar ahora</button> <br>
-            <button class="carrito" type="submit"><a href="../carrito"><i class="fas fa-shopping-cart"></i> Agregar al carrito </a></button> -->
-            <!-- <a href=""><i class="fas fa-shopping-cart"></i> Agregar al carrito</a> -->
-          <!-- </div> -->
-        <!-- </div> -->
-  
-  <!-- 
-        <div class="entrega">
-          <h3>Formas de entrega</h3>
-          <div class="metodos">
-            <span><a href=""></a><i class="fas fa-store-alt"></i>Retiro en sucursal</span>
-            <span><a href=""></a><i class="fas fa-truck"></i>Envío rapido a toda la Argentina</span>
-          </div>
-        </div> -->
-  
-
-        
-<!--         <div class="definiciones">
- -->
  
 </div>
 
-         <!--  <div class="acordion"> -->
-
-<!--             <div class="seccion1">
-              <input type="radio" name="detalle_acordion" id="seccion1" class="accordion__input">
-              <label for="seccion1" class="accordion__label">Formas de entrega</label>
-
-              <div class="acordioncontenido">
-              <span><i class="fas fa-store-alt"></i>Retiro en sucursal</span> <br>
-              <span><i class="fas fa-truck"></i>Envío rapido a toda la Argentina</span>
-              </div>
-
-            </div> -->
-
-
-        <!--     <div class="seccion2">
-              <input type="radio" name="detalle_acordion" id="seccion2" class="accordion__input">
-              <label for="seccion2" class="accordion__label">Descripción</label>
-
-              <div class="acordioncontenido">
-                <p><%= producto.description %>.</p>
-              </div>
-             </div> -->
-<!-- 
-             <div class="seccion3">
-              <input type="radio" name="detalle_acordion" id="seccion3" class="accordion__input">
-              <label for="seccion3" class="accordion__label">Marca</label>
-
-              <div class="acordioncontenido">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius sit esse perferendis dignissimos, assumenda adipisci mollitia velit sequi vitae magni. A perspiciatis sequi asperiores maiores facilis iure ipsum est neque cumque nostrum adipisci doloremque aspernatur, expedita debitis, quasi, magnam omnis quaerat provident repudiandae dolorum animi? Esse eos deleniti earum laboriosam.</p>
-              </div>
-             </div> -->
-
             </div>
 
-
-            
-
-
-<!--             <div class="acordionitem"><h3>Formas de entrega</h3><i class="fas fa-angle-down"></i></div>
-
-            
-        <div class="entrega">
-          <div class="metodos">
-            <span><a href=""></a><i class="fas fa-store-alt"></i>Retiro en sucursal</span>
-            <span><a href=""></a><i class="fas fa-truck"></i>Envío rapido a toda la Argentina</span>
-          </div>
-        </div>
-
-
-          </div>
-
-          <div class="acordion">
-
-            <div class="acordionitem"><h3>Descripciones</h3></div>
-
-            <div class="acordioncontenido">
-              <p><%= producto.description %>.</p> </div>
- -->
-
-         <!--  </div> -->
-          
-
-
-<!--           <h4>Descripciones</h4> -->
-<!--           <p><%= producto.description %>.</p> -->
-<!--         </div> -->
 
       <% }) %>
 
@@ -256,9 +127,6 @@
               <div class="col-sm-4 col-md-3"><img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="cuarto"></div>
             </div>
           </div>
-<!--           <div class="carousel-item">
-            <img src="/images/productos/img-1613791700390.jpg" class="d-block w-60" alt="">
-          </div> -->
         </div>
       </div>
 
