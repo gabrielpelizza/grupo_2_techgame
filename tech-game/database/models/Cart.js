@@ -25,11 +25,11 @@ module.exports = (sequelize, dataTypes) => {
 
 	const Carrito = sequelize.define(alias,cols,config)
 	
-    Cart.associate = function(modelos){
-        Cart.belongTo(models.Product,{
+/*     cart.associate = function(modelos){
+        cart.belongTo(models.Product,{
             as : 'id'
         });
-    }
+    } */
 
 	return Carrito;
 

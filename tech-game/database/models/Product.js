@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
 
-	let alias = 'products';
-	let cols = {
+	const alias = 'Productos';
+	const cols = {
 		id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
@@ -36,19 +36,20 @@ module.exports = (sequelize, dataTypes) => {
         }
 	};
 
-	let config = {
-		tableName : 'products', /* no es necesario ya que sequelize toma el nombre del archivo pero en plurar como el nombre de la tabla */
+	const config = {
+		tableName : 'products',
 		timestamps: false 
 	}
 
-	const Products = sequelize.define(alias,cols,config)
+	const Product = sequelize.define(alias,cols,config)
 	
-    Product.associate = function(modelos){
-        Product.hasMany(models.Brand,{
-            as : 'brand'
-        });
+    Product.associate = function(models){
+        Product.belongsTo(models.Brands, {
+            as : 'Productos',
+            foreignKey : "brand_id"
+        })
     }
 
-	return Products;
+	return Product;
 
 }
