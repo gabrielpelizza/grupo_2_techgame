@@ -10,49 +10,49 @@
             <form action="" method="get" class="col-12">
                 <input type="search" name="" value="" class="col-6 mb-5 justify-content-left" placeholder="buscar" >
             </form> -->
-            <form class="formEditar" action="/admin/productos/update/<%= producto.id %>/?_method=PUT " method="POST">
+            <form class="formEditar" action="/admin/productos/update/<%= rtaproducto.id %>/?_method=PUT " method="POST">
                 <div>     
                     <h2>Modificar producto</h2>
                 </div>
                 <div class="">
                   <label for="nombre" class="">Nombre: </label>
-                  <input type="text" name="nombre" value="<%= producto.product_name%> " id="nombre">
+                  <input type="text" name="nombre" value="<%= rtaproducto.product_name%> " id="nombre">
                 </div>
                 <div class="">
                     <label for="sku" class="">Sku: </label>
-                    <input type="text" name="sku" value="<%= producto.sku %>" id="sku">
+                    <input type="text" name="sku" value="<%= rtaproducto.sku %>" id="sku">
                   </div>
                   <div class="">
                     <label for="precio" class="">Precio: </label>
-                    <input type="text" name="precio" value="<%= producto.price %>" id="precio">
+                    <input type="text" name="precio" value="<%= rtaproducto.price %>" id="precio">
                   </div>
                   <div class="">
                     <label for="stock" class="">Stock: </label>
-                    <input type="text" name="stock" value="<%= producto.stock %>" id="stock">
+                    <input type="text" name="stock" value="<%= rtaproducto.stock %>" id="stock">
                   </div>
                   <div class="">
                     <label for="descuento" class="">Descuento: </label>
-                    <input type="text" name="descuento" value="<%= producto.discount %>" id="descuento">
+                    <input type="text" name="descuento" value="<%= rtaproducto.discount %>" id="descuento">
                   </div>
                   <div>
                     <select name="categoria" id="">
-                        <option value="">Categoria</option>
-                        <option value="">--</option>
-                        <option value="">---</option>
+                      <% rtacategorias.forEach(cadacategoria => { %>
+                        <option <%= cadacategoria.id == rtaproducto.category_id ? 'selected' : null %> value="<%= cadacategoria.id %>"  > <%= cadacategoria.category %> </option>
+                     <% }) %> 
                     </select>
                   
                   
                     <select name="marca" id="">
-                        <option value="">Marca</option>
-                        <option value="">--</option>
-                        <option value="">---</option>
+                      <% rtamarcas.forEach(cadamarca => { %>
+                           <option <%= cadamarca.id == rtaproducto.brand_id ? 'selected' : null %> value="<%= cadamarca.id %>"  > <%= cadamarca.brand %> </option>
+                      <% }) %> 
                     </select>
                   </div>
                    
 
                   <div class="">
                     <label for="Descripcion" class="">Descripcion: </label> <br>
-                    <textarea name="descripcion" id="descripcion" cols="60" rows="4"><%= producto.description %>
+                    <textarea name="descripcion" id="descripcion" cols="60" rows="4"><%= rtaproducto.description %>
                     </textarea>
                   </div>
                   <div class="">

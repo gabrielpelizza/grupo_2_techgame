@@ -6,7 +6,7 @@
     <main>
         <div class="contenedor-crear container col-12 mt-5">
             <h2 class="col-12 mb-5">Agregar producto</h2>
-            <form action="/admin/productos/create" method="POST" enctype="multipart/form-data">
+            <form action="/admin/productos/create" method="POST" enctype="multipart/form-data"> 
                 <input type="text" name="nombre" id="nombre" value="" class="col-3 mb-2" placeholder="Nombre">
                 <input type="text" name="precio" id="precio" value="" class="col-3 mb-3" placeholder="Precio">
                 <input type="text" name="sku" id="sku" value="" class="col-3 mb-3" placeholder="SKU">
@@ -31,6 +31,14 @@
                 <input type="file" name="img" value="" id="img" class="col-3 mb-3">
                 <textarea name="descripcion" id="descripcion" cols="90%" rows="5" class="col-9 mb-5" placeholder="Ingresa descripcion de l producto"></textarea>
 
+                <% if (typeof errores != 'undefined') { %>
+                    <ul>
+                        <% errores.forEach(cadaerror => { %>
+                         <li class="text-danger"> - <%= cadaerror.msg %>   </li>
+                       <% }); %>
+                    </ul>
+                <% } %>
+                
                 <button type="submit" class="btn btn-success col-9 justify-content-center mb-2">Agregar producto</button>
                 <a href="/admin/productos" class="btn btn-danger col-9 justify-content-center mb-5">Cancelar</a>
 
