@@ -55,14 +55,14 @@ module.exports = (sequelize, dataTypes) => {
     Product.associate = function(models){
 
         Product.belongsTo(models.Brands, {
-            as : 'Productos',  //aca no iria marcas  como alias?
+            as : 'marcas',  //aca no iria marcas  como alias?
             foreignKey : "brand_id"
         })
-/*
+
         Product.belongsTo(models.categories,{
             as : 'categorias',
             foreignKey :'category_id'
-        }) ¿aca no va la otra asocion de categorias? */
+        })
     }  
 
 	return Product;

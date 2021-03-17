@@ -19,7 +19,16 @@ module.exports = {
     res.render('admin/index'); //home de administracion
   },
   crud : (req, res, next)=>{ //panel de control de productos
-      db.Productos.findAll()
+      db.Productos.findAll({
+        include : [
+          {
+          association : 'categorias'
+          },
+          {
+            association : 'marcas'
+          }
+
+      ]  })
           .then((productos)=>{
               res.render('admin/panelProduct', {
                 productos,
