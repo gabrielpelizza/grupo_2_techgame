@@ -19,8 +19,16 @@ module.exports = {
     },
 
     detalle : (req, res)=>{
-
-        let productDetail = product.find(producto =>{
+        db.Productos.findByPk(req.params.id)
+        .then(producto =>{
+            return res.render('detalle', {
+                title: 'Producto',
+                producto,
+                toThousand
+            })
+        })
+        .catch(error => res.send(error))
+        /* let productDetail = product.find(producto =>{
             return producto.id === +req.params.id
         })
         
@@ -29,7 +37,7 @@ module.exports = {
             productDetail,
             toThousand
 
-        });
+        }); */
       },
     carrito : (req, res, next)=>{
         res.render('miCarrito', { title: 'Express' });
