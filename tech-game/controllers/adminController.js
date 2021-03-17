@@ -62,7 +62,20 @@ module.exports = {
     })
     .then(() => res.redirect('/admin/productos'))
     .catch(error => res.send(error))
-  }
+  },
+  editProduct : (req,res)=>{
+     let categorias = db.categories.findAll();
+     let marcas = db.Brands.findAll();
+
+     let producto = db.Productos.findByPk(req.params.id);
+    Promise.all([categorias,marcas,producto])
+    .then(([rtacategorias,rtamarcas,rtaproducto])=>{
+      res.render('admin/editProduct',{
+        rtacategorias,rtamarcas,rtaproducto
+      })
+    })
+    .catch(error=>console.log(error))
+    }
 
 /*     productAlmacenado : (req,res,next)=>{ //cumple la accion de almacenar lo agregado
 
