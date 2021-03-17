@@ -56,20 +56,21 @@ module.exports = {
   },
 
   productAlmacenado:(req,res)=>{
+  
     const {nombre,precio,sku,stock,descripcion,descuento, marcas, categoria, img} = req.body;
 
     db.Productos.create({
       product_name : nombre,
-      price : precio,
-      sku : sku,
-      stock : stock,
-      discount : descuento,
-      brand_id : marcas,
-      category_id : categoria,
+      price : +precio,
+      sku : +sku,
+      stock : +stock,
+      discount : +descuento,
+      brand_id : +marcas,
+      category_id : +categoria,
       description : descripcion
       /* image : "2323333.jpg" */
     }).catch(error => console.log(error))
-    res.redirect('/')
+    res.redirect('/admin/productos')
   },
   deleteProduct : (req, res) =>{
     db.Productos.destroy({
@@ -78,13 +79,14 @@ module.exports = {
       }
     })
     .then(() => res.redirect('/admin/productos'))
-    .catch(error => res.send(error))
+    .catch(error => console.log(error))
   },
   editProduct : (req,res)=>{
      let categorias = db.categories.findAll();
      let marcas = db.Brands.findAll();
 
      let producto = db.Productos.findByPk(req.params.id);
+
     Promise.all([categorias,marcas,producto])
     .then(([rtacategorias,rtamarcas,rtaproducto])=>{
       res.render('admin/editProduct',{
@@ -92,6 +94,27 @@ module.exports = {
       })
     })
     .catch(error=>console.log(error))
+    },
+    productModificado : (req,res)=>{
+      const {nombre,precio,sku,stock,descripcion,descuento, marca, categoria, img} = req.body;
+
+      db.Productos.update({
+        product_name : nombre,
+        price : +precio,
+        sku : +sku,
+        stock : +stock,
+        discount : +descuento,
+        brand_id : +marca,
+        category_id : +categoria,
+        description : descripcion
+        //images : img
+      },{
+        where : {
+          id : req.params.id
+        }
+      }).then(()=>{
+        return res.redirect('/admin/productos')
+      }).catch(error=>console.log(error))
     }
 
 /*     productAlmacenado : (req,res,next)=>{ //cumple la accion de almacenar lo agregado
