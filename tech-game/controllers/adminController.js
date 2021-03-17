@@ -39,7 +39,7 @@ module.exports = {
   },
 
   productAlmacenado:(req,res)=>{
-    const {nombre,precio,sku,stock,descuento,brand_id} = req.body;
+    const {nombre,precio,sku,stock,descuento,brand_id, img} = req.body;
 
     db.Productos.create({
       product_name : nombre,
@@ -47,8 +47,8 @@ module.exports = {
       sku : sku,
       stock : stock,
       discount : descuento,
-      brand_id : 1,
-      image : "2323333.jpg"
+      brand_id : brand_id,
+      /* image : "2323333.jpg" */
     }).catch(error => console.log(error))
     res.redirect('/')
   },
