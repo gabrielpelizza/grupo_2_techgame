@@ -39,7 +39,7 @@ module.exports = {
   },
 
   productAlmacenado:(req,res)=>{
-    const {nombre,precio,sku,stock,descuento, descripcion, marcas, categoria, img} = req.body;
+    const {nombre,precio,sku,stock,descripcion,descuento, marcas, categoria, img} = req.body;
 
     db.Productos.create({
       product_name : nombre,
