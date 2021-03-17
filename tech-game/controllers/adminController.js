@@ -19,8 +19,16 @@ module.exports = {
     res.render('admin/index'); //home de administracion
   },
   crud : (req, res, next)=>{ //panel de control de productos
+      db.Productos.findAll()
+          .then((productos)=>{
+              res.render('admin/panelProduct', {
+                productos,
+                toThousand
+              });
+      
+  /* },
       res.render('admin/panelProduct', {
-        productos
+        productos */
       });
   },
   createProduct :(req,res)=>{ //muestra el formulario de agregar  con algunos valores de l base de datos
