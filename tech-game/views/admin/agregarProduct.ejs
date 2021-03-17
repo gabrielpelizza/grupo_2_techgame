@@ -13,29 +13,24 @@
                 <input type="text" name="stock" id="stock" value="" class="col-3 mb-3" placeholder="stock">
                 <input type="text" name="descuento" id="descuento" value="" class="col-3 mb-3" placeholder="con o sin descuento">
                 <input type="text" name="detalle" id="detalle" value="" class="col-3 mb-3"  placeholder="Detalle">
+
                 <select name="categoria" id="categoria" class="col-3">
+
                     <option disabled="enable" selected>Categoria</option>
-                    <option id="accesorios" value="acceesorios">accesorios</option>
-                    <option id="componentes" value="componentes">componentes</option>
-                    <option id="juegos" value="juegos">juegos</option>
+                        <% rtacategorias.forEach(cadacategoria => { %>
+                          <option id=""value=""><%= cadacategoria.category %> </option>
+                        <% }) %>
                 </select>
 
                 <select name="marcas" id="marcas" class="col-3">
                     <option disabled="enable" selected>Marcas</option>
-                    <option id="hyper-x" value="hyper-x">hyper x</option>
-                    <option id="noga" value="noga">noga</option>
-                    <option id="aorus" value="aorus">aorus</option>
+                    <% rtamarcas.forEach(cadamarca=>{ %> 
+                        <option id=""value=""><%= cadamarca.brand %> </option>
+                    <% }) %> 
                 </select>
+
                 <input type="file" name="img" value="" id="img" class="col-3 mb-3">
                 <textarea name="descripcion" id="descripcion" cols="90%" rows="5" class="col-9 mb-5" placeholder="Ingresa descripcion de l producto"></textarea>
-
-                <% if (typeof errores != 'undefined') { %>
-                    <ul>
-                        <% errores.forEach(cadaerror => { %>
-                         <li class="text-danger"> - <%= cadaerror.msg %>   </li>
-                       <% }); %>
-                    </ul>
-                <% } %>
 
                 <button type="submit" class="btn btn-success col-9 justify-content-center mb-2">Agregar producto</button>
                 <a href="/admin/productos" class="btn btn-danger col-9 justify-content-center mb-5">Cancelar</a>

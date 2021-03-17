@@ -23,8 +23,19 @@ module.exports = {
         productos
       });
   },
-  createProduct :(req,res)=>{ //muestra el formulario de agregar producto
-    res.render('admin/agregarProduct');
+  createProduct :(req,res)=>{ //muestra el formulario de agregar  con algunos valores de la base de datos, como la sopciones de las categorias y marcas
+    
+    let categorias = db.categories.findAll()
+    
+    let marcas = db.Brands.findAll()
+    
+    Promise.all([categorias,marcas])
+    .then( ([rtacategorias,rtamarcas])=>{
+      return res.render('admin/agregarProduct',{
+        rtacategorias,
+        rtamarcas
+      });
+    }).catch(error=>console.log(error))
   },
 
   productAlmacenado:(req,res)=>{

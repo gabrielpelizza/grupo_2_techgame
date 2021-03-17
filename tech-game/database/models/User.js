@@ -4,7 +4,7 @@ module.exports = (sequelize, datatypes) => {
 
     const cols = {
         id : {
-            type: datatypes.INTEGER(11),
+            type: datatypes.INTEGER,
             primaryKey : true,
             allowNull : false,
             autoIncrement : true
@@ -22,7 +22,7 @@ module.exports = (sequelize, datatypes) => {
             allowNull : false
         },
         dni : {
-            type : datatypes.INTEGER(11),
+            type : datatypes.INTEGER,
             allowNull : false
         },
         country : {
@@ -30,11 +30,11 @@ module.exports = (sequelize, datatypes) => {
             allowNull : false
         },
         password : {
-            type : datatypes.STRING(45),
+            type : datatypes.STRING(200),
             allowNull : false
         },
         rol_id : {
-            type : datatypes.INTEGER(11),
+            type : datatypes.INTEGER,
             allowNull : false
         }
     }

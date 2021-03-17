@@ -5,10 +5,11 @@ module.exports = (sequelize, dataTypes) => {
 		id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
 		},
 		product_name:{
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(45),
             allowNull : false
 		} ,
         sku : {
@@ -25,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
         } ,
         discount : {
             type: dataTypes.INTEGER,
-            allowNull : false
+            allowNull : true
         } ,
         brand_id : {
             type: dataTypes.INTEGER,
@@ -33,6 +34,11 @@ module.exports = (sequelize, dataTypes) => {
         } ,
         image : {
             type: dataTypes.STRING,
+            allowNull: true
+        } ,
+        category_id : {
+            type : dataTypes.INTEGER,
+            allowNull: false
         }
 	};
 
@@ -44,11 +50,17 @@ module.exports = (sequelize, dataTypes) => {
 	const Product = sequelize.define(alias,cols,config)
 	
     Product.associate = function(models){
+
         Product.belongsTo(models.Brands, {
-            as : 'Productos',
+            as : 'Productos',  //aca no iria marcas  como alias?
             foreignKey : "brand_id"
         })
-    }
+/*
+        Product.belongsTo(models.categories,{
+            as : 'categorias',
+            foreignKey :'category_id'
+        }) ¿aca no va la otra asocion de categorias? */
+    }  
 
 	return Product;
 

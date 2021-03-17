@@ -10,10 +10,6 @@ module.exports = (sequelize,dataTypes)=>{
         brand : {
             type : dataTypes.STRING(45),
             allowNull : false
-        },
-        category_id : {
-            type : dataTypes.INTEGER,
-            allowNull: false
         }
 
     }
@@ -27,7 +23,7 @@ module.exports = (sequelize,dataTypes)=>{
 
     Brand.associate = function(models){
         Brand.hasMany(models.Productos, {
-            as:'Productos',
+            as:'productos',
             foreignKey : 'brand_id'
         })
     }
