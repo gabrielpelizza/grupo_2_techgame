@@ -14,18 +14,18 @@
                 <input type="text" name="descuento" id="descuento" value="" class="col-3 mb-3" placeholder="con o sin descuento">
                 <input type="text" name="detalle" id="detalle" value="" class="col-3 mb-3"  placeholder="Detalle">
 
-                <select name="categoria" id="categoria" class="col-3">
+                <select name="categorias" id="categoria" class="col-3">
 
                     <option disabled="enable" selected>Categoria</option>
                         <% rtacategorias.forEach(cadacategoria => { %>
-                          <option id=""value=""><%= cadacategoria.category %> </option>
+                          <option id=""value="<%= cadacategoria.id %>"> <%= cadacategoria.category %> </option>
                         <% }) %>
                 </select>
 
                 <select name="marcas" id="marcas" class="col-3">
                     <option disabled="enable" selected>Marcas</option>
                     <% rtamarcas.forEach(cadamarca=>{ %> 
-                        <option id=""value=""><%= cadamarca.brand %> </option>
+                        <option id=""value="<%= cadamarca.id %>"> <%= cadamarca.brand %> </option>
                     <% }) %> 
                 </select>
 
