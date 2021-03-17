@@ -12,7 +12,7 @@ router.get('/productos/create',createProduct) //muestra el formulario crear prod
 
 router.post('/productos/create', upload.any(), productValidator, productAlmacenado)//cumple la accion de almacenar el producto agregado
 
-/* router.delete('/productos/delete/:id', deleteProduct) */ //cumple la accion de eliminar producto
+ router.delete('/productos/delete/:id', deleteProduct)  //cumple la accion de eliminar producto
 
 /* router.get('/productos/editar/:id', editarProducto) */ //muestra vista con datos de producto 
 /* router.put('/productos/update/:id',productModificado); */
