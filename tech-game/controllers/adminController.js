@@ -40,6 +40,15 @@ module.exports = {
       image : "2323333.jpg"
     }).catch(error => console.log(error))
     res.redirect('/')
+  },
+  deleteProduct : (req, res) =>{
+    db.Productos.destroy({
+      where : {
+        id : req.params.id
+      }
+    })
+    .then(() => res.redirect('/admin/productos'))
+    .catch(error => res.send(error))
   }
 
 /*     productAlmacenado : (req,res,next)=>{ //cumple la accion de almacenar lo agregado
