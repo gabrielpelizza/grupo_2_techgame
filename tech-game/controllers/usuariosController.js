@@ -132,14 +132,17 @@ module.exports = {
     },
     //---------------- operacion con el perfil del usuario-------------------
     perfilUser:(req,res)=>{
-        const usuario = usuarios.find(cadauser=>cadauser.id === +req.params.id);
-        res.render('perfil',{
-            usuario
-        });
+        db.Usuarios.findByPk(req.params.id)
+        .then(usuario =>{
+            return res.render('perfil', {
+                usuario
+            })
+        })
+        .catch(error => res.send(error))
     },
     perfilEditadoUser:(req,res)=>{
 
-        const {name, lastname, email, dni, country} = req.body
+         const {name, lastname, email, dni, country} = req.body
 
         db.Usuarios.update({
             name,
@@ -155,8 +158,9 @@ module.exports = {
         })
 
         .then(() =>{
-            return res.redirect('perfil')
+            return res.redirect('/users/perfil/' + req.params.id)
         })
+        .catch(error => res.send(error))
         /* const {name,lastname,email,dni,country} = req.body;
 
         usuarios.forEach(user=>{

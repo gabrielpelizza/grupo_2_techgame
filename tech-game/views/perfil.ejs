@@ -11,19 +11,18 @@
         <h2>Perfil</h2>
         
 
-        <form action="">
-            <form action="/users/perfil/<%= usuario.id %>?_method=PUT" method="POST">
+            <form action="/users/perfil/<%= user.id %>?_method=PUT" method="POST">
                 <label for="">Nombre</label>
-                <input type="text" name="name" value="<%= usuario.name %> ">
+                <input type="text" name="name" value="<%= user.name %>">
     
                 <label for="">Apellido</label>
-                <input type="text" name="lastname" value="<%= usuario.lastname %>">
+                <input type="text" name="lastname" value="<%= user.lastname %>">
     
                 <label for="">Correo electronico</label>
-                <input type="text" name="email" value="<%= usuario.email %>">
+                <input type="text" name="email" value="<%= user.email %>">
     
                 <label for="">Numero de documento</label>
-                <input type="text" name="dni" value="<%= usuario.dni %>">
+                <input type="text" name="dni" value="<%= user.dni %>">
     
                 <label for="">Numero de telefono</label>
                 <input type="text">
@@ -32,7 +31,7 @@
             <h2>Ubicación</h2>
     
                 <label for="">Localidad</label>
-                <input type="text" name="country"  value="<%= usuario.country %>">
+                <input type="text" name="country"  value="<%= user.country %>">
     
                 <label for="">Dirección</label>
                 <input type="text" name="address">

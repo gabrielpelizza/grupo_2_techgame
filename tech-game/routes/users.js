@@ -23,6 +23,6 @@ router.get('/cerrarSesion',checkUser, usuariosController.cerrarSesion)
 
 
 router.get('/perfil/:id',checkUser,usuariosController.perfilUser)
-router.put('/perfil',usuariosController.perfilEditadoUser);
+router.put('/perfil/:id',usuariosController.perfilEditadoUser);
 
 module.exports = router;
