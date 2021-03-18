@@ -19,10 +19,17 @@ module.exports = {
 
         const erroresValidacion = validationResult(req);
 
+        if(!erroresValidacion.isEmpty()){
+            return res.render('registro',{
+                errores : erroresValidacion.mapped(),
+                old : req.body
+            })
+        } else {
+
 /*         res.send(erroresValidacion)  /* para ver que me manda */
 
 
-        if(erroresValidacion.isEmpty()){
+      /*   if(erroresValidacion.isEmpty()){ */
             const {name, lastname, email, dni, country, password} = req.body
 
             db.Usuarios.create({   /* se pone el nombre de la columna de la tabla */
@@ -40,11 +47,11 @@ module.exports = {
 
 
 
-        } else {
+       /*  } else {
             return res.render('registro',{
                 errores : erroresValidacion.mapped(),
                 old : req.body
-            })
+            }) */
         }
 
 
