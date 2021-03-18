@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %> 
+<body>
+    <%- include('partials/header') %> 
+    <main>
+        <div class="contenedor-crear mb-5 col-12 mb-5 mt-5 container">
+            <h2 class="col-12 mb-5 center">Listado de Administradores</h2>
+            <a href="/admin/usuarios/create" class="btn btn-success mb-5 mr-2 ">Agregar Administrador</a>
+            <button class="btn btn-success mb-5" onclick="myFunction()">buscar  <i class="fas fa-search"></i></button>
+            <div class="scroll">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Dni</th>
+                        <th>Pais</th>
+                        <th>Rol</th>
+                        <th>Operaciones</th>
+                    </tr>
+                
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><form action="" class="d-inline p-2">
+                                <a href="/admin/usuarios/edit"  class="btn btn-success">Editar</a>
+                            </form>
+                            <form method="" class="d-inline p-2">
+                                <button class="btn btn-danger" type="submit">eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                  
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <%- include('partials/scripts') %> 
+    <script>
+        function myFunction() {
+         
+            var search = prompt("Termino de busqueda:");
+            if (search == null || search == "") {
+                alert("User cancelled");
+            } else {
+                find(search)
+            }
+           
+        }
+    </script>
+</body>
+</html>

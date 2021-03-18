@@ -41,14 +41,9 @@
             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.documento ? errores.documento.msg : null)%></span>
         </section>
 
+    
         <section>
-            <label for="">País de residencia</label>
-            <%- include('partials/paises') %> 
-            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.paises ? errores.paises.msg : null)%></span>
-        </section>
-
-        <section>
-            <label for="">Localidad</label>
+            <label for="">Pais</label>
             <input type="text" placeholder="Localidad" name="country">
             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.country ? errores.country.msg : null)%></span>
         </section>
