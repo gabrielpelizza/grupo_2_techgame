@@ -3,7 +3,7 @@ var router = express.Router();
 const upload = require('../middlewares/subidaImagenes');
 const productValidator = require('../validations/productValidation');
 
-const {createProduct,productModificado,productAlmacenado, crud, deleteProduct,index, usuario, editProduct} = require('../controllers/adminController');
+const {createProduct,productModificado,productAlmacenado, crud, deleteProduct,index, usuario, editProduct,admincrud,createAdmin,editAdmin} = require('../controllers/adminController');
 
 router.get('/', index)
 router.get('/productos', crud);
@@ -17,4 +17,11 @@ router.delete('/productos/delete/:id', deleteProduct)  //cumple la accion de eli
  router.get('/productos/editar/:id', editProduct)  //muestra vista con datos de producto 
  router.put('/productos/update/:id',productModificado); 
 
+
+
+ //-----------------usuarios crud-------
+
+ router.get('/usuarios', admincrud)
+ router.get('/usuarios/create',createAdmin)
+ router.get('/usuarios/edit',editAdmin)
 module.exports = router;

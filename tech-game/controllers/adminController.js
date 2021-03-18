@@ -115,6 +115,16 @@ module.exports = {
       }).then(()=>{
         return res.redirect('/admin/productos')
       }).catch(error=>console.log(error))
+    },
+    //-----------------------------USUARIOS CRUD-------------------
+    admincrud : (req,res)=>{
+      res.render('admin/panelAdmin');
+    },
+    createAdmin : (req,res)=>{
+      res.render('admin/agregarAdmin');
+    },
+    editAdmin : (req,res)=>{
+      res.render('admin/editarAdmin')
     }
 
 /*     productAlmacenado : (req,res,next)=>{ //cumple la accion de almacenar lo agregado

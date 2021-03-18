@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %> 
+<body>
+    <%- include('partials/header') %> 
+    <main>
+        <div class="contenedor-crear container col-12 mt-5">
+            <h2 class="col-12 mb-5">Agregar Usuario</h2>
+            <form action="" method="POST" enctype="multipart/form-data"> 
+                <input type="text" name="nombre" id="nombre" value="" class="col-3 mb-2" placeholder="Nombre">
+
+                <input type="text" name="apellido" id="apellido" value="" class="col-3 mb-3" placeholder="Apellido">
+
+                <input type="email" name="email" id="email" value="" class="col-3 mb-3" placeholder="Email">
+
+                <input type="text" name="dni" id="dni" value="" class="col-3 mb-3" placeholder="Dni">
+                <input type="text" name="pais" id="pais" value="" class="col-3 mb-3" placeholder="País">
+                
+                <select name="rol" id="rol">
+                    <option value="">Rol</option>
+                </select>
+
+
+                
+                <button type="submit" class="btn btn-success col-9 justify-content-center mb-2">Agregar</button>
+                <a href="/admin/usuarios" class="btn btn-danger col-9 justify-content-center mb-5">Cancelar</a>
+
+            </form>
+        </div>
+    </main>
+
+<%- include('partials/scripts') %> 
+</body>
+</html>
