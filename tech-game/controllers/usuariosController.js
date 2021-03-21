@@ -32,18 +32,16 @@ module.exports = {
       /*   if(erroresValidacion.isEmpty()){ */
             const {name, lastname, email, dni, country, password} = req.body
 
-            db.Usuarios.create({   /* se pone el nombre de la columna de la tabla */
-                name : name.trim(),
-                lastname : lastname.trim(),
-                email,
-                dni : dni.trim(),
-                country : country.trim(),
-                password : bcrypt.hashSync(password, 10),
-                rol_id : 2
-            })
-
-            .then(()=> res.redirect('/users/login'))
-            .catch(error => res.send(error))
+            db.Usuarios.create({
+              name,
+              lastname,
+              email,
+              dni,
+              country,
+              password : bcrypt.hashSync(password, 10),
+              rol_id : 2
+            }).catch(error => console.log(error))
+            res.redirect('/users/login')
 
 
 
@@ -152,11 +150,11 @@ module.exports = {
          const {name, lastname, email, dni, country} = req.body
 
         db.Usuarios.update({
-            name,
-            lastname,
-            email,
-            dni,
-            country
+            name : name.trim(),
+            lastname : lastname.trim(),
+            email :email.trim(),
+            dni : +dni,
+            country : country.trim()
         },
         {
             where : {
@@ -165,7 +163,7 @@ module.exports = {
         })
 
         .then(() =>{
-            return res.redirect('/users/perfil/' + req.params.id)
+            res.redirect('/')
         })
         .catch(error => res.send(error))
         /* const {name,lastname,email,dni,country} = req.body;

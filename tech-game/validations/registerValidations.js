@@ -11,6 +11,7 @@ module.exports = [
 
     check('email')
     .notEmpty()
+    .isEmail()
     .withMessage('Debes completar el campo email'),
 
     check('dni')
@@ -21,10 +22,6 @@ module.exports = [
       max : 8
     })
     .withMessage('Tiene que ser un dni valido'),
-
-    check('pais')
-    .notEmpty()
-    .withMessage('Debes seleccionar un país'),
 
     check('country')
     .notEmpty()
