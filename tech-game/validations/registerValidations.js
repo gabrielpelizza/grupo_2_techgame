@@ -22,10 +22,10 @@ module.exports = [
     })
     .withMessage('Tiene que ser un dni valido'),
 
-    check('pais')
+ /*    check('pais')
     .notEmpty()
     .withMessage('Debes seleccionar un país'),
-
+ */
     check('country')
     .notEmpty()
     .withMessage('Debes completar el campo localidad'),

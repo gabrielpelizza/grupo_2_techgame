@@ -34,13 +34,13 @@ module.exports = {
                 password : bcrypt.hashSync(password, 10),
                 rol_id : 2
             })
-
             .then(()=> res.redirect('/users/login'))
-            .catch(error => res.send(error))
+            .catch(error => console.log(error))
 
 
 
         } else {
+            console.log(erroresValidacion)
             return res.render('registro',{
                 errores : erroresValidacion.mapped(),
                 old : req.body

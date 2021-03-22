@@ -30,7 +30,7 @@ module.exports = (sequelize, datatypes) => {
             allowNull : false
         },
         password : {
-            type : datatypes.STRING(200),
+            type : datatypes.STRING(100),
             allowNull : false
         },
         rol_id : {
