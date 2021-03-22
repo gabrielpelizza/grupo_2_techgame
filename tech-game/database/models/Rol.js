@@ -16,7 +16,7 @@ module.exports = (sequelize, datatypes) => {
     }
 
     const config = {
-        tablename : 'roles',
+        tableName : 'roles',
         timestamps : false
     }
 

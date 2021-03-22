@@ -19,10 +19,18 @@ module.exports = {
 
         const erroresValidacion = validationResult(req);
 
+        if(!erroresValidacion.isEmpty()){
+            return res.render('registro',{
+                errores : erroresValidacion.mapped(),
+                old : req.body
+            })
+        } else {
+
 /*         res.send(erroresValidacion)  /* para ver que me manda */
 
-
-        if(erroresValidacion.isEmpty()){
+        }
+        
+      if(erroresValidacion.isEmpty()){
             const {name, lastname, email, dni, country, password} = req.body
 
             db.Usuarios.create({   /* se pone el nombre de la columna de la tabla */
@@ -145,11 +153,11 @@ module.exports = {
          const {name, lastname, email, dni, country} = req.body
 
         db.Usuarios.update({
-            name,
-            lastname,
-            email,
-            dni,
-            country
+            name : name.trim(),
+            lastname : lastname.trim(),
+            email :email.trim(),
+            dni : +dni,
+            country : country.trim()
         },
         {
             where : {
@@ -158,7 +166,7 @@ module.exports = {
         })
 
         .then(() =>{
-            return res.redirect('/users/perfil/' + req.params.id)
+            res.redirect('/')
         })
         .catch(error => res.send(error))
         /* const {name,lastname,email,dni,country} = req.body;

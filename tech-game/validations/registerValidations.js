@@ -11,6 +11,7 @@ module.exports = [
 
     check('email')
     .notEmpty()
+    .isEmail()
     .withMessage('Debes completar el campo email'),
 
     check('dni')
