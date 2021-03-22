@@ -25,11 +25,9 @@ module.exports = {
                 old : req.body
             })
         } else {
-
 /*         res.send(erroresValidacion)  /* para ver que me manda */
-
         }
-        
+
       if(erroresValidacion.isEmpty()){
             const {name, lastname, email, dni, country, password} = req.body
 
@@ -94,37 +92,47 @@ module.exports = {
     processLogin : (req,res)=>{ 
         let errores = validationResult(req);
         
-        if(!errores.isEmpty()){
-            return res.render('login',{
-                errores: errores.errors
-            })
-        }else{
+        if(errores.isEmpty()){ 
+
             const {email,password,recordar} = req.body;
 
-            let result  = usuarios.find(user => user.email === email);
-
-            if(result){
-                if(bcrypt.compareSync(password.trim(),result.password)){
-
-                    req.session.user = {
-                        id : result.id,
-                        username : result.name,
-                    }
-
-                    if(recordar){
-                        res.cookie('techGame', req.session.user,{
-                            maxAge : 1000 * 60
-                        })
-                    }
-                    res.redirect('/');
+            db.Usuarios.findOne({
+                where: {
+                    email : email,
                 }
-            }
-            return res.render('login',{
-                errores : [
-                    {
-                        msg : "credenciales invalidas"
+            })
+            .then(usuario => {
+                return result = usuario
+            })
+            .then(result => {
+                if(result){
+                    if(bcrypt.compareSync(password.trim(),result.password)){
+    
+                        req.session.user = {
+                            id : result.id,
+                            username : result.name,
+                        }
+    
+                        if(recordar){
+                            res.cookie('techGame', req.session.user,{
+                                maxAge : 1000 * 60
+                            })
+                        }
+                        res.redirect('/');
                     }
-                ]
+                }
+                return res.render('login',{
+                    errores : [
+                        {
+                            msg : "credenciales invalidas"
+                        }
+                    ]
+                })
+            }).catch(error => console.log(error))         
+            
+        }else{
+            return res.render('login',{
+                errores: errores.errors
             })
         }
     },
