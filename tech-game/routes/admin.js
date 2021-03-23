@@ -5,16 +5,19 @@ const productValidator = require('../validations/productValidation');
 
 const {createProduct,productModificado,productAlmacenado, crud, deleteProduct,index, usuario, editProduct,admincrud,createAdmin,editAdmin} = require('../controllers/adminController');
 
-router.get('/', index)
-router.get('/productos', crud);
 
-router.get('/productos/create',createProduct) //muestra el formulario crear producto
+const checAdmin = require('../middlewares/checkUsers');
 
-router.post('/productos/create', upload.any(), productValidator, productAlmacenado)//cumple la accion de almacenar el producto agregado
+router.get('/', checAdmin,index)
+router.get('/productos',checAdmin, crud);
 
-router.delete('/productos/delete/:id', deleteProduct)  //cumple la accion de eliminar producto
+router.get('/productos/create',checAdmin,createProduct) //muestra el formulario crear producto
 
- router.get('/productos/editar/:id', editProduct)  //muestra vista con datos de producto 
+router.post('/productos/create',checAdmin, upload.any(), productValidator, productAlmacenado)//cumple la accion de almacenar el producto agregado
+
+router.delete('/productos/delete/:id',checAdmin, deleteProduct)  //cumple la accion de eliminar producto
+
+ router.get('/productos/editar/:id',checAdmin, editProduct)  //muestra vista con datos de producto 
  router.put('/productos/update/:id',productModificado); 
 
 

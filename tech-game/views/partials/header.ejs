@@ -40,10 +40,11 @@
                   <div class="lista col-lg-6 row">
                         <li><a href="/">home</a></li>
                         <li><a href="/productos">Productos</a></li>
-                        <% if (typeof user == 'undefined' ) { %>
-
-                        <% } else { %>
-                            <!-- <li>
+                        
+                        <% if ( typeof user == "undefined") { %>
+                           <h1>no sos nadie</h1>
+                        <%} else if (user.rol_id == 1 ){%>
+                             <!-- <li>
                                 <select name="" id="" class="opciones">
                                     mi cuenta
                                     <option value="" disabled>Mi cuenta</option>
@@ -52,13 +53,9 @@
                                 </select>
                             </li> -->
                             
-                            <li>
-                                <select class="dropdown-item opciones" aria-labelledby="dropdownMenuButton">
-                                  <option value=""class="dropdown-item"><a class="" href="#">Mi cuenta</a></option>
-                                  <option value=""class="dropdown-item"><a class="" href="">Perfil</a></option>
-                                  
-                                </select>
-                            </li>
+                            <li><a class="" href="#">Mi cuenta</a></li>
+                            <li><a class="" href="">Perfil</a></li>   
+                            <li><a class="" href="/admin">Panel de control</a></option></li>
                            <!--  <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                   Usuario
@@ -69,7 +66,19 @@
                                   <li><a class="dropdown-item" href="/admin/cerrarSesion">Cerrar sesion</a></li>
                                 </ul>
                             </li> -->
-                         <% } %>
+                        <% } else if (user.rol_id == 2 ){%>
+                            <h1>hola</h1>
+                            <li>
+                                <select class="dropdown-item opciones" aria-labelledby="dropdownMenuButton">
+                                  <option value=""class="dropdown-item"><a class="" href="#">Mi cuenta</a></option>
+                                  <option value=""class="dropdown-item"><a class="" href="">Perfil</a></option>
+                                  
+                                </select>
+                            </li>
+
+                        <% } else { %>
+                            <h1>nada</h1   
+                        <% } %>
                   </div>
                   
               </ul>
