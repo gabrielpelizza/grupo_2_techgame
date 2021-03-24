@@ -1329,6 +1329,18 @@ main.detalleproducto{
   border-bottom: 1px solid #949494;
 }
 
+.formulario input#recordar{
+  width: 20px;
+  margin-right: 10px;
+}
+
+.formulario .recordar{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+
+}
+
 .formulario a{
   margin: 0 auto;
   text-decoration: none;
