@@ -8,69 +8,68 @@
     <div class="registrobody"></div>
     <div class="registrar">
 
-    <h1>Creá tu cuenta</h1>
-    
-    <div class="registro">
-
-    <hr width="100%">
-    <h3>Completa tus datos personales</h3>
-    <hr width="100%">
-
-        <form action="" method="POST">
-            <section>
-            <label for="">Nombre</label>
-            <input type="text" placeholder="Nombre" name="name">
-            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.name ? errores.name.msg : null)%></span>
-            </section>
-
-        <section>
-            <label for="">Apellído</label>
-            <input type="text" placeholder="Apellido" name="lastname">
-            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.lastname ? errores.lastname.msg : null)%></span>
-        </section>
+        <h1>Creá tu cuenta</h1>
         
-        <section>
-            <label for="">Email</label>
-            <input type="email" placeholder="E-mail" name="email">
-            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.email ? errores.email.msg : null)%></span>
-        </section>
+        <div class="registro">
 
-        <section>
-            <label for="">N° de documento</label>
-            <input type="text" placeholder="Numero de documento" name="dni">
-            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.documento ? errores.documento.msg : null)%></span>
-        </section>
+            <hr width="100%">
+            <h3>Completa tus datos personales</h3>
+            <hr width="100%">
 
-    
-        <section>
-            <label for="">Pais</label>
-            <input type="text" placeholder="Pais" name="country">
-            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.country ? errores.country.msg : null)%></span>
-        </section>
+            <form action="" method="POST" id="form">
+                <section>
+                    <label for="">Nombre</label>
+                    <input type="text" placeholder="Nombre" name="name" class="form-control" id="name">
+                    <span class="text-danger" id="nameErrors"><%= (typeof ess != 'undefined' && errores.name ? errores.name.msg : null)%></span>
+                </section>
 
-        <section>
-            <label for="">Clave</label>
-            <input type="password" placeholder="Clave" name="password">
-            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.password ? errores.password.msg : null)%></span>
-        </section>
+                <section>
+                    <label for="">Apellído</label>
+                    <input type="text" placeholder="Apellido" name="lastname" class="form-control"  id="lastName">
+                    <span class="text-danger" id="lastNameErrors"><%= (typeof errores != 'undefined' && errores.lastname ? errores.lastname.msg : null)%></span>
+                </section>
+                
+                <section>
+                    <label for="">Email</label>
+                    <input type="email" placeholder="E-mail" name="email" class="form-control"  id="email">
+                    <span class="text-danger" id="emailErrors"><%= (typeof errores != 'undefined' && errores.email ? errores.email.msg : null)%></span>
+                </section>
 
-        <section>
-            <label for="">Confirmar clave</label>
-            <input type="password" placeholder="Confirmar clave" name="password2">
-            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.password2 ? errores.password2.msg : null)%></span>
-        </section>
+                <section>
+                    <label for="">N° de documento</label>
+                    <input type="text" placeholder="Numero de documento" name="dni" class="form-control" id="dni">
+                    <span class="text-danger" id="dniErrors"><%= (typeof errores != 'undefined' && errores.documento ? errores.documento.msg : null)%></span>
+                </section>
 
-            <button>REGISTRARME</button>
+            
+                <section>
+                    <label for="">Pais</label>
+                    <input type="text" placeholder="Pais" name="country" class="form-control"  id="country">
+                    <span class="text-danger" id="countryErrors"><%= (typeof errores != 'undefined' && errores.country ? errores.country.msg : null)%></span>
+                </section>
+
+                <section>
+                    <label for="">Clave</label>
+                    <input type="password" placeholder="Clave" name="password" class="form-control"  id="pass">
+                    <span class="text-danger" id="passErrors"><%= (typeof errores != 'undefined' && errores.password ? errores.password.msg : null)%></span>
+                </section>
+
+                <section>
+                    <label for="">Confirmar clave</label>
+                    <input type="password" placeholder="Confirmar clave" name="password2" class="form-control"  id="pass2">
+                    <span class="text-danger" id="pass2Errors"><%= (typeof errores != 'undefined' && errores.password2 ? errores.password2.msg : null)%></span>
+                </section>
+
+                <button>REGISTRARME</button>
+                
+            </form>
+
         </div>
-        </form>
-
     </div>
-</div>
-
-</div>
 
 
 
+<script src="/javascripts/registro.js"></script>
 <%- include('partials/footer') %> 
 
 <%- include('partials/scripts') %> 
