@@ -45,16 +45,13 @@
             
                         <%} else if (user.rol_id == 1 ){%> 
                             <li><a class="" href="#">Mi cuenta</a></li>
-                            <li><a class="" href="">Perfil</a></li>   
+                            <li><a class="" href="/users/perfil/<%= user.id %>">Perfil</a></li>   
                             <li><a class="" href="/admin">Panel de control</a></option></li>
 
                         <% } else if (user.rol_id == 2 ){%>
                             <li>
-                                <select class="dropdown-item opciones" aria-labelledby="dropdownMenuButton">
-                                  <option value=""class="dropdown-item"><a class="" href="#">Mi cuenta</a></option>
-                                  <option value=""class="dropdown-item"><a class="" href="">Perfil</a></option>
-                                  
-                                </select>
+                                <li><a class="" href="#">Mi cuenta</a></li>
+                                <li><a class="" href="users/perfil/<%= user.id %>">Perfil</a></li>
                             </li>
                         <% } else { %>
                             <h1>nada</h1   

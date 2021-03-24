@@ -45,7 +45,7 @@ module.exports = {
         res.render('miCarrito', { title: 'Express' });
     },
     buscar : (req,res)=>{
-
+        buscar = req.query.buscar;
         db.Productos.findAll({
             where:{
                 product_name:{ [Op.like]: `%${req.query.buscar}%` }
@@ -55,6 +55,7 @@ module.exports = {
             return res.render('resultados', {
                 title: 'Resultados',
                 product,
+                buscar,
                 toThousand
             })
         })
