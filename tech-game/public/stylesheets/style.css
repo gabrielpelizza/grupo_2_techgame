@@ -1398,11 +1398,14 @@ main.detalleproducto{
 }
 
 .registrar h3{
-  margin: 0 auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  margin: 10px auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
   padding-left: 15px;
-  font-size: 14px;
+  font-size: 22px;
+  background-color: #f1f1f1;
+  color: black;
+  border: 1px solid rgb(209, 209, 209);
 }
 
 .registrar hr{
@@ -1437,6 +1440,7 @@ main.detalleproducto{
   margin-top: 20px;
   height: 35px;
   width: 100%;
+  font-weight: bold;
   background-color: #949494;
   border: none;
   border-radius: 4px;
@@ -1463,19 +1467,45 @@ main.detalleproducto{
   .registrar{
     padding: 5px 10%;
   }
+
+  .registrar h1{
+    margin-bottom: 20px;
+  }
   
   .registrar h3{
       font-size: 24px;
-      margin: 0%;
+      margin-bottom: 30px;
+  }
+
+  .registro{
+    margin-bottom: 30px;
   }
   
-/*   .registro section{
+  .registro section{
     width: 50%;
-    display: grid;
-  } */
+  }
+
+  .registro section.primeracolumna{
+    width: 33%;
+    float: left;
+  }
+
+  .registro section.segundacolumna{
+    margin-top: 20px;
+    float: left;
+    width: 50%;
+  }
+
+  .registro input.segundacolumna{
+    width: 120px;
+  }
 
   .registro input{
-    width: 98%;
+    width: 95%;
+  }
+
+  .registro button{
+    margin-top: 5%;
   }
   /*   -----------------DETALLE DE PRODUCTO------------- */
   .volver{

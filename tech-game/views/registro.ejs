@@ -12,49 +12,49 @@
     
     <div class="registro">
 
-    <hr width="100%">
+    <!-- <hr width="100%"> -->
     <h3>Completa tus datos personales</h3>
-    <hr width="100%">
+    <!-- <hr width="100%"> -->
 
         <form action="" method="POST">
-            <section>
+            <section class="primeracolumna">
             <label for="">Nombre</label>
             <input type="text" placeholder="Nombre" name="name">
             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.name ? errores.name.msg : null)%></span>
             </section>
 
-        <section>
+        <section class="primeracolumna">
             <label for="">Apellído</label>
             <input type="text" placeholder="Apellido" name="lastname">
             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.lastname ? errores.lastname.msg : null)%></span>
         </section>
         
-        <section>
+        <section class="primeracolumna">
             <label for="">Email</label>
             <input type="email" placeholder="E-mail" name="email">
             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.email ? errores.email.msg : null)%></span>
         </section>
 
-        <section>
+        <section class="segundacolumna">
             <label for="">N° de documento</label>
             <input type="text" placeholder="Numero de documento" name="dni">
             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.documento ? errores.documento.msg : null)%></span>
         </section>
 
     
-        <section>
-            <label for="">Pais</label>
+        <section class="segundacolumna">
+            <label for="">Pais de residencia</label>
             <input type="text" placeholder="Pais" name="country">
             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.country ? errores.country.msg : null)%></span>
         </section>
 
-        <section>
+        <section class="segundacolumna">
             <label for="">Clave</label>
             <input type="password" placeholder="Clave" name="password">
             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.password ? errores.password.msg : null)%></span>
         </section>
 
-        <section>
+        <section class="segundacolumna">
             <label for="">Confirmar clave</label>
             <input type="password" placeholder="Confirmar clave" name="password2">
             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.password2 ? errores.password2.msg : null)%></span>
