@@ -32,44 +32,30 @@
       <div class="navbar-expand-md">
           <nav class="collapse navbar-collapse nav-menu col-lg-12" id="navbarSupportedContent">
               <ul class="menu navbar-nav">
-                  <form class="d-flex search col-lg-6">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <form class="d-flex search col-lg-6" method="GET" action="/productos/search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="buscar">
                       <button class="btn boton-busqueda" type="submit"><i class="fas fa-search"></i></button>
                   </form>
 
                   <div class="lista col-lg-6 row">
                         <li><a href="/">home</a></li>
                         <li><a href="/productos">Productos</a></li>
-                        <% if (typeof user == 'undefined' ) { %>
+                        
+                        <% if ( typeof user == "undefined") { %>
+            
+                        <%} else if (user.rol_id == 1 ){%> 
+                            <li><a class="" href="#">Mi cuenta</a></li>
+                            <li><a class="" href="/users/perfil/<%= user.id %>">Perfil</a></li>   
+                            <li><a class="" href="/admin">Panel de control</a></option></li>
 
-                        <% } else { %>
-                            <!-- <li>
-                                <select name="" id="" class="opciones">
-                                    mi cuenta
-                                    <option value="" disabled>Mi cuenta</option>
-                                    <option value="" class="dropdown-item">Perfil</option>
-                                    <option value="" >Mis compras</option>
-                                </select>
-                            </li> -->
-                            
+                        <% } else if (user.rol_id == 2 ){%>
                             <li>
-                                <select class="dropdown-item opciones" aria-labelledby="dropdownMenuButton">
-                                  <option value=""class="dropdown-item"><a class="" href="#">Mi cuenta</a></option>
-                                  <option value=""class="dropdown-item"><a class="" href="">Perfil</a></option>
-                                  
-                                </select>
+                                <li><a class="" href="#">Mi cuenta</a></li>
+                                <li><a class="" href="users/perfil/<%= user.id %>">Perfil</a></li>
                             </li>
-                           <!--  <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Usuario
-                                </a>
-                                <ul class="" aria-labelledby="navbarDropdown">
-                                  <li><a class="dropdown-item" href="/admin/cerrarSesion">Cerrar sesion</a></li>
-                                  <li><a class="dropdown-item" href="/admin/cerrarSesion">Cerrar sesion</a></li>
-                                  <li><a class="dropdown-item" href="/admin/cerrarSesion">Cerrar sesion</a></li>
-                                </ul>
-                            </li> -->
-                         <% } %>
+                        <% } else { %>
+                            <h1>nada</h1   
+                        <% } %>
                   </div>
                   
               </ul>

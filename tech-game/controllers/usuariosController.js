@@ -111,6 +111,8 @@ module.exports = {
                         req.session.user = {
                             id : result.id,
                             username : result.name,
+                            rol_id : result.rol_id,
+                            id : result.id
                         }
     
                         if(recordar){

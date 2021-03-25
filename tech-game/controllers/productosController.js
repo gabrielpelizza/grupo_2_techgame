@@ -1,4 +1,6 @@
 const path = require('path');
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
 const db = require('../database/models');
 
 /* let fs = require('fs');*/
@@ -41,5 +43,21 @@ module.exports = {
       },
     carrito : (req, res, next)=>{
         res.render('miCarrito', { title: 'Express' });
+    },
+    buscar : (req,res)=>{
+        buscar = req.query.buscar;
+        db.Productos.findAll({
+            where:{
+                product_name:{ [Op.like]: `%${req.query.buscar}%` }
+            }
+        })
+        .then(product =>{
+            return res.render('resultados', {
+                title: 'Resultados',
+                product,
+                buscar,
+                toThousand
+            })
+        })
     }
 }

@@ -1,5 +1,5 @@
 const path = require('path');
-
+const db = require('../database/models');
 let fs = require('fs');
 
 const {getProduct} = require(path.join('..', 'data', 'products'));
@@ -8,10 +8,13 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     home : (req, res) => {
-        res.render('index', { 
-          title: 'Inicio',
-          product,
-          toThousand
-        });
-      }
+      db.Productos.findAll()
+            .then((product)=>{
+                res.render('index', {
+                  title: 'Inicio',
+                  product,
+                  toThousand
+                });
+      }) 
+    }
 }

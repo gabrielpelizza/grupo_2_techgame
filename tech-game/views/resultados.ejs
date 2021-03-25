@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head') %> 
+  <body>
+    <%- include('partials/header') %>
+    
+    <main>
+  
+      <div class="titulo col-12">
+        <h2>resultado: <%- buscar %></h2>
+      </div>
+        <% if (product.length == 0) { %>
+                <p>Ups no se encontraron resultados</p>
+        <% } else { %>
+            <div class="contenedor-productos">
+                <div class="fila">
+                    <% product.forEach(producto => { %>
+                      <div class="tarjeta-producto">
+                        <a href="detalle/<%= producto.id %>">
+                          <div class="img-prod">
+                            <img src="/images/productos/<%= producto.image %>" alt="">
+                          </div>
+                          <h3><%= producto.product_name%></h3>
+                          <div class="descripcion">
+                            <span class="precio">$ <%= toThousand(producto.price - producto.price * producto.discount / 100); %></span>
+                            <% if(producto.discount != 0){ %> 
+                            <span class="descuento"><%= producto.discount %>%</span>
+                            <% } %>
+                          </div>
+                        </a>
+                      </div>
+                    <% }) %>
+                </div>
+            </div>
+        <%}%>
+
+    </main>
+
+    <%- include('partials/footer') %> 
+
+
+    <%- include('partials/scripts') %> 
+  </body>
+</html>
