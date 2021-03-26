@@ -4,8 +4,6 @@ let qs = function(elemento){
 
 window.addEventListener('load', function(){
 
-    console.log('asdasdasdasdas')
-
     let $inputName = qs('#name'),
     $nameErrors = qs('#nameErrors'),
     $inputLastname = qs('#lastName'),

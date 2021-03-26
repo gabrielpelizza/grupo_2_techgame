@@ -1496,15 +1496,23 @@ main.detalleproducto{
   .registro section{
     width: 50%;
   }
-
+  
+  form .box-form{
+    display: flex;
+    flex-direction: row;
+  }
   .registro section.primeracolumna{
     width: 33%;
-    float: left;
+    display: flex;
+    flex-direction: column;
   }
+
+
 
   .registro section.segundacolumna{
     margin-top: 20px;
-    float: left;
+    display: flex;
+    flex-direction: column;
     width: 50%;
   }
 

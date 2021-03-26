@@ -67,8 +67,8 @@ module.exports = {
       discount : +descuento,
       brand_id : +marcas,
       category_id : +categoria,
-      description : descripcion
-      /* image : "2323333.jpg" */
+      description : descripcion,
+      image : (req.files[0])?req.files[0].filename : "imagenDefault.png" 
     }).catch(error => console.log(error))
     res.redirect('/admin/productos')
   },
