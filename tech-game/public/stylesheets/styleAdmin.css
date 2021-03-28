@@ -47,3 +47,39 @@ div.cajaFormularioEdit .formEditar select{
 .headerAdmin nav{
     background-color: rgba(214, 168, 255, 0.7);
 }
+
+
+
+    .adminagregarproducto form .box-form{
+        display: flex;
+        flex-direction: row;
+        margin: 0 12%;
+      }
+
+    .adminagregarproducto section.primeracolumna{
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2%;
+      }
+
+    .adminagregarproducto input{
+        width: 98%;
+    }
+
+    .adminagregarproducto section.segundacolumna{
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2%;
+      }
+
+    .adminagregarproducto section.cuartacolumna{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2%;
+        margin-bottom: 2%;
+      }
+
+
