@@ -10,6 +10,8 @@
     background-color: #892cdc;
     color: white;
     border-radius: 25px 25px 25px 25px;
+    display: flex;
+    flex-direction: row;
 }
 .contador-container{
     width:50%;
