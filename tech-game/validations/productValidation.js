@@ -7,14 +7,17 @@ module.exports = [
 
     check('precio')
     .notEmpty()
+    .isNumeric()
     .withMessage('Debes completar el campo precio.'),
 
     check('sku')
     .notEmpty()
+    .isNumeric()
     .withMessage('Debes completar el campo sku.'),
 
     check('stock')
     .notEmpty()
+    .isNumeric()
     .withMessage('Debes completar el campo stock.'),
 
     check('categoria')
@@ -30,6 +33,7 @@ module.exports = [
     .withMessage('Debes agregar una descripción.'),
 
     check('descuento')
+    .isNumeric()
     .isLength({
         min :0,
         max : 2
