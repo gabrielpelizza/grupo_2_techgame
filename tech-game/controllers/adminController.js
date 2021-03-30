@@ -17,7 +17,14 @@ const productos = getProduct();
 
 module.exports = {
   index:(req,res)=>{
-    res.render('admin/index'); //home de administracion
+    db.Productos.count()
+    .then(contador => {
+      res.render('admin/index', {
+        contador
+      }); //home de administracion
+    })
+    
+
   },
   crud : (req, res, next)=>{ //panel de control de productos
       db.Productos.findAll({
