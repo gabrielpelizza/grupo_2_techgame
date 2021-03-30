@@ -56,6 +56,10 @@ module.exports = {
   },
 
   productAlmacenado:(req,res)=>{
+
+    const errores = validationResult(req)
+
+    if(errores.isEmpty()){
   
     const {nombre,precio,sku,stock,descripcion,descuento, marcas, categoria, img} = req.body;
 
@@ -71,6 +75,21 @@ module.exports = {
       image : (req.files[0])?req.files[0].filename : "imagenDefault.png" 
     }).catch(error => console.log(error))
     res.redirect('/admin/productos')
+
+  } else {
+    let categorias = db.categories.findAll()
+    
+    let marcas = db.Brands.findAll()
+    
+    Promise.all([categorias,marcas])
+    .then(([rtacategorias,rtamarcas])=>{
+      return res.render('admin/agregarProduct',{
+        rtacategorias,
+        rtamarcas,
+        errores : errores.mapped()
+      });
+    }).catch(error=>console.log(error))
+  }
   },
   deleteProduct : (req, res) =>{
     db.Productos.destroy({
