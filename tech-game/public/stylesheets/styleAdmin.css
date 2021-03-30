@@ -92,7 +92,7 @@ div.cajaFormularioEdit .formEditar select{
       .adminagregarproducto section.quintacolumna{
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         margin-top: 2%;
         margin-bottom: 2%;
       }

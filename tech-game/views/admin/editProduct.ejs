@@ -63,20 +63,20 @@
               <div class="box-form">
                   <section class="cuartacolumna">
                     <textarea class="mr-5 ml-3" name="descripcion" id="descripcion" cols="90%" rows="5" class="" placeholder="Ingresa descripcion del producto"><%= rtaproducto.description %> </textarea> <!-- col-9 mb-5 mt-4 -->
-                    <span id="descripcionErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.descripcion ? errores.descripcion.msg : null) %></span>
+                    <span id="descripcionErrors" class="text-danger ml-3"><%= (typeof errores != "undefined" && errores.descripcion ? errores.descripcion.msg : null) %></span>
                   </section> 
               </div>
-              <div class="box-form">
+              <div class="d-flex flex-row justify-content-center  box-form">
                   <section class="quintacolumna">
                     <span id="submitErrors" class="d-flex text-danger justify-content-center mb-4"></span>
-                    <button type="submit" class="btn btn-success justify-content-center mb-2">Modificar producto</button>
-                    <a href="/admin/productos" class="btn btn-danger justify-content-center mb-5">Cancelar</a>
+                    <a type="submit" class="btn btn-success justify-content-center mb-2 ml-3 w-50 ">Modificar producto</a>
+                    <a href="/admin/productos" class="btn btn-danger justify-content-center  mr-3 mb-2 w-50">Cancelar</a>
                   </section>
               </div>
               <div class="box-form">
                 <span id="submitErrors"></span>
               </div>
-              <input class="d.none" type="text" value="<%= rtaproducto.id %>" name="id">
+              <input class="d-none" type="text" value="<%= rtaproducto.id %>" name="id">
             </form>
         </div>
       </div>
