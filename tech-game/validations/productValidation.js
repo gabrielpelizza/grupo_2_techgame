@@ -7,14 +7,17 @@ module.exports = [
 
     check('price')
     .notEmpty()
+    .isNumeric()
     .withMessage('Debes completar el campo precio.'),
 
     check('sku')
     .notEmpty()
+    .isNumeric()
     .withMessage('Debes completar el campo sku.'),
 
     check('stock')
     .notEmpty()
+    .isNumeric()
     .withMessage('Debes completar el campo stock.'),
 
     check('categoria')

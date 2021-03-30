@@ -4,7 +4,11 @@
 <body>
     <%- include('partials/header') %> 
     <main>
-        <div class="cajaFormularioEdit">
+      <div class="adminagregarproducto">
+        <div class="contenedor-crear container col-12 mt-5">
+            <h2 class="col-12 mb-5">Modificar producto</h2>
+
+            <form action="/admin/productos/update/<%=rtaproducto.id%>/?_method=PUT" method="POST" enctype="multipart/form-data" id="formEdit"> 
             
             <!-- para el panel d productos....
             <form action="" method="get" class="col-12">
@@ -47,21 +51,22 @@
                     </select>
                   </div>
 
-                  <div class="">
-                    <select name="marcas" id="marcas">
-                      <% rtamarcas.forEach(cadamarca => { %>
-                           <option <%= cadamarca.id == rtaproducto.brand_id ? 'selected' : null %> value="<%= cadamarca.id %>"> <%= cadamarca.brand %> </option>
-                      <% }) %> 
-                    </select>
-                  </div>
-                   
+                    <% rtamarcas.forEach(cadamarca=>{ %> 
+                        <option <%= cadamarca.id == rtaproducto.brand_id ? 'selected' : null %> value="<%= cadamarca.id %>"><%= cadamarca.brand %> </option>
+                    <% }) %> 
+                </select>
+    </section>
+   </div>
+                <!-- <input type="file" name="img" value="" id="img" class="col-3 mb-3"> -->
+    <div class="box-form">
+        <section class="cuartacolumna">
+                <textarea name="descripcion" id="descripcion" cols="90%" rows="5" class="" placeholder="Ingresa descripcion del producto"><%= rtaproducto.description %> </textarea> <!-- col-9 mb-5 mt-4 -->
+                <span id="descripcionErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.descripcion ? errores.descripcion.msg : null) %></span>
+        </section> 
+     </div>
 
-                  <div class="">
-                    <label for="Descripcion" class="">Descripcion: </label> <br>
-                    <textarea name="descripcion" id="descripcion" cols="60" rows="4"><%= rtaproducto.description %>
-                    </textarea>
-                    <span id="descripcionErrors" class="text-danger"><%= (typeof errores != 'undefined' && errores.descripcion ? errores.descripcion.msg : null) %> </span>
 
+<<<<<<< HEAD
                   </div>
                   <div class="">
                     <label for="formFile" class="">Imagen: </label>
@@ -76,7 +81,21 @@
                 </div>
                 <input class="display-none" type="text" name="id" value="<%= rtaproducto.id %>">
               </form>
+=======
+    <div class="box-form">
+                <section class="quintacolumna">
+                <span id="submitErrors" class="text-danger"></span>
+                <button type="submit" class="btn btn-success justify-content-center mb-2">Modificar producto</button>
+                <a href="/admin/productos" class="btn btn-danger justify-content-center mb-5">Cancelar</a>
+            </section>
+     </div>
+    <div class="box-form">
+      <span id="submitErrors"></span>
+    </div>
+            </form>
+>>>>>>> 8a1f85abc736a683aa8e930fc91aed851f9a9df5
         </div>
+    </div>
            
     </main>
 
