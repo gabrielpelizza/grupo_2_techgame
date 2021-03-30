@@ -43,12 +43,13 @@
                   <span id="discountErrors" class="text-danger"><%= (typeof errores != 'undefined' && errores.discount) ? errores.discount.msg : null %> </span>
                 </div>
                 <div class="d-flex flex-row mt-4 mb-4 justify-content-center">
-                    <select name="categoria" id="categorias" class="mr-5 w-25">
+                    <label for="categorias" class="mr-3">Categoria</label>
+                    <select name="categorias" id="categorias" class="mr-5 w-25">
                       <% rtacategorias.forEach(cadacategoria => { %>
                         <option <%= cadacategoria.id == rtaproducto.category_id ? 'selected' : null %> value="<%= cadacategoria.id %>"  > <%= cadacategoria.category %> </option>
                      <% }) %> 
                     </select>
-                
+                    <label for="marcas" class="mr-3">Marca</label>
                     <select name="marcas" id="marcas" class=" w-25">
                       <% rtamarcas.forEach(cadamarca=>{ %> 
                           <option <%= cadamarca.id == rtaproducto.brand_id ? 'selected' : null %> value="<%= cadamarca.id %>"><%= cadamarca.brand %> </option>
