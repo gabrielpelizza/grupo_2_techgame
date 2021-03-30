@@ -21,7 +21,17 @@ module.exports = {
     },
 
     detalle : (req, res)=>{
-        db.Productos.findByPk(req.params.id)
+        db.Productos.findOne({
+            where : {
+                id: req.params.id
+            },
+            include : [
+                {
+                    association : 'marcas'
+                }
+            ]
+        })
+
         .then(producto =>{
             return res.render('detalle', {
                 title: 'Producto',
