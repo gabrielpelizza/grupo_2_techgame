@@ -96,25 +96,35 @@ module.exports = {
     .catch(error=>console.log(error))
     },
     productModificado : (req,res)=>{
-      const {nombre,precio,sku,stock,descripcion,descuento, marca, categoria, img} = req.body;
+      const erroresValidacion = validationResult(req);
+  
+      
+      if(erroresValidacion.isEmpty()){
+        const {nombre,precio,sku,stock,descripcion,descuento, marcas, categoria} = req.body;
 
-      db.Productos.update({
-        product_name : nombre,
-        price : +precio,
-        sku : +sku,
-        stock : +stock,
-        discount : +descuento,
-        brand_id : +marca,
-        category_id : +categoria,
-        description : descripcion
-        //images : img
-      },{
-        where : {
-          id : req.params.id
-        }
-      }).then(()=>{
-        return res.redirect('/admin/productos')
-      }).catch(error=>console.log(error))
+        db.Productos.update({
+          product_name : nombre,
+          price : +precio,
+          sku : +sku,
+          stock : +stock,
+          discount : +descuento,
+          brand_id : +marcas,
+          category_id : +categoria,
+          description : descripcion
+
+        },{
+          where : {
+            id : req.params.id
+          }
+        }).then(()=>{
+          return res.redirect('/admin/productos')
+        }).catch(error=>console.log(error))
+      }else{
+        return res.render('admin/editProduct',{
+          errores : erroresValidacion.mapped()
+        })
+      }
+     
     },
     //-----------------------------USUARIOS CRUD-------------------
     admincrud : (req,res)=>{

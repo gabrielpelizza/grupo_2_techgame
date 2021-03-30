@@ -18,7 +18,7 @@ router.post('/productos/create',checkAdmin, upload.any(), productValidator, prod
 router.delete('/productos/delete/:id',checkAdmin, deleteProduct)  //cumple la accion de eliminar producto
 
  router.get('/productos/editar/:id',checkAdmin, editProduct)  //muestra vista con datos de producto 
- router.put('/productos/update/:id',productModificado); 
+ router.put('/productos/update/:id',checkAdmin,upload.any(),productValidator,productModificado); 
 
 
 
