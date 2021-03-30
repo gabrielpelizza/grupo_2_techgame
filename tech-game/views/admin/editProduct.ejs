@@ -42,19 +42,18 @@
                   <input class="form-control" type="text" name="discount" value="<%= rtaproducto.discount %>" id="discount">
                   <span id="discountErrors" class="text-danger"><%= (typeof errores != 'undefined' && errores.discount) ? errores.discount.msg : null %> </span>
                 </div>
-                <div class="">
-                    <select name="categoria" id="categorias">
+                <div class="d-flex flex-row mt-4 mb-4 justify-content-center">
+                    <select name="categoria" id="categorias" class="mr-5 w-25">
                       <% rtacategorias.forEach(cadacategoria => { %>
                         <option <%= cadacategoria.id == rtaproducto.category_id ? 'selected' : null %> value="<%= cadacategoria.id %>"  > <%= cadacategoria.category %> </option>
                      <% }) %> 
                     </select>
-                </div>
-                <div class="">
-                  <select>
+                
+                    <select name="marcas" id="marcas" class=" w-25">
                       <% rtamarcas.forEach(cadamarca=>{ %> 
                           <option <%= cadamarca.id == rtaproducto.brand_id ? 'selected' : null %> value="<%= cadamarca.id %>"><%= cadamarca.brand %> </option>
                       <% }) %> 
-                  </select>
+                    </select>
                 </div>
 
                 </section>
@@ -68,7 +67,7 @@
               </div>
               <div class="box-form">
                   <section class="quintacolumna">
-                    <span id="submitErrors" class="text-danger"></span>
+                    <span id="submitErrors" class="d-flex text-danger justify-content-center mb-4"></span>
                     <button type="submit" class="btn btn-success justify-content-center mb-2">Modificar producto</button>
                     <a href="/admin/productos" class="btn btn-danger justify-content-center mb-5">Cancelar</a>
                   </section>
