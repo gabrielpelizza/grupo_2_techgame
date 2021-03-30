@@ -1,11 +1,11 @@
 const {check, validationResult, body} = require('express-validator');
 
 module.exports = [
-    check('nombre')
+    check('product_name')
     .notEmpty()
     .withMessage('Debes completar el campo nombre.'),
 
-    check('precio')
+    check('price')
     .notEmpty()
     .withMessage('Debes completar el campo precio.'),
 
@@ -29,11 +29,13 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes agregar una descripción.'),
 
-    check('descuento')
+    check('discount')
     .isLength({
         min :0,
         max : 2
-    }).withMessage('Descuento invalido')
+    })
+    .notEmpty()
+    .withMessage('Descuento invalido')
 
 
   ]

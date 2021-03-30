@@ -2,6 +2,7 @@ const path = require('path');
 
 /* let fs = require('fs'); */
 
+
 const db = require('../database/models')
 
 const { validationResult } = require('express-validator');
@@ -103,30 +104,31 @@ module.exports = {
   editProduct : (req,res)=>{
      let categorias = db.categories.findAll();
      let marcas = db.Brands.findAll();
-
      let producto = db.Productos.findByPk(req.params.id);
+     
 
     Promise.all([categorias,marcas,producto])
     .then(([rtacategorias,rtamarcas,rtaproducto])=>{
       res.render('admin/editProduct',{
-        rtacategorias,rtamarcas,rtaproducto
+        rtacategorias,rtamarcas,rtaproducto,
       })
     })
     .catch(error=>console.log(error))
     },
     productModificado : (req,res)=>{
       const erroresValidacion = validationResult(req);
-  
       
+      const old = req.body;
+
       if(erroresValidacion.isEmpty()){
-        const {nombre,precio,sku,stock,descripcion,descuento, marcas, categoria} = req.body;
+        const {id, product_name,price,sku,stock,descripcion,discount, marcas, categoria} = req.body;
 
         db.Productos.update({
-          product_name : nombre,
-          price : +precio,
+          product_name : product_name,
+          price : +price,
           sku : +sku,
           stock : +stock,
-          discount : +descuento,
+          discount : +discount,
           brand_id : +marcas,
           category_id : +categoria,
           description : descripcion
@@ -139,9 +141,19 @@ module.exports = {
           return res.redirect('/admin/productos')
         }).catch(error=>console.log(error))
       }else{
-        return res.render('admin/editProduct',{
-          errores : erroresValidacion.mapped()
-        })
+        let categorias = db.categories.findAll();
+        let marcas = db.Brands.findAll();
+
+        Promise.all([categorias,marcas])
+        .then(([rtacategorias,rtamarcas,])=>{
+          return res.render('admin/editProduct',{
+            errores : erroresValidacion.mapped(),
+            rtaproducto : old,
+            old: req.body,
+            rtacategorias,
+            rtamarcas
+          })
+        }).catch(error => console.log(error))
       }
      
     },
