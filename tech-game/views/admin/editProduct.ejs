@@ -6,7 +6,6 @@
     <main>
       <div class="adminagregarproducto">
         <div class="contenedor-crear container col-12 mt-5">
-            <h2 class="col-12 mb-5">Modificar producto</h2>
 
             <form action="/admin/productos/update/<%=rtaproducto.id%>/?_method=PUT" method="POST" enctype="multipart/form-data" id="formEdit"> 
             
@@ -20,85 +19,69 @@
                 </div>
                 <div class="">
                   <label for="product_name" class="">Nombre: </label>
-                  <input type="text" name="product_name" value="<%= rtaproducto.product_name %>" id="product_name">
+                  <input class="form-control" type="text" name="product_name" value="<%= rtaproducto.product_name %>" id="product_name">
                   <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.product_name)?errores.product_name.msg : null %>  </span>
                 </div>
                 <div class="">
-                    <label for="sku" class="">Sku: </label>
-                    <input type="text" name="sku" value="<%= rtaproducto.sku %>" id="sku">
-                    <span id="skuErrors" class="text-danger"><%= (typeof errores != 'undefined' && errores.sku) ? errores.sku.msg : null %> </span>
-                  </div>
-                  <div class="">
-                    <label for="price" class="">Precio: </label>
-                    <input type="text" name="price" value="<%= rtaproducto.price %>" id="price">
-                    <span id="precioErrors" class="text-danger"><%= (typeof errores!= 'undefined' && errores.price) ? errores.price.msg : null  %> </span>
-                  </div>
-                  <div class="">
-                    <label for="stock" class="">Stock: </label>
-                    <input type="text" name="stock" value="<%= rtaproducto.stock %>" id="stock">
-                    <span id="stockErrors" class="text-danger"><%=(typeof errores != 'undefined' && errores.stock) ? errores.stock.msg : null%> </span>
-                  </div>
-                  <div class="">
-                    <label for="discount" class="">Descuento: </label>
-                    <input type="text" name="discount" value="<%= rtaproducto.discount %>" id="discount">
-                    <span id="descuentoErrors" class="text-danger"><%= (typeof errores != 'undefined' && errores.discount) ? errores.discount.msg : null %> </span>
-                  </div>
-                  <div class="">
+                  <label for="sku" class="">Sku: </label>
+                  <input class="form-control" type="text" name="sku" value="<%= rtaproducto.sku %>" id="sku">
+                  <span id="skuErrors" class="text-danger"><%= (typeof errores != 'undefined' && errores.sku) ? errores.sku.msg : null %> </span>
+                </div>
+                <div class="">
+                  <label for="price" class="">Precio: </label>
+                  <input class="form-control" type="text" name="price" value="<%= rtaproducto.price %>" id="price">
+                  <span id="priceErrors" class="text-danger"><%= (typeof errores!= 'undefined' && errores.price) ? errores.price.msg : null  %> </span>
+                </div>
+                <div class="">
+                  <label for="stock" class="">Stock: </label>
+                  <input class="form-control" type="text" name="stock" value="<%= rtaproducto.stock %>" id="stock">
+                  <span id="stockErrors" class="text-danger"><%=(typeof errores != 'undefined' && errores.stock) ? errores.stock.msg : null%> </span>
+                </div>
+                <div class="">
+                  <label for="discount" class="">Descuento: </label>
+                  <input class="form-control" type="text" name="discount" value="<%= rtaproducto.discount %>" id="discount">
+                  <span id="discountErrors" class="text-danger"><%= (typeof errores != 'undefined' && errores.discount) ? errores.discount.msg : null %> </span>
+                </div>
+                <div class="">
                     <select name="categoria" id="categorias">
                       <% rtacategorias.forEach(cadacategoria => { %>
                         <option <%= cadacategoria.id == rtaproducto.category_id ? 'selected' : null %> value="<%= cadacategoria.id %>"  > <%= cadacategoria.category %> </option>
                      <% }) %> 
                     </select>
-                  </div>
-
-                    <% rtamarcas.forEach(cadamarca=>{ %> 
-                        <option <%= cadamarca.id == rtaproducto.brand_id ? 'selected' : null %> value="<%= cadamarca.id %>"><%= cadamarca.brand %> </option>
-                    <% }) %> 
-                </select>
-    </section>
-   </div>
-                <!-- <input type="file" name="img" value="" id="img" class="col-3 mb-3"> -->
-    <div class="box-form">
-        <section class="cuartacolumna">
-                <textarea name="descripcion" id="descripcion" cols="90%" rows="5" class="" placeholder="Ingresa descripcion del producto"><%= rtaproducto.description %> </textarea> <!-- col-9 mb-5 mt-4 -->
-                <span id="descripcionErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.descripcion ? errores.descripcion.msg : null) %></span>
-        </section> 
-     </div>
-
-
-<<<<<<< HEAD
-                  </div>
-                  <div class="">
-                    <label for="formFile" class="">Imagen: </label>
-                    <input class="" type="file" name="imagen" id="file">
-                    <span id="fileErrors" class="text-danger"></span>
-                  </div>
-                
-                <div>
-                  <span id="submitErrors" class="text-danger"></span>
-                    <a href="/admin/productos" class="btn btn-danger px-5">Cancelar</a>
-                    <button type="submit" class="btn btn-success px-5">Modificar</button>
                 </div>
-                <input class="display-none" type="text" name="id" value="<%= rtaproducto.id %>">
-              </form>
-=======
-    <div class="box-form">
-                <section class="quintacolumna">
-                <span id="submitErrors" class="text-danger"></span>
-                <button type="submit" class="btn btn-success justify-content-center mb-2">Modificar producto</button>
-                <a href="/admin/productos" class="btn btn-danger justify-content-center mb-5">Cancelar</a>
-            </section>
-     </div>
-    <div class="box-form">
-      <span id="submitErrors"></span>
-    </div>
+                <div class="">
+                  <select>
+                      <% rtamarcas.forEach(cadamarca=>{ %> 
+                          <option <%= cadamarca.id == rtaproducto.brand_id ? 'selected' : null %> value="<%= cadamarca.id %>"><%= cadamarca.brand %> </option>
+                      <% }) %> 
+                  </select>
+                </div>
+
+                </section>
+              </div>
+                            <!-- <input class="form-control" type="file" name="img" value="" id="img" class="col-3 mb-3"> -->
+              <div class="box-form">
+                  <section class="cuartacolumna">
+                    <textarea name="descripcion" id="descripcion" cols="90%" rows="5" class="" placeholder="Ingresa descripcion del producto"><%= rtaproducto.description %> </textarea> <!-- col-9 mb-5 mt-4 -->
+                    <span id="descripcionErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.descripcion ? errores.descripcion.msg : null) %></span>
+                  </section> 
+              </div>
+              <div class="box-form">
+                  <section class="quintacolumna">
+                    <span id="submitErrors" class="text-danger"></span>
+                    <button type="submit" class="btn btn-success justify-content-center mb-2">Modificar producto</button>
+                    <a href="/admin/productos" class="btn btn-danger justify-content-center mb-5">Cancelar</a>
+                  </section>
+              </div>
+              <div class="box-form">
+                <span id="submitErrors"></span>
+              </div>
+              <input class="d.none" type="text" value="<%= rtaproducto.id %>" name="id">
             </form>
->>>>>>> 8a1f85abc736a683aa8e930fc91aed851f9a9df5
         </div>
-    </div>
+      </div>
            
     </main>
-
 
     <%- include('partials/scripts') %> 
     <script src="/javascripts/editProduct.js"></script>
