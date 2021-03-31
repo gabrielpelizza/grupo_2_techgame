@@ -62,22 +62,25 @@ module.exports = {
 
     if(errores.isEmpty()){
   
-    const {nombre,precio,sku,stock,descripcion,descuento, marcas, categoria, img} = req.body;
+    const {product_name,price,sku,stock,descripcion,discount, marcas, categoria, img} = req.body;
 
     db.Productos.create({
-      product_name : nombre,
-      price : +precio,
+      product_name : product_name,
+      price : +price,
       sku : +sku,
       stock : +stock,
-      discount : +descuento,
+      discount : +discount,
       brand_id : +marcas,
       category_id : +categoria,
       description : descripcion,
       image : (req.files[0])?req.files[0].filename : "imagenDefault.png" 
     }).catch(error => console.log(error))
-    res.redirect('/admin/productos')
+    .then(() =>{
+      res.redirect('/admin/productos')
+    })
 
   } else {
+    console.log(errores)
     let categorias = db.categories.findAll()
     
     let marcas = db.Brands.findAll()
@@ -87,7 +90,8 @@ module.exports = {
       return res.render('admin/agregarProduct',{
         rtacategorias,
         rtamarcas,
-        errores : errores.mapped()
+        errores : errores.mapped(),
+        old : req.body
       });
     }).catch(error=>console.log(error))
   }
