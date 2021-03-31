@@ -17,9 +17,9 @@ window.addEventListener('load', function(){
     $categoriasErrors = document.querySelector('#categoriasErrors'),
     $inputMarcas = document.querySelector('#marcas'),
     $marcasErrors = document.querySelector('#marcasErrors'),
-    $textareaDescripcion = document.querySelector('#descripcion'),
+    $textareaDescripcion = document.querySelector('#description'),
     $descripcionErrors = document.querySelector('#descripcionErrors'),
-    $form = document.querySelector('#formEdit'),
+    $form = document.querySelector('#form'),
     $submitErrors = document.querySelector('#submitErrors'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExDescuento = /^[0-9]{1,2}$/;
@@ -74,7 +74,7 @@ window.addEventListener('load', function(){
         }
     })
 
-    $inputStock.addEventListener('blur',()=>{
+    $inputStock.addEventListener('blur',function(){
         switch(true){
             case !$inputStock.value.trim(): 
                 $stockErrors.innerHTML = 'El campo stock, es obligatorio.';
@@ -92,7 +92,7 @@ window.addEventListener('load', function(){
         }
     })
 
-    $inputDescuento.addEventListener('blur',()=>{
+    $inputDescuento.addEventListener('blur',function(){
         switch(true){
             case !$inputDescuento.value.trim() :
                 $descuentoErrors.innerHTML = 'El campo descuento, es obligatorio.';
@@ -139,7 +139,7 @@ window.addEventListener('load', function(){
     }) */
 
     
-    $form.addEventListener('submit',function(event){
+    $form.addEventListener('on-submit',function(event){
         let error = false
         event.preventDefault()
         console.log($form.elements)
@@ -154,8 +154,7 @@ window.addEventListener('load', function(){
         }
         if(!error){
             $form.submit()
-        }
-        
+        } 
         
     })
 

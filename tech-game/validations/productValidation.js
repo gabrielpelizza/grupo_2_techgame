@@ -20,15 +20,7 @@ module.exports = [
     .isNumeric()
     .withMessage('Debes completar el campo stock.'),
 
-    check('categoria')
-    .notEmpty()
-    .withMessage('Debes completar el campo de categoria.'),
-
-    check('marcas')
-    .notEmpty()
-    .withMessage('Debes completar el campo de marca.'),
-
-    check('descripcion')
+    check('description')
     .notEmpty()
     .withMessage('Debes agregar una descripción.'),
 

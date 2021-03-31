@@ -66,7 +66,7 @@ module.exports = {
   productAlmacenado:(req,res)=>{
 
     const errores = validationResult(req)
-
+   
     if(errores.isEmpty()){
   
     const {nombre,precio,sku,stock,descripcion,descuento, marcas, categoria, img} = req.body;
@@ -81,16 +81,14 @@ module.exports = {
       category_id : +categoria,
       description : descripcion,
       image : (req.files[0])?req.files[0].filename : "imagenDefault.png" 
-    }).catch(error => console.log(error))
+    })
     res.redirect('/admin/productos')
-
   } else {
-    let categorias = db.categories.findAll()
     
-    let marcas = db.Brands.findAll()
-    
+    let categorias = db.categories.findAll()  
+    let marcas = db.Brands.findAll()  
     Promise.all([categorias,marcas])
-    .then(([rtacategorias,rtamarcas])=>{
+    .then(([rtacategorias,rtamarcas])=>{ 
       return res.render('admin/agregarProduct',{
         rtacategorias,
         rtamarcas,
@@ -128,7 +126,7 @@ module.exports = {
       const old = req.body;
 
       if(erroresValidacion.isEmpty()){
-        const {id, product_name,price,sku,stock,descripcion,discount, marcas, categoria} = req.body;
+        const {product_name,price,sku,stock,description,discount, marcas, categorias} = req.body;
 
         db.Productos.update({
           product_name : product_name,
@@ -137,8 +135,8 @@ module.exports = {
           stock : +stock,
           discount : +discount,
           brand_id : +marcas,
-          category_id : +categoria,
-          description : descripcion
+          category_id : +categorias,
+          description : description
 
         },{
           where : {
@@ -148,6 +146,7 @@ module.exports = {
           return res.redirect('/admin/productos')
         }).catch(error=>console.log(error))
       }else{
+        console.log(erroresValidacion)
         let categorias = db.categories.findAll();
         let marcas = db.Brands.findAll();
 
@@ -156,7 +155,6 @@ module.exports = {
           return res.render('admin/editProduct',{
             errores : erroresValidacion.mapped(),
             rtaproducto : old,
-            old: req.body,
             rtacategorias,
             rtamarcas
           })
