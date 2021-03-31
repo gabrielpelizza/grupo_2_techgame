@@ -117,7 +117,7 @@ module.exports = {
     
                         if(recordar){
                             res.cookie('techGame', req.session.user,{
-                                maxAge : 1000 * 60
+                                maxAge : 2000 * 60 * 60
                             })
                         }
                         res.redirect('/');

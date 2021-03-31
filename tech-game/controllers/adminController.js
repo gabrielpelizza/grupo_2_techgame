@@ -17,7 +17,14 @@ const productos = getProduct();
 
 module.exports = {
   index:(req,res)=>{
-    res.render('admin/index'); //home de administracion
+    db.Productos.count()
+    .then(contador => {
+      res.render('admin/index', {
+        contador
+      }); //home de administracion
+    })
+    
+
   },
   crud : (req, res, next)=>{ //panel de control de productos
       db.Productos.findAll({
@@ -59,10 +66,10 @@ module.exports = {
   productAlmacenado:(req,res)=>{
 
     const errores = validationResult(req)
-
+   
     if(errores.isEmpty()){
   
-    const {product_name,price,sku,stock,descripcion,discount, marcas, categoria, img} = req.body;
+    const {product_name,price,sku,stock,description,discount, marcas, categoria, img} = req.body;
 
     db.Productos.create({
       product_name : product_name,
@@ -72,7 +79,7 @@ module.exports = {
       discount : +discount,
       brand_id : +marcas,
       category_id : +categoria,
-      description : descripcion,
+      description : description,
       image : (req.files[0])?req.files[0].filename : "imagenDefault.png" 
     }).catch(error => console.log(error))
     .then(() =>{
@@ -80,13 +87,11 @@ module.exports = {
     })
 
   } else {
-    console.log(errores)
-    let categorias = db.categories.findAll()
-    
-    let marcas = db.Brands.findAll()
-    
+ 
+    let categorias = db.categories.findAll()  
+    let marcas = db.Brands.findAll()  
     Promise.all([categorias,marcas])
-    .then(([rtacategorias,rtamarcas])=>{
+    .then(([rtacategorias,rtamarcas])=>{ 
       return res.render('admin/agregarProduct',{
         rtacategorias,
         rtamarcas,
@@ -125,7 +130,7 @@ module.exports = {
       const old = req.body;
 
       if(erroresValidacion.isEmpty()){
-        const {id, product_name,price,sku,stock,descripcion,discount, marcas, categoria} = req.body;
+        const {product_name,price,sku,stock,description,discount, marcas, categorias} = req.body;
 
         db.Productos.update({
           product_name : product_name,
@@ -134,8 +139,8 @@ module.exports = {
           stock : +stock,
           discount : +discount,
           brand_id : +marcas,
-          category_id : +categoria,
-          description : descripcion
+          category_id : +categorias,
+          description : description
 
         },{
           where : {
@@ -145,6 +150,7 @@ module.exports = {
           return res.redirect('/admin/productos')
         }).catch(error=>console.log(error))
       }else{
+        console.log(erroresValidacion)
         let categorias = db.categories.findAll();
         let marcas = db.Brands.findAll();
 
@@ -153,7 +159,6 @@ module.exports = {
           return res.render('admin/editProduct',{
             errores : erroresValidacion.mapped(),
             rtaproducto : old,
-            old: req.body,
             rtacategorias,
             rtamarcas
           })

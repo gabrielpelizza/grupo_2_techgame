@@ -69,17 +69,17 @@
                 <!-- <input type="file" name="img" value="" id="img" class="col-3 mb-3"> -->
     <div class="box-form">
         <section class="cuartacolumna">
-                <textarea name="descripcion" id="descripcion" cols="90%" rows="5" class="" placeholder="Ingresa descripcion del producto"></textarea> <!-- col-9 mb-5 mt-4 -->
-                <span id="descriptionErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.descripcion ? errores.descripcion.msg : null) %></span>
+                <textarea name="description" id="description" cols="90%" rows="5" class="" placeholder="Ingresa descripcion del producto"></textarea> <!-- col-9 mb-5 mt-4 -->
+                <span id="descriptionErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.description ? errores.description.msg : null) %></span>
         </section> 
      </div>
 
 
-    <div class="box-form">
+    <div class="d-flex flex-row justify-content-center box-form">
                 <section class="quintacolumna">
                 <span id="submitErrors" class="text-danger"></span>
-                <button type="submit" class="btn btn-success justify-content-center mb-2">Agregar producto</button>
-                <a href="/admin/productos" class="btn btn-danger justify-content-center mb-5">Cancelar</a>
+                <button type="submit" class="btn btn-success justify-content-center mb-2 w-50 ">Agregar producto</button>
+                <a href="/admin/productos" class="btn btn-danger justify-content-center ml-2 mb-2 w-50">Cancelar</a>
             </section>
      </div>
             </form>

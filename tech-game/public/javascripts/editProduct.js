@@ -1,25 +1,25 @@
 console.log('vinculado')
 window.addEventListener('load', function(){
 
-    let $inputNombre = document.querySelector('#nombre'),
+    let $inputNombre = document.querySelector('#product_name'),
     $nombreErrors = document.querySelector('#nombreErrors'),
-    $inputPrecio = document.querySelector('#precio'),
-    $precioErrors = document.querySelector('#precioErrors'),
+    $inputPrecio = document.querySelector('#price'),
+    $precioErrors = document.querySelector('#priceErrors'),
     $inputSku = document.querySelector('#sku'),
     $skuErrors = document.querySelector('#skuErrors'),
     $inputStock = document.querySelector('#stock'),
     $stockErrors = document.querySelector('#stockErrors'),
-    $inputDescuento = document.querySelector('#descuento'),
-    $descuentoErrors = document.querySelector('#descuentoErrors'),
+    $inputDescuento = document.querySelector('#discount'),
+    $descuentoErrors = document.querySelector('#discountErrors'),
     $inputFile = document.querySelector('#file'),
     $fileErrors = document.querySelector('#fileErrors'),
     $inputCategorias = document.querySelector('#categorias'),
     $categoriasErrors = document.querySelector('#categoriasErrors'),
     $inputMarcas = document.querySelector('#marcas'),
     $marcasErrors = document.querySelector('#marcasErrors'),
-    $textareaDescripcion = document.querySelector('#descripcion'),
+    $textareaDescripcion = document.querySelector('#description'),
     $descripcionErrors = document.querySelector('#descripcionErrors'),
-    $form = document.querySelector('#formEdit'),
+    $form = document.querySelector('#form'),
     $submitErrors = document.querySelector('#submitErrors'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExDescuento = /^[0-9]{1,2}$/;
@@ -42,11 +42,16 @@ window.addEventListener('load', function(){
             case !$inputSku.value.trim():
                 console.log($inputSku)
                 $skuErrors.innerHTML = 'El campo sku es obligatorio.';
+                $inputSku.classList.add('is-invalid')
                 break;
             case (!Number($inputSku.value.trim()) && $inputSku.value != 0) ||  $inputSku.value.trim() < 0  : 
-                $skuErrors.innerHTML = 'El campo sku, es numero invalido.';break;
+                $skuErrors.innerHTML = 'El campo sku, es numero invalido.';
+                $inputSku.classList.add('is-invalid')
+                break;
             default :
                 $skuErrors.innerHTML = '';
+                $inputSku.classList.remove('is-invalid')
+                $inputSku.classList.add('is-valid')
                 break;
         }
     })
@@ -54,45 +59,72 @@ window.addEventListener('load', function(){
     $inputPrecio.addEventListener('blur',function(){
         switch(true){
             case !$inputPrecio.value.trim():
-                $precioErrors.innerHTML = 'El campo precio es obligatorio.';break;
+                $precioErrors.innerHTML = 'El campo precio es obligatorio.';
+                $inputPrecio.classList.add('is-invalid');
+                break;
             case (!Number($inputPrecio.value.trim()) && $inputPrecio.value != 0) ||  $inputPrecio.value.trim() < 0  : 
-                $precioErrors.innerHTML = 'El campo precio, es numero invalido.'; break;
-            default : $precioErrors.innerHTML = '';break;
+                $precioErrors.innerHTML = 'El campo precio, es numero invalido.'; 
+                $inputPrecio.classList.add('is-invalid')
+                break;
+            default : 
+                $precioErrors.innerHTML = '';
+                $inputPrecio.classList.remove('is-invalid')
+                $inputPrecio.classList.add('is-valid')
+                break;
         }
     })
 
-    $inputStock.addEventListener('blur',()=>{
+    $inputStock.addEventListener('blur',function(){
         switch(true){
             case !$inputStock.value.trim(): 
-            $stockErrors.innerHTML = 'El campo stock, es obligatorio.'; break;
+                $stockErrors.innerHTML = 'El campo stock, es obligatorio.';
+                $inputStock.classList.add('is-invalid')
+                break;
             case (!Number($inputStock.value.trim()) && $inputStock.value != 0 ) || $inputStock.value.trim()< 0 :
-            $stockErrors.innerHTML = 'El campo stock, es numero invalido.'; break;
+                $inputStock.classList.remove('is-invalid')
+                $stockErrors.innerHTML = 'El campo stock, es numero invalido.'; 
+                break;
             default : 
-             $stockErrors.innerHTML = ''; break;
+                $inputStock.classList.remove('is-invalid')
+                $inputStock.classList.add('is-valid')
+                $stockErrors.innerHTML = ''; 
+                break;
         }
     })
 
-    $inputDescuento.addEventListener('blur',()=>{
+    $inputDescuento.addEventListener('blur',function(){
         switch(true){
             case !$inputDescuento.value.trim() :
-                $descuentoErrors.innerHTML = 'El campo descuento, es obligatorio.';break;
+                $descuentoErrors.innerHTML = 'El campo descuento, es obligatorio.';
+                $inputDescuento.classList.add('is-invalid')
+                break;
             case !regExDescuento.test($inputDescuento.value):
-                $descuentoErrors.innerHTML = 'El campo descuento, debe ser valido.' ; break;
+                $descuentoErrors.innerHTML = 'El campo descuento, debe ser valido.' ;
+                $inputDescuento.classList.add('is-invalid')
+                break;
             default : 
-            $descuentoErrors.innerHTML = '';
+                $descuentoErrors.innerHTML = '';
+                $inputDescuento.classList.remove('is-invalid')
+                $inputDescuento.classList.add('is-valid')
+                break;
+            
         }
     })
     $textareaDescripcion.addEventListener('blur',()=>{
         if(!$textareaDescripcion.value.trim()){
             $descripcionErrors.innerHTML = 'El campo descripcion, es obligatorio.'
+            $textareaDescripcion.classList.add('is-invalid')
         }else if( $textareaDescripcion.value.length >= 300 ){
             $descripcionErrors.innerHTML = 'El campo descripcion, tiene un maximo de 300 caracteres.'
+            $textareaDescripcion.classList.add('is-valid')
         }else{
             $descripcionErrors.innerHTML = '';
+            $textareaDescripcion.classList.remove('is-invalid')
+            $textareaDescripcion.classList.add('is-valid')
         }
     })
 
-    $inputFile.addEventListener('change', 
+/*     $inputFile.addEventListener('change', 
     function fileValidation(){
         let filePath = $inputFile.value,
         allowExtensions = /(.jpg|.jpeg|.png|.gif)$/i
@@ -104,10 +136,10 @@ window.addEventListener('load', function(){
                $fileErrors.innerHTML = ''
             }
         }
-    })
+    }) */
 
     
-    $form.addEventListener('submit',function(event){
+    $form.addEventListener('on-submit',function(event){
         let error = false
         event.preventDefault()
         console.log($form.elements)
@@ -122,8 +154,7 @@ window.addEventListener('load', function(){
         }
         if(!error){
             $form.submit()
-        }
-        
+        } 
         
     })
 
