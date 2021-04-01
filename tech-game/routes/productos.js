@@ -9,7 +9,9 @@ router.get('/detalle/:id', productosController.detalle);
 
 router.get('/carrito', productosController.carrito);
 
-router.get('/search', productosController.buscar)
+router.get('/search', productosController.buscar);
+
+router.get('/filter', productosController.filter);
   
 
 module.exports = router;
