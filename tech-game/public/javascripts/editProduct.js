@@ -91,21 +91,6 @@ window.addEventListener('load', function(){
             $descripcionErrors.innerHTML = '';
         }
     })
-
-    $inputFile.addEventListener('change', 
-    function fileValidation(){
-        let filePath = $inputFile.value,
-        allowExtensions = /(.jpg|.jpeg|.png|.gif)$/i
-        if(!allowExtensions.exec(filePath)){
-            $fileErrors.innerHTML = 'El campo de imagen, deber ser .jpg, .peg, .png, o .gif';
-            $inputFile.value = ''
-        } else {
-            if($inputFile.files && $inputFile.files[0]){
-               $fileErrors.innerHTML = ''
-            }
-        }
-    })
-
     
     $form.addEventListener('submit',function(event){
         let error = false
@@ -125,6 +110,19 @@ window.addEventListener('load', function(){
         }
         
         
+    })
+    $inputFile.addEventListener('change', 
+    function fileValidation(){
+        let filePath = $inputFile.value,
+        allowExtensions = /(.jpg|.jpeg|.png|.gif)$/i
+        if(!allowExtensions.exec(filePath)){
+            $fileErrors.innerHTML = 'El campo de imagen, deber ser .jpg, .peg, .png, o .gif';
+            $inputFile.value = ''
+        } else {
+            if($inputFile.files && $inputFile.files[0]){
+               $fileErrors.innerHTML = ''
+            }
+        }
     })
 
 
