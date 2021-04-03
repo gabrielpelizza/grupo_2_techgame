@@ -137,7 +137,6 @@ window.addEventListener('load', function(){
     $form.addEventListener('submit',function(event){
         let error = false
         event.preventDefault()
-        console.log($form.elements)
         let elementosForm = this.elements
         
         for (let index = 0; index < elementosForm.length-1; index++) {
@@ -145,9 +144,12 @@ window.addEventListener('load', function(){
                 elementosForm[index].classList.add('is-invalid');
                 submitErrors.innerHTML = "Los campos señalados son obligatorios";
                 error =true
+            }else{
+                $form.submit()
+                console.log($form.elements)
             }
         }
-        $form.submit()
+        
         /* if(!$terms.checked){
             $termsErrors.innerHTML = 'Para crear una cuenta debes aceptar los términos y condiciones'
         }else {

@@ -3,6 +3,24 @@
     box-sizing: border-box;
     padding: 0;
 }
+
+.container-stats{
+    margin-top: 15px;
+    height: auto;
+    background-color: #892cdc;
+    color: white;
+    border-radius: 25px 25px 25px 25px;
+    display: flex;
+    flex-direction: row;
+}
+.contador-container{
+    width:50%;
+}
+.contador{
+    font-size: 13vh;
+}
+
+
 .logoAdmin img {
     width: 60%;
 }
@@ -92,7 +110,7 @@ div.cajaFormularioEdit .formEditar select{
       .adminagregarproducto section.quintacolumna{
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         margin-top: 2%;
         margin-bottom: 2%;
       }

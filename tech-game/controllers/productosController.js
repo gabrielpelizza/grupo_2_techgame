@@ -5,8 +5,8 @@ const db = require('../database/models');
 
 /* let fs = require('fs');*/
 
-const {getProduct} = require(path.join('..', 'data', 'products'));
-const product = getProduct();
+/* const {getProduct} = require(path.join('..', 'data', 'products'));
+const product = getProduct(); */
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
@@ -18,6 +18,50 @@ module.exports = {
                     toThousand
                 });
         });
+    },
+
+    filter: (req,res)=>{
+        const {filtrar} = req.query;
+    
+        switch (filtrar) {
+            case "1":
+                db.Productos.findAll({
+                    where:{
+                        category_id : 1
+                    }
+                })
+                .then((product)=>{
+                    res.render('productos', {
+                        product,
+                        toThousand
+                });
+            });
+                
+
+                break;
+            case "2":
+                db.Productos.findAll({
+                    where:{
+                        category_id : 2
+                    }
+                })
+                .then((product)=>{
+                    res.render('productos', {
+                        product,
+                        toThousand
+                });
+            });
+
+            default:
+                    db.Productos.findAll()
+                        .then((product)=>{
+                            res.render('productos', {
+                                product,
+                                toThousand
+                            });
+                    });
+                break;
+        }
     },
 
     detalle : (req, res)=>{

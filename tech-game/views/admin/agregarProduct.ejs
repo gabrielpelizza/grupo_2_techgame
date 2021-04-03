@@ -12,12 +12,12 @@
             
     <div class="box-form">
             <section class="primeracolumna">
-                <input type="text" name="nombre" id="nombre" value="" class="" placeholder="Nombre">
-                <span id="nameErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.nombre ? errores.nombre.msg : null) %></span>
+                <input type="text" name="product_name" id="nombre" value="" class="" placeholder="Nombre">
+                <span id="nameErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.product_name ? errores.product_name.msg : null) %></span>
             </section>
             <section class="primeracolumna">
-                <input type="text" name="precio" id="precio" value="" class="" placeholder="Precio">
-                <span id="priceErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.precio ? errores.precio.msg : null) %></span>
+                <input type="text" name="price" id="precio" value="" class="" placeholder="Precio">
+                <span id="priceErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.price ? errores.price.msg : null) %></span>
             </section>
             <section class="primeracolumna">
                 <input type="text" name="sku" id="sku" value="" class="" placeholder="SKU">
@@ -32,8 +32,8 @@
             </section>
 
             <section class="segundacolumna">
-                <input type="text" name="descuento" id="descuento" value="" class="" placeholder="con o sin descuento">
-                <span id="discountErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.descuento ? errores.descuento.msg : null) %></span>
+                <input type="text" name="discount" id="descuento" value="" class="" placeholder="con o sin descuento">
+                <span id="discountErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.discount ? errores.discount.msg : null) %></span>
             </section>
 
             <section class="segundacolumna">
@@ -69,17 +69,17 @@
                 <!-- <input type="file" name="img" value="" id="img" class="col-3 mb-3"> -->
     <div class="box-form">
         <section class="cuartacolumna">
-                <textarea name="descripcion" id="descripcion" cols="90%" rows="5" class="" placeholder="Ingresa descripcion del producto"></textarea> <!-- col-9 mb-5 mt-4 -->
-                <span id="descriptionErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.descripcion ? errores.descripcion.msg : null) %></span>
+                <textarea name="description" id="description" cols="90%" rows="5" class="" placeholder="Ingresa descripcion del producto"></textarea> <!-- col-9 mb-5 mt-4 -->
+                <span id="descriptionErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.description ? errores.description.msg : null) %></span>
         </section> 
      </div>
 
 
-    <div class="box-form">
+    <div class="d-flex flex-row justify-content-center box-form">
                 <section class="quintacolumna">
                 <span id="submitErrors" class="text-danger"></span>
-                <button type="submit" class="btn btn-success justify-content-center mb-2">Agregar producto</button>
-                <a href="/admin/productos" class="btn btn-danger justify-content-center mb-5">Cancelar</a>
+                <button type="submit" class="btn btn-success justify-content-center mb-2 w-50 ">Agregar producto</button>
+                <a href="/admin/productos" class="btn btn-danger justify-content-center ml-2 mb-2 w-50">Cancelar</a>
             </section>
      </div>
             </form>

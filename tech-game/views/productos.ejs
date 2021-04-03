@@ -9,12 +9,23 @@
       <div class="titulo col-12">
         <h2>Productos</h2>
       </div>
+
+      <div class="mr-3 ml-3">
+        <form action="/productos/filter" method="get">
+          <select class="form-select w-25 btn border bg-light" aria-label="select" name="filtrar" id="filtrar">
+            <option value="1" id="1" name="1">accesorios</option>
+            <option value="2" id="2" name="2">juegos</option>
+          </select>
+          <input class="btn btn-dark" type="submit" value="aplicar">
+        </form>
+      </div>
+
   
       <div class="contenedor-productos">
         <div class="fila">
             <% product.forEach(producto => { %>
               <div class="tarjeta-producto">
-                <a href="productos/detalle/<%= producto.id %>">
+                <a href="detalle/<%= producto.id %>">
                   <div class="img-prod">
                     <img src="/images/productos/<%= producto.image %>" alt="">
                   </div>

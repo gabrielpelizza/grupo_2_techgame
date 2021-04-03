@@ -2,6 +2,7 @@ const path = require('path');
 
 /* let fs = require('fs'); */
 
+
 const db = require('../database/models')
 
 const { validationResult } = require('express-validator');
@@ -16,7 +17,14 @@ const productos = getProduct();
 
 module.exports = {
   index:(req,res)=>{
-    res.render('admin/index'); //home de administracion
+    db.Productos.count()
+    .then(contador => {
+      res.render('admin/index', {
+        contador
+      }); //home de administracion
+    })
+    
+
   },
   crud : (req, res, next)=>{ //panel de control de productos
       db.Productos.findAll({
@@ -58,35 +66,35 @@ module.exports = {
   productAlmacenado:(req,res)=>{
 
     const errores = validationResult(req)
-
+   
     if(errores.isEmpty()){
   
-    const {nombre,precio,sku,stock,descripcion,descuento, marcas, categoria, img} = req.body;
+    const {product_name,price,sku,stock,description,discount, marcas, categoria, img} = req.body;
 
     db.Productos.create({
-      product_name : nombre,
-      price : +precio,
+      product_name : product_name,
+      price : +price,
       sku : +sku,
       stock : +stock,
-      discount : +descuento,
+      discount : +discount,
       brand_id : +marcas,
       category_id : +categoria,
-      description : descripcion,
+      description : description,
       image : (req.files[0])?req.files[0].filename : "imagenDefault.png" 
     }).catch(error => console.log(error))
     res.redirect('/admin/productos')
 
   } else {
-    let categorias = db.categories.findAll()
-    
-    let marcas = db.Brands.findAll()
-    
+ 
+    let categorias = db.categories.findAll()  
+    let marcas = db.Brands.findAll()  
     Promise.all([categorias,marcas])
-    .then(([rtacategorias,rtamarcas])=>{
+    .then(([rtacategorias,rtamarcas])=>{ 
       return res.render('admin/agregarProduct',{
         rtacategorias,
         rtamarcas,
-        errores : errores.mapped()
+        errores : errores.mapped(),
+        old : req.body
       });
     }).catch(error=>console.log(error))
   }
@@ -103,33 +111,34 @@ module.exports = {
   editProduct : (req,res)=>{
      let categorias = db.categories.findAll();
      let marcas = db.Brands.findAll();
-
      let producto = db.Productos.findByPk(req.params.id);
+     
 
     Promise.all([categorias,marcas,producto])
     .then(([rtacategorias,rtamarcas,rtaproducto])=>{
       res.render('admin/editProduct',{
-        rtacategorias,rtamarcas,rtaproducto
+        rtacategorias,rtamarcas,rtaproducto,
       })
     })
     .catch(error=>console.log(error))
     },
     productModificado : (req,res)=>{
       const erroresValidacion = validationResult(req);
-  
       
+      const old = req.body;
+
       if(erroresValidacion.isEmpty()){
-        const {nombre,precio,sku,stock,descripcion,descuento, marcas, categoria} = req.body;
+        const {product_name,price,sku,stock,description,discount, marcas, categorias} = req.body;
 
         db.Productos.update({
-          product_name : nombre,
-          price : +precio,
+          product_name : product_name,
+          price : +price,
           sku : +sku,
           stock : +stock,
-          discount : +descuento,
+          discount : +discount,
           brand_id : +marcas,
-          category_id : +categoria,
-          description : descripcion
+          category_id : +categorias,
+          description : description
 
         },{
           where : {
@@ -139,9 +148,19 @@ module.exports = {
           return res.redirect('/admin/productos')
         }).catch(error=>console.log(error))
       }else{
-        return res.render('admin/editProduct',{
-          errores : erroresValidacion.mapped()
-        })
+        console.log(erroresValidacion)
+        let categorias = db.categories.findAll();
+        let marcas = db.Brands.findAll();
+
+        Promise.all([categorias,marcas])
+        .then(([rtacategorias,rtamarcas,])=>{
+          return res.render('admin/editProduct',{
+            errores : erroresValidacion.mapped(),
+            rtaproducto : old,
+            rtacategorias,
+            rtamarcas
+          })
+        }).catch(error => console.log(error))
       }
      
     },
