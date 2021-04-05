@@ -48,7 +48,7 @@
 
         <section class="tercercolumna">
                 <select name="categoria" id="categoria" class="col-9 ml-5">
-                    <option disabled="enable" selected>Categoria</option>
+                    <option value="" disabled="enable" selected>Categoria</option>
                         <% rtacategorias.forEach(cadacategoria => { %>
                           <option id="" value="<%= cadacategoria.id %>"><%= cadacategoria.category %> </option>
                         <% }) %>
@@ -58,7 +58,7 @@
 
    <section class="tercercolumna">
                 <select name="marcas" id="marcas" class="col-9 ml-5">
-                    <option disabled="enable" selected>Marcas</option>
+                    <option value="" disabled="enable" selected>Marcas</option>
                     <% rtamarcas.forEach(cadamarca=>{ %> 
                         <option id=""value="<%= cadamarca.id %>"><%= cadamarca.brand %> </option>
                     <% }) %> 
@@ -74,14 +74,14 @@
         </section> 
      </div>
 
-
-    <div class="d-flex flex-row justify-content-center box-form">
+     <span id="submitErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.form ? errores.form.msg : null) %></span>
+    <div class="box-form">
                 <section class="quintacolumna">
-                <span id="submitErrors" class="text-danger"></span>
                 <button type="submit" class="btn btn-success justify-content-center mb-2 w-50 ">Agregar producto</button>
                 <a href="/admin/productos" class="btn btn-danger justify-content-center ml-2 mb-2 w-50">Cancelar</a>
             </section>
      </div>
+
             </form>
         </div>
     </div>

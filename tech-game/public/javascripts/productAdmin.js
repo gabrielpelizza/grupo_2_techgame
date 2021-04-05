@@ -16,7 +16,7 @@ window.addEventListener('load', function(){
     $categoryErrors = document.querySelector('#categoryErrors'),
     $inputMarcas = document.querySelector('#marcas'),
     $brandErrors = document.querySelector('#brandErrors'),
-    $textareaDescripcion = document.querySelector('#descripcion'),
+    $textareaDescripcion = document.querySelector('#description'),
     $descriptionErrors = document.querySelector('#descriptionErrors'),
     $form = document.querySelector('#form'),
     $submitErrors = document.querySelector('#submitErrors'),
