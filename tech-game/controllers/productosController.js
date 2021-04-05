@@ -22,46 +22,23 @@ module.exports = {
 
     filter: (req,res)=>{
         const {filtrar} = req.query;
-    
-        switch (filtrar) {
-            case "1":
-                db.Productos.findAll({
-                    where:{
-                        category_id : 1
-                    }
-                })
-                .then((product)=>{
-                    res.render('productos', {
-                        product,
-                        toThousand
+        console.log(filtrar)
+        try {
+            db.Productos.findAll({
+                where:{
+                    category_id : filtrar
+                }
+            })
+            .then((product)=>{
+                res.render('productos', {
+                    product,
+                    toThousand
                 });
-            });
-                
-
-                break;
-            case "2":
-                db.Productos.findAll({
-                    where:{
-                        category_id : 2
-                    }
-                })
-                .then((product)=>{
-                    res.render('productos', {
-                        product,
-                        toThousand
-                });
-            });
-
-            default:
-                    db.Productos.findAll()
-                        .then((product)=>{
-                            res.render('productos', {
-                                product,
-                                toThousand
-                            });
-                    });
-                break;
+        });
+        } catch (error) {
+            console.log(error)
         }
+
     },
 
     detalle : (req, res)=>{
