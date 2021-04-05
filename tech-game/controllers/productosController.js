@@ -11,30 +11,80 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     productos : (req,res)=>{
-        db.Productos.findAll()
-            .then((product)=>{
-                res.render('productos', {
-                    product,
-                    toThousand
-                });
-        });
+            
+        let categorias = db.categories.findAll()
+        let product = db.Productos.findAll()
+        let marcas = db.Brands.findAll()
+
+        Promise.all([categorias,marcas,product])
+        .then(([rtacategorias,rtamarcas,product])=>{
+          return res.render('productos',{
+            rtacategorias,
+            rtamarcas,
+            product,
+            toThousand
+          });
+        }).catch(error=>console.log(error))
+        
     },
 
     filter: (req,res)=>{
-        const {filtrar} = req.query;
-        console.log(filtrar)
+        const {categoria,marca} = req.query;
         try {
-            db.Productos.findAll({
-                where:{
-                    category_id : filtrar
-                }
-            })
-            .then((product)=>{
-                res.render('productos', {
+            let marcas = db.Brands.findAll()
+            let categorias = db.categories.findAll()
+
+           if (categoria == 0) {
+           
+                let product = db.Productos.findAll({
+                    where : {
+                        brand_id : marca
+                    }
+                })
+                Promise.all([categorias,marcas,product])
+                .then(([rtacategorias,rtamarcas,product])=>{
+                return res.render('productos',{
+                    rtacategorias,
+                    rtamarcas,
                     product,
                     toThousand
                 });
-        });
+                }).catch(error=>console.log(error))
+
+           } else if(marca == 0){
+                let product = db.Productos.findAll({
+                    where : {
+                        category_id : categoria
+                    }
+                })
+                Promise.all([categorias,marcas,product])
+                .then(([rtacategorias,rtamarcas,product])=>{
+                return res.render('productos',{
+                    rtacategorias,
+                    rtamarcas,
+                    product,
+                    toThousand
+                });
+                }).catch(error=>console.log(error))
+
+           }else if(categoria != 0 && marca != 0){
+                let product = db.Productos.findAll({
+                    where : {
+                        category_id : categoria,
+                        brand_id : marca
+                    }
+                })
+                Promise.all([categorias,marcas,product])
+                .then(([rtacategorias,rtamarcas,product])=>{
+                return res.render('productos',{
+                    rtacategorias,
+                    rtamarcas,
+                    product,
+                    toThousand
+                });
+                }).catch(error=>console.log(error))
+           }
+
         } catch (error) {
             console.log(error)
         }
