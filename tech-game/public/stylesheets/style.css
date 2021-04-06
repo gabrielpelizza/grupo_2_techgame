@@ -2042,8 +2042,9 @@ div.card{
   background-color: #892cdc;
   color: white;
   border-radius: 10px 0 10px 0;
-  box-shadow: 10px 0px 0px 0px rgba(0, 0, 0, 0.2);
-  margin-bottom:0;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom:10px;
+  margin-top: 10px;
 }
 div.card-img{
   border-bottom: 1px solid #892cdc;
