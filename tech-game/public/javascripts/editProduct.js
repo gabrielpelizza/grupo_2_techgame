@@ -139,7 +139,7 @@ window.addEventListener('load', function(){
     }) */
 
     
-    $form.addEventListener('on-submit',function(event){
+    $form.addEventListener('submit',function(event){
         let error = false
         event.preventDefault()
         console.log($form.elements)
@@ -153,7 +153,29 @@ window.addEventListener('load', function(){
             }
         }
         if(!error){
-            $form.submit()
+            swal({
+                title: "estas seguro?",
+                text: "Estas a punto de modificar un producto",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((modificar) => {
+            if (modificar) {
+                swal("El producto a sido modificado exitosamente", {
+                icon: "success",
+                }).then((value)=>{
+                    if (value) {
+                        $form.submit()
+                    }
+                });
+                
+                
+            } else {
+                swal("Your imaginary file is safe!");
+            }
+            })
+              
         } 
         
     })

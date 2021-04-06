@@ -50,7 +50,7 @@
         <h2>Productos Populares</h2>
       </div>
   
-      <div class="contenedor-productos">
+      <!-- <div class="contenedor-productos">
         <div class="fila">
             <% product.forEach(producto => { %>
               <div class="tarjeta-producto">
@@ -70,8 +70,29 @@
 
             <% }) %>
         </div>
-      </div>
-  
+      </div> -->
+
+        <div class="glide">
+          <div class="glide__track" data-glide-el="track">
+              <div class="glide__slides">
+                <% product.forEach(producto => { %>
+                <div class="card glide__slide" style="width: 18rem;">
+                  <img src="/images/productos/<%= producto.image %> " class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= producto.product_name%></h5>
+                    <p class="precio card-text">$<%= toThousand(producto.price - producto.price * producto.discount / 100) %></p>
+                    <a href="productos/detalle/<%= producto.id %>" class="btn btn-primary">ver</a>
+                  </div>
+                </div>
+                <% }) %>
+              </div>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+              <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+              <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
   
   
       <div class="contenedor-publicidad">
@@ -143,7 +164,35 @@
 
     <%- include('partials/footer') %> 
 
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+      new Glide('.glide', {
+        type: 'slider',
+        bound:true,
+        breakpoints: {
+          1024: {
+            perView: 3
+          },
+          768: {
+            perView: 3
+          },
+          426: {
+            perView: 3
+          },
+          425:{
+            perView: 1
+          }
+        },
+        perView:3,
+        startAt: 0,
+        gap:50,
+        focusAt:'0',
+        autoplay:2000,
+        hoverpause: true,
+      }).mount()
+    </script>
 
+    
     <%- include('partials/scripts') %> 
   </body>
 </html>

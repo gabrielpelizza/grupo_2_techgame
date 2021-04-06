@@ -2028,3 +2028,33 @@ div .scroll{
   background-color: #892cdc;
   color: white;
 }
+
+button.glide__arrow{
+  background-color: black;
+  color: white;
+}
+
+button.glide__bullet{
+  background-color: black;
+}
+
+div.card{
+  border:2px solid #892cdc;
+  background-color: #892cdc;
+  color: white;
+  border-radius: 10px 0 10px 0;
+}
+div.card-img{
+  border-bottom: 1px solid #892cdc;
+}
+div.card a{
+  background-color: white;
+  border:none;
+  width: 100%;
+  color: black;
+}
+
+div.contenedor-slider{
+ 
+}
+
