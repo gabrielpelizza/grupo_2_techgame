@@ -34,7 +34,7 @@ module.exports = {
             let marcas = db.Brands.findAll()
             let categorias = db.categories.findAll()
 
-           if (categoria == 0) {
+           if (categoria == 0 && marca != 0) {
            
                 let product = db.Productos.findAll({
                     where : {
@@ -51,7 +51,7 @@ module.exports = {
                 });
                 }).catch(error=>console.log(error))
 
-           } else if(marca == 0){
+           } else if(marca == 0 && categoria != 0){
                 let product = db.Productos.findAll({
                     where : {
                         category_id : categoria
@@ -83,6 +83,18 @@ module.exports = {
                     toThousand
                 });
                 }).catch(error=>console.log(error))
+           }else{
+            let product = db.Productos.findAll()
+            Promise.all([categorias,marcas,product])
+                .then(([rtacategorias,rtamarcas,product])=>{
+                return res.render('productos',{
+                    rtacategorias,
+                    rtamarcas,
+                    product,
+                    toThousand
+                })
+            }).catch(error=>console.log(error))
+
            }
 
         } catch (error) {

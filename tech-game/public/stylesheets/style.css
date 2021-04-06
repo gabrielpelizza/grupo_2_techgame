@@ -2019,3 +2019,12 @@ div .scroll{
   border: 1px solid #892cdc;
 }
 }
+
+/**********************************************/
+/*                 productos                  */
+/**********************************************/
+
+.bg-purple{
+  background-color: #892cdc;
+  color: white;
+}
