@@ -333,6 +333,10 @@ main div div.tarjeta-producto{
 
 }
 
+main div div.tarjeta-producto img{
+  object-fit: cover;
+}
+
 main div div.tarjeta-producto a{
   text-decoration: none;
 }
@@ -2046,10 +2050,11 @@ div.card{
   margin-bottom:10px;
   margin-top: 10px;
 }
-div.card-img{
+div .card img{
   border-bottom: 1px solid #892cdc;
-  height: auto;
+  height: 250px;
   width: auto;
+  object-fit: cover;
 }
 div.card a{
   background-color: white;
