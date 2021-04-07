@@ -22,7 +22,7 @@ window.addEventListener('load', function(){
     $form = document.querySelector('#form'),
     $submitErrors = document.querySelector('#submitErrors'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
-    regExDescuento = /^[0-9]{1,2}$/;
+
 
     $inputNombre.addEventListener('blur',function(){
         switch(true){
@@ -62,7 +62,7 @@ window.addEventListener('load', function(){
                 $precioErrors.innerHTML = 'El campo precio es obligatorio.';
                 $inputPrecio.classList.add('is-invalid');
                 break;
-            case (!Number($inputPrecio.value.trim()) && $inputPrecio.value != 0) ||  $inputPrecio.value.trim() < 0  : 
+            case !Number($inputPrecio.value.trim()) ||  $inputPrecio.value.trim() < 0  : 
                 $precioErrors.innerHTML = 'El campo precio, es numero invalido.'; 
                 $inputPrecio.classList.add('is-invalid')
                 break;

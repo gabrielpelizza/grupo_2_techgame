@@ -21,7 +21,8 @@ window.addEventListener('load', function(){
     $form = document.querySelector('#form'),
     $submitErrors = document.querySelector('#submitErrors'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
-    regExNumeros = /^[0-9]*$/
+    regExNumeros = /^[0-9]*$/,
+    regExDescuento = /^[0-9]{1,2}$/;
 
     $inputNombre.addEventListener('blur', function(){
         switch (true) {
@@ -29,10 +30,13 @@ window.addEventListener('load', function(){
                 $nameErrors.innerHTML = 'El campo nombre es obligatorio'
                 $inputNombre.classList.add('is-invalid')
                 break;
-            case !regExAlpha.test($inputNombre.value):
+            case $inputNombre.value.length >= 45 :
+                $nameErrors.innerHTML = "Debe contener un maximo de 45 caracteres"
+                ;break;
+           /* case !regExAlpha.test($inputNombre.value):
                 $nameErrors.innerHTML = "Debes ingresar un nombre valído"
                 $inputNombre.classList.add('is-invalid')
-                break;
+                break;*/
             default:
                 $inputNombre.classList.remove('is-invalid')
                 $inputNombre.classList.add('is-valid')
@@ -65,10 +69,13 @@ window.addEventListener('load', function(){
                 $priceErrors.innerHTML = "El campo precio es obligatorio"
                 $inputNombre.classList.add('is-invalid')
                 break;
-            case !regExNumeros.test($inputPrecio.value):
+            case !Number($inputPrecio.value.trim()) || $inputPrecio.value.trim() <= 0  : 
+                $priceErrors.innerHTML = "Debes ingresar un precio valido"
+            ;break;
+          /*  case !regExNumeros.test($inputPrecio.value):
                 $priceErrors.innerHTML = "Debes ingresar un precio valido"
                 $inputNombre.classList.add('is-invalid')
-                break;
+                break;*/
             default:
                 $inputPrecio.classList.remove('is-invalid')
                 $inputPrecio.classList.add('is-valid')
@@ -101,8 +108,8 @@ window.addEventListener('load', function(){
                 $discountErrors.innerHTML = "El campo descuento es obligatorio"
                 $inputDescuento.classList.add('is-invalid')
                 break;
-            case !regExNumeros.test($inputDescuento.value):
-                $discountErrors.innerHTML = "Debes ingresar un numero de descuento"
+            case !regExDescuento.test($inputDescuento.value):
+                $discountErrors.innerHTML = "Debes ingresar un descuento valido"
                 $inputDescuento.classList.add('is-invalid')
                 break;
             default:
@@ -113,20 +120,7 @@ window.addEventListener('load', function(){
         }
     })
 
-    $inputFile.addEventListener('change', 
-    function fileValidation(){
-        let filePath = $inputFile.value,
-        allowExtensions = /(.jpg|.jpeg|.png|.gif)$/i
-        if(!allowExtensions.exec(filePath)){
-            $fileErrors.innerHTML = 'Carga un archivo de imagen valido'
-            $inputFile.value = ''
-        } else {
-            if($inputFile.files && $inputFile.files[0]){
-               $fileErrors.innerHTML = ''
-            }
-        }
-    })
-
+    
     $inputCategoria.addEventListener('blur', function(){
         if(!$inputCategoria.value.trim()){
             $categoryErrors.innerHTML = 'Debes seleccionar una categoria'
@@ -155,6 +149,9 @@ window.addEventListener('load', function(){
                 $descriptionErrors.innerHTML = 'El campo descripcion es obligatorio'
                 $textareaDescripcion.classList.add('is-invalid')
                 break;
+            case $textareaDescripcion.value.length > 300  : 
+                $descriptionErrors.innerHTML = 'Debes ingresar un maximo de 300 caracteres'    
+            ;break;
             default:
                 $textareaDescripcion.classList.remove('is-invalid')
                 $textareaDescripcion.classList.add('is-valid')
@@ -162,22 +159,40 @@ window.addEventListener('load', function(){
                 break;
         }
     })
+    $inputFile.addEventListener('change', 
+    function fileValidation(){
+        let filePath = $inputFile.value,
+        allowExtensions = /(.jpg|.jpeg|.png|.gif)$/i
+        if(!allowExtensions.exec(filePath)){
+            $fileErrors.innerHTML = 'Carga un archivo de imagen valido'
+            $inputFile.value = ''
+        } else {
+            if($inputFile.files && $inputFile.files[0]){
+               $fileErrors.innerHTML = ''
+            }
+        }
+    })
 
-    $form.addEventListener('submit', function(event){
+
+     $form.addEventListener('submit', function(event){
         let error = false;
         event.preventDefault()
         let elementosForm = this.elements
-
         for (let index = 0; index < elementosForm.length-1; index++) {
-            if(elementosForm[index].value == ''){
-                elementosForm[index].classList.add('is-invalid');
-                $submitErrors.innerHTML = 'Todos los campos son obligatorios'
-                error = true
-            }
+            console.log(elementosForm[index].value)
+
+            if((elementosForm[index].value != '' && elementosForm.file.value == '') || (elementosForm[index].value != '' && elementosForm.file.value != '') ){ //Si en cada elemento, tienen valores y el input file  esta vacio, significa que no hay errores. O si en cada elemento hay valores y el input file tiene un valor tampoco hay errores
+                error = false
             
+            }
+            else{ //Si todo esta vacio que muestre esto, que significa que hay error
+               // elementosForm[index].classList.add('is-invalid');
+                $submitErrors.innerHTML = 'Todos los campos son obligatorios'    
+                error = true;   
+            }
         }
-        if(!error){
-            $form.submit()
+        if(!error){ //si es true el error 
+            $form.submit() //envia el form
         }
     })
 })
