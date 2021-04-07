@@ -21,7 +21,7 @@ window.addEventListener('load', function(){
     $descripcionErrors = document.querySelector('#descripcionErrors'),
     $form = document.querySelector('#form'),
     $submitErrors = document.querySelector('#submitErrors'),
-    regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+    regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
 
 
     $inputNombre.addEventListener('blur',function(){
