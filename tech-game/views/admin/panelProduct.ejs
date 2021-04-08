@@ -37,7 +37,7 @@
                         <td><form action="" class="d-inline p-2">
                                 <a href="/admin/productos/editar/<%= elemento.id %>" class="btn btn-success"><i class="fas fa-edit"></i></a>
                             </form>
-                            <form action="/admin/productos/delete/<%= elemento.id %>?_method=DELETE" method="POST" class="d-inline p-2">
+                            <form id="form" action="/admin/productos/delete/<%= elemento.id %>?_method=DELETE" method="POST" class="d-inline p-2 formDelete">
                                 <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                             </form>
                         </td>
@@ -50,6 +50,9 @@
     </main>
 
     <%- include('partials/scripts') %> 
+
+    <script src="/javascripts/eliminar.js"></script>
+
     <script>
         function myFunction() {
          

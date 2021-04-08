@@ -12,27 +12,27 @@
             
     <div class="box-form">
             <section class="primeracolumna">
-                <input type="text" name="product_name" id="nombre" value="" class="" placeholder="Nombre">
+                <input type="text" name="product_name" id="nombre" value="<%= (typeof old != 'undefined' && old.product_name ? old.product_name : null) %>" class="" placeholder="Nombre">
                 <span id="nameErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.product_name ? errores.product_name.msg : null) %></span>
             </section>
             <section class="primeracolumna">
-                <input type="text" name="price" id="precio" value="" class="" placeholder="Precio">
+                <input type="text" name="price" id="precio" value="<%= (typeof old != 'undefined' && old.price ? old.price : null) %>" class="" placeholder="Precio">
                 <span id="priceErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.price ? errores.price.msg : null) %></span>
             </section>
             <section class="primeracolumna">
-                <input type="text" name="sku" id="sku" value="" class="" placeholder="SKU">
+                <input type="text" name="sku" id="sku" value="<%= (typeof old != 'undefined' && old.sku ? old.sku : null) %>" class="" placeholder="SKU">
                 <span id="skuErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.sku ? errores.sku.msg : null) %></span>
             </section>
     </div>
 
     <div class="box-form">
                 <section class="segundacolumna">
-                <input type="text" name="stock" id="stock" value="" class="" placeholder="stock">
+                <input type="text" name="stock" id="stock" value="<%= (typeof old != 'undefined' && old.stock ? old.stock : null) %>" class="" placeholder="stock">
                 <span id="stockErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.stock ? errores.stock.msg : null) %></span>
             </section>
 
             <section class="segundacolumna">
-                <input type="text" name="discount" id="descuento" value="" class="" placeholder="con o sin descuento">
+                <input type="text" name="discount" id="descuento" value="<%= (typeof old != 'undefined' && old.discount ? old.discount : null) %>" class="" placeholder="con o sin descuento">
                 <span id="discountErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.discount ? errores.discount.msg : null) %></span>
             </section>
 

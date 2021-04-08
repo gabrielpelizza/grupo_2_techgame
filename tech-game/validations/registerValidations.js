@@ -1,5 +1,5 @@
 const {check, validationResult, body} = require('express-validator');
-
+const db = require('../database/models')
 module.exports = [
     check('name')
     .notEmpty()
@@ -36,5 +36,18 @@ module.exports = [
     .withMessage('Debes completar el campo contraseña'),
 
     body('password2').custom((value, {req})=> value !== req.body.password ? false : true)
-    .withMessage('Las contraseñas no coinciden')
+    .withMessage('Las contraseñas no coinciden'),
+
+    body('email').custom(value => {
+      return db.Usuarios.findOne({
+          where : {
+              email : value
+          }
+      })
+      .then(user => {
+          if(user){
+              return Promise.reject('Este email ya está registrado')
+          }
+      })
+   })
   ]

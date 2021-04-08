@@ -79,11 +79,11 @@
                 <div class="card glide__slide" style="width: 18rem;">
                   <img src="/images/productos/<%= producto.image %> " class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title"><%= producto.product_name%></h5>
+                    <h5 class="card-title"><%= producto.product_name.slice(0,29)%>...</h5>
                     <p class="precio card-text">$<%= toThousand(producto.price - producto.price * producto.discount / 100) %></p>
                     <a href="productos/detalle/<%= producto.id %>" class="btn btn-primary">ver</a>
                   </div>
-                </div>
+                </div>  
                 <% }) %>
               </div>
             </div>

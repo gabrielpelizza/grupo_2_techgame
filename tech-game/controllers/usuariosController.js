@@ -1,11 +1,6 @@
 const path = require('path');
 const bcrypt = require('bcrypt');
 const {check, validationResult, body} = require('express-validator');
-
-const {getUsers, setUsers} = require(path.join('..', 'data', 'users'));
-
-const usuarios = getUsers();
-
 let db = require('../database/models');
 
 module.exports = {
@@ -25,10 +20,10 @@ module.exports = {
                 old : req.body
             })
         } else {
-/*         res.send(erroresValidacion)  /* para ver que me manda */
+            res.send(erroresValidacion)  /* para ver que me manda */
         }
 
-      if(erroresValidacion.isEmpty()){
+        if(erroresValidacion.isEmpty()){
             const {name, lastname, email, dni, country, password} = req.body
 
             db.Usuarios.create({   /* se pone el nombre de la columna de la tabla */
@@ -43,8 +38,6 @@ module.exports = {
             .then(()=> res.redirect('/users/login'))
             .catch(error => console.log(error))
 
-
-
         } else {
             console.log(erroresValidacion)
             return res.render('registro',{
@@ -53,38 +46,6 @@ module.exports = {
             })
         }
 
-
-      /*   const {name, lastname, email, dni, country, password, password2} = req.body
-        
-        let lastID = 0;
-
-        usuarios.forEach(element => {
-            if(element.id > lastID){
-                lastID = element.id
-            }
-        });
-
-        let hashing = bcrypt.hashSync(password, 10)
-        let hashing2 = bcrypt.hashSync(password2, 10)
-
-        let newUser = {
-            id: +lastID + 1,
-            name,
-            lastname,
-            email,
-            dni : +dni,
-            country,
-            password : hashing,
-            password2 : hashing2
-        }
-
-
-        usuarios.push(newUser)
-
-
-        setUsers(usuarios)
- */
-        /*  res.redirect('/users/login')  */
     },
     inicioSesion : (req,res)=>{
         res.render('login');
@@ -179,25 +140,6 @@ module.exports = {
             res.redirect('/')
         })
         .catch(error => res.send(error))
-        /* const {name,lastname,email,dni,country} = req.body;
-
-        usuarios.forEach(user=>{
-            if(user.id === +req.params.id ){
-                user.id = Number(req.params.id);
-                user.name =  name;
-                user.lastname = lastname;
-                user.email = email;
-                user.dni = +dni;
-                user.country = country;
-            }
-        });
-
-        setUsers(usuarios);
-        
-        const usuario = usuarios.find(cadauser=>cadauser.id === +req.params.id);
-        res.render('perfil',{
-            usuario
-        }); */
     }
 
 }

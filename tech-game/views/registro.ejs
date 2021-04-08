@@ -20,33 +20,33 @@
                 <div class="box-form">
                     <section class="primeracolumna">
                         <label for="">Nombre</label>
-                        <input type="text" placeholder="Nombre" name="name" id="name">
+                        <input type="text" placeholder="Nombre" name="name" id="name" value="<%= (typeof old != 'undefined' && old.name ? old.name : null) %>">
                         <span class="text-danger" id="nameErrors"><%= (typeof errores != 'undefined' && errores.name ? errores.name.msg : null)%></span>
                     </section>
     
                     <section class="primeracolumna">
                         <label for="">Apellído</label>
-                        <input type="text" placeholder="Apellido" name="lastname" id="lastName">
+                        <input type="text" placeholder="Apellido" name="lastname" id="lastName" value="<%= (typeof old != 'undefined' && old.lastName ? old.lastName : null) %>">
                         <span class="text-danger" id="lastNameErrors"><%= (typeof errores != 'undefined' && errores.lastname ? errores.lastname.msg : null)%></span>
                     </section>
                     
                     <section class="primeracolumna">
                         <label for="">Email</label>
-                        <input type="email" placeholder="E-mail" name="email" id="email">
+                        <input type="email" placeholder="E-mail" name="email" id="email" value="<%= (typeof old != 'undefined' && old.email ? old.email : null) %>">
                         <span class="text-danger" id="emailErrors"><%= (typeof errores != 'undefined' && errores.email ? errores.email.msg : null)%></span>
                     </section>
                 </div>
                 <div class="box-form">
                     <section class="segundacolumna">
                         <label for="">N° de documento</label>
-                        <input type="text" placeholder="Numero de documento" name="dni" id="dni">
+                        <input type="text" placeholder="Numero de documento" name="dni" id="dni" value="<%= (typeof old != 'undefined' && old.dni ? old.dni : null) %>">
                         <span class="text-danger" id="dniErrors"><%= (typeof errores != 'undefined' && errores.documento ? errores.documento.msg : null)%></span>
                     </section>
     
                 
                     <section class="segundacolumna">
                         <label for="">Pais de residencia</label>
-                        <input type="text" placeholder="Pais" name="country" id="country"><br>
+                        <input type="text" placeholder="Pais" name="country" id="country" value="<%= (typeof old != 'undefined' && old.country ? old.country : null) %>"><br>
                         <span class="text-danger"><%= (typeof errores != 'undefined' && errores.country ? errores.country.msg : null)%></span>
                     </section>
                 </div>

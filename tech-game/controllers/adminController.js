@@ -8,12 +8,8 @@ const db = require('../database/models')
 const { validationResult } = require('express-validator');
 const { isNullOrUndefined } = require('util');
 
-const {getProduct, setProduct} = require(path.join('..', 'data', 'products'));
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-
-const productos = getProduct();
 
 module.exports = {
   index:(req,res)=>{
@@ -85,7 +81,7 @@ module.exports = {
     res.redirect('/admin/productos')
 
   } else {
-res.send(errores)
+   //res.send(errores)
     let categorias = db.categories.findAll()  
     let marcas = db.Brands.findAll()  
     Promise.all([categorias,marcas])
