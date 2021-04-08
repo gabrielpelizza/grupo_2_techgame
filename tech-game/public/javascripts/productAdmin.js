@@ -180,20 +180,22 @@ window.addEventListener('load', function(){
         let elementosForm = this.elements
               console.log(elementosForm)
         for (let index = 0; index < elementosForm.length-1; index++) {
-      
-//falta arreglarrrr
-            if(elementosForm[index].value == '' /*|| (elementosForm[index].value != '' && elementosForm.file.value != '')*/ ){ //Si en cada elemento, tienen valores y el input file  esta vacio, significa que no hay errores. O si en cada elemento hay valores y el input file tiene un valor tampoco hay errores
-                if(elementosForm[5].value == '' || elementosForm[5].value != '' ){
-                    error = false
-                }
-                $submitErrors.innerHTML = 'Todos los campos son obligatorios'    
-                error = true;
-                
+            console.log(elementosForm[index].value)
+
+            if((elementosForm[index].value != '' && elementosForm.file.value == '') || (elementosForm[index].value != '' && elementosForm.file.value != '') ){ //Si en cada elemento, tienen valores y el input file  esta vacio, significa que no hay errores. O si en cada elemento hay valores y el input file tiene un valor tampoco hay errores
+                error = false
+            
+            }
+            else{ //Si todo esta vacio que muestre esto, que significa que hay error
+               // elementosForm[index].classList.add('is-invalid');
+                error = true;   
             }
 
         }
         if(!error){ //si es true el error 
             $form.submit() //envia el form
+        } else {
+            $submitErrors.innerHTML = 'Todos los campos son obligatorios'
         }
     })
 })

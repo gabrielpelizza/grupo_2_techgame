@@ -14,15 +14,19 @@
             <form action="/users/perfil/<%= usuario.id %>?_method=PUT" method="POST">
                 <label for="">Nombre</label>
                 <input type="text" name="name" value="<%= usuario.name %>">
+                <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.name)?errores.name.msg : null %>  </span>
     
                 <label for="">Apellido</label>
                 <input type="text" name="lastname" value="<%= usuario.lastname %>">
+                <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.lastname)?errores.lastname.msg : null %>  </span>
     
                 <label for="">Correo electronico</label>
                 <input type="text" name="email" value="<%= usuario.email %>">
+                <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.email)?errores.email.msg : null %>  </span>
     
                 <label for="">Numero de documento</label>
                 <input type="text" name="dni" value="<%= usuario.dni %>">
+                <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.dni)?errores.dni.msg : null %>  </span>
 
             
     
@@ -30,6 +34,7 @@
     
                 <label for="">Pais</label>
                 <input type="text" name="country"  value="<%= usuario.country %>">
+                <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.country)?errores.country.msg : null %>  </span>
     
                 <button type="submit">Actualizar datos</button>
             </form>
