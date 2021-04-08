@@ -8,12 +8,8 @@ const db = require('../database/models')
 const { validationResult } = require('express-validator');
 const { isNullOrUndefined } = require('util');
 
-const {getProduct, setProduct} = require(path.join('..', 'data', 'products'));
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-
-const productos = getProduct();
 
 module.exports = {
   index:(req,res)=>{
