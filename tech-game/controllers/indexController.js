@@ -8,13 +8,16 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     home : (req, res) => {
-      db.Productos.findAll({
+    let productos=   db.Productos.findAll({
         limit: 4,
-      })
-      .then((product)=>{
+      });
+    let categorias = db.categories.findAll()
+    Promise.all([productos,categorias])
+      .then(([product,categorias])=>{
           res.render('index', {
             title: 'Inicio',
             product,
+            categorias,
             toThousand
           });
       }) 

@@ -9,6 +9,7 @@ window.addEventListener('load', function(){
     $inputLastname = qs('#lastName'),
     $lastnameErrors = qs('#lastNameErrors'),
     $form = qs('#form'),
+    $submitErrors = qs('#submitErrors')
     $dni = qs('#dni'),
     $dniErrors = qs('#dniErrors'),
     $email = qs('#email'),
@@ -142,22 +143,16 @@ window.addEventListener('load', function(){
         for (let index = 0; index < elementosForm.length-1; index++) {
             if(elementosForm[index].value == ""){
                 elementosForm[index].classList.add('is-invalid');
-                submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                $submitErrors.innerHTML = "Los campos señalados son obligatorios";
                 error =true
             }else{
-                $form.submit()
-                console.log($form.elements)
+                error = false
             }
         }
         
-        /* if(!$terms.checked){
-            $termsErrors.innerHTML = 'Para crear una cuenta debes aceptar los términos y condiciones'
-        }else {
-            $terms.classList.remove('is-invalid');
-            if(!error){
+        if(!error){
             $form.submit()
             }
-        } */
         
     })
 

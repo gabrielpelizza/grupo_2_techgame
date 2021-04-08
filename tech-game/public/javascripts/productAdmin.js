@@ -181,11 +181,10 @@ window.addEventListener('load', function(){
         for (let index = 0; index < elementosForm.length-1; index++) {
             console.log(elementosForm[index].value)
 
-            if((elementosForm[index].value != '' && elementosForm.file.value == '') || (elementosForm[index].value != '' && elementosForm.file.value != '') ){ //Si en cada elemento, tienen valores y el input file  esta vacio, significa que no hay errores. O si en cada elemento hay valores y el input file tiene un valor tampoco hay errores
+            if((elementosForm[index].value != '' && elementosForm[index].value != '' ) && elementosForm.file.value == ''  /*|| (elementosForm[index].value != '' && elementosForm.file.value != '')*/ ){ //Si en cada elemento, tienen valores y el input file  esta vacio, significa que no hay errores. O si en cada elemento hay valores y el input file tiene un valor tampoco hay errores
                 error = false
-            
             }
-            else{ //Si todo esta vacio que muestre esto, que significa que hay error
+            else if((elementosForm[index].value == '' && elementosForm[index].value != '' ) && elementosForm.file.value == '' ){ //Si todo esta vacio que muestre esto, que significa que hay error
                // elementosForm[index].classList.add('is-invalid');
                 $submitErrors.innerHTML = 'Todos los campos son obligatorios'    
                 error = true;   

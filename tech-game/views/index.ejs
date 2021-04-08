@@ -94,7 +94,7 @@
           </div>
         </div>
   
-  
+  <!-- 
       <div class="contenedor-publicidad">
         <div class="publicidad">
           <div class="img-publicidad">
@@ -114,10 +114,32 @@
             <p>lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
           </div>
         </div>
+      </div> -->
+      <!-- categorias -->
+      <div class="contenedor--slider">
+        <div class="carousel">
+          <div class="carousel__contenedor">
+            <button aria-label="Anterior" class="carousel__anterior"><i class="fas fa-chevron-left"></i></button> <!-- aria-label : "texto" -> dispositivos de lectura indica que es tal cosa -->
+    
+            
+            <div class="carousel__lista">
+              <% categorias.forEach(cadacategoria => { %>
+                <div class="carousel__elemento">
+                  <a href=""><h5><%= cadacategoria.category %> </h5></a>
+                </div>
+              <% }) %>         
+            </div>
+          
+          
+            <button aria-label="Siguiente" class="carousel__siguiente"><i class="fas fa-chevron-right"></i></button> <!-- aria-label : "texto" -> dispositivos de lectura indica que es tal cosa -->
+          </div>
+    
+          <div role="tablist" class="carousel__indicadores">
+          </div> <!-- se agrega un indicador por cada uno de las paginas q tengamoos, (role="tablist" -> indica que es una lista de elementos de tabulacion/indicadores) -->
+        </div>
       </div>
-  
-  
-  
+
+      <!-- fin -->
       <div class="titulo col-12">
         <h2>Ofertas</h2>
       </div>
@@ -166,6 +188,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="/javascripts/slider.js"></script>
+    <script src="/javascripts/categoriasSlider.js"></script>
 
     
     <%- include('partials/scripts') %> 

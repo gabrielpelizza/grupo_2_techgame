@@ -16,7 +16,9 @@ h3{
 p{
   font-family: "geforce-bold-alt";
 }
-
+a{
+  text-decoration: none !important;
+}
 
 
 /*Fuentes Personalizadas*/
@@ -283,8 +285,96 @@ background-color: white;
   color: rgb(209, 197, 34);
 }
 /*--------------------------------------------fin---------------------------------------------------------*/
+/*slider de catyegorias*/
+
+.contenedor--slider {
+max-width: 1200px;
+width: 90%;
+margin: 100px auto;
+}
+/* --- --- CAROUSEL --- --- */
+.carousel__contenedor {
+position: relative;
+}
+.carousel__anterior , .carousel__siguiente{
+position: absolute;
+display: block;
+width: 30px;
+height: 30px;
+border: none;
+top: calc(50% - 20px); /*Calcular para que se aline correctamente. con respecto al ancho y alto*/
+cursor: pointer;
+line-height: 30px;
+text-align: center;
+background:none;
+color: grey;
+opacity: 50%;
+}
+.carousel__anterior:hover , .carousel__siguiente:hover{
+opacity: 100%;
+}
+.carousel__anterior{
+left: -30px;
+}
+.carousel__siguiente {
+right: -30px;
+}
+.carousel__lista{ /*quitamos el scroll debajo del carrousel, que aparecen en algunos navegadores*/
+overflow: hidden;
+}
+
+/*rompiendo esquema de clases glider que son agregando x defecto*/
+.carousel__elemento .glider-slide{
+height: 300px !important;
+}
+.carousel__elemento{
+margin-right: 5px ;
+height: 100px !important;
+overflow-wrap: anywhere ;
+text-align: center;
+display: flex;
+align-items: center;
+padding: 10px 10px;
+box-sizing: border-box;
+background-image: radial-gradient(circle at 9.44% -7.92%, #cc34ef 0, #b324e9 25%, #960ce1 50%, #7600d9 75%, #5100d3 100%) !important;
+}
+.carousel__elemento a {
+  color: white;
+  text-decoration: none !important;
+}
+.carousel__elemento a:hover {
+  color: white;
+  letter-spacing: 2px;
+  text-decoration: none !important;
+}
+.carousel__indicadores .glider-dot{ /*modificando la estructura de los puntitos del carrusel*/
+display: block;
+width: 30px;
+height: 4px;
+background: grey;
+opacity: .2;
+border-radius: 0;
+}
 
 
+.carousel__indicadores .glider-dot:hover{ /*cuando esta posicionado*/
+opacity: .5;
+}
+.carousel__indicadores .glider-dot.active{ /*cuando esta seleccionado*/
+opacity: 1;
+}
+
+/* --- --- MEDIA QUERIES --- --- */
+@media screen and (max-width: 800px) {
+.contenido-principal {
+  flex-direction: column;
+}
+
+.contenido-principal > * {
+  width: 100%;
+}
+}
+/*fin*/
 /*cuerpo del main*/
 
 
