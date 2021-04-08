@@ -119,6 +119,11 @@ module.exports = {
     },
     perfilEditadoUser:(req,res)=>{
 
+        const profileValidation = validationResult(req)
+
+        
+        if(profileValidation.isEmpty()){
+
          const {name, lastname, email, dni, country} = req.body
 
         db.Usuarios.update({
@@ -138,6 +143,17 @@ module.exports = {
             res.redirect('/')
         })
         .catch(error => res.send(error))
+    } else {
+        db.Usuarios.findByPk(req.params.id)
+        .then(usuario =>{
+            return res.render('perfil', {
+                usuario,
+                errores : profileValidation.mapped(),
+                old : req.body
+            })
+        })
+        .catch(error => res.send(error))
     }
+}
 
 }

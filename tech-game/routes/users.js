@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 
 const usuariosController = require('../controllers/usuariosController')
 const registerValidations = require('../validations/registerValidations');
+const profileValidation = require('../validations/profileValidation');
 
 const checkUser = require('../middlewares/checkUsers');
 
@@ -23,6 +24,6 @@ router.get('/cerrarSesion',checkUser, usuariosController.cerrarSesion)
 
 
 router.get('/perfil/:id',checkUser,usuariosController.perfilUser)
-router.put('/perfil/:id',usuariosController.perfilEditadoUser);
+router.put('/perfil/:id',profileValidation, usuariosController.perfilEditadoUser);
 
 module.exports = router;

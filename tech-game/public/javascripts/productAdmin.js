@@ -187,12 +187,13 @@ window.addEventListener('load', function(){
             }
             else{ //Si todo esta vacio que muestre esto, que significa que hay error
                // elementosForm[index].classList.add('is-invalid');
-                $submitErrors.innerHTML = 'Todos los campos son obligatorios'    
                 error = true;   
             }
         }
         if(!error){ //si es true el error 
             $form.submit() //envia el form
+        } else {
+            $submitErrors.innerHTML = 'Todos los campos son obligatorios'
         }
     })
 })
