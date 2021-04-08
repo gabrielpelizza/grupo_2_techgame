@@ -18,7 +18,7 @@ window.addEventListener('load', function(){
     $passErrors = qs('#passErrors'),
     $pass2 = qs('#pass2'),
     $pass2Errors = qs('#pass2Errors'),
-    $submitErrots= qs('#submitErrors')
+    $submitErrors= qs('#submitErrors')
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExDNI = /^[0-9]{7,8}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,

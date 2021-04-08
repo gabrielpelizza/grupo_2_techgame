@@ -26,7 +26,7 @@
     
                     <section class="primeracolumna">
                         <label for="">Apellído</label>
-                        <input type="text" placeholder="Apellido" name="lastname" id="lastName" value="<%= (typeof old != 'undefined' && old.lastName ? old.lastName : null) %>">
+                        <input type="text" placeholder="Apellido" name="lastname" id="lastName" value="<%= (typeof old != 'undefined' && old.lastname ? old.lastname : null) %>">
                         <span class="text-danger" id="lastNameErrors"><%= (typeof errores != 'undefined' && errores.lastname ? errores.lastname.msg : null)%></span>
                     </section>
                     
@@ -66,12 +66,7 @@
                         <span class="text-danger" id="pass2Errors"><%= (typeof errores != 'undefined' && errores.password2 ? errores.password2.msg : null)%></span>
                     </section>
                 </div>
-<<<<<<< HEAD
-
-                <span id = "submitErrors" ></span>
-=======
                     <span id="submitErrors"></span>
->>>>>>> 0f1a3f836059d7b21f6b3523cabcd9d4444bf57b
                     <button>REGISTRARME</button>
             </form>
 

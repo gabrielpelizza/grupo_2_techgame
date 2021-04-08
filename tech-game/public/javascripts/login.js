@@ -57,14 +57,12 @@ let $inputEmail = document.querySelector('#email'),
        console.log(elementosForm)
 
        for (let index = 0; index < elementosForm.length-1; index++) {
-        if(elementosForm[index].value == ""){
-            elementosForm[index].classList.add('is-invalid');
-            $formErrors.innerHTML = "Los campos señalados son obligatorios";
-            if(!$inputRecordar.checked){
-                $recordarErrors.innerHTML = '¿Seguro que no quieres recordar la cuenta?'
+            if(elementosForm[index].value == ""){
+                elementosForm[index].classList.add('is-invalid');
+                $formErrors.innerHTML = "Los campos señalados son obligatorios";
+                error =true
             }
-            error =true
-        }
+
         }
     
         if(!error){
