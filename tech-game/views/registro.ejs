@@ -45,8 +45,11 @@
     
                 
                     <section class="segundacolumna">
-                        <label for="">Pais de residencia</label>
-                        <input type="text" placeholder="Pais" name="country" id="country" value="<%= (typeof old != 'undefined' && old.country ? old.country : null) %>"><br>
+                        <label for="">Provincia</label>
+                        <select id="provinciaSelect">
+                            <option value="">Seleccione una provincia</option>
+                        </select>
+                        <!-- <input type="text" placeholder="Pais" name="country" id="country" value="<%= (typeof old != 'undefined' && old.country ? old.country : null) %>"> --><br>
                         <span class="text-danger"><%= (typeof errores != 'undefined' && errores.country ? errores.country.msg : null)%></span>
                     </section>
                 </div>

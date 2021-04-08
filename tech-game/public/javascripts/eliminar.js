@@ -1,6 +1,7 @@
 
 const $form = document.querySelectorAll(".formDelete");
 
+
 for (let i = 0; i < $form.length; i++) {
 
 console.log("vinculado")
@@ -16,13 +17,13 @@ console.log("vinculado")
                 buttons: true,
                 dangerMode: true,
             })
-            .then((modificar) => {
-                if (modificar) {
+            .then((eliminar) => {
+                if (eliminar) {
                     swal("El producto a sido eliminado exitosamente", {
                     icon: "success",
                     }).then((value)=>{
                         if (value) {
-                            $form.submit()
+                            $form[i].submit()
                         }
                     }); 
                 } else {

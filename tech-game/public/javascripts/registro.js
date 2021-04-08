@@ -9,6 +9,7 @@ window.addEventListener('load', function(){
     $inputLastname = qs('#lastName'),
     $lastnameErrors = qs('#lastNameErrors'),
     $form = qs('#form'),
+    $provinciaSelect = qs('#provinciaSelect')
     $dni = qs('#dni'),
     $dniErrors = qs('#dniErrors'),
     $email = qs('#email'),
@@ -96,6 +97,19 @@ window.addEventListener('load', function(){
                 $emailErrors.innerHTML = ''
                 break;
         }
+    })
+
+    $provinciaSelect.addEventListener('load',() => {
+        fetch('https://apis.datos.gob.ar/georef/api/provincias')
+        .then(response => response.json())
+        .then(result => {
+            result.provincia.sort((prev,next)=>{
+                return prev.nombre > next.nombre
+            })
+            result.provincias.forEach(provincia => {
+                provinciaSelect.innerHTML += `<option value="${provincia.id}">${provincia.nombre}</option>`
+            });
+        })
     })
 
     $pass.addEventListener('blur', function() {
