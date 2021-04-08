@@ -81,7 +81,7 @@ module.exports = {
     res.redirect('/admin/productos')
 
   } else {
-   //res.send(errores)
+res.send(errores)
     let categorias = db.categories.findAll()  
     let marcas = db.Brands.findAll()  
     Promise.all([categorias,marcas])
