@@ -9,7 +9,7 @@ window.addEventListener('load', function(){
     $inputLastname = qs('#lastName'),
     $lastnameErrors = qs('#lastNameErrors'),
     $form = qs('#form'),
-    $submitErrors = qs('#submitErrors')
+    $provinciaSelect = qs('#country'),
     $dni = qs('#dni'),
     $dniErrors = qs('#dniErrors'),
     $email = qs('#email'),
@@ -18,6 +18,7 @@ window.addEventListener('load', function(){
     $passErrors = qs('#passErrors'),
     $pass2 = qs('#pass2'),
     $pass2Errors = qs('#pass2Errors'),
+    $submitErrots= qs('#submitErrors')
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExDNI = /^[0-9]{7,8}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
@@ -99,6 +100,19 @@ window.addEventListener('load', function(){
         }
     })
 
+    $provinciaSelect.addEventListener('focus',() => {
+        fetch('https://apis.datos.gob.ar/georef/api/provincias')
+        .then(response =>  response.json(response))
+        .then(result => {
+            result.provincias.sort((prev,next)=>{
+                return prev.nombre > next.nombre
+            })
+            result.provincias.forEach(provincia => {
+                $provinciaSelect.innerHTML += `<option value="${provincia.nombre}">${provincia.nombre}</option>`
+            });
+        })
+    })
+
     $pass.addEventListener('blur', function() {
         switch (true) {
             case !$pass.value.trim():
@@ -139,6 +153,7 @@ window.addEventListener('load', function(){
         let error = false
         event.preventDefault()
         let elementosForm = this.elements
+        console.log(elementosForm)
         
         for (let index = 0; index < elementosForm.length-1; index++) {
             if(elementosForm[index].value == ""){
@@ -149,10 +164,9 @@ window.addEventListener('load', function(){
                 error = false
             }
         }
-        
         if(!error){
             $form.submit()
-            }
+        }
         
     })
 

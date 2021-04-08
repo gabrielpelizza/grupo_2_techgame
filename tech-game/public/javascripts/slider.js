@@ -1,17 +1,14 @@
 new Glide('.glide', {
-    type: 'slider',
+    type: 'carrousel',
     bound:true,
     breakpoints: {     
         769: {
         perView: 3
         },
         426: {
-        perView: 3
-        },
-        325:{
         perView: 2,
-        gap:10,
-        }
+        gap:10
+        },
     },
     perView:4,
     startAt: 0,

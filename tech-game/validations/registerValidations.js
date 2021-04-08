@@ -29,7 +29,7 @@ module.exports = [
  */
     check('country')
     .notEmpty()
-    .withMessage('Debes completar el campo localidad'),
+    .withMessage('Debes completar el campo provincia'),
 
     check('password')
     .notEmpty()

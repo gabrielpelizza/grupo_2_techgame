@@ -19,8 +19,6 @@ module.exports = {
                 errores : erroresValidacion.mapped(),
                 old : req.body
             })
-        } else {
-            res.send(erroresValidacion)  /* para ver que me manda */
         }
 
         if(erroresValidacion.isEmpty()){
