@@ -9,7 +9,7 @@ window.addEventListener('load', function(){
     $inputLastname = qs('#lastName'),
     $lastnameErrors = qs('#lastNameErrors'),
     $form = qs('#form'),
-    $provinciaSelect = qs('#provinciaSelect')
+    $provinciaSelect = qs('#country'),
     $dni = qs('#dni'),
     $dniErrors = qs('#dniErrors'),
     $email = qs('#email'),
@@ -108,7 +108,7 @@ window.addEventListener('load', function(){
                 return prev.nombre > next.nombre
             })
             result.provincias.forEach(provincia => {
-                provinciaSelect.innerHTML += `<option value="${provincia.nombre}">${provincia.nombre}</option>`
+                $provinciaSelect.innerHTML += `<option value="${provincia.nombre}">${provincia.nombre}</option>`
             });
         })
     })
