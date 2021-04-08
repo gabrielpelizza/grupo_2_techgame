@@ -9,10 +9,6 @@ module.exports = [
     .notEmpty()
     .withMessage('El campo apellido es obligatorio'),
 
-    check('email')
-    .notEmpty()
-    .isEmail()
-    .withMessage('El campo email es obligatorio'),
 
     check('dni')
     .notEmpty()

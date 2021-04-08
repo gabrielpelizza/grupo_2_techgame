@@ -124,12 +124,11 @@ module.exports = {
         
         if(profileValidation.isEmpty()){
 
-         const {name, lastname, email, dni, country} = req.body
+         const {name, lastname, dni, country} = req.body
 
         db.Usuarios.update({
             name : name.trim(),
             lastname : lastname.trim(),
-            email :email.trim(),
             dni : +dni,
             country : country.trim()
         },
