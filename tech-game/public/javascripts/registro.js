@@ -18,6 +18,7 @@ window.addEventListener('load', function(){
     $passErrors = qs('#passErrors'),
     $pass2 = qs('#pass2'),
     $pass2Errors = qs('#pass2Errors'),
+    $submitErrots= qs('#submitErrors')
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExDNI = /^[0-9]{7,8}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
@@ -99,15 +100,15 @@ window.addEventListener('load', function(){
         }
     })
 
-    $provinciaSelect.addEventListener('load',() => {
+    $provinciaSelect.addEventListener('focus',() => {
         fetch('https://apis.datos.gob.ar/georef/api/provincias')
-        .then(response => response.json())
+        .then(response =>  response.json(response))
         .then(result => {
-            result.provincia.sort((prev,next)=>{
+            result.provincias.sort((prev,next)=>{
                 return prev.nombre > next.nombre
             })
             result.provincias.forEach(provincia => {
-                provinciaSelect.innerHTML += `<option value="${provincia.id}">${provincia.nombre}</option>`
+                provinciaSelect.innerHTML += `<option value="${provincia.nombre}">${provincia.nombre}</option>`
             });
         })
     })
@@ -152,6 +153,7 @@ window.addEventListener('load', function(){
         let error = false
         event.preventDefault()
         let elementosForm = this.elements
+        console.log(elementosForm)
         
         for (let index = 0; index < elementosForm.length-1; index++) {
             if(elementosForm[index].value == ""){
@@ -159,19 +161,12 @@ window.addEventListener('load', function(){
                 submitErrors.innerHTML = "Los campos señalados son obligatorios";
                 error =true
             }else{
-                $form.submit()
-                console.log($form.elements)
+                error = false
             }
         }
-        
-        /* if(!$terms.checked){
-            $termsErrors.innerHTML = 'Para crear una cuenta debes aceptar los términos y condiciones'
-        }else {
-            $terms.classList.remove('is-invalid');
-            if(!error){
+        if(!error){
             $form.submit()
-            }
-        } */
+        }
         
     })
 
