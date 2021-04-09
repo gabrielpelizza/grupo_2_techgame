@@ -5,7 +5,7 @@
     <%- include('partials/header') %> 
     <main>
       <div class="adminagregarproducto">
-        <div class="contenedor-crear container col-12 mt-5">
+        <div class="contenedor-crear container col-6 mt-5">
 
             <!-- <form action="/admin/productos/update/<%=rtaproducto.id%>/?_method=PUT" method="POST" enctype="multipart/form-data" id="formEdit"> 
             
@@ -43,44 +43,44 @@
                   <input class="form-control" type="text" name="discount" value="<%= rtaproducto.discount %>" id="discount">
                   <span id="discountErrors" class="text-danger"><%= (typeof errores != 'undefined' && errores.discount) ? errores.discount.msg : null %> </span>
                 </div>
+                 <div class="mt-3"> 
+                  <input class="form-control" type="file" name="img" value="" id="img" class="col-3 mb-3"> 
+                </div> 
                 <div class="d-flex flex-row mt-4 mb-4 justify-content-center">
                     <label for="categorias" class="mr-3">Categoria</label>
-                    <select name="categorias" id="categorias" class="mr-5 w-25">
+                    <select name="categorias" id="categorias" class="mr-5 w-25 form-control">
                       <% rtacategorias.forEach(cadacategoria => { %>
                         <option <%= cadacategoria.id == rtaproducto.category_id ? 'selected' : null %> value="<%= cadacategoria.id %>"><%= cadacategoria.category %></option>
                      <% }) %> 
                     </select>
                     <label for="marcas" class="mr-3">Marca</label>
-                    <select name="marcas" id="marcas" class=" w-25">
+                    <select name="marcas" id="marcas" class="form-control w-25">
                       <% rtamarcas.forEach(cadamarca=>{ %> 
                           <option <%= cadamarca.id == rtaproducto.brand_id ? 'selected' : null %> value="<%= cadamarca.id %>"><%= cadamarca.brand %></option>
                       <% }) %> 
                     </select>
                 </div>
+                  <div class="">
+                    <textarea class=" form-control mr-5 ml-3 col-11" name="description" id="description" cols="90%" rows="5"  placeholder="Ingresa descripcion del producto"><%= rtaproducto.description %></textarea> <!-- col-9 mb-5 mt-4 -->
+                      <span id="descripcionErrors" class="text-danger ml-3"><%= (typeof errores != "undefined" && errores.description ? errores.description.msg : null) %></span>
+                  </div>
+                  <div>
+                    <span id="submitErrors" class="d-flex text-danger justify-content-center mb-4"></span>
+                  </div>
+    
+                  <div class="d-flex flex-row justify-content-center box-form">
+                      <section class="quintacolumna">
+                        <button type="submit" class="btn btn-success justify-content-center mb-2 ml-3 w-50 ">Modificar producto</button>
+                        <a href="/admin/productos" class="btn btn-danger justify-content-center  mr-3 mb-2 w-50">Cancelar</a>
+                      </section>
+                  </div>
+                  <div class="box-form">
+                    <span id="submitErrors"></span>
+                  </div>
 
-                </section>
-              </div>
-                            <!-- <input class="form-control" type="file" name="img" value="" id="img" class="col-3 mb-3"> -->
-              <div class="box-form">
-                  <section class="cuartacolumna">
-                    <textarea class="mr-5 ml-3" name="description" id="description" cols="90%" rows="5" class="" placeholder="Ingresa descripcion del producto"><%= rtaproducto.description %></textarea> <!-- col-9 mb-5 mt-4 -->
-                    <span id="descripcionErrors" class="text-danger ml-3"><%= (typeof errores != "undefined" && errores.description ? errores.description.msg : null) %></span>
-                  </section> 
-              </div>
+                             
 
-              <div>
-                <span id="submitErrors" class="d-flex text-danger justify-content-center mb-4"></span>
-              </div>
-
-              <div class="d-flex flex-row justify-content-center box-form">
-                  <section class="quintacolumna">
-                    <button type="submit" class="btn btn-success justify-content-center mb-2 ml-3 w-50 ">Modificar producto</button>
-                    <a href="/admin/productos" class="btn btn-danger justify-content-center  mr-3 mb-2 w-50">Cancelar</a>
-                  </section>
-              </div>
-              <div class="box-form">
-                <span id="submitErrors"></span>
-              </div>
+              
             </form>
         </div>
       </div>

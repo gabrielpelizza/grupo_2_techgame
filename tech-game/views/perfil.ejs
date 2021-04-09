@@ -3,44 +3,53 @@
     <%- include('partials/head') %> 
 <body>
     <%- include('partials/header') %>
-
-    <div class="datosperfil">
-
+    <div class="container mt-5">
         <h1>Mis datos</h1>
+    </div>
+        <div class="adminagregarproducto form__perfil">
+            
+            <div class="contenedor-crear   container  col-6 mt-5 mb-5">
+                
         
         <h2>Perfil</h2>
-        
+            <form action="/users/perfil/<%= usuario.id %>?_method=PUT" method="POST" class="">
+                <div>
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control"  name="name" value="<%= usuario.name %>">
+                    <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.name)?errores.name.msg : null %>  </span>
+                </div>
+                <div>
+                    <label for="">Apellido</label>
+                    <input type="text" class="form-control"  name="lastname" value="<%= usuario.lastname %>">
+                    <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.lastname)?errores.lastname.msg : null %>  </span>
+                </div>
+                <div>
+                    <label for="">Correo electronico</label>
+                    <input type="text"  class="form-control" disabled name="email" value="<%= usuario.email %> ">
+                    <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.email)?errores.email.msg : null %>  </span>
+                </div>
+                <div>
+                    <label for="">Numero de documento</label>
+                    <input type="text" class="form-control"  name="dni" value="<%= usuario.dni %>">
+                    <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.dni)?errores.dni.msg : null %>  </span>
+                </div>
 
-            <form action="/users/perfil/<%= usuario.id %>?_method=PUT" method="POST">
-                <label for="">Nombre</label>
-                <input type="text" name="name" value="<%= usuario.name %>">
-                <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.name)?errores.name.msg : null %>  </span>
-    
-                <label for="">Apellido</label>
-                <input type="text" name="lastname" value="<%= usuario.lastname %>">
-                <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.lastname)?errores.lastname.msg : null %>  </span>
-    
-                <label for="">Correo electronico</label>
-                <input type="text" disabled name="email" value="<%= usuario.email %> ">
-                <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.email)?errores.email.msg : null %>  </span>
-    
-                <label for="">Numero de documento</label>
-                <input type="text" name="dni" value="<%= usuario.dni %>">
-                <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.dni)?errores.dni.msg : null %>  </span>
-
-            
-    
                 <h2>Ubicación</h2>
-    
-                <label for="">Pais</label>
-                <input type="text" name="country"  value="<%= usuario.country %>">
-                <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.country)?errores.country.msg : null %>  </span>
-    
-                <button type="submit">Actualizar datos</button>
-            </form>
-       </div>
+                <div>
+                    <label for="">Pais</label>
+                    <input type="text" name="country"  class="form-control"  value="<%= usuario.country %>">
+                    <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.country)?errores.country.msg : null %>  </span>
+                </div>
 
-        </section>
+                <div class="perfil__botones mt-5">
+                        <button type="submit" class="btn btn-success ">Actualizar perfil</button>
+                        <a href="#" class="btn btn-danger ">Eliminar</a>
+                </div>
+             </form>
+            </div>
+        </div>
+
+
     </main>
 
 

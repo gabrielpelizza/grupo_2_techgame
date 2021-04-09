@@ -20,7 +20,13 @@ a{
   text-decoration: none !important;
 }
 
+.form__perfil div.container {
+text-align: start;
 
+}
+.form__perfil div.container div.perfil__botones {
+text-align: center;
+}
 /*Fuentes Personalizadas*/
 
 @font-face {
@@ -152,7 +158,6 @@ img.logo{
 div.container{
   flex-direction: column;
   text-align: center;
-  border-bottom: 1px solid #892cdc;
 }
 
 header div .menu-button-carrito button{
@@ -819,7 +824,7 @@ main.detalleproducto{
   }
   
   .datosperfil input{
-    width: 100%;
+    width: 40%;
   }
 
   .datosperfil .botonesperfilactualizar{
@@ -1564,7 +1569,6 @@ main.detalleproducto{
   cursor: pointer;
 }
 
-
 /* .paises select{
   width: 100%;
   height: 30px;
@@ -2116,10 +2120,11 @@ main.detalleproducto{
 /**********************************************/
 
 div .scroll{
-  height: 400px;
+  height: 800px;
   overflow: scroll;
   border: 1px solid #892cdc;
 }
+
 }
 
 /**********************************************/
