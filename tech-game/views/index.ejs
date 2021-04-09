@@ -49,90 +49,44 @@
         <h2>Productos Populares</h2>
       </div>
   
-      <!-- <div class="contenedor-productos">
-        <div class="fila">
-            <% product.forEach(producto => { %>
-              <div class="tarjeta-producto">
-                <a href="productos/detalle/<%= producto.id %>">
-                  <div class="img-prod">
-                    <img src="/images/productos/<%= producto.image %> " alt="">
-                  </div>
-                  <h3><%= producto.product_name%></h3>
-                  <div class="descripcion">
-                    <span class="precio">$<%= toThousand(producto.price - producto.price * producto.discount / 100) %></span>
-                    <% if(producto.discount != 0){ %> 
-                    <span class="descuento">%<%= producto.discount%></span>
-                    <% } %> 
-                  </div>
-                </a>
-              </div>
 
-            <% }) %>
-        </div>
-      </div> -->
-
-        <div class="glide contenedor-slider">
-          <div class="glide__track " data-glide-el="track">
-              <div class="glide__slides">
-                <% product.forEach(producto => { %>
-                <div class="card glide__slide" style="width: 18rem;">
-                  <img src="/images/productos/<%= producto.image %> " class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><%= producto.product_name.slice(0,29)%>...</h5>
-                    <p class="precio card-text">$<%= toThousand(producto.price - producto.price * producto.discount / 100) %></p>
-                    <a href="productos/detalle/<%= producto.id %>" class="btn btn-primary">ver</a>
-                  </div>
-                </div>  
-                <% }) %>
-              </div>
-            </div>
-            <div class="glide__arrows" data-glide-el="controls">
-              <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
-              <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+      <div class="glide contenedor-slider">
+        <div class="glide__track " data-glide-el="track">
+            <div class="glide__slides">
+              <% product.forEach(producto => { %>
+              <div class="card glide__slide" style="width: 18rem;">
+                <img src="/images/productos/<%= producto.image %> " class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><%= producto.product_name.slice(0,29)%>...</h5>
+                  <p class="precio card-text">$<%= toThousand(producto.price - producto.price * producto.discount / 100) %></p>
+                  <a href="productos/detalle/<%= producto.id %>" class="btn btn-primary">ver</a>
+                </div>
+              </div>  
+              <% }) %>
             </div>
           </div>
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+          </div>
         </div>
+      </div>
   
-  <!-- 
-      <div class="contenedor-publicidad">
-        <div class="publicidad">
-          <div class="img-publicidad">
-            <img src="https://i.blogs.es/ba8545/pcheap/450_1000.jpg" alt="">
-          </div>
-          <div class="texto-publicidad">
-            <h2>lorem ipsum</h2>
-            <p>lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-        <div class="publicidad">
-          <div class="img-publicidad">
-            <img src="https://i.blogs.es/ba8545/pcheap/450_1000.jpg" alt="">
-          </div>
-          <div class="texto-publicidad">
-            <h2>lorem ipsum</h2>
-            <p>lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-      </div> -->
+  
       <!-- categorias -->
       <div class="contenedor--slider">
         <div class="carousel">
           <div class="carousel__contenedor">
-            <button aria-label="Anterior" class="carousel__anterior"><i class="fas fa-chevron-left"></i></button> <!-- aria-label : "texto" -> dispositivos de lectura indica que es tal cosa -->
-    
-            
+            <button aria-label="Anterior" class="carousel__anterior"><i class="fas fa-chevron-left"></i></button> <!-- aria-label : "texto" -> dispositivos de lectura indica que es tal cosa -->     
             <div class="carousel__lista">
               <% categorias.forEach(cadacategoria => { %>
                 <div class="carousel__elemento">
-                  <a href=""><h5><%= cadacategoria.category %> </h5></a>
+                  <a href="/productos/filter?categoria=<%= cadacategoria.id %>&marca=0"><h5><%= cadacategoria.category %> </h5></a>
                 </div>
               <% }) %>         
             </div>
-          
-          
             <button aria-label="Siguiente" class="carousel__siguiente"><i class="fas fa-chevron-right"></i></button> <!-- aria-label : "texto" -> dispositivos de lectura indica que es tal cosa -->
           </div>
-    
           <div role="tablist" class="carousel__indicadores">
           </div> <!-- se agrega un indicador por cada uno de las paginas q tengamoos, (role="tablist" -> indica que es una lista de elementos de tabulacion/indicadores) -->
         </div>
