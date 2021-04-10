@@ -80,9 +80,16 @@
             <button aria-label="Anterior" class="carousel__anterior"><i class="fas fa-chevron-left"></i></button> <!-- aria-label : "texto" -> dispositivos de lectura indica que es tal cosa -->     
             <div class="carousel__lista">
               <% categorias.forEach(cadacategoria => { %>
-                <div class="carousel__elemento">
-                  <a href="/productos/filter?categoria=<%= cadacategoria.id %>&marca=0"><h5><%= cadacategoria.category %> </h5></a>
-                </div>
+                  <a href="/productos/filter?categoria=<%= cadacategoria.id %>&marca=0">
+                    <div class="carousel__elemento">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                         <h5><%= cadacategoria.category %> </h5>
+                    </div>
+                  </a>
+                
               <% }) %>         
             </div>
             <button aria-label="Siguiente" class="carousel__siguiente"><i class="fas fa-chevron-right"></i></button> <!-- aria-label : "texto" -> dispositivos de lectura indica que es tal cosa -->
@@ -91,8 +98,9 @@
           </div> <!-- se agrega un indicador por cada uno de las paginas q tengamoos, (role="tablist" -> indica que es una lista de elementos de tabulacion/indicadores) -->
         </div>
       </div>
+      <!-- fin  -->
 
-      <!-- fin -->
+      
       <div class="titulo col-12">
         <h2>Ofertas</h2>
       </div>
