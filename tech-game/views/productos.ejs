@@ -10,31 +10,55 @@
         <h2>Productos</h2>
       </div>
 
-      <div class="col-12 bg-purple">
-        <form action="/productos/filter" method="get" class="p-2 p-2">
-            <label for="categoria" class="mr-3">Categorias</label>
-            <select class="form-select w-25 btn border bg-light w-100 col-lg-3" aria-label="select" name="categoria" id="categoria">
-              <option value="0">todas</option>
+      <div class=" col-lg-3 col-md-5 col-sm-12  productos__filter">
+        <form action="/productos/filter" method="get" class="">
+          <div class="">
+            <label for="categoria" class="mr-3 ml-3">Categorias</label>
+            <select class="form-select btn border bg-light  " aria-label="select" name="categoria" id="categoria">
+              <option value="0">-----</option>
               <% rtacategorias.forEach(cadacategoria => { %>
                 <option id="" value="<%= cadacategoria.id %>"><%= cadacategoria.category %> </option>
               <% }) %>
             </select>
+          </div>
+            
+          <div class="">
             <label for="marca" class="mr-3 ml-3">Marcas</label>
-            <select class="form-select btn border bg-light col-lg-3 w-100" aria-label="select" name="marca" id="marca">
-              <option value="0">todas</option>
+            <select class="form-select btn border bg-light" aria-label="select" name="marca" id="marca">
+              <option value="0">-----</option>
               <% rtamarcas.forEach(cadamarca => { %>
                 <option id="" value="<%= cadamarca.id %>"><%= cadamarca.brand%> </option>
               <% }) %>
             </select>
+          </div>
 
-            <input class="btn btn-light w-auto" type="submit" value="aplicar">
+          <div>
+            <label for="orden" class="mr-3 ml-3">Ordenar</label>
+            <select class="form-select btn border bg-light" aria-label="select" name="orden" id="orden">
+                <option value="0">Ninguno</option>
+                <option id="" value="1">Mayor precio</option>
+                <option id="" value="2"> Menor precio</option>
+            </select>
+
+          </div>
+           
+          <div class="filter__boton">
+            <input class="btn btn-light  mx-2" type="submit" value="Aplicar">
+          </div>
+            
         </form>
       </div>
 
   
-      <div class="contenedor-productos container">
+      <div class=" col-lg-9  col-md-7 col-sm-12 contenedor-productos ">
         <div class="fila h-auto">
-            <% product.forEach(producto => { %>
+          <% if(product == 0 ) {%>
+            <div  class="container-fluid sinproducto">
+              <h5>No se han encontrado productos </h5>
+            </div>
+            
+          <% }else{
+              product.forEach(producto => { %>
               <div class="tarjeta-producto">
                 <a href="/productos/detalle/<%= producto.id %>">
                   <div class="img-prod">
@@ -49,15 +73,15 @@
                   </div>
                 </a>
               </div>
-            <% }) %>
+           <%  })
+            } %>
+            
         </div>
       </div>
     
     </main>
 
     <%- include('partials/footer') %> 
-
-
     <%- include('partials/scripts') %> 
   </body>
 </html>
