@@ -153,6 +153,24 @@ module.exports = {
         })
         .catch(error => res.send(error))
     }
+},
+eliminarUser: (req,res)=>{
+    db.Usuarios.destroy({
+        where : {
+          id : req.params.id
+        }
+      })
+      .then(() => {
+        req.session.destroy();
+
+        if(req.cookies.techGame){
+            res.cookie('techGame','',{
+                maxAge: -1
+            });
+        }
+        res.redirect('/');
+    })
+      .catch(error => console.log(error))
 }
 
 }

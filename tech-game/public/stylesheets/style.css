@@ -15,9 +15,7 @@ h3{
 p{
   font-family: "geforce-bold-alt";
 }
-a{
-  text-decoration: none !important;
-}
+
 
 .form__perfil div.container {
 text-align: start;
@@ -25,6 +23,10 @@ text-align: start;
 }
 .form__perfil div.container div.perfil__botones {
 text-align: center;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
 }
 /*Fuentes Personalizadas*/
 
@@ -131,8 +133,8 @@ header nav li .opciones option{
 }
 
 header nav a{
-  color:white;
-  text-decoration: none;
+  color:white ;
+  text-decoration: none !important;
   padding-left: 10px;
   text-transform: uppercase;
 }
@@ -746,7 +748,43 @@ main.detalleproducto{
 
 
   /*--------------------------------------------MI PERFIL------------------------------------------ */
-  
+  .contenedor-crear input {
+   width: 70%;
+  }
+  .contenedor-crear .campo{
+    margin-top: 15px;
+  }
+  .contenedor-crear {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .contenedor-crear form {
+   background-color: rgba(137, 52, 221, 0.061);
+   border-radius: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+  }
+  .contenedor-crear div.caja__form{
+    margin:  0px auto;
+    width: 70%;
+  }
+  .contenedor-crear div.caja__form label{
+
+    width: 70%;
+  }
+  .contenedor-crear div.caja__form div{
+
+     width: 100%;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+  }
+  .contenedor-crear h2{
+    margin: 20px 0px 15px 0px;
+  }
   .datosperfil .imageninfoperfil{
     display: flex;
     justify-content: center;
@@ -872,12 +910,10 @@ main.detalleproducto{
   }
 
   header nav li{
-      border-bottom: 1px solid white;
       line-height: 30px;
   }
 
   header nav a{
-      color:black;
       text-decoration: none;
       padding-right: 10px;
   }
@@ -1358,7 +1394,7 @@ main.detalleproducto{
 
  /*  ---------------------------- MI PERFIL -------------------------- */
 
-@media(min-width:769px){
+@media(min-width:768px){
 
   /*************/
   /*HEADER******/
@@ -1730,6 +1766,41 @@ div .scroll{
     font-size: 15px;
   }
   /* fin filtro*/
+
+  .contenedor-crear div.caja__form {
+    width: 80%;
+    }
+}
+@media(max-width:576px){
+
+  /*--------------------------------------------MI PERFIL------------------------------------------ */
+  .contenedor-crear input {
+    width: 100%;
+   }
+   .contenedor-crear .campo{
+     margin-top: 15px;
+   }
+   .contenedor-crear {
+     display: flex;
+     align-items: center;
+     width: 100%;
+   }
+   .contenedor-crear form {
+    background-color: white;
+     width: 90%;
+     padding-bottom: 30px;
+   }
+   .contenedor-crear div.caja__form label{
+ 
+     width: 100%;
+   }
+  
+   .contenedor-crear h2{
+     margin: 20px 0px 15px 0px;
+     width: 100%;
+     border-bottom: 1px solid rgb(137, 64, 206,.2);
+     padding-bottom: 10px;
+   }
 }
 @media(max-width:425px){
   .productos__filter form{
@@ -1749,8 +1820,28 @@ div .scroll{
   .productos__filter form div.filter__boton{
     margin-left: 20px;
   }
+  .contenedor-crear form {
+     width: 100%;
+     padding-bottom: 20px;
+   }
+   
+.contenedor-crear div.caja__form {
+width: 80%;
 }
-
+}
+@media(max-width:375px){
+  .form__perfil div.container div.perfil__botones {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    }
+    .form__perfil div.container div.perfil__botones button {
+     margin-bottom: 10px;
+     width: 100%;
+    }
+}
 /**********************************************/
 /*                 productos                  */
 /**********************************************/

@@ -26,4 +26,5 @@ router.get('/cerrarSesion',checkUser, usuariosController.cerrarSesion)
 router.get('/perfil/:id',checkUser,usuariosController.perfilUser)
 router.put('/perfil/:id',profileValidation, usuariosController.perfilEditadoUser);
 
+router.get('/perfil/delete/:id',usuariosController.eliminarUser)
 module.exports = router;

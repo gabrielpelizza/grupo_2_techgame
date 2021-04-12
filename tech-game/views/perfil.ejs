@@ -8,43 +8,46 @@
     </div>
         <div class="adminagregarproducto form__perfil">
             
-            <div class="contenedor-crear   container  col-6 mt-5 mb-5">
+            <div class="contenedor-crear   container col-xl-6 col-lg-9 col-md-10 col-sm-12  mt-5 mb-5">
                 
         
-        <h2>Perfil</h2>
             <form action="/users/perfil/<%= usuario.id %>?_method=PUT" method="POST" class="">
-                <div>
-                    <label for="">Nombre</label>
-                    <input type="text" class="form-control"  name="name" value="<%= usuario.name %>">
-                    <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.name)?errores.name.msg : null %>  </span>
+                <div class="caja__form" class="">
+                    <div> <h2>Perfil</h2></div>
+                    <div class="campo ">
+                        <label for="">Nombre</label>
+                        <input type="text" class="form-control"  name="name" value="<%= usuario.name %>" id="name">
+                        <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.name)?errores.name.msg : null %>  </span>
+                    </div>
+                    <div class="campo">
+                        <label for="">Apellido</label>
+                        <input type="text" class="form-control"  name="lastname" value="<%= usuario.lastname %>">
+                        <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.lastname)?errores.lastname.msg : null %>  </span>
+                    </div>
+                    <div class="campo">
+                        <label for="">Correo electronico</label>
+                        <input type="text"  class="form-control" disabled name="email" value="<%= usuario.email %> ">
+                        <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.email)?errores.email.msg : null %>  </span>
+                    </div>
+                    <div class="campo">
+                        <label for="">Numero de documento</label>
+                        <input type="text" class="form-control"  name="dni" value="<%= usuario.dni %>">
+                        <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.dni)?errores.dni.msg : null %>  </span>
+                    </div>
+                    <div><h2>Ubicación</h2></div>
+                    
+                    <div class="campo">
+                        <label for="">Pais</label>
+                        <input type="text" name="country"  class="form-control"  value="<%= usuario.country %>">
+                        <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.country)?errores.country.msg : null %>  </span>
+                    </div>
+    
+                    <div class="perfil__botones mt-5">
+                            <button type="submit" class="btn btn-success ">Actualizar</button>
+                            <a href="/users/perfil/delete/<%= usuario.id %>"  class="btn btn-danger ">Eliminar</a>
+                    </div>
                 </div>
-                <div>
-                    <label for="">Apellido</label>
-                    <input type="text" class="form-control"  name="lastname" value="<%= usuario.lastname %>">
-                    <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.lastname)?errores.lastname.msg : null %>  </span>
-                </div>
-                <div>
-                    <label for="">Correo electronico</label>
-                    <input type="text"  class="form-control" disabled name="email" value="<%= usuario.email %> ">
-                    <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.email)?errores.email.msg : null %>  </span>
-                </div>
-                <div>
-                    <label for="">Numero de documento</label>
-                    <input type="text" class="form-control"  name="dni" value="<%= usuario.dni %>">
-                    <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.dni)?errores.dni.msg : null %>  </span>
-                </div>
-
-                <h2>Ubicación</h2>
-                <div>
-                    <label for="">Pais</label>
-                    <input type="text" name="country"  class="form-control"  value="<%= usuario.country %>">
-                    <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.country)?errores.country.msg : null %>  </span>
-                </div>
-
-                <div class="perfil__botones mt-5">
-                        <button type="submit" class="btn btn-success ">Actualizar perfil</button>
-                        <a href="#" class="btn btn-danger ">Eliminar</a>
-                </div>
+                
              </form>
             </div>
         </div>
@@ -53,8 +56,8 @@
     </main>
 
 
-    <%- include('partials/footer') %> 
 
+    <%- include('partials/footer') %> 
 
     <%- include('partials/scripts') %> 
 </body>
