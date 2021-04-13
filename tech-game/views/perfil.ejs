@@ -21,25 +21,25 @@
                     </div>
                     <div class="campo">
                         <label for="">Apellido</label>
-                        <input type="text" class="form-control"  name="lastname" value="<%= usuario.lastname %>">
-                        <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.lastname)?errores.lastname.msg : null %>  </span>
+                        <input type="text" class="form-control"  name="lastname" value="<%= usuario.lastname %>" id="lastname">
+                        <span id="apellidoErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.lastname)?errores.lastname.msg : null %>  </span>
                     </div>
                     <div class="campo">
                         <label for="">Correo electronico</label>
                         <input type="text"  class="form-control" disabled name="email" value="<%= usuario.email %> ">
-                        <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.email)?errores.email.msg : null %>  </span>
+                        <span class="text-danger"><%= (typeof errores  != 'undefined' && errores.email)?errores.email.msg : null %>  </span>
                     </div>
                     <div class="campo">
                         <label for="">Numero de documento</label>
-                        <input type="text" class="form-control"  name="dni" value="<%= usuario.dni %>">
-                        <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.dni)?errores.dni.msg : null %>  </span>
+                        <input type="text" class="form-control"  name="dni" value="<%= usuario.dni %>" id="dni">
+                        <span id="dniErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.dni)?errores.dni.msg : null %>  </span>
                     </div>
                     <div><h2>Ubicación</h2></div>
                     
                     <div class="campo">
                         <label for="">Pais</label>
-                        <input type="text" name="country"  class="form-control"  value="<%= usuario.country %>">
-                        <span id="nombreErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.country)?errores.country.msg : null %>  </span>
+                        <input type="text" name="country"  class="form-control"  value="<%= usuario.country %>" id="pais">
+                        <span id="paisErrors" class="text-danger"><%= (typeof errores  != 'undefined' && errores.country)?errores.country.msg : null %>  </span>
                     </div>
     
                     <div class="perfil__botones mt-5">
@@ -57,6 +57,7 @@
 
 
 
+    <script src="/javascripts/perfiluser.js"></script>
     <%- include('partials/footer') %> 
 
     <%- include('partials/scripts') %> 

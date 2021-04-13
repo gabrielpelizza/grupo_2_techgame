@@ -78,7 +78,7 @@ module.exports = {
       description : description,
       image : (req.files[0])?req.files[0].filename : "imagenDefault.png" 
     }).catch(error => console.log(error))
-    res.redirect('/admin/productos')
+    .then(() => res.redirect('/admin/productos'))
 
   } else {
 res.send(errores)
