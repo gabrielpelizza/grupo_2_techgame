@@ -393,12 +393,13 @@ main div div .tarjeta-producto div span.precio{
 main div div .tarjeta-producto span.descuento{
   position: absolute;
   display: flex;
+  border: 1px solid #892cdc;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   background-color: white;
   font-weight: 700;
-  color:green;
+  color:#892cdc;
   font-size: 15px;
   justify-content: center;
   align-items: center;
@@ -1622,12 +1623,13 @@ main.detalleproducto{
   }
   main div div .tarjeta-producto span.descuento{
       display: flex;
+      border: 1px solid #892cdc;
       border-radius: 50%;
       width: 50px;
       height: 50px;
       background-color: white;
       font-weight: 700;
-      color:green;
+      color:#892cdc;
       font-size: 15px;
       justify-content: center;
       align-items: center;
@@ -1886,23 +1888,24 @@ div.card a{
   width: 100%;
   color: black;
 }
+div.card a:hover{
+  background-color: black;
+  color: white;
+}
 
 div.card span.descuento{
   position: absolute;
   display: flex;
+  border: 1px solid #892cdc;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   background-color: white;
   font-weight: 700;
-  color:green;
+  color:#892cdc;
   font-size: 15px;
   justify-content: center;
   align-items: center;
   top:0;
-  right:0;
-}
-div.card button:hover{
-  background-color: white;
-  color: black;
+  right:0;;
 }
