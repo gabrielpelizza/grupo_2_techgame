@@ -1902,3 +1902,7 @@ div.card span.descuento{
   top:0;
   right:0;
 }
+div.card button:hover{
+  background-color: white;
+  color: black;
+}

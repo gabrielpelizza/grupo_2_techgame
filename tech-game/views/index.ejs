@@ -54,7 +54,9 @@
                   <p class="precio card-text">$<%= toThousand(producto.price - producto.price * producto.discount / 100) %></p>
                   <a href="productos/detalle/<%= producto.id %>" class="btn btn-primary">ver</a>
                 </div>
-                <span class="descuento">%<%= producto.discount%></span>
+                <% if (producto.discount > 0) { %>
+                  <span class="descuento">%<%= producto.discount %></span>
+                <% } %>
               </div>  
               <% }) %>
             </div>
@@ -112,7 +114,9 @@
                   <span class="precio">$<%= producto.price%></span>
                 </div>
               </a>
-              <span class="descuento">%<%= producto.discount%></span>
+              <% if (producto.discount > 0) { %>
+                <span class="descuento">%<%= producto.discount %></span>
+              <% } %>
             </div>
           <% }) %>
         </div>
