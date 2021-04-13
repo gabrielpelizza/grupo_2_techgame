@@ -1,5 +1,5 @@
 new Glide('.glide', {
-    type: 'carrousel',
+    type: 'slider',
     bound:true,
     breakpoints: {     
         769: {
