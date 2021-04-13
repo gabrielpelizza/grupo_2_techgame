@@ -20,33 +20,33 @@
                 <div class="box-form">
                     <section class="primeracolumna">
                         <label for="">Nombre</label>
-                        <input type="text" placeholder="Nombre" name="name" id="name" value="<%= (typeof old != 'undefined' && old.name ? old.name : null) %>">
+                        <input type="text" class="form-control" placeholder="Nombre" name="name" id="name" value="<%= (typeof old != 'undefined' && old.name ? old.name : null) %>">
                         <span class="text-danger" id="nameErrors"><%= (typeof errores != 'undefined' && errores.name ? errores.name.msg : null)%></span>
                     </section>
     
                     <section class="primeracolumna">
                         <label for="">Apellído</label>
-                        <input type="text" placeholder="Apellido" name="lastname" id="lastName" value="<%= (typeof old != 'undefined' && old.lastname ? old.lastname : null) %>">
+                        <input type="text" class="form-control" placeholder="Apellido" name="lastname" id="lastName" value="<%= (typeof old != 'undefined' && old.lastname ? old.lastname : null) %>">
                         <span class="text-danger" id="lastNameErrors"><%= (typeof errores != 'undefined' && errores.lastname ? errores.lastname.msg : null)%></span>
                     </section>
                     
                     <section class="primeracolumna">
                         <label for="">Email</label>
-                        <input type="email" placeholder="E-mail" name="email" id="email" value="<%= (typeof old != 'undefined' && old.email ? old.email : null) %>">
+                        <input type="email" class="form-control"  placeholder="E-mail" name="email" id="email" value="<%= (typeof old != 'undefined' && old.email ? old.email : null) %>">
                         <span class="text-danger" id="emailErrors"><%= (typeof errores != 'undefined' && errores.email ? errores.email.msg : null)%></span>
                     </section>
                 </div>
                 <div class="box-form">
                     <section class="segundacolumna">
                         <label for="">N° de documento</label>
-                        <input type="text" placeholder="Numero de documento" name="dni" id="dni" value="<%= (typeof old != 'undefined' && old.dni ? old.dni : null) %>">
+                        <input type="text" class="form-control"  placeholder="Numero de documento" name="dni" id="dni" value="<%= (typeof old != 'undefined' && old.dni ? old.dni : null) %>">
                         <span class="text-danger" id="dniErrors"><%= (typeof errores != 'undefined' && errores.documento ? errores.documento.msg : null)%></span>
                     </section>
     
                 
                     <section class="segundacolumna">
                         <label for="">Provincia</label>
-                        <select id="country" name="country">
+                        <select id="country"   name="country">
                             <option value="">Seleccione una provincia</option>
                         </select>
                         <!-- <input type="text" placeholder="Pais" name="country" id="country" value="<%= (typeof old != 'undefined' && old.country ? old.country : null) %>"> --><br>
@@ -56,17 +56,20 @@
                 <div class="box-form">
                     <section class="segundacolumna">
                         <label for="">Clave</label>
-                        <input type="password" placeholder="Clave" name="password" id="pass">
+                        <input type="password"  class="form-control" placeholder="Clave" name="password" id="pass">
                         <span class="text-danger" id="passErrors"><%= (typeof errores != 'undefined' && errores.password ? errores.password.msg : null)%></span>
                     </section>
     
                     <section class="segundacolumna">
                         <label for="">Confirmar clave</label>
-                        <input type="password" placeholder="Confirmar clave" name="password2" id="pass2">
+                        <input type="password" class="form-control" placeholder="Confirmar clave" name="password2" id="pass2">
                         <span class="text-danger" id="pass2Errors"><%= (typeof errores != 'undefined' && errores.password2 ? errores.password2.msg : null)%></span>
                     </section>
                 </div>
+                <div  class="container mt-4 text-danger">
                     <span id="submitErrors"></span>
+                </div>
+                    
                     <button>REGISTRARME</button>
             </form>
 
