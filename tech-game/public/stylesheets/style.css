@@ -771,11 +771,11 @@ main.detalleproducto{
     margin:  0px auto;
     width: 70%;
   }
-  .contenedor-crear div.caja__form label{
+  .contenedor-perfil div.caja__form label{
 
     width: 70%;
   }
-  .contenedor-crear div.caja__form div{
+  .contenedor-perfil div.caja__form div{
 
      width: 100%;
      display: flex;
@@ -1773,28 +1773,28 @@ div .scroll{
 @media(max-width:576px){
 
   /*--------------------------------------------MI PERFIL------------------------------------------ */
-  .contenedor-crear input {
+  .contenedor-perfil input {
     width: 100%;
    }
-   .contenedor-crear .campo{
+   .contenedor-perfil .campo{
      margin-top: 15px;
    }
-   .contenedor-crear {
+   .contenedor-perfil {
      display: flex;
      align-items: center;
      width: 100%;
    }
-   .contenedor-crear form {
+   .contenedor-perfil form {
     background-color: white;
      width: 90%;
      padding-bottom: 30px;
    }
-   .contenedor-crear div.caja__form label{
+   .contenedor-perfil div.caja__form label{
  
      width: 100%;
    }
   
-   .contenedor-crear h2{
+   .contenedor-perfil h2{
      margin: 20px 0px 15px 0px;
      width: 100%;
      border-bottom: 1px solid rgb(137, 64, 206,.2);
@@ -1819,12 +1819,12 @@ div .scroll{
   .productos__filter form div.filter__boton{
     margin-left: 20px;
   }
-  .contenedor-crear form {
+  .contenedor-perfil form {
      width: 100%;
      padding-bottom: 20px;
    }
    
-.contenedor-crear div.caja__form {
+.contenedor-perfil div.caja__form {
 width: 80%;
 }
 }
