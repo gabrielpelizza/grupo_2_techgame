@@ -47,7 +47,7 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes agregar una marca'),
 
-    check('categoria')
+    check('categorias')
     .notEmpty()
     .withMessage('Debes agregar una categoria')
 
