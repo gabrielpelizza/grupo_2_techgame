@@ -340,6 +340,7 @@ main div.fila{
 }
 
 main div div.tarjeta-producto{ 
+  position: relative;
   margin:2%;
   width:46%;
   height:auto;
@@ -389,7 +390,8 @@ main div div .tarjeta-producto div span.precio{
   justify-content: center;
   align-items: center;
 }
-main div div .tarjeta-producto div span.descuento{
+main div div .tarjeta-producto span.descuento{
+  position: absolute;
   display: flex;
   border-radius: 50%;
   width: 50px;
@@ -400,6 +402,8 @@ main div div .tarjeta-producto div span.descuento{
   font-size: 15px;
   justify-content: center;
   align-items: center;
+  top:0;
+  right:0;
 }
 
 
@@ -1560,6 +1564,7 @@ main.detalleproducto{
       flex-wrap: wrap;
       margin:2.5%;
       width:20%;
+      position: relative;
       height:320px;
       background-color: #892cdc;
       overflow:hidden;
@@ -1615,7 +1620,7 @@ main.detalleproducto{
       padding-top: 10px;
       padding-bottom: 10px;
   }
-  main div div .tarjeta-producto div span.descuento{
+  main div div .tarjeta-producto span.descuento{
       display: flex;
       border-radius: 50%;
       width: 50px;
@@ -1860,6 +1865,7 @@ button.glide__bullet{
 }
 
 div.card{
+  position: relative;
   border:2px solid #892cdc;
   background-color: #892cdc;
   color: white;
@@ -1879,4 +1885,20 @@ div.card a{
   border:none;
   width: 100%;
   color: black;
+}
+
+div.card span.descuento{
+  position: absolute;
+  display: flex;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  font-weight: 700;
+  color:green;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  top:0;
+  right:0;
 }
