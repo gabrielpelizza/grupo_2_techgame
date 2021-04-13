@@ -8,7 +8,7 @@
         <div class="contenedor-crear container col-12 mt-5">
             <h2 class="col-12 mb-5">Agregar producto</h2>
 
-            <form action="/admin/productos/create" method="POST" enctype="multipart/form-data" id="form"> 
+            <form action="/admin/productos/create" method="POST" enctype="multipart/form-data" class="cajaAddColor" id="form"> 
             
     <div class="box-form">
             <section class="primeracolumna">
@@ -76,9 +76,9 @@
 
      <span id="submitErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.form ? errores.form.msg : null) %></span>
     <div class="box-form">
-                <section class="quintacolumna">
-                <button type="submit" class="btn btn-success justify-content-center mb-2 w-50 ">Agregar producto</button>
-                <a href="/admin/productos" class="btn btn-danger justify-content-center ml-2 mb-2 w-50">Cancelar</a>
+                <section class="quintacolumna botonQuinta">
+                <button type="submit" class="btn btn-success justify-content-center ">Agregar producto</button>
+                <a href="/admin/productos" class="btn btn-danger justify-content-center  ">Cancelar</a>
             </section>
      </div>
 

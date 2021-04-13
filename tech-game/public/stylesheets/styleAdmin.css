@@ -57,7 +57,53 @@ width: 60%;
 div.cajaFormularioEdit .formEditar select{
     width: 60%;
 }
+.cajaAddColor{
+      background-color: rgba(214, 168, 255, 0.15);
+      width: 70%;
+      margin: 0px auto;
+      padding: 40px 0px;
+}
 
+.form__editar{
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+.form__editar div {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.form__editar div.cajaImg input{
+    height: 40px;
+}
+.form__editar div.caja1 label{
+    width: 70%;
+    text-align: start;
+}
+.form__editar div.cajaColor{
+    background-color: rgba(214, 168, 255, 0.15);
+padding: 10px 0px;
+}
+.form__editar section.botonEdit button{
+    width: 50% ;
+
+}
+
+.form__editar div.error{
+    margin-bottom: 0px;
+}
+.form__editar div input{
+    width: 70%;
+    height: 30px;
+}
 .indexTitulo{
     text-align: center;
     padding-top: 25px;
@@ -108,11 +154,17 @@ div.cajaFormularioEdit .formEditar select{
       }
 
       .adminagregarproducto section.quintacolumna{
-        width: 100%;
+        width: 80%;
+        margin: 0px auto;
         display: flex;
         flex-direction: row;
+        justify-content: center;
         margin-top: 2%;
         margin-bottom: 2%;
+      }
+      .botonQuinta button{
+       width: 28%;
+       margin-right: 20px;
       }
 
 

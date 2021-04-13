@@ -748,18 +748,18 @@ main.detalleproducto{
 
 
   /*--------------------------------------------MI PERFIL------------------------------------------ */
-  .contenedor-crear input {
+  .contenedor-perfil input {
    width: 70%;
   }
-  .contenedor-crear .campo{
+  .contenedor-perfil .campo{
     margin-top: 15px;
   }
-  .contenedor-crear {
+  .contenedor-perfil {
     display: flex;
     align-items: center;
     width: 100%;
   }
-  .contenedor-crear form {
+  .contenedor-perfil form {
    background-color: rgba(137, 52, 221, 0.061);
    border-radius: 20px;
     width: 80%;
@@ -767,7 +767,7 @@ main.detalleproducto{
     flex-direction: column;
     padding-bottom: 40px;
   }
-  .contenedor-crear div.caja__form{
+  .contenedor-perfil div.caja__form{
     margin:  0px auto;
     width: 70%;
   }
@@ -782,7 +782,7 @@ main.detalleproducto{
      align-items: center;
      flex-direction: column;
   }
-  .contenedor-crear h2{
+  .contenedor-perfil h2{
     margin: 20px 0px 15px 0px;
   }
   .datosperfil .imageninfoperfil{
@@ -884,7 +884,6 @@ main.detalleproducto{
   header nav ul{
       width:100%;
   }
-
 
   header nav .search{
       overflow:hidden;
@@ -1767,7 +1766,7 @@ div .scroll{
   }
   /* fin filtro*/
 
-  .contenedor-crear div.caja__form {
+  .contenedor-perfil div.caja__form {
     width: 80%;
     }
 }

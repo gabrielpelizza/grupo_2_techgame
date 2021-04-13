@@ -7,7 +7,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
     home : (req, res) => {
     let productos=   db.Productos.findAll({
-        limit: 4,
+        limit: 8,
       });
     let categorias = db.categories.findAll()
     Promise.all([productos,categorias])
