@@ -65,7 +65,7 @@ module.exports = {
    
     if(errores.isEmpty()){
   
-    const {product_name,price,sku,stock,description,discount, marcas, categoria, img} = req.body;
+    const {product_name,price,sku,stock,description,discount, marcas, categorias, img} = req.body;
 
     db.Productos.create({
       product_name : product_name,
@@ -74,7 +74,7 @@ module.exports = {
       stock : +stock,
       discount : +discount,
       brand_id : +marcas,
-      category_id : +categoria,
+      category_id : +categorias,
       description : description,
       image : (req.files[0])?req.files[0].filename : "imagenDefault.png" 
     }).catch(error => console.log(error))
