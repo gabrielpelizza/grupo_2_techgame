@@ -448,6 +448,7 @@ margin-right: 50px;
         div.cm-caja>section.tercercolumna span{
             margin-left: 0px;
         }
+    }
       /* MOBILE Y TABLER LISTADO DE PRODUCTOS */
 @media(min-width:320px){
     .scroll{
@@ -531,7 +532,7 @@ margin-right: 50px;
     text-align: center;
 }
 }
-@media(min-width:435px){
+@media(min-width:426px){
     .scroll{
         display: none;
     }
@@ -553,5 +554,4 @@ margin-right: 50px;
     .scroll{
         display: grid;
     }
-}
 }
