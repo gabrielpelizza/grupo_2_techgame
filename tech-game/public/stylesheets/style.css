@@ -862,7 +862,7 @@ main.detalleproducto{
 
   header nav .search button.boton-busqueda{
       background-color: white;
-      height:38;
+      height:38px;
   }
 
   header nav{
@@ -925,7 +925,7 @@ main.detalleproducto{
 
   header div.menu-button-carrito{
       display:flex;
-      justify-content:end;
+      justify-content:start;
       align-items: right;
       padding-top: 10px;
   }
@@ -1429,6 +1429,7 @@ main.detalleproducto{
       border:0;
   }
 
+
   header nav ul li a{
      color:white;
      font-weight: 700;
@@ -1784,6 +1785,18 @@ div .scroll{
     width: 80%;
     }
 }
+
+@media(min-width:769px){
+  .logoutmobil{
+    display: none;
+  }
+}
+@media(max-width:426){
+  .logoutpc{
+    display: none;
+  }
+}
+
 @media(max-width:576px){
 
   /*--------------------------------------------MI PERFIL------------------------------------------ */
