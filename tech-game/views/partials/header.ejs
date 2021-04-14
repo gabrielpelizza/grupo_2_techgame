@@ -10,20 +10,20 @@
                 <img class="logo" src="/images/logo-tech-game.PNG" alt="">
             </div>
             
-            <div class="navbar-expand-md col-2 col-lg-2 menu-button-carrito">
+            <div class="navbar-expand-md col-2 col-md-2 col-lg-2 menu-button-carrito">
                     <button><a href="/productos/carrito"><i class="fas fa-shopping-cart"></i></a></button>
-                    <a href="/productos/carrito"><span class=" d-none d-lg-block d-xl-block ml-2">Carrito</span></a>
+                    <a href="/productos/carrito"><span class="  d-none d-lg-block d-md-block d-xl-block ml-2">Carrito</span></a>
             </div>
 
             <% if (typeof user == 'undefined' ) { %>
-                <div class="navbar-expand-md col-2 col-lg-2 menu-button-carrito">
+                <div class="navbar-expand-md col-2  col-md-3 col-lg-2 menu-button-carrito">
                     <button><a href="/users/login"><i class="fas fa-user"></i></a></button>
-                    <a href="/users/login"><span class=" d-none d-lg-block d-xl-block ml-2">Iniciar Sesion</span></a>
+                    <a href="/users/login"><span class="  d-none d-lg-block d-md-block d-md-block d-xl-block ml-2">Iniciar Sesion</span></a>
                 </div>
             <% } else { %>
-                <div class="navbar-expand-md col-2 col-lg-2 menu-button-carrito">
+                <div class="navbar-expand-md col-2 col-md-3 col-lg-2 menu-button-carrito">
                     <button><a href="/users/perfil/<%= user.id %>"><i class="fas fa-user"></i></a></button>
-                    <a class="logoutdesktop" href="/users/cerrarSesion"><span class=" d-none d-lg-block d-xl-block ml-2">Cerrar Sesion</span></a>
+                    <a class="logoutdesktop" href="/users/cerrarSesion"><span class="  d-none d-lg-block d-md-block d-xl-block ml-2">Cerrar Sesion</span></a>
                 </div>
             <% } %>
           </div>
@@ -32,7 +32,7 @@
       <div class="navbar-expand-md">
           <nav class="collapse navbar-collapse nav-menu col-lg-12" id="navbarSupportedContent">
               <ul class="menu navbar-nav">
-                  <form class="d-flex search col-lg-6" method="GET" action="/productos/search">
+                  <form class="d-flex search col-md-4 col-lg-6" method="GET" action="/productos/search">
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="buscar">
                       <button class="btn boton-busqueda" type="submit"><i class="fas fa-search"></i></button>
                   </form>
