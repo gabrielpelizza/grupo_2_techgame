@@ -615,6 +615,7 @@ hr.detalledekstop{
 
 main.detalleproducto{
   background-color: #EBEBEB;
+  width: 100%;
 }
 
 .volver span{
@@ -1306,6 +1307,12 @@ main.detalleproducto{
     margin-top: 10px;
     font-size: 26px;
   }
+
+  .cajadetalleimagen img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
   
   .definicion{
     width: 50%;
@@ -1343,7 +1350,7 @@ main.detalleproducto{
   .definicion h3{
     display: flex;
     justify-content: center;
-    font-size: 15px;
+    font-size: 22px;
     width: 100%;
   }
   

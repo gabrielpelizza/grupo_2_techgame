@@ -24,9 +24,9 @@
 .logoAdmin img {
     width: 60%;
 }
-.logoAdmin{
+/* .logoAdmin{
     width: 15%;
-}
+} */
 .letraHeader{
     color: #892cdc;    
 }
@@ -167,4 +167,119 @@ padding: 10px 0px;
        margin-right: 20px;
       }
 
+      /* MOBILE Y TABLER LISTADO DE PRODUCTOS */
+@media(min-width:320px){
+    .scroll{
+        display: none;
+    }
+.cardpanelproduct{
+    width: 90%;
+    margin: 5% 5%;
+    color: white;
+    border-radius: 18px;
+}
+.cardpanelproduct .imagenpaneltamano img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.mobilepanelproduct .reyusadocard{
+    padding: 0 15px;
+    margin-bottom: 5%;
+}
+.mobilepanelproduct .usadocard{
+    display: flex;
+    justify-content: center;
+}
+.mobilepanelproduct .usadocard-discount{
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+    width: 30%;
+}
 
+.mobilepanelproduct .usadocard-price{
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+    width: 32%;
+}
+
+.mobilepanelproduct .usadocard-stock{
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+    width: 30%;
+}
+.mobilepanelproduct .divcard-titlename{
+    border-bottom: 1px solid #a993b3;
+}
+.mobilepanelproduct .divcard-titlename h5.card-titlename{
+    display: inline;
+    width: 50%;
+}
+
+.mobilepanelproduct h6.card-titlesku{
+    display: inline;
+    width: 50%;
+    margin-left: 8px;
+    color: #e0dede;
+}
+
+.mobilepanelproduct p.card-titledescription{
+    margin-top: 5%;
+}
+.mobilepanelproduct .descbrandpanel{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    border-top: 1px solid #a993b3;
+}
+
+.mobilepanelproduct .descbrandpanel h6.descbrandpanel1{
+    display: inline;
+    margin-top: 3%;
+    width: 50%;
+    text-align: center;
+}
+
+.mobilepanelproduct .descbrandpanel h6.descbrandpanel2{
+    display: inline;
+    margin-top: 3%;
+    width: 50%;
+    text-align: center;
+}
+
+/* intento solucion de header*/
+.logoAdmin{
+    width: 60%;
+}
+}
+@media(min-width:435px){
+    .scroll{
+        display: none;
+    }
+    .cardpanelproduct{
+        width: 50%;
+        margin: 5% 1%;
+        color: white;
+        border-radius: 18px;
+    }
+    .mobilepanelproduct{
+        display: flex;
+    }
+    .logoAdmin{
+        width: 45%;
+    }
+}
+@media(min-width:769px){
+    .mobilepanelproduct{
+        display: none;
+    }
+    .scroll{
+        display: grid;
+    }
+    .logoAdmin{
+        width: 15%;
+    }
+}
