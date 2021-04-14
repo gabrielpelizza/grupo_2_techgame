@@ -537,13 +537,14 @@ margin-right: 50px;
         display: none;
     }
     .cardpanelproduct{
-        width: 50%;
+        width: 97%;
         margin: 5% 1%;
         color: white;
         border-radius: 18px;
     }
     .mobilepanelproduct{
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         width: 100%;
     }
 }
