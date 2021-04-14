@@ -1422,6 +1422,7 @@ main.detalleproducto{
       border:0;
   }
 
+
   header nav ul li a{
      color:white;
      font-weight: 700;
@@ -1777,6 +1778,18 @@ div .scroll{
     width: 80%;
     }
 }
+
+@media(min-width:769px){
+  .logoutmobil{
+    display: none;
+  }
+}
+@media(max-width:426){
+  .logoutpc{
+    display: none;
+  }
+}
+
 @media(max-width:576px){
 
   /*--------------------------------------------MI PERFIL------------------------------------------ */

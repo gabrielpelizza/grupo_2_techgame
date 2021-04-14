@@ -23,7 +23,7 @@
             <% } else { %>
                 <div class="navbar-expand-md col-2 col-lg-2 menu-button-carrito">
                     <button><a href="/users/perfil/<%= user.id %>"><i class="fas fa-user"></i></a></button>
-                    <a href="/users/cerrarSesion"><span class=" d-none d-lg-block d-xl-block ml-2">Cerrar Sesion</span></a>
+                    <a class="logoutdesktop" href="/users/cerrarSesion"><span class=" d-none d-lg-block d-xl-block ml-2">Cerrar Sesion</span></a>
                 </div>
             <% } %>
           </div>
@@ -46,11 +46,13 @@
                         <%} else if (user.rol_id == 1 ){%> 
                             <li><a class="" href="/users/perfil/<%= user.id %>">Perfil</a></li>   
                             <li><a class="" href="/admin">Panel de control</a></option></li>
+                            <li><a class="logoutmobil" href="/users/cerrarSesion">Cerrar Sesion</a></li>
 
                         <% } else if (user.rol_id == 2 ){%>
-                            <li>
-                                <li><a class="" href="/users/perfil/<%= user.id %>">Perfil</a></li>
-                            </li>
+
+                            <li><a class="" href="/users/perfil/<%= user.id %>">Perfil</a></li>
+                            <li><a class="logoutmobil" href="/users/cerrarSesion">Cerrar Sesion</a></li>
+
                         <% } else { %> 
                         <% } %>
                   </div>
