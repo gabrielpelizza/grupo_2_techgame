@@ -267,6 +267,7 @@ padding: 10px 0px;
     }
     .mobilepanelproduct{
         display: flex;
+        width: 100%;
     }
     .logoAdmin{
         width: 45%;
