@@ -28,7 +28,7 @@
     width: 15%;
 }
 .letraHeader{
-    color: #892cdc;    
+    color: white;    
 }
 
 .letraHeader:hover{
@@ -57,12 +57,7 @@ width: 60%;
 div.cajaFormularioEdit .formEditar select{
     width: 60%;
 }
-.cajaAddColor{
-      background-color: rgba(214, 168, 255, 0.15);
-      width: 70%;
-      margin: 0px auto;
-      padding: 40px 0px;
-}
+
 
 .form__editar{
     margin: 0 auto;
@@ -109,11 +104,111 @@ padding: 10px 0px;
     padding-top: 25px;
 }
 .headerAdmin nav{
-    background-color: rgba(214, 168, 255, 0.7);
+    
+}
+.imgAdd{
+    display: flex;
+   align-items: center;
+
+}
+.form__add{
+    margin-top: 40px;
+}
+.imgAdd img{
+width: 90%;
+margin-left: 70px ;
+}
+
+.formAdd{ 
+    margin:10px 0px;
+}
+.contenedor-Add{
+   
+    display: flex;
+    flex-direction: row;
+ justify-content: center;
 }
 
 
+div.cm-caja{
+    width: 95%;
+}
+.formAdd div.campo-form{
+ 
+    display: flex;
+    justify-content: row;
+    justify-content: center;    
+    width: 90%;
+    margin: 0 auto;
+}
+.formAdd div.campo-form section{
+    width: 25%;
+    padding: 0px 0px 20px 0px; 
+}
+div.cm-caja>section.tercercolumna{
+    width: 40%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.cm-caja section.tercercolumna select{
+    width: 60%;
+}
 
+.tituloAdd {
+    width: 80%;
+    text-align: center;
+    border-bottom:   1px solid rgba(137, 44, 220, .2);
+    padding-bottom: 10px;
+    margin: 10px auto;
+}
+.formAdd div{
+    margin: 0px auto;
+}
+.formAdd div.campo-form section input{
+width: 90%;
+}
+.formAdd div.textform{
+   
+    width: 80%;
+    margin: 0 auto;
+}
+.formAdd div.textform section {
+    width: 60%;
+    padding-bottom: 10px ;
+}
+.formAdd div.textform section textarea{
+    resize: none;
+}
+.formAdd div.form-boton{
+    width: 80%;
+    margin: 0 auto;
+   
+}
+.formAdd div.textform span{
+    margin: 0 auto;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.formAdd div.form-boton section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0px;
+}
+.formAdd div.form-boton section a:last-child{
+    width: 18%;
+}
+ div.form-boton .spanBoton{
+     display: inline-block;
+    text-align: center;
+  
+    width: 100%;
+
+}
+/*
     .adminagregarproducto form .box-form{
         display: flex;
         flex-direction: row;
@@ -161,10 +256,196 @@ padding: 10px 0px;
         justify-content: center;
         margin-top: 2%;
         margin-bottom: 2%;
-      }
+      }*/
+
+      
       .botonQuinta button{
        width: 28%;
        margin-right: 20px;
       }
 
+@media(max-width:1474px){
+    div.cm-caja>section.tercercolumna{
+        width: 50%;
+        margin-right: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    .formAdd div.campo-form section{
+        width: 45%;
+        padding: 0px 0px 20px 0px; 
+        margin-right: 15px;
+        
+    }
+    
+    div.cm-caja section.tercercolumna select{
+        width: 100%;
+    }
+    .formAdd div.textform section {
+        width: 80%;
+        padding-bottom: 0px ;
+    }
+}
 
+
+@media(max-width:1194px){
+    .formAdd{ 
+        margin:10px auto;
+    }
+    .imgAdd{
+        display: none;
+    }
+    div.cm-caja section.tercercolumna select{
+        width: 70%;
+    }
+    .formAdd div.campo-form{    
+        width: 100%;
+        margin: 0 auto;
+    }
+    .formAdd div.campo-form section{
+        width: 80%;
+        padding: 0px 0px 20px 0px; 
+    }
+    .formAdd span{
+        font-size: 13px;
+    }
+}
+@media(max-width:1150px){
+    .contenedor-Add{
+   
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .formAdd div.campo-form{
+ 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;    
+        width: 90%;
+    }
+    div.cm-caja section.tercercolumna select{
+        width: 30%;
+    }
+    .formAdd div.campo-form section{
+        width: 80%;
+        padding: 0px 0px 20px 0px; 
+        margin: 0px auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .formAdd div.campo-form section input{
+        width: 60%;
+        
+        }
+        section.marcacol span{
+            width: 45%;
+        }
+        div.cm-caja>section.tercercolumna span{
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin-left: 60px;
+        }
+        .formAdd div.textform{
+   
+            width: 60%;
+        }
+        div.cm-caja section.tercercolumna select{
+            margin-right: 50px;
+                }
+    
+}
+@media(max-width :967px){
+    .formAdd div.form-boton section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+     
+    .formAdd div.form-boton section.botonQuinta a{
+        width: 40%;
+        margin-top: 10px;
+        margin-left: 0px;
+       }
+       .formAdd div.form-boton section.botonQuinta button{
+           margin-right: 0px;
+           width: 40%;
+       }
+       div.cm-caja section.tercercolumna select{
+        width: 60%;
+    }
+    div.cm-caja section.tercercolumna select{
+margin-right: 50px;
+    }
+}
+@media(max-width:768px){
+    .formAdd div.campo-form{  
+        width: 100%;
+    }
+    .formAdd div.campo-form section{
+        width: 100%;
+        padding: 0px 0px 20px 0px; 
+        margin: 0px auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .formAdd div.form-boton section.botonQuinta a{
+        width: 70%;
+        margin-top: 10px;
+        margin-left: 0px;
+       }
+       .formAdd div.form-boton section.botonQuinta button{
+           margin-right: 0px;
+           width: 70%;
+       }
+       .formAdd div.campo-form section input{
+        width: 80%;
+        
+        }
+        .formAdd{
+            margin: 0px auto;
+        }
+}
+@media(max-width:425px){
+    .formAdd{
+        margin: 0px auto;
+        max-width: 100% !important;
+    }
+    .formAdd div.campo-form{  
+        width: 100%;
+    }
+    .formAdd div.campo-form section{
+        width: 100%;
+        padding: 0px 0px 20px 0px; 
+        margin: 0px auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .formAdd div.form-boton section.botonQuinta a{
+        width: 90%;
+        margin-top: 10px;
+        margin-left: 0px;
+       }
+       .formAdd div.form-boton section.botonQuinta button{
+           margin-right: 0px;
+           width: 90%;
+       }
+       .formAdd div.campo-form section input{
+        width: 100%;
+        
+        }
+        div.cm-caja section.tercercolumna select{
+            width: 100%;
+        }
+        div.cm-caja>section.tercercolumna span{
+            margin-left: 0px;
+        }
+}
