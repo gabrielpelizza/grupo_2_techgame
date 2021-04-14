@@ -180,7 +180,7 @@ window.addEventListener('load', function(){
         let elementosForm = this.elements
         let errorCounter = 0;
         for (let index = 0; index < elementosForm.length-1; index++) {
-            elementosForm[index].classList.add('is-invalid');
+            /* elementosForm[index].classList.add('is-invalid'); */
 
              if(elementosForm[index].type !=='file' && elementosForm[index].value.length == 0){
                  elementosForm[index].classList.add('is-invalid');
