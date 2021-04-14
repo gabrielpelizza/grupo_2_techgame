@@ -13,10 +13,14 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
   index:(req,res)=>{
-    db.Productos.count()
-    .then(contador => {
+    let productos = db.Productos.count()
+    let usuarios = db.Usuarios.count()
+
+    Promise.all([productos,usuarios])
+    .then(([contador,usuarios]) => {
       res.render('admin/index', {
-        contador
+        contador,
+        usuarios
       }); //home de administracion
     })
     

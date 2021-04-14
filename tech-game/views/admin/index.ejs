@@ -4,17 +4,32 @@
 <body>
     <%- include('partials/header') %> 
     <main>
-        <div class="indexTitulo">
-            <h1>PANEL DE ADMINISTRACION</h1>
+        <div class="indexTitulo2 "><h2>BIENVENIDOS</h2></div>
+        <div class="indexPanel container-fluid ">
+            <div class=" col-12" >
+                <img src="/images/panel.svg" alt="">
+            </div>
+            <div class="col-xl-10 contadorIndex ">
+                <div>
+                    <h2 class="contador">Cantidad de productos  :  </h2>
+                    <h2 class="contador"><%= contador %> </h2>
+                </div>
+                <div>
+                    <h2 class="contador">Cantidad de usuarios  :  </h2>
+                    <h2 class="contador"><%= usuarios %> </h2>
+                </div>
+                
+            </div>
         </div>
+        
     </main>
-    <div class="container container-stats">
-        <div class="contador-container">
-            <h2>cantidad de productos</h2>
-            <h2 class="contador"><%= contador %> </h2>
-        </div>
 
-    </div>
+    
+
+
+
+        
+
 
 <%- include('partials/scripts') %> 
 </body>

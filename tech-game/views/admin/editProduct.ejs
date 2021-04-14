@@ -4,8 +4,9 @@
 <body>
     <%- include('partials/header') %> 
     <main>
-      <div class="adminagregarproducto">
-        <div class="contenedor-crear container col-6 mt-5">
+      <div class="cajaEdit">
+        
+        <div class="  col-xl-7 col-md-9 col-sm-10 col-12  mt-5">
 
             <!-- <form action="/admin/productos/update/<%=rtaproducto.id%>/?_method=PUT" method="POST" enctype="multipart/form-data" id="formEdit"> 
             
@@ -13,8 +14,8 @@
             <form action="" method="get" class="col-12">
                 <input type="search" name="" value="" class="col-6 mb-5 justify-content-left" placeholder="buscar" >
             </form> -->
-            <form class=" form__editar" id="form" action="/admin/productos/update/<%= rtaproducto.id %>?_method=PUT" method="POST">
-                <div>     
+            <form class="col-12  col-xl-9 col-sm-11 form__editar" id="form" action="/admin/productos/update/<%= rtaproducto.id %>?_method=PUT" method="POST">
+                <div class="tituloEdit">     
                     <h2>Modificar producto</h2>
                 </div>
                 <div class="caja1 cajaColor">
@@ -47,15 +48,16 @@
                  <div class="caja1  cajaColor cajaImg "> 
                   <input class="form-control" type="file" name="img" value="" id="img" class="col-3 mb-3"> 
                  </div>  -->
-                <div class="d-flex flex-row  mb-4 justify-content-center  cajaColor">
-                    <label for="categorias" class="mr-3">Categoria</label>
-                    <select name="categorias" id="categorias" class="mr-5 w-25 form-control">
+                <div class=" mb-4 cm-formEdit  cajaColor">
+                    <select name="categorias" id="categorias" class="cat  form-control">
+                      <option disabled>Categoria</option>
                       <% rtacategorias.forEach(cadacategoria => { %>
                         <option <%= cadacategoria.id == rtaproducto.category_id ? 'selected' : null %> value="<%= cadacategoria.id %>"><%= cadacategoria.category %></option>
                      <% }) %> 
                     </select>
-                    <label for="marcas" class="mr-3">Marca</label>
-                    <select name="marcas" id="marcas" class="form-control w-25">
+
+                    <select name="marcas" id="marcas" class="form-control ">
+                      <option disabled>Marca</option>
                       <% rtamarcas.forEach(cadamarca=>{ %> 
                           <option <%= cadamarca.id == rtaproducto.brand_id ? 'selected' : null %> value="<%= cadamarca.id %>"><%= cadamarca.brand %></option>
                       <% }) %> 
@@ -69,9 +71,9 @@
                   
                     
     
-                  <div class="d-flex flex-row justify-content-center box-form">
-                      <section class="quintacolumna botonEdit ">
-                        <button type="submit" class="btn btn-success justify-content-center mr-4 ">Modificar producto</button>
+                  <div class=" formEdit_boton flex-row ">
+                      <section class=" botonEdit ">
+                        <button type="submit" class=" btn btn-success justify-content-center">Modificar producto</button>
                         <a href="/admin/productos" class="btn btn-danger justify-content-center   ">Cancelar</a>
                       </section>
                   </div>
@@ -84,6 +86,7 @@
               
             </form>
         </div>
+        <img src="/images/act.svg" alt="" class=" ">
       </div>
            
     </main>

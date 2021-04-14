@@ -17,7 +17,8 @@
     width:50%;
 }
 .contador{
-    font-size: 13vh;
+    font-size: 3vh;
+    margin-left: 5px;
 }
 
 
@@ -28,7 +29,8 @@
     width: 15%;
 }
 .letraHeader{
-    color: white;    
+    color: black;    
+    font-weight: bold;
 }
 
 .letraHeader:hover{
@@ -36,6 +38,38 @@
     color:white ;
     border: none;    
 }
+/*index*/
+.indexPanel img{
+    width: 30%;
+}
+.indexPanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.contadorIndex{
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+.contadorIndex div{
+    padding: 10px 0px;
+border : 2px double  #892cdc;
+border-radius: 10px ;
+width: 30%;
+text-align: center;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+
+
+
 /*editar producto*/
 div.cajaFormularioEdit{
     width: 800px;
@@ -53,20 +87,55 @@ div.cajaFormularioEdit .formEditar div{
 }
 div.cajaFormularioEdit .formEditar input{
 width: 60%;
+
 }
 div.cajaFormularioEdit .formEditar select{
-    width: 60%;
+    width: 0%;
 }
 
-
+.cajaEdit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.cajaEdit img{
+    width: 35%;
+margin-right: 50px;
+}
 .form__editar{
     margin: 0 auto;
+    margin-right: 0px;
     width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-bottom: 40px;
+}
+.form__editar div label{
+    width: 60%;
+}
+.form__editar .tituloEdit h2{
+    width: 100%;
+    border-bottom:   1px solid rgba(137, 44, 220, .2);
+    padding-bottom: 10px;
+    text-align: center;
+}
+.form__editar textarea{
+    resize: none;
+}
+.form__editar .cm-formEdit{
+    display:flex;
+    flex-direction: row;
+}
+.form__editar .cm-formEdit label{
+    width: auto;
+}
+.form__editar .cm-formEdit select{
+    width: 30%;
+}
+.form__editar .cm-formEdit select.cat{
+    margin-right: 10px;
 }
 .form__editar div {
     width: 80%;
@@ -80,28 +149,46 @@ div.cajaFormularioEdit .formEditar select{
     height: 40px;
 }
 .form__editar div.caja1 label{
-    width: 70%;
     text-align: start;
 }
 .form__editar div.cajaColor{
-    background-color: rgba(214, 168, 255, 0.15);
-padding: 10px 0px;
+padding: 0px;
 }
-.form__editar section.botonEdit button{
-    width: 50% ;
-
+.form__editar section.botonEdit {
+    display: flex;
+    flex-direction: row;
+}
+.form__editar section.botonEdit button {
+    margin-right: 20px;
 }
 
 .form__editar div.error{
     margin-bottom: 0px;
 }
 .form__editar div input{
-    width: 70%;
+    width: 60%;
     height: 30px;
+    text-align: center;
 }
+
 .indexTitulo{
     text-align: center;
     padding-top: 25px;
+}
+.indexTitulo2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 0px;
+    
+}
+.indexTitulo2 h2{
+    font-size: 7em;
+    text-decoration-line:underline;
+    text-decoration-style: wavy;
+    text-decoration-color:  #892cdc;
+    width: 90%;
+    text-align: center;
 }
 .headerAdmin nav{
     background-color: rgba(214, 168, 255, 0.7);
@@ -287,6 +374,23 @@ width: 90%;
     }
 }
 
+@media(max-width:1300px){
+    .form__editar .cm-formEdit{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .form__editar .cm-formEdit select{
+    width: 60%;
+    }
+    .form__editar .cm-formEdit select.cat{
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+    .indexTitulo2 h2{
+        font-size: 6em;
+        
+    }
+}
 
 @media(max-width:1194px){
     .formAdd{ 
@@ -311,6 +415,7 @@ width: 90%;
     }
 }
 @media(max-width:1150px){
+    
     .contenedor-Add{
    
         display: flex;
@@ -359,11 +464,26 @@ width: 90%;
     
 }
 @media(max-width :967px){
+    .contadorIndex div {
+        padding: 15px 0px;
+        width: 40%;
+    }
+    .contador{
+        font-size: 1em;
+        margin-left: 5px;
+    }
+    .indexTitulo2 h2{
+        font-size: 5em;
+        
+    }
     .formAdd div.form-boton section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .cajaEdit img{
+        display: none;
     }
      
     .formAdd div.form-boton section.botonQuinta a{
@@ -382,7 +502,48 @@ width: 90%;
 margin-right: 50px;
     }
 }
+@media(max-width:579px){
+    .form__editar .cm-formEdit select{
+        width: 60%;
+    }
+    .form__editar section.botonEdit {
+        display: flex;
+        flex-direction: column;
+    }
+    .form__editar section.botonEdit button {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    .indexTitulo2 h2{
+        font-size: 3em;
+    }
+    .contadorIndex {
+        padding: 20px 0px;
+    }
+    .contadorIndex div{
+    padding: 0px;
+    border-radius: 10px ;
+    width: 45%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    }
+    .contador{
+        font-size: 12px;
+        margin-left: 5px;
+        margin-bottom: 0px;
+    }
+
+}
 @media(max-width:768px){
+    .cajaEdit{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .cajaEdit img{
+        display: none;
+    }
     .formAdd div.campo-form{  
         width: 100%;
     }
@@ -411,8 +572,43 @@ margin-right: 50px;
         .formAdd{
             margin: 0px auto;
         }
+        .form__editar div.cajaColor{
+            background-color: white;
+            padding: 10px 0px;
+        }
+        .form__editar div {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .form__editar div input {
+            width: 70%;
+            height: 30px;
+            text-align: center;
+            padding: 10px;
+        }
+        .form__editar div label{
+            width: 70%;
+        }
+        .form__editar div.cajaColor {
+            background-color: white;
+            padding:  0px;
+        }
+        .form__editar .cm-formEdit select{
+            width: 70%;
+        }
+        .form__editar .cm-formEdit select.cat{
+            margin-bottom: 20px;
+        }
+    
 }
-@media(max-width:425px){
+@media(max-width:487px){
+    .form__editar .tituloEdit h2{
+        font-size: 25px;
+    }
     .formAdd{
         margin: 0px auto;
         max-width: 100% !important;
@@ -448,6 +644,28 @@ margin-right: 50px;
         div.cm-caja>section.tercercolumna span{
             margin-left: 0px;
         }
+        .form__editar section.botonEdit button {
+            margin-right: 0px;
+            margin-bottom: 10px;
+            padding: 13px;
+        }
+    
+        .form__editar div {
+            width: 90%;
+        }
+        .form__editar div input {
+            width: 90%;
+            height: 30px;
+            text-align: center;
+        }
+        .form__editar .cm-formEdit select {
+            width: 90%;
+        }
+        .form__editar div label{
+            width: 90%;
+        }
+        
+        
     }
       /* MOBILE Y TABLER LISTADO DE PRODUCTOS */
 @media(min-width:320px){
@@ -547,6 +765,7 @@ margin-right: 50px;
         grid-template-columns: 1fr 1fr;
         width: 100%;
     }
+    
 }
 @media(min-width:769px){
     .mobilepanelproduct{
@@ -554,5 +773,22 @@ margin-right: 50px;
     }
     .scroll{
         display: grid;
+    }
+}
+@media(max-width:360px){
+    .indexTitulo2 h2 {
+        font-size: 1.9em;
+    }
+    .indexPanel img{
+        width: 40%;
+    }
+    .contadorIndex{
+        padding-right: 0px !important;
+        padding-left: 0px!important;
+    }
+    .contador {
+        font-size: 11px;
+        margin-left: 0px;
+        margin-bottom: 0px;
     }
 }
