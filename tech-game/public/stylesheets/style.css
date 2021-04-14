@@ -615,6 +615,7 @@ hr.detalledekstop{
 
 main.detalleproducto{
   background-color: #EBEBEB;
+  width: 100%;
 }
 
 .volver span{
@@ -861,7 +862,7 @@ main.detalleproducto{
 
   header nav .search button.boton-busqueda{
       background-color: white;
-      height:38;
+      height:38px;
   }
 
   header nav{
@@ -924,7 +925,7 @@ main.detalleproducto{
 
   header div.menu-button-carrito{
       display:flex;
-      justify-content:end;
+      justify-content:start;
       align-items: right;
       padding-top: 10px;
   }
@@ -1306,6 +1307,12 @@ main.detalleproducto{
     margin-top: 10px;
     font-size: 26px;
   }
+
+  .cajadetalleimagen img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
   
   .definicion{
     width: 50%;
@@ -1343,7 +1350,7 @@ main.detalleproducto{
   .definicion h3{
     display: flex;
     justify-content: center;
-    font-size: 15px;
+    font-size: 22px;
     width: 100%;
   }
   
@@ -1421,6 +1428,7 @@ main.detalleproducto{
       list-style: none;
       border:0;
   }
+
 
   header nav ul li a{
      color:white;
@@ -1777,6 +1785,18 @@ div .scroll{
     width: 80%;
     }
 }
+
+@media(min-width:769px){
+  .logoutmobil{
+    display: none;
+  }
+}
+@media(max-width:426){
+  .logoutpc{
+    display: none;
+  }
+}
+
 @media(max-width:576px){
 
   /*--------------------------------------------MI PERFIL------------------------------------------ */

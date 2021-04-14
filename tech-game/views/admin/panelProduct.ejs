@@ -49,6 +49,60 @@
         </div>
     </main>
 
+   
+        <div class="mobilepanelproduct">
+            
+            <% productos.forEach(element => { %>
+
+                <div class="cardpanelproduct" style="background-color: #7367F0;">
+                <div class="imagenpaneltamano">
+                    <img src="/images/productos/<%= element.image %>" class="card-img-top" alt="...">  
+                </div>     <!-- imagenpaneltamano   -->      
+                    <div class="card-body">
+                        <div class="divcard-titlename">
+                      <h5 class="card-titlename"><%= element.product_name %></h5>
+                      <h6 class="card-titlesku"><%= element.sku %></h6>
+                    </div> <!-- divcard-titlename -->
+
+                      <p class="card-titledescription"><%= element.description %></p>
+
+                      <div class="descbrandpanel">
+                        <h6 class="descbrandpanel1"><%= element.categorias.category %></h6>
+                        <h6 class="descbrandpanel2"><%= element.marcas.brand %></h6>
+                      </div>
+
+                      <div class="reyusadocard" style="background-color: #9f98ec;">
+                      <div class="usadocard-discount">
+                          <h6>Descuento</h6>
+                          <p><%= element.discount %></p>
+                      </div> <!-- card stats -->
+
+                      <div class="usadocard-price">
+                        <h6>Precio</h6>
+                        <p><%= element.price %></p>
+                    </div> <!-- card stats -->
+
+                    <div class="usadocard-stock">
+                        <h6>Stock</h6>
+                        <p><%= element.stock %></p>
+                    </div> <!-- card stats -->
+
+                </div> <!-- rey de usadocard -->
+                <div class="divbotonespanel">
+                    <form action="" class="d-inline">
+                        <a href="/admin/productos/editar/<%= element.id %>" class="btn btn-success w-50"><i class="fas fa-edit"></i></a>
+                    </form>
+                    <form class=" d-inline formDelete" action="/admin/productos/delete/<%= element.id %>?_method=DELETE" method="POST" class="d-inline p-2 formDelete">
+                        <button class="btn btn-danger ml-5 w-25" type="submit"><i class="fas fa-trash"></i></button>
+                    </form>
+                </div>
+                    </div><!--  card-body -->
+                  </div>
+           
+            <% }) %>
+        </div> <!-- mobilepanelproduct -->
+       
+
     <%- include('partials/scripts') %> 
 
     <script src="/javascripts/eliminar.js"></script>

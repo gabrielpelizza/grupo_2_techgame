@@ -18,7 +18,7 @@
           <h1><%= producto.product_name %></h1> 
           <p class="skumobile"> <%= producto.sku %> </p>
 
-          <div class="carrucel">
+<!--           <div class="carrucel">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner mb-5">
                 <div class="carousel-item active ml-3">
@@ -42,7 +42,10 @@
             </div>
 
 
-      </div>
+      </div> -->
+    <div class="cajadetalleimagen ml-3">
+      <img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="...">
+    </div>  <!-- div cajadetalleimagen -->
       </div>
   
         <div class="definicion">
@@ -105,7 +108,7 @@
 
 
       <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"> -->
-        <div class="carousel-inner mb-5">
+        <div class="carousel-inner">
          <!--  <div class="carousel-item active">
             <div class="row">
               <div class="col-sm-4 col-md-3"><img src="/images/productos/<%= producto.image %>" class="d-block w-100" alt="primero"></div>
