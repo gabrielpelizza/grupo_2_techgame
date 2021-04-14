@@ -5,87 +5,99 @@
     <%- include('partials/header') %> 
     <main>
         <div class="adminagregarproducto">
-        <div class="contenedor-crear container col-12 mt-5">
-            <h2 class="col-12 mb-5">Agregar producto</h2>
-
-            <form action="/admin/productos/create" method="POST" enctype="multipart/form-data" class="cajaAddColor" id="form"> 
             
-    <div class="box-form">
-            <section class="primeracolumna">
-                <input type="text" name="product_name" id="nombre" value="<%= (typeof old != 'undefined' && old.product_name ? old.product_name : null) %>" class="form-control" placeholder="Nombre">
-                <span id="nameErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.product_name ? errores.product_name.msg : null) %></span>
-            </section>
-            <section class="primeracolumna">
-                <input type="text" name="price" id="precio" value="<%= (typeof old != 'undefined' && old.price ? old.price : null) %>" class="form-control" placeholder="Precio">
-                <span id="priceErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.price ? errores.price.msg : null) %></span>
-            </section>
-            <section class="primeracolumna">
-                <input type="text" name="sku" id="sku" value="<%= (typeof old != 'undefined' && old.sku ? old.sku : null) %>" class="form-control" placeholder="SKU">
-                <span id="skuErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.sku ? errores.sku.msg : null) %></span>
-            </section>
-    </div>
 
-    <div class="box-form">
-                <section class="segundacolumna">
-                <input type="text" name="stock" id="stock" value="<%= (typeof old != 'undefined' && old.stock ? old.stock : null) %>" class="form-control" placeholder="stock">
-                <span id="stockErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.stock ? errores.stock.msg : null) %></span>
-               </section>
+            <div class="contenedor-Add col-12">
 
-            <section class="segundacolumna">
-                <input type="text" name="discount" id="descuento" value="<%= (typeof old != 'undefined' && old.discount ? old.discount : null) %>" class="form-control" placeholder="con o sin descuento">
-                <span id="discountErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.discount ? errores.discount.msg : null) %></span>
-            </section>
+                <div class="imgAdd col-3 col-lg-3">
+                    <img src="/images/addproduct.svg" alt="">
+                </div>
 
-            <section class="segundacolumna">
-                <input type="file" name="img" value="" id="file" class="">  <!-- dentro de la class col-3 mb-3 -->
-                <span id="fileErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.img ? errores.img.msg : null) %></span>
-            </section>
-    </div>
+                <div class="formAdd col-9">
+                    <h2 class=" mt-4   tituloAdd ">Agregar producto</h2>
+                    <form action="/admin/productos/create" method="POST" enctype="multipart/form-data" class="cajaAddColor form__add" id="form"> 
+                    
+                            <div class="campo-form">
+                                    <section class="primeracolumna">
+                                        <input type="text" name="product_name" id="nombre" value="<%= (typeof old != 'undefined' && old.product_name ? old.product_name : null) %>" class="form-control" placeholder="Nombre">
+                                        <span id="nameErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.product_name ? errores.product_name.msg : null) %></span>
+                                    </section>
+                                    <section class="primeracolumna">
+                                        <input type="text" name="price" id="precio" value="<%= (typeof old != 'undefined' && old.price ? old.price : null) %>" class="form-control" placeholder="Precio">
+                                        <span id="priceErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.price ? errores.price.msg : null) %></span>
+                                    </section>
+                                    <section class="primeracolumna">
+                                        <input type="text" name="sku" id="sku" value="<%= (typeof old != 'undefined' && old.sku ? old.sku : null) %>" class="form-control" placeholder="SKU">
+                                        <span id="skuErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.sku ? errores.sku.msg : null) %></span>
+                                    </section>
+                            </div>
 
-                <!-- <input type="text" name="detalle" id="detalle" value="" class="col-3 mb-3"  placeholder="Detalle">
-                <span id="detailError"></span> -->
-    <div class="box-form">
+                            <div class="campo-form">
+                                      <section class="segundacolumna">
+                                        <input type="text" name="stock" id="stock" value="<%= (typeof old != 'undefined' && old.stock ? old.stock : null) %>" class="form-control" placeholder="stock">
+                                        <span id="stockErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.stock ? errores.stock.msg : null) %></span>
+                                     </section>
 
-        <section class="tercercolumna">
-                <select name="categorias" id="categoria" class="col-9 ml-5 form-control">
-                    <option value="" disabled="enable" selected>Categoria</option>
-                        <% rtacategorias.forEach(cadacategoria => { %>
-                          <option id="" value="<%= cadacategoria.id %>"><%= cadacategoria.category %> </option>
-                        <% }) %>
-                </select>
-                <span id="categoryErrors" class="text-danger mr-5"><%= (typeof errores != "undefined" && errores.categoria ? errores.categoria.msg : null) %></span>
-   </section>
+                                    <section class="segundacolumna">
+                                        <input type="text" name="discount" id="descuento" value="<%= (typeof old != 'undefined' && old.discount ? old.discount : null) %>" class="form-control" placeholder="con o sin descuento">
+                                        <span id="discountErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.discount ? errores.discount.msg : null) %></span>
+                                    </section>
 
-   <section class="tercercolumna">
-                <select name="marcas" id="marcas" class="col-9 ml-5 form-control">
-                    <option value="" disabled="enable" selected>Marcas</option>
-                    <% rtamarcas.forEach(cadamarca=>{ %> 
-                        <option id=""value="<%= cadamarca.id %>"><%= cadamarca.brand %> </option>
-                    <% }) %> 
-                </select>
-                <span id="brandErrors" class="text-danger mr-5"><%= (typeof errores != "undefined" && errores.marcas ? errores.marcas.msg : null) %></span>
-    </section>
-   </div>
-                <!-- <input type="file" name="img" value="" id="img" class="col-3 mb-3"> -->
-    <div class="box-form">
-        <section class="cuartacolumna">
-                <textarea name="description" id="description" cols="90%" rows="5" class="form-control" placeholder="Ingresa descripcion del producto"></textarea> <!-- col-9 mb-5 mt-4 -->
-                <span id="descriptionErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.description ? errores.description.msg : null) %></span>
-        </section> 
-     </div>
+                                    <section class="segundacolumna">
+                                        <input type="file" name="img" value="" id="file" class="">  <!-- dentro de la class col-3 mb-3 -->
+                                        <span id="fileErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.img ? errores.img.msg : null) %></span>
+                                    </section>
+                            </div>
 
-     <span id="submitErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.form ? errores.form.msg : null) %></span>
-    <div class="box-form">
-                <section class="quintacolumna botonQuinta">
-                <button type="submit" class="btn btn-success justify-content-center ">Agregar producto</button>
-                <a href="/admin/productos" class="btn btn-danger justify-content-center  ">Cancelar</a>
-            </section>
-     </div>
+                        <!-- <input type="text" name="detalle" id="detalle" value="" class="col-3 mb-3"  placeholder="Detalle">
+                        <span id="detailError"></span> -->
+                            <div class="campo-form cm-caja">
 
-            </form>
+                                <section class="tercercolumna">
+                                        <select name="categorias" id="categoria" class=" ml-5 form-control">
+                                            <option value="" disabled="enable" selected>Categoria</option>
+                                                <% rtacategorias.forEach(cadacategoria => { %>
+                                                <option id="" value="<%= cadacategoria.id %>"><%= cadacategoria.category %> </option>
+                                                <% }) %>
+                                        </select>
+                                        <span id="categoryErrors" class="text-danger "><%= (typeof errores != "undefined" && errores.categoria ? errores.categoria.msg : null) %></span>
+                                </section>
+
+                                <section class="tercercolumna marcacol">
+                                        <select name="marcas" id="marcas" class="ml-5 form-control">
+                                            <option value="" disabled="enable" selected>Marcas</option>
+                                            <% rtamarcas.forEach(cadamarca=>{ %> 
+                                                <option id=""value="<%= cadamarca.id %>"><%= cadamarca.brand %> </option>
+                                            <% }) %> 
+                                        </select>
+                                        <span id="brandErrors" class="text-danger "><%= (typeof errores != "undefined" && errores.marcas ? errores.marcas.msg : null) %></span>
+                                </section>
+                            </div>
+                        <!-- <input type="file" name="img" value="" id="img" class="col-3 mb-3"> -->
+                            <div class="campo-form textform">
+                                <section class="cuartacolumna">
+                                        <textarea name="description" id="description" cols="90%" rows="6" class="form-control" placeholder="Ingresa descripcion del producto"></textarea> <!-- col-9 mb-5 mt-4 -->
+                                        <span id="descriptionErrors" class="text-danger"><%= (typeof errores != "undefined" && errores.description ? errores.description.msg : null) %></span>
+                                        
+                                </section> 
+                               
+                            </div>
+
+                            
+                            <div class=" form-boton botones">
+                                <span id="submitErrors" class="text-danger spanBoton"><%= (typeof errores != "undefined" && errores.form ? errores.form.msg : null) %></span>
+                                    <section class="quintacolumna botonQuinta">
+                                        
+                                        <button type="submit" class="btn btn-success justify-content-center ">Agregar producto</button>
+                                        <a href="/admin/productos" class="btn btn-danger ">Cancelar</a>
+                                    </section>
+                            </div>
+                    </form>
+                </div>
+
+            </div>
         </div>
-    </div>
-    </main>
+</main>
 
 <script src="/javascripts/productAdmin.js"></script>
 <%- include('partials/scripts') %> 
