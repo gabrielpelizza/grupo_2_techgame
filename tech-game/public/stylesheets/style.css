@@ -8,7 +8,7 @@ h1, h2, h5, a{
   font-family: "geforce_bold";
 }
 
-h3{
+h3, label{
   font-family: "geforce_light";
 }
 
@@ -901,7 +901,7 @@ main.detalleproducto{
   header nav .search{
       overflow:hidden;
       order:2;
-      top:-11px;
+      top:-13px;
       right:0px;
       height:100%;
       margin-bottom: 5px;
@@ -1495,7 +1495,7 @@ main.detalleproducto{
   header nav .search{
       overflow:hidden;
       order:2;
-      top:-11px;
+      top:-13px;
       right:0px;
       height:100%;
       margin-bottom: 5px;
