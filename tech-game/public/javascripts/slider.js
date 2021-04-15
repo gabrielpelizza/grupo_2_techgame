@@ -7,7 +7,7 @@ new Glide('.glide', {
         },
         426: {
         perView: 2,
-        gap:10
+        gap:10,
         },
     },
     perView:4,
