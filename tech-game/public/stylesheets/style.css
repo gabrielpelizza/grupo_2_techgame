@@ -572,7 +572,14 @@ footer .redes{
   justify-content: center;
   width: 100%;
 }
-
+footer  a:hover{
+  text-decoration: none;
+  color: black;
+  }
+  footer{
+    margin-top: 20px;
+    padding-top: 15px;
+  }
 footer .redes ul li{
   display: inline;
   margin-right: 30px;
