@@ -15,7 +15,7 @@ module.exports = {
     Promise.all([productos,categorias,descuento])
       .then(([product,categorias,descuento])=>{
           res.render('index', {
-            title: 'Inicio',
+            title: 'Home',
             product,
             categorias,
             descuento,
