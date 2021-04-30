@@ -18,7 +18,8 @@ window.addEventListener('load', function(){
     $passErrors = qs('#passErrors'),
     $pass2 = qs('#pass2'),
     $pass2Errors = qs('#pass2Errors'),
-    $submitErrors= qs('#submitErrors')
+    $submitErrors= qs('#submitErrors'),
+    $opcion = qs('#opcion')
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExDNI = /^[0-9]{7,8}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
@@ -73,7 +74,7 @@ window.addEventListener('load', function(){
             case !regExDNI.test($dni.value):
                 $dniErrors.innerHTML = 'Debe ingresar un dni válido';
                 $dni.classList.add('is-invalid')
-                break
+                break;
             default:
                 $dni.classList.remove('is-invalid');
                 $dni.classList.add('is-valid');
@@ -91,7 +92,7 @@ window.addEventListener('load', function(){
             case !regExEmail.test($email.value):
                 $emailErrors.innerHTML = 'Debe ingresar un email válido';
                 $email.classList.add('is-invalid')
-                break
+                break;
             default:
                 $email.classList.remove('is-invalid');
                 $email.classList.add('is-valid');
@@ -108,9 +109,21 @@ window.addEventListener('load', function(){
                 return prev.nombre > next.nombre
             })
             result.provincias.forEach(provincia => {
-                $provinciaSelect.innerHTML += `<option value="${provincia.nombre}">${provincia.nombre}</option>`
+                $provinciaSelect.innerHTML += `<option value='${provincia.nombre}'>${provincia.nombre}</option>`
             });
         })
+    })
+    $provinciaSelect.addEventListener('change',function(){
+            switch (true) {
+                case !$provinciaSelect.value:
+                     $provinciaSelect.classList.add('is-invalid')
+                    break;
+            
+                default:
+                    $provinciaSelect.classList.remove('is-invalid');
+                    break;
+            }
+        
     })
 
     $pass.addEventListener('blur', function() {
@@ -122,11 +135,11 @@ window.addEventListener('load', function(){
             case !regExPass.test($pass.value):
                 $passErrors.innerHTML = 'La contraseña debe tener: entre 6 o 12 caracteres, al menos una mayúscula, una minúscula y un número';
                 $pass.classList.add('is-invalid')
-                break
+                break;
             default:
                 $pass.classList.remove('is-invalid');
                 $pass.classList.add('is-valid');
-                $passErrors.innerHTML = ''
+                $passErrors.innerHTML = '';
                 break;
         }
     })
@@ -136,11 +149,11 @@ window.addEventListener('load', function(){
             case !$pass2.value.trim():
                 $pass2Errors.innerHTML = 'Debes reingresar la contraseña';
                 $pass2.classList.add('is-invalid')
-                break;
+                ;break;
             case $pass2.value != $pass.value:
                 pass2Errors.innerHTML = 'Las contraseñas no coinciden';
                 $pass2.classList.add('is-invalid')
-                break;
+                ;break;
             default:
                 $pass2.classList.remove('is-invalid');
                 $pass2.classList.add('is-valid');
@@ -150,23 +163,38 @@ window.addEventListener('load', function(){
     })
 
     $form.addEventListener('submit',function(event){
+        console.log($provinciaSelect.value)
         let error = false
         event.preventDefault()
         let elementosForm = this.elements
-        console.log(elementosForm)
         
-        for (let index = 0; index < elementosForm.length-1; index++) {
-            if(elementosForm[index].value == ""){
-                elementosForm[index].classList.add('is-invalid');
-                $submitErrors.innerHTML = "Los campos señalados son obligatorios";
-                error =true
-            }else{
-                error = false
+        let contadorErrors = 0;
+       
+            for (let index = 0; index < elementosForm.length-1; index++) {
+               
+                 if(elementosForm[index].value == ""){
+                    elementosForm[index].classList.add('is-invalid');
+                    $submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                    error =true
+                }
+                let variable = elementosForm[index].classList.contains('is-invalid')
+                 if (variable){
+                    contadorErrors++;
+                }
+                
             }
-        }
-        if(!error){
-            $form.submit()
-        }
+            
+            if(contadorErrors > 0){
+                error = true;
+            }
+            if(contadorErrors == 0){ //si no hay errores
+                $form.submit() //envia el form
+            }else {
+                $submitErrors.innerHTML = 'Todos los campos son obligatorios2 '
+                
+            }
+        
+    
         
     })
 

@@ -26,7 +26,7 @@ module.exports = [
  /*    check('pais')
     .notEmpty()
     .withMessage('Debes seleccionar un país'),
- */
+*/ 
     check('country')
     .notEmpty()
     .withMessage('Debes completar el campo provincia'),

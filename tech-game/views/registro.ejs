@@ -46,12 +46,11 @@
                 
                     <section class="segundacolumna">
                         <label for="">Provincia</label>
-                        <select id="country"   name="country">
-                            <option value="">Seleccione una provincia</option>
+                        <select id="country"   name="country" class="form-control">
+                            <option value="" >Seleccione una provincia</option>
                         </select>
-                        <!-- <input type="text" placeholder="Pais" name="country" id="country" value="<%= (typeof old != 'undefined' && old.country ? old.country : null) %>"> --><br>
                         <span class="text-danger"><%= (typeof errores != 'undefined' && errores.country ? errores.country.msg : null)%></span>
-                    </section>
+                    </section> 
                 </div>
                 <div class="box-form">
                     <section class="segundacolumna">

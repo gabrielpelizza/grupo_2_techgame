@@ -29,7 +29,7 @@ module.exports = {
                 lastname : lastname.trim(),
                 email,
                 dni : dni.trim(),
-                country : country.trim(),
+                country : country,
                 password : bcrypt.hashSync(password, 10),
                 rol_id : 2
             })

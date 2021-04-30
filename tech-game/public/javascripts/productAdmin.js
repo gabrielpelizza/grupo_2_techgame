@@ -31,6 +31,7 @@ window.addEventListener('load', function(){
                 $inputNombre.classList.add('is-invalid')
                 break;
             case $inputNombre.value.length >= 45 :
+                $inputNombre.classList.add('is-invalid');
                 $nameErrors.innerHTML = "Debe contener un maximo de 45 caracteres"
                 ;break;
            /* case !regExAlpha.test($inputNombre.value):
@@ -70,6 +71,7 @@ window.addEventListener('load', function(){
                 $inputNombre.classList.add('is-invalid')
                 break;
             case !Number($inputPrecio.value.trim()) || $inputPrecio.value.trim() <= 0  : 
+                $inputPrecio.classList.add('is-invalid')
                 $priceErrors.innerHTML = "Debes ingresar un precio valido"
             ;break;
           /*  case !regExNumeros.test($inputPrecio.value):
@@ -150,6 +152,7 @@ window.addEventListener('load', function(){
                 $textareaDescripcion.classList.add('is-invalid')
                 break;
             case $textareaDescripcion.value.length > 300  : 
+                $textareaDescripcion.classList.add('is-invalid')
                 $descriptionErrors.innerHTML = 'Debes ingresar un maximo de 300 caracteres'    
             ;break;
             default:
@@ -179,6 +182,7 @@ window.addEventListener('load', function(){
         event.preventDefault()
         let elementosForm = this.elements
         let errorCounter = 0;
+        let errorInvalid = 0;
         for (let index = 0; index < elementosForm.length-1; index++) {
             /* elementosForm[index].classList.add('is-invalid'); */
 
@@ -186,15 +190,19 @@ window.addEventListener('load', function(){
                  elementosForm[index].classList.add('is-invalid');
                  errorCounter++;
              }
+             let variable = elementosForm[index].classList.contains('is-invalid')
+             if (variable){
+                errorInvalid++;
+            }
         }
-        if(errorCounter > 0){
+        
+        if(errorInvalid > 0){
             error = true
-        }
-        if(!error){ //si no hay errores
-            $form.submit() //envia el form
-        } else {
             $submitErrors.innerHTML = 'Todos los campos son obligatorios'
-            
         }
+        if(errorInvalid == 0){ //si no hay errores
+            $submitErrors.innerHTML = ''
+            $form.submit() //envia el form
+        } 
     })
 })

@@ -144,15 +144,26 @@ window.addEventListener('load', function(){
         event.preventDefault()
         console.log($form.elements)
         let elementosForm = this.elements
-        
+        let errorInvalid=0;
         for (let index = 0; index < elementosForm.length-1; index++) {
             if(elementosForm[index].value == ""){
                 elementosForm[index].classList.add('is-invalid');
                 $submitErrors.innerHTML = "Los campos señalados son obligatorios";
                 error =true
             }
+            let variable = elementosForm[index].classList.contains('is-invalid')
+             if (variable){
+                errorInvalid++;
+            }
         }
-        if(!error){
+        
+        if(errorInvalid > 0){
+            error = true
+            $submitErrors.innerHTML = 'Todos los campos son obligatorios'
+        }
+        
+        if(errorInvalid == 0 ){
+            $submitErrors.innerHTML = ''
             swal({
                 title: "estas seguro?",
                 text: "Estas a punto de modificar un producto",
